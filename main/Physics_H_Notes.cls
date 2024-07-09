@@ -328,6 +328,31 @@
 	\end{examplebox}%
 }
 %习题环境example
+
+\newcounter{EXAMPLE}
+\counterwithin{EXAMPLE}{chapter}
+\renewcommand{\theEXAMPLE}{{\large\arabic{chapter}}.\arabic{EXAMPLE}}
+\newtcolorbox{EXAMPLEbox}[1][1]%
+{
+	colback=cyan!5!white,
+	colbacktitle=red!5!white,
+	coltitle=black!70!white,
+	title={\itshape 例题\theEXAMPLE\labelrootmark{EXAMPLE\arabic{chapter}.\arabic{EXAMPLE}}\ #1},
+	colframe=black!50!white,
+	boxrule=0.6pt,
+	breakable
+}
+\NewDocumentEnvironment{EXAMPLE}{O{未命名例题}}%
+{%
+	\refstepcounter{EXAMPLE}%
+	\labelroot*{EXAMPLE\arabic{chapter}.\arabic{EXAMPLE}}[3.2ex]%
+	\begin{EXAMPLEbox}[#1]%
+	}%
+	{%
+	\end{EXAMPLEbox}%
+}
+%例题环境EXAMPLE
+
 \newcounter{solution}
 \counterwithin{solution}{chapter}
 \renewcommand{\thesolution}{{\large\arabic{chapter}}.\arabic{solution}}
@@ -355,6 +380,7 @@
 \Crefname{example}{习题}{习题}
 \Crefname{solution}{Solution}{Solution}
 \Crefname{prove}{Prove}{Prove}
+\Crefname{EXAMPLE}{例题}{例题}
 %各环境的引用头
 %-------------------------------------------------------------
 \newcounter{apart}
