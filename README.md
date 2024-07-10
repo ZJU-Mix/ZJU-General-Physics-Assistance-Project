@@ -10,4 +10,5 @@
 
 本书模板由斑鸠负责，水平比较有限，欢迎LaTeX水平高的同学贡献美工。
 
-
+## 关于使用
+本项目的许可证为  [![CC BY-NC-SA Logo](https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png) 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
