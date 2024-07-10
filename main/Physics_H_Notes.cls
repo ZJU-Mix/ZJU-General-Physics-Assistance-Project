@@ -51,74 +51,7 @@
 \definecolor{c4}{RGB}{100, 172, 174}
 \definecolor{c5}{RGB}{95, 162, 162}
 \setmainfont{Times New Roman}
-\begin{comment}
-	
-% 初始化一些命令用于保存封面信息
-\def\fancybook@theme@color{green}
-\def\fancybook@title{}
-% 标题
 
-\def\fancybook@subtitle{}
-% 副标题
-
-\def\fancybook@author{}
-% 作者
-
-\def\fancybook@cover@picture{}
-% 封面插图
-
-\def\fancybook@cover@color{}
-% 封面 `带子' 颜色
-
-\define@key{fancybook/cover}{title}{%
-	\def\fancybook@title{#1}
-}
-
-\define@key{fancybook/cover}{subtitle}{%
-	\def\fancybook@subtitle{#1}
-}
-
-\define@key{fancybook/cover}{author}{%
-	\def\fancybook@author{#1}
-}
-
-\define@key{fancybook/cover}{picture}{%
-	\def\fancybook@cover@picture{#1}
-}
-
-\define@key{fancybook/cover}{color}{%
-	\def\fancybook@cover@color{#1}
-}
-
-\define@key{fancybook}{cover}{
-	\setkeys{fancybook/cover}{#1}
-}
-
-\def\fancybooksetup#1{%
-	\setkeys{fancybook}{#1}
-}
-% 使用 keyval 宏包，对外暴露 `key-value' 形式的接口以便用户能够修改封面信息
-
-\def\maketitle{%
-	\begin{titlepage}
-        \begin{tikzpicture}[remember picture, overlay]
-            \node[inner sep = 0pt, anchor = north west] at (current page.north west) {
-                \includegraphics[width = \paperwidth, height = .45\paperheight]{\fancybook@cover@picture}};
-            \fill[color = \fancybook@cover@color] ([yshift = -.45\paperheight]current page.north west) rectangle ++ (\paperwidth, -.05\paperheight);
-            \node[anchor = north east, inner sep = 2cm] at (current page.east) {
-                \begin{minipage}{.75\paperwidth}
-                    \begin{flushright}
-                        {\zihao{-1}\bfseries\fancybook@title} \\[.5cm]
-                        {\zihao{-2}\bfseries\fancybook@subtitle} \\[.75cm]
-                        {\zihao{-3}\kaishu\fancybook@author}
-                    \end{flushright}
-                \end{minipage}
-            };
-        \end{tikzpicture}
-	\end{titlepage}
-}
-%封面定义
-\end{comment}
 %-------------------------------------------------------------
 \RequirePackage%
 [	bookmarksopen=true,
@@ -253,7 +186,7 @@
 	blanker,
 	before skip = 10pt,
 	after skip = 10pt,
-	borderline west = {3mm}{13pt}{red!10!white}
+	borderline west = {3mm}{15.5pt}{red!10!white}
 }
 %设计书签格式itemize
 
@@ -446,10 +379,3 @@
 }
 \renewcommand{\thechapter}{\arabic{chapter}}
 \endinput
-
-
-
-
-
-
-
