@@ -24,6 +24,7 @@
     {../figures/figure4/},
     {../figures/figure5/},
     {../figures/figure6/},
+    {../figures/figure7/}
     %{../figures/cover/}
 }
 %图片地址
