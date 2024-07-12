@@ -326,8 +326,8 @@
 	\stepcounter{apart}%
 	\addcontentsline{toc}{chapter}{\large #1}%
 	\begin{tikzpicture}[overlay,remember picture,font=\sffamily\bfseries]
-		\fill[fill=green!2!white] (current page.south west) rectangle (current page.north east);  
-		
+		\fill[fill=green!2!white] (current page.south west) rectangle (current page.north east);
+
 		\draw[ultra thick,c4,name path=big arc] ([xshift=-2mm]current page.north) arc(150:285:11)
 		coordinate[pos=0.225] (x0);
 		\begin{scope}
@@ -345,7 +345,7 @@
 			\draw[ultra thick,c4!50] (x1) arc(135:-20:8.75);
 			\path[name intersections={of=big arc and arc2,by={aux,x2}}];
 			\draw[ultra thick,c4!50] (x2) arc(180:50:2.25);
-		\end{scope} 
+		\end{scope}
 		\path[decoration={text along path,text color=c4,
 			raise = -2.8ex,
 			text  along path,
@@ -358,13 +358,13 @@
 		\begin{scope}
 			\path[clip,postaction={fill=yellow!10!white}]
 			([xshift=2cm,yshift=-9.5cm]current page.center) rectangle ++ (4.2,7.7);
-			\draw[ultra thick,plaincyan] ([xshift=-1.5cm,yshift=-9.5cm]current page.center) 
+			\draw[ultra thick,plaincyan] ([xshift=-1.5cm,yshift=-9.5cm]current page.center)
 			arc(180:0:2);
-			\draw[ultra thick,plaincyan] ([xshift=0.5cm,yshift=-9.5cm]current page.center) 
+			\draw[ultra thick,plaincyan] ([xshift=0.5cm,yshift=-9.5cm]current page.center)
 			arc(180:0:2);
-			\draw[ultra thick,plaincyan] ([xshift=2.5cm,yshift=-9.5cm]current page.center) 
+			\draw[ultra thick,plaincyan] ([xshift=2.5cm,yshift=-9.5cm]current page.center)
 			arc(180:0:2);
-			\draw[ultra thick,plaincyan] ([xshift=4.5cm,yshift=-9.5cm]current page.center) 
+			\draw[ultra thick,plaincyan] ([xshift=4.5cm,yshift=-9.5cm]current page.center)
 			arc(180:0:2);
 			\fill[red!20!white] ([xshift=2.5cm,yshift=-9.5cm]current page.center) +(60:2) circle(1.5mm);
 			\node[text=c5!80!black] at ([xshift=4.7cm,yshift=-6.7cm]current page.center) {\LARGE \hspace*{-3.9em}G.P.A};
@@ -379,3 +379,10 @@
 }
 \renewcommand{\thechapter}{\arabic{chapter}}
 \endinput
+
+
+
+
+
+
+

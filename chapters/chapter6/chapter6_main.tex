@@ -1,0 +1,78 @@
+\chapter[狭义相对论]{\itr{Special relativity}{狭义相对论}}
+进入狭义相对论，我们就开始从熟悉的三维世界来到了陌生的四维世界。作为三维世界的生物大家都一样，谁都没有进化出适用于四维空间的大脑。也许我们并不能建立对于四维世界的直观认知——\begin{center}
+	\itshape 我们能做的，仅仅是通过一些抽象的数学工具来尝试刻画这个神秘而又复杂的四维空间。
+\end{center}
+\section[相对论运动学]{\itr{Time and Space in Special relativity}{相对论运动学}}
+在开始我们的讨论前，有必要先强调一下如下概念:
+\begin{description}
+	\item[同一事件] 我们要注意的是，在狭义相对论中，只有\textbf{同时同地发生}的事件才叫做同一事件，同一事件是无论在哪个参考系中都要承认的\footnote{\eg 若$S$系中的李同学在自己的钟读数为5：00时，与$S'$系中的王同学在同一位置相遇，并看见王同学的钟读数为4:00，那么，王同学也必须承认，当自己的钟读数为4:00时，他与李同学相遇且看到李同学的钟读数为5:00。}。
+	\item[观察与“看”] 在狭义相对论中的题目中，我们遇到的大部分情形是观察。比如说，“在地面系看来火车系上的追击过程花了多久时间”，这种“看”应该理解为观察，也就是通过实验、测量等方式，以一种上帝视角\mgnote{可以有无数个在同一个系里的观察者}[-6ex]得出的结果\mgnote{也就是用洛伦兹变换(\refleaftext{chapter_6_Lorentz_Transformation})得到的结果}；我们也许还会遇到一种“看”，这种看应该理解为一个单独的观察者所观察到的情况，如“高速运动的物体的视觉效应”。我们之后的练习也会涉及到这一点。
+\end{description}
+\subsection[基本假设]{\itr{Basic assumptions}{基本假设}}
+
+\begin{Itemize}
+    \item \itr{Principle of the Constancy of Lightspeed}{光速不变性原理}\ 光速与光源和接收器的运动无关。
+    \item \itr{The Principle of Relativity}{相对性假设}\ 对于任何两个匀速运动的观察者来说，基本物理定律完全相同。（相对性假设）
+\end{Itemize}
+\subsection[洛伦兹变换]{\itr{Lorentz Transformation}{洛伦兹变换}}
+洛伦兹变换是狭义相对论的核心。在理解种种狭义相对论现象之前，我们不妨先引入洛伦兹变换。
+\labelroot*{chapter_6_Lorentz_Transformation}[45ex]
+\begin{law}[\itr{Lorentz Transformation}{洛伦兹变换}]
+	\begin{singlefigure}[洛伦兹变换]{chapter_6_Lorentz_Transformation}[0.4]
+	\end{singlefigure}
+	设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$t,t'$表示$S$系，$S'$系中的时间，用$x,y,z$与$x',y',z'$表示$S$系，$S'$系中的坐标，则有
+	\[
+		\left\{
+			\begin{array}{l}
+				t'=\gamma(t-\beta x/c)\\
+				x^{\prime}=\gamma(x-vt)\\
+				y^{\prime}=y\\
+				z^{\prime}=z
+			\end{array}
+		\right.
+	\]
+	其中 $\gamma = \dfrac{1}{\sqrt{1-v^2/c^2}} \quad,\quad\beta=\dfrac{v}{c}$。
+\end{law}
+
+注意到这里我们仅仅介绍了正逆变换中的一个。实际上，由基本假设2（相对性假设）可知，无论在哪个参考系下，洛伦兹变换都应该具有
+相同的形式。所以，我们自然而然的引入一种符号法则，即给$v$带上正负号，并约定：
+\begin{center}
+	\itshape 在等号左边的系看来，等号右边的系沿着等号左边的系的正方向运动时，$v$取正号；负方向运动时，$v$取负号。
+\end{center}
+
+比如说，在定理说明时，$S$系沿着$S'$系的负方向运动，所以$v$前与$\beta$前取负号。
+\subsection[动尺收缩]{\itr{Lorentz Contradiction}{动尺收缩}}
+\begin{singlefigure}{chapter_6_2}[0.45]
+\end{singlefigure}
+考虑一根在参考系S静止的杆，它顺着x轴放置。因为杆在S系中静止，其端点的位置坐标$x_1$和$x_2$与时间无关。因此，
+\[L_0=x_2-x_1\]
+被称为杆的\textbf{原长}或\textbf{静止长度}。\\
+下记$S'$系中测量杆长的结果为$L$，由洛伦兹变换有
+\[x_{1}=\gamma\left(x_{1}^{\prime}+vt_{1}^{\prime}\right), \]
+\[x_{2}=\gamma\left(x_{2}^{\prime}+vt_{2}^{\prime}\right), \]
+于是有
+\[x_{2}-x_{1}=L_{0}=\gamma\left(x_{2}^{\prime}-x_{1}^{\prime}\right)+\gamma v\left(t_{2}^{\prime}-t_{1}^{\prime}\right) \]
+由于我们是在$S^{\prime}$系下做的测量，故令$t_{2}^{\prime}=t_{1}^{\prime}$,从而得到
+\[L_0=\gamma L\]
+由上述讨论，我们不难发现，之所以尺子会变短，是因为我们的测量出了问题：
+\begin{center}
+	\itshape 我们的测量仅仅保证了在$S$系下是同时的。\\然而，在$S^{\prime}$系看来，这两种操作并不是同时的。
+\end{center}
+
+事实上，在$S^{\prime}$看来，$S$系进行的测量是先测的头后测的尾，其仅仅测量了尺子的一部分，故必然会得到尺缩的结论。
+\subsection[动钟变慢]{\itr{Time dilation}{动钟变慢}}
+在时钟静止的参考系中，时间间隔的测量结果记为
+\[\tau=t_2-t_1\] 
+它称为\textbf{原时}或\textbf{本征时间}。然后我们用洛伦兹变换得到
+\[t_{2}'=\gamma\left(t_{2}-\frac{\beta x_{2}}{c}\right),\]
+\[t_{1}'=\gamma\left(t_{1}-\frac{\beta x_{1}}{c}\right),\]
+注意到我们是在$S^{\prime}$系下测量$S$系下同一处的钟的时间，故有$x_2-x_1=0$，所以可得
+\[t_{2}'-t_{1}'=\gamma \tau\]
+实际上，我们之所以会得到如此结果，是因为光速不变这条基本假设。由于在$S$中静止的钟在$S^{\prime}$下却是运动的，这两个事件在$S$看来不是同地发生的。由于光速不变，这两个信息以光速传播到$S$中的观察者时，必然会产生一个时间差，故看起来就像时间膨胀了一样。
+\subsection[速度变换]{\itr{Speed Transformation}{速度变换}}
+\begin{law}[\itr{Speed Transformation}{速度变换}]
+    \[u_{x}=\frac{u_{x}^{\prime}+v}{1+\frac{v}{c^{2}}u_{x}^{\prime}},\]
+    \[u_{y}=\frac{\sqrt{1-\beta^{2}}u_{y}^{\prime}}{1+\frac{v}{c^{2}}u_{x}^{\prime}},\]
+    \[u_{z}=\frac{\sqrt{1-\beta^{2}}u_{z}^{\prime}}{1+\frac{v}{c^{2}}u_{x}^{\prime}}\]
+\end{law}
+同样的我们约定一种符号法则，v正负号的选取和洛伦兹变换一样，即等号左边的参考系看来右边的参考系相对左边参考系向正方向运动就取正号反之取负号；其他的速度如$u_{x}$,$u_{y}$,$u_{z}$其在相应的参考系下朝正半轴运动就取正号反之取负号，所得到的$u_{x}^{\prime}$,$u_{y}^{\prime}$,$u_{z}^{\prime}$也满足上述符号法则。
