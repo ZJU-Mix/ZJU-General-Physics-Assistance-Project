@@ -34,7 +34,7 @@
             \end{equation}          
             这样就得到了压强的表达式。
 
-            注意$\rho = \frac{N}{V}$，将理想气体方程写成$p = \rho k_{_B}T$后，代入上式有：
+            注意$\rho = \dfrac{N}{V}$，将理想气体方程写成$p = \rho k_{_B}T$后，代入上式有：
             \begin{equation}
                 \overline{\epsilon_k} = \frac{1}{2}\mu \overline{v^{2}}  = \frac{3pV}{2N} = \frac{3}{2} k_{_B}T  
             \end{equation}
@@ -84,9 +84,9 @@
             \end{equation}
         \end{prove}
         \begin{prove}[Isochoric Process and Isobaric Process]
-            对等容过程,其他物理量的求法是显然的，熵则将$Q$微分得到$dQ = nC_{V}dT$，代入定义中：
+            对等容过程,其他物理量的求法是显然的，熵则将$Q$微分得到$\Delta Q = nC_{V}dT$，代入定义中：
             \begin{equation}
-                \Delta S = \int_{T_1}^{T_2} \frac{dQ}{T} = \int_{T_1}^{T_2} \frac{nC_{V}dT}{T} = nC_{V}ln\frac{T_2}{T_1}
+                \Delta S = \int_{T_1}^{T_2} \frac{\Delta Q}{T} = \int_{T_1}^{T_2} \frac{nC_{V}dT}{T} = nC_{V}\ln\frac{T_2}{T_1}
             \end{equation}
             
             等压过程的熵类似等容过程，略。
@@ -94,11 +94,11 @@
         \begin{prove}[Isothermal Process]
             对等温过程，由于无温度变化，故$\Delta U = 0$，由于$PV = nRT = constant$，有：
             \begin{equation}
-                W = \int_{V_1}^{V_2} p \dif{V} = \int_{V_1}^{V_2} \frac{nRT}{V} \dif{V} = nRTln\frac{V_2}{V_1}
+                W = \int_{V_1}^{V_2} p \dif{V} = \int_{V_1}^{V_2} \frac{nRT}{V} \dif{V} = nRT\ln\frac{V_2}{V_1}
             \end{equation}
             由热力学第一定律，$Q = W$，代入熵的定义中：
             \begin{equation}
-                \Delta S = \int_{T_1}^{T_2} \frac{dQ}{T} =\int_{T_1}^{T_2} \frac{dW}{T} =  \int_{V_1}^{V_2} \frac{nR}{V} \dif{V} = nRln\frac{V_2}{V_1}
+                \Delta S = \int_{T_1}^{T_2} \frac{\Delta Q}{T} =  \int_{V_1}^{V_2} \frac{nR}{V} \dif{V} = nR\ln\frac{V_2}{V_1}
             \end{equation} 
         \end{prove}
         \begin{prove}[Adiabatic Process]
@@ -124,7 +124,7 @@
             \end{equation}
             对两边积分：
             \begin{equation}
-                \frac{i+2}{i} lnV  =-lnp + C
+                \frac{i+2}{i} \ln V  =-\ln p + C
                 \nonumber
             \end{equation}
             设$\gamma = \frac{C_p}{C_V} = \frac{2+i}{i}$，那么就有：
@@ -139,8 +139,9 @@
         \end{prove}
         \begin{prove}[Efficiency of a Otto Cycle]
             奥托循环如下：
-            \begin{singlefigure}[Otto Cycle]{Chapter7_otto.png}[0.4]
-            \end{singlefigure}
+            \begin{center}
+                \includegraphics[width=5cm,height=5cm]{Chapter7_otto.png}
+            \end{center}
             AB与CD为绝热过程，$Q = 0$，我们只需考虑BC过程的吸热与DA过程的放热。
             这是两个等压过程，它们的热为：
             \begin{equation}
@@ -159,14 +160,15 @@
             这和奥托循环的证明几乎一样
 
             卡诺循环如下：
-            \begin{singlefigure}[Carnot Cycle]{Chapter7_carnot.png}[0.4]
-            \end{singlefigure}
+            \begin{center}
+                \includegraphics[width=5cm,height=5cm]{Chapter7_carnot.png}
+            \end{center}
             AB与CD为绝热过程，$Q = 0$，我们只需考虑AB过程的吸热与CD过程的放热。
             这是两个等温过程，它们的热为：
             \begin{equation}
                 \begin{aligned}
-                    &Q_{in} = Q_{AB} = nRT_{h}ln\frac{V_B}{V_A}\\
-                    &Q_{out} = -Q_{CD} = nRT_{c}ln\frac{V_C}{V_D}
+                    &Q_{in} = Q_{AB} = nRT_{h}\ln\frac{V_B}{V_A}\\
+                    &Q_{out} = -Q_{CD} = nRT_{c}\ln\frac{V_C}{V_D}
                 \end{aligned}
                 \nonumber
             \end{equation}
@@ -218,25 +220,25 @@
             \end{equation}
             因为对数与原函数在同一点取极值，所以我们对它取个对数，有：
             \begin{equation}
-                ln\Omega = ln(N!)\sum_{i = 1}^{k}[{a_i}ln(w_i) - ln(a_i!)]
+                \ln\Omega = \ln(N!)\sum_{i = 1}^{k}[{a_i}\ln(w_i) - \ln(a_i!)]
             \end{equation}
             $N$是一个很大的数，我们假设所有的$a_i$也是很大的数\footnote{这一假设对真实气体并不严谨，但推导理想气体够用了}，
             使用如下的积分估值：
             \begin{equation}
-                \ln(N!) = \ln(\prod_{i=1}^{N}i)=\sum_{i=1}^{N}ln(i) \approx \int_{1}^{N}lnx\dif{x} = NlnN-N
+                \ln(N!) = \ln(\prod_{i=1}^{N}i)=\sum_{i=1}^{N}\ln(i) \approx \int_{1}^{N}\ln x\dif{x} = N\ln N-N
             \end{equation}
             并且注意到$\sum_{i=1}^{k}a_i=N$，就可以得到：
             \begin{equation}
                 \begin{aligned}
-                    ln\Omega &= NlnN-N-\sum_{i=1}^{k}a_{i}ln(a_i)+\sum_{i=1}^{k}a_k+\sum_{i = 1}^{k}{a_i}ln(w_i)\\
-                    &=NlnN-\sum_{i=1}^{k}a_{i}ln(a_i)+\sum_{i = 1}^{k}{a_i}ln(w_i)
+                    \ln\Omega &= N\ln N-N-\sum_{i=1}^{k}a_{i}\ln(a_i)+\sum_{i=1}^{k}a_k+\sum_{i = 1}^{k}{a_i}\ln(w_i)\\
+                    &=N\ln N-\sum_{i=1}^{k}a_{i}\ln(a_i)+\sum_{i = 1}^{k}{a_i}\ln(w_i)
                     \label{of_omega}
                 \end{aligned}
             \end{equation}
             全微分：
             \begin{equation}
-                \dif{(ln\Omega)} = \sum_{i=1}^{k}\left(\frac{\partial (ln\Omega)}{\partial a_i}\right)_{a_j(i\neq j)} \dif{a_i} = 
-                -\sum_{i=1}^{k}(1+ln a_i-ln w_i)\dif{a_i} 
+                \dif{(\ln\Omega)} = \sum_{i=1}^{k}\left(\frac{\partial (\ln\Omega)}{\partial a_i}\right)_{a_j(i\neq j)} \dif{a_i} = 
+                -\sum_{i=1}^{k}(1+\ln a_i-\ln w_i)\dif{a_i} 
                 \label{of_difOmega}
             \end{equation}
             考虑存在如下两个约束条件，所有能级上的粒子之和等于$N$，所有粒子的能量之和等于内能$U$，设第$i$个能级的能量为$\epsilon_i$，即有：
@@ -249,11 +251,11 @@
             \end{equation}
             要求极值，显然使用拉格朗日乘因子法，分别对上式微分后乘以$\alpha + 1$，$\beta$加到\ref{of_difOmega}中，可得到：
             \begin{equation}
-                \sum_{i=1}^{k} [ln(\frac{w_i}{a_i})+\alpha+\beta \epsilon_i] \dif{a_i} = 0
+                \sum_{i=1}^{k} [\ln(\frac{w_i}{a_i})+\alpha+\beta \epsilon_i] \dif{a_i} = 0
             \end{equation}
             此时变量相互独立，只需令每一项均为0即可，得到：
             \begin{equation}
-                ln(\frac{w_i}{a_i})+\alpha+\beta \epsilon_i = 0
+                \ln(\frac{w_i}{a_i})+\alpha+\beta \epsilon_i = 0
                 \label{of_a_i}
             \end{equation}
             写成指数形式也就是：
@@ -266,15 +268,15 @@
 
             我们现在重新观察一下\ref{of_omega}，并将其写成如下形式：
             \begin{equation}
-                ln\Omega = NlnN + \sum_{i = 1}^{k} a_i ln(\frac{w_i}{a_i})
+                \ln\Omega = N\ln N + \sum_{i = 1}^{k} a_i \ln(\frac{w_i}{a_i})
             \end{equation}
             这样我们较为方便的把\ref{of_a_i}代入，并注意一下\ref{of_U}，不难得到：
             \begin{equation}
-                ln\Omega = NlnN - \alpha \sum_{i = 1}^{k} a_i -\beta \sum_{i = 1}^{k}\epsilon_i a_i = NlnN -\alpha N - \beta U  
+                \ln\Omega = N\ln N - \alpha \sum_{i = 1}^{k} a_i -\beta \sum_{i = 1}^{k}\epsilon_i a_i = N\ln N -\alpha N - \beta U  
             \end{equation}
             接着我们利用熵的微观表达式，即玻尔兹曼公式，并结合最概然分布的假设，代入有：
             \begin{equation}
-                S = k_{_B}ln\sum \Omega_i = k_{_B}ln\Omega =  k_{_B}NlnN -k_{_B}\alpha N - k_{_B}\beta U
+                S = k_{_B}\ln\sum \Omega_i = k_{_B}\ln\Omega =  k_{_B}N\ln N -k_{_B}\alpha N - k_{_B}\beta U
                 \label{of_S}
             \end{equation}
             最后结合温度的定义即可求得$\beta$：
@@ -286,18 +288,18 @@
             \end{equation}
             定义配分函数如下：
             \begin{equation}
-                Z \overset{def}{=} \sum_{i=1}^{k}w_i e^{-\frac{\epsilon_i}{k_{_B}T}}
+                Z \overset{def}{=} \sum_{i=1}^{k}w_i e^{-\tfrac{\epsilon_i}{k_{_B}T}}
             \end{equation}
             将\ref{of_a_i_2}代入\ref{of_U}的$N$中，可以得到：
             \begin{equation}
                 \begin{aligned}
                     &N = Ze^{\alpha} \\
-                    &\alpha = ln\left(\frac{N}{Z}\right)
+                    &\alpha = \ln\left(\frac{N}{Z}\right)
                 \end{aligned}
             \end{equation}
             就有了最基本的形式：
             \begin{equation}
-                a_i = \frac{w_{i}N}{Z} e^{-\frac{\epsilon_i}{k_{_B}T}}
+                a_i = \frac{w_{i}N}{Z} e^{-\tfrac{\epsilon_i}{k_{_B}T}}
                 \label{of_a_i_3}
             \end{equation}
             设第一个能级为基态，其能量为0（由于习惯，基态用下标“0”表示），且能级无简并（$w_i=1$）：
@@ -306,7 +308,7 @@
             \end{equation}
             从而得到有：
             \begin{equation}
-                a_i = a_{_0} e^{-\frac{\epsilon_i}{k_{_B}T}} 
+                a_i = a_{_0} e^{-\tfrac{\epsilon_i}{k_{_B}T}} 
             \end{equation}
             这样我们就得到了玻尔兹曼分布的表达式。
         \end{prove}
@@ -321,20 +323,20 @@
             \footnote{这里我们不考虑能级简并问题，因为经典动能是连续的，导致了对$v_{x}^{2}+v_{y}^{2}+v_{z}^{2}=A$来说，
             在$A>0$的情况下总是有无数组解。}：
             \begin{equation}
-                a= \frac{N}{Z} e^{-\frac{\mu v^{2}}{2k_{_B}T}}
+                a= \frac{N}{Z} e^{-\tfrac{\mu v^{2}}{2k_{_B}T}}
             \end{equation}
             下面来求配分函数，在连续空间中，我们把累加化为积分。因为位置和速度都可能影响能级能量
             \footnote{虽然这里的空间分布不影响能量，但不代表积分时可以不考虑。}
             ，所以积分区间应遍历整个空间与速度空间，即相空间：
             \begin{equation}
-                Z =\int \dots \int e^{-\frac{\mu v^{2}}{2k_{_B}T}} \dif{x}\dif{y}\dif{z}\dif{v_x}\dif{v_y}\dif{v_z}
+                Z =\int \dots \int e^{-\tfrac{\mu v^{2}}{2k_{_B}T}} \dif{x}\dif{y}\dif{z}\dif{v_x}\dif{v_y}\dif{v_z}
             \end{equation}
             注意到能量与空间分布无关，所以对空间的积分就等于$V$，然后看对速度的积分，由于只需考虑速度大小且积分区间为全速度空间，
             我们选择从球壳逐层积分，即$\dif{v_x}\dif{v_y}\dif{v_z} = 4\pi v^{2}\dif{v}$，从而：
             \begin{equation}
                 \begin{aligned}
-                    Z &= 4\pi V\int_{0}^{+\infty} v^{2} e^{-\frac{\mu v^{2}}{2k_{_B}T}} \dif{v}\\
-                      &= -\frac{4 \pi V k_{_B}T}{\mu} (ve^{-\frac{\mu v^{2}}{2k_{_B}T}}\big|_{0}^{+\infty} - \int_{0}^{+\infty} e^{-\frac{\mu v^{2}}{2k_{_B}T}} \dif{v})
+                    Z &= 4\pi V\int_{0}^{+\infty} v^{2} e^{-\tfrac{\mu v^{2}}{2k_{_B}T}} \dif{v}\\
+                      &= -\frac{4 \pi V k_{_B}T}{\mu} (ve^{-\tfrac{\mu v^{2}}{2k_{_B}T}}\big|_{0}^{+\infty} - \int_{0}^{+\infty} e^{-\tfrac{\mu v^{2}}{2k_{_B}T}} \dif{v})
                 \end{aligned}
             \end{equation}
             前一项显然为0，后一项是经典的高斯积分，在概率论与数学分析中都有涉及它的求解，这里直接给出结果：
@@ -344,31 +346,31 @@
             \end{equation}
             将它代入粒子数的表达式，我们可以得到粒子密度随动量的分布：
             \begin{equation}
-                \rho = \frac{a}{V} = N\left(\frac{\mu}{2\pi k_{_B}T}\right)^{\frac{3}{2}}e^{-\frac{\mu v^{2}}{2k_{_B}T}}
+                \rho = \frac{a}{V} = N\left(\frac{\mu}{2\pi k_{_B}T}\right)^{\frac{3}{2}}e^{-\tfrac{\mu v^{2}}{2k_{_B}T}}
             \end{equation}
             这样就可以求$\dif{N}$了，它等于速度空间体积元内的粒子数：
             \begin{equation}
-                \dif{N} = \rho \dif{V} = N4\pi \left(\frac{\mu}{2\pi k_{_B}T}\right)^{\frac{3}{2}}v^{2}e^{-\frac{\mu v^{2}}{2k_{_B}T}}\dif{v}
+                \dif{N} = \rho \dif{V} = N4\pi \left(\frac{\mu}{2\pi k_{_B}T}\right)^{\frac{3}{2}}v^{2}e^{-\tfrac{\mu v^{2}}{2k_{_B}T}}\dif{v}
             \end{equation}
             联系速率分布函数的定义，其实我们已经得到了麦克斯韦分布：
             \begin{equation}
-                f(v) = \frac{\dif{N}}{N\dif{v}} = 4\pi \left(\frac{\mu}{2\pi k_{_B}T}\right)^{\frac{3}{2}}v^{2}e^{-\frac{\mu v^{2}}{2k_{_B}T}}
+                f(v) = \frac{\dif{N}}{N\dif{v}} = 4\pi \left(\frac{\mu}{2\pi k_{_B}T}\right)^{\frac{3}{2}}v^{2}e^{-\tfrac{\mu v^{2}}{2k_{_B}T}}
             \end{equation}
             证毕。
         \end{prove}
         \begin{prove}[Ideal Gas Law]
             先回到玻尔兹曼分布\ref{of_S}，我们已经求出了这里的$\alpha$与$\beta$，直接代入：
             \begin{equation}
-                S = k_{_B}NlnN - k_{_B}Nln\frac{N}{Z} + \frac{U}{T} = k_{_B}NlnZ + \frac{U}{T}
+                S = k_{_B}N\ln N - k_{_B}N\ln\frac{N}{Z} + \frac{U}{T} = k_{_B}N\ln Z + \frac{U}{T}
             \end{equation}
             定义亥姆霍兹自由能$A=U-TS$，从而上式化为：
             \begin{equation}
-                A = -k_{_B}NTlnZ
+                A = -k_{_B}NT\ln Z
             \end{equation}
             这里的配分函数我们已经计算过了，直接代入\ref{of_Z}
-            \footnote{严谨来说应该把外势场以及转动动能考虑进去，不过那样配分函数还是$Z=ln(Vf(T))$的形式，区别只是$f(T)$不影响推导，详见}：
+            \footnote{严谨来说应该把外势场以及转动动能考虑进去，不过那样配分函数还是$Z=\ln(Vf(T))$的形式，区别只是$f(T)$不影响推导}：
             \begin{equation}
-                A = -k_{_B}NTln\left[V\left(\frac{2\pi k_{_B}T}{\mu}\right)^{\frac{3}{2}}\right]
+                A = -k_{_B}NT\ln\left[V\left(\frac{2\pi k_{_B}T}{\mu}\right)^{\frac{3}{2}}\right]
                 \label{of_A}
             \end{equation}
             代入热力学基本方程$dU=T\dif{S}-p\dif{V}$，可以得到
@@ -396,7 +398,7 @@
             \begin{equation}
                 \begin{aligned}
                     S &= -\left(\frac{\partial A}{\partial T}\right)_{V} \\
-                      &= k_{_B}Nln\left[V\left(\frac{2\pi k_{_B}T}{\mu}\right)^{\frac{3}{2}}\right]+\frac{3}{2}k_{_B}N\\
+                      &= k_{_B}N\ln\left[V\left(\frac{2\pi k_{_B}T}{\mu}\right)^{\frac{3}{2}}\right]+\frac{3}{2}k_{_B}N\\
                       &= -\frac{A}{T} +\frac{3}{2}k_{_B}N
                 \end{aligned}
             \end{equation}
@@ -408,7 +410,7 @@
             
             然后把转动动能考虑进来，先来看非线性分子。令$I=\frac{1}{2}Jw^{2}$为转动动能，取类似于速度空间的角速度空间，这样考虑了转动后的配合函数变为：
             \begin{equation}
-                Z =\int \dots \int e^{-\frac{\mu v^{2}+J w^{2}}{2k_{_B}T}} \dif{x}\dif{y}\dif{z}\dif{v_x}\dif{v_y}\dif{v_z}\dif{w_x}\dif{w_y}\dif{w_z}
+                Z =\int \dots \int e^{-\tfrac{\mu v^{2}+J w^{2}}{2k_{_B}T}} \dif{x}\dif{y}\dif{z}\dif{v_x}\dif{v_y}\dif{v_z}\dif{w_x}\dif{w_y}\dif{w_z}
             \end{equation}
             由于非线性分子实际上平动动能与转动动能形式一致，故积分结果也一致，有：
             \begin{equation}
@@ -423,7 +425,7 @@
             对线性分子，绕穿过分子的那条轴的转动惯量过小，对应方向上的转动动能可以忽略。
             假设忽略$w_z$，则体积元从球壳变为圆柱体壳，即$\dif{w_x}\dif{w_y}\dif{w_z}=2\pi w\dif{w}$，即下面的积分：
             \begin{equation}
-                2\pi \int_{0}^{+\infty} we^{-\frac{J w^{2}}{2k_{_B}T}}\dif{w} = \frac{2\pi k_{B}T}{J}
+                2\pi \int_{0}^{+\infty} we^{-\tfrac{J w^{2}}{2k_{_B}T}}\dif{w} = \frac{2\pi k_{B}T}{J}
             \end{equation}
             于是有$Z\propto T^{\frac{5}{2}}$，对应的：
             \begin{equation}
@@ -433,5 +435,4 @@
             所以把能级近似为连续的考虑。这一假设对于振动能级开始已经不再成立，我们必须使用求和代替积分，这个计算出来的贡献相对前两者来说可以忽略，
             不过这部分的计算需要使用量子力学，这里就不给出振动贡献可忽略的证明了。
         \end{prove}
-        
 %\end{document}

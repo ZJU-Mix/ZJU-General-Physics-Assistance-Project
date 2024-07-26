@@ -30,25 +30,27 @@
         \begin{Itemize}
             \item \itr{Amount of Substance}{物质的量}用于衡量分子数量，用$n$表示，国际单位为摩尔（$\rm{mol}$）。
             \item \itr{Avogadro Constant}{阿伏伽德罗常数}，记为$N_{A}$，约为$6.022\times 10^{23}\rm{mol}^{-1}$。
-            表示$1mol$物质中含有的粒子数，即若用$N$代表分子个数，其关系为$N=nN_{A}$。
+            表示$1\rm{mol}$物质中含有的粒子数，即若用$N$代表分子个数，其关系为$N=nN_{A}$。
             \item \itr{Temperature}{热力学温度}表示气体热运动的剧烈程度，用$T$表示，国际单位为开尔文（$\rm{K}$）。
             其与摄氏温度的转化为：$T = t + 273.15$，$t$为摄氏温度。
             \item \itr{Boltzmann Constant}{玻尔兹曼常数}，记为$k_{B}$，约为$1.381\times 10^{-23}\rm{J}\cdot K^{-1}$。
             反应微观状态数与熵的关系。
             \item \itr{Gas Constant}{气体常数}，记为$R$，约为$8.314\rm{J}\cdot mol^{-1}\cdot K^{-1}$且$R=N_{A}k_{B}$。
         \end{Itemize}
+
+        这是一个实验结论，理论上也可以证明(可见\refleaf{prove7.11})
     \section[分子动理论]{\itr{Kinetic Theory of Molecules}{分子动理论}}
         \subsection[压强的微观解释]{\itr{the Microscopic View of Pressure}{压强的微观解释}}
             从微观角度来说，压强的本质是气体分子对容器壁不断撞击的统计平均结果。根据理想气体的假设，并认为速度向各个方向的概率均等，
-            可以得到压强与分子数密度以及速率的关系如下：
+            可以得到压强与分子数密度以及速率的关系如下(证明见\refleaf{prove7.1})：
             \begin{equation}
                 p = \rho \mu \upperline{v_{x}^{2}}=\frac{1}{3}\rho \mu \upperline{v^{2}}
                 \nonumber
             \end{equation}
-            其中$\rho = \frac{N}{V}$表示单位体积的分子数密度，$\mu$表示单个分子的质量，\upperline{v^{2}}为速度平方的平均值
-            （注意与速度平均值的平方$\upperline{v}^2$区分）。
+            其中$\rho = \dfrac{N}{V}$表示单位体积的分子数密度，$\mu$表示单个分子的质量，$\upperline{v^{2}}$为速度平方的平均值
+            （注意与速度平均值的平方$\overline{v}^2$区分）。
 
-            利用这一结论，如果我们定义分子平均动能\ $\upperline{\epsilon_{k}} = \frac{1}{2} \mu \upperline{v^{2}}$，
+            利用这一结论，如果我们定义分子平均动能\ $\upperline{\epsilon_{k}} = \dfrac{1}{2} \mu \upperline{v^{2}}$，
             结合理想气体方程，经过简单推导，我们即可得到其表达式为：
             \begin{equation}
                 \upperline{\epsilon_{k}} = \frac{3}{2}k_{B}T
@@ -69,7 +71,7 @@
                 %\footnote{如要直接分析，则振动自由数等于简正模式的数量，即彼此正交且不改变质心位置与分子取向的基本振动的数量}
             \end{Itemize}
             \ \newline 
-            有了自由度的概念，根据大量的实验事实总结有如下关系成立：
+            有了自由度的概念，根据大量的实验事实总结有如下关系成立(理论上也可以证明,可见\refleaf{prove7.11})：
             \begin{equation}
                 U = \frac{i}{2}Nk_{B}T
                 \nonumber
@@ -79,7 +81,7 @@
             \footnote{不计振动自由度、电子自由度与原子核自由度，这是因为这些自由度对应的能级能隙的数量级与$k_{B}T$相当（振动能隙）
             或远大于它（电子能隙与原子核能隙），均分定理所需的假设“能级组成平滑连续能谱”不再成立，其贡献变为0。
             事实上当温度降低到一定值时，这一定理也会因为同样的原因失效。}；
-            而$\frac{1}{2}k_{B}T$正是上一部分中我们计算得到的分子动能平分到某个方向上的结果，
+            而$\dfrac{1}{2}k_{B}T$正是上一部分中我们计算得到的分子动能平分到某个方向上的结果，
             这一结论也由此解释为内能平均分配到每一个自由度上，得名\itr{Equipartition Theorem}{能量均分原理}。
         \subsection[麦克斯韦分布]{\itr{Maxwell Distribution}{麦克斯韦分布}}
             速率分布函数是这样一个函数，它的自变量为速度，因变量为速度落在$[v,v+\dif{v}]$区间内的粒子占总粒子数的比值，
@@ -95,9 +97,9 @@
             \end{equation}
             根据定义，速率分布函数是归一化的，即其在$[0,+\infty)$上的积分为1。
                 
-            \itr{Maxwell Distribution}{麦克斯韦分布}给出了理想气体的速率分布规律，它给出的速率分布函数如下：
+            \itr{Maxwell Distribution}{麦克斯韦分布}给出了理想气体的速率分布规律，它给出的速率分布函数如下(证明可见\refleaf{prove7.10})：
             \begin{equation}
-                f(v)dv=\left(\frac \mu{2\pi k_{B}T}\right)^{\frac{3}{2}}e^{-\frac{\mu v^{2}}{2k_{_B}T}}4\pi v^2\dif{v}
+                f(v)\dif{v}=\left(\frac \mu{2\pi k_{_B}T}\right)^{\frac{3}{2}}e^{-\tfrac{\mu v^{2}}{2k_{_B}T}}4\pi v^2\dif{v}
                 \nonumber
             \end{equation}
             
@@ -111,63 +113,63 @@
                     v_{p} \quad where \quad \frac{\dif N({v_{p}})}{\dif{v}} = 0
                     \nonumber
                 \end{equation}
-                对麦克斯韦分布，其值等于$\sqrt{\frac{2k_{B}T}{\mu}}$或$\sqrt{\frac{2RT}{M}}$，$M$为摩尔质量。
+                对麦克斯韦分布，其值等于$\sqrt{\dfrac{2k_{_B}T}{\mu}}$或$\sqrt{\dfrac{2RT}{M}}$，$M$为摩尔质量。
                 \item \itr{Average Speed}{平均速率}表示所有粒子速率的平均值，用于计算分子自由程等，定义式为：
                 \begin{equation}
-                    \overline{v} = \int_{0}^{+\infty} vf(v)dv
+                    \upperline{v} = \int_{0}^{+\infty} vf(v) \dif v
                     \nonumber
                 \end{equation}
-                对麦克斯韦分布，其值等于$\sqrt{\frac{8k_{B}T}{\pi \mu}}$或$\sqrt{\frac{8RT}{\pi M}}$。
+                对麦克斯韦分布，其值等于$\sqrt{\dfrac{8k_{_B}T}{\pi \mu}}$或$\sqrt{\dfrac{8RT}{\pi M}}$。
                 \item \itr{Root Mean Speed}{方均根速率}表示所有粒子速度平方的平均值的平方根，用于计算分子动能等，定义式为：
                 \begin{equation}
-                    v_{rms} = \sqrt{\int_{0}^{+\infty} v^{2}f(v)dv}
+                    v_{rms} = \sqrt{\int_{0}^{+\infty} v^{2}f(v)\dif v}
                     \nonumber
                 \end{equation}
-                对麦克斯韦分布，其值等于$\sqrt{\frac{3k_{B}T}{\mu}}$或$\sqrt{\frac{3RT}{M}}$。
+                对麦克斯韦分布，其值等于$\sqrt{\dfrac{3k_{_B}T}{\mu}}$或$\sqrt{\dfrac{3RT}{M}}$。
             \end{Itemize}
         \subsection[玻尔兹曼分布]{\itr{Boltzmann Distribution}{玻尔兹曼分布}}
-            我们再重新观察一下麦克斯韦分布的$e$指数位置，发现可以提出$\frac{1}{2}\mu v^{2}$，这正是分子动能，
+            我们再重新观察一下麦克斯韦分布的$e$指数位置，发现可以提出$\dfrac{1}{2}\mu v^{2}$，这正是分子动能，
             这启示我们粒子的分布的核心可能是它的能量。那么在一般的势场中，随着粒子所在位置的不同，自然其能量不同，
             所以对应的分布应该与空间坐标有关。
 
             事实也确实如此，在同时考虑速度与位置的情况下，我们有如下的关系：
             \begin{equation}
-                \dif{N}=\rho_{0}\left(\frac \mu{2\pi k_{B}T}\right)^{\frac{3}{2}}e^{-\frac{\epsilon}{k_{_B}T}}
+                \dif{N}=\rho_{0}\left(\frac \mu{2\pi k_{B}T}\right)^{\frac{3}{2}}e^{-\tfrac{\epsilon}{k_{_B}T}}
                 \dif{x}\dif{y}\dif{z}\dif{v_{x}}\dif{v_{y}}\dif{v_{z}}
                 \nonumber
             \end{equation}
             其中$\rho_{0}$为势能零点处的分子数密度。
             仔细观察可见，若将内能拆成势能与动能的和，再分别与对应的变量组合，就有：
             \begin{equation}
-                \dif{N} =\rho_{0}e^{-\frac{\epsilon_{p}}{k_{_B}T}}\dif{x}\dif{y}\dif{z}\times\left(\frac \mu{2\pi k_{B}T}\right)^{\frac{3}{2}}e^{-\frac{\epsilon_{k}}{k_{_B}T}}
+                \dif{N} =\rho_{0}e^{-\tfrac{\epsilon_{p}}{k_{_B}T}}\dif{x}\dif{y}\dif{z}\times\left(\frac \mu{2\pi k_{B}T}\right)^{\frac{3}{2}}e^{-\tfrac{\epsilon_{k}}{k_{_B}T}}
                 \dif{v_{x}}\dif{v_{y}}\dif{v_{z}}
                 \nonumber
             \end{equation}
             由于$\dif{v_{x}}\dif{v_{y}}\dif{v_{z}}=4\pi v^{2}\dif{v}$事实上是速度在三维微分的不同表达形式，
             此时后一项即是麦克斯韦分布，积分为1，故对两边进行关于速度的积分，就有：
             \begin{equation}
-                \dif{N} =\rho_{0}e^{-\frac{\epsilon_{p}}{k_{_B}T}}\dif{x}\dif{y}\dif{z} =\rho_{0}e^{-\frac{\epsilon_{p}}{k_{_B}T}}\dif{V}
+                \dif{N} =\rho_{0}e^{-\tfrac{\epsilon_{p}}{k_{_B}T}}\dif{x}\dif{y}\dif{z} =\rho_{0}e^{-\tfrac{\epsilon_{p}}{k_{_B}T}}\dif{V}
                 \nonumber
             \end{equation}
             接下来只要注意到$\rho = \frac{\dif{N}}{\dif{V}}$，就自然得到了一个简洁而重要的结论：
             \begin{equation}
-                \rho = \rho_{0}e^{-\frac{\epsilon_{p}}{k_{_B}T}}
+                \rho = \rho_{0}e^{-\tfrac{\epsilon_{p}}{k_{_B}T}}
                 \nonumber
             \end{equation}
-            这一分布称为\itr{Boltzmann Distribution}{玻尔兹曼分布}，
+            这一分布称为\itr{Boltzmann Distribution}{玻尔兹曼分布}(严谨证明见\refleaf{prove7.9})，
             我们将处于势能零点的粒子称为基态粒子，那么这个式子反映了能量高于$\epsilon_{p}$的粒子相对基态粒子的数量。
             
             利用它，我们可以轻松推出流体力学中压强随高度（假设温度不变）的分布，只需注意到压强与分子数成正比，
             势能在此处为重力势能即可，有：
             \begin{equation}
-                p = p_{0}e^{-\frac{\mu gh}{k_{_B}T}} = p_{0}e^{-\frac{mgh}{RT}}
+                p = p_{0}e^{-\tfrac{\mu gh}{k_{_B}T}} = p_{0}e^{-\tfrac{mgh}{RT}}
                 \nonumber    
             \end{equation}
         \subsection[平均自由程]{\itr{Mean Free Path}{平均自由程}}
             \itr{Mean Free Path}{平均自由程}是指分子在相邻两次碰撞之间走过的平均路程，它等于分子在一段时间内通过的路程与平均碰撞次数的比值。
-            如将分子视为直径为$d$的球体且分子做平均速度为$v$的折线运动，可以得到平均碰撞次数$\overline{Z}$为：
+            如将分子视为直径为$d$的球体且分子做平均速度为$v$的折线运动，可以得到平均碰撞次数$\upperline{Z}$为(证明见\refleaf{prove7.2})：
             \begin{equation}
-                \overline{Z} = \sqrt{2}\pi \rho d^{2} v
+                \upperline{Z} = \sqrt{2}\pi \rho d^{2} v
                 \nonumber
             \end{equation}
 
@@ -192,7 +194,7 @@
             且外界对物体做正功时为正；而物理化学则用$w$表示物体对外界做功并强调它不是一个状态量，规定对内做功为正。
             所以说在学习这一块的时候，请各位务必注意符号问题，很有可能课程或参考书的符号及其定义与本笔记有较大出入。
 
-            关于热力学函数的$\dif{Q}$这类对于过程函数的微分，最好从物理上理解为一个微小可逆过程的放热，
+            一些教材上可能会出现$\dif{Q}$这类对于过程函数的微分写法，最好从物理上理解为一个微小可逆过程的放热，
             因为如果把$Q$作为一个数学概念上的多元函数，那么它并不能全微分，自然不存在$\dif{Q}$这一说法。
             而对于状态函数的微分如$\dif{U}$，其可以视为数学上的全微分。
 
@@ -232,7 +234,7 @@
                     \frac{\dif{Q}}{\dif{t}} = \kappa_{t}A\frac{\dif{T}}{\dif{x}}
                 \end{equation}
                 这是\itr{Fourier's Law}{傅里叶定律}，其中$\kappa_{t}$表示介质的热传导率，与介质种类有关；$A$为截面面积；
-                $\frac{\dif{T}}{\dif{x}}$代表了温度梯度，即两端的温差大小。
+                $\dfrac{\dif{T}}{\dif{x}}$代表了温度梯度，即两端的温差大小。
                 \item \itr{Heat Capacity at Constant Volume}{等容热容}是在体积一定的情况下上升单位温度所需要吸收的热量：
                 \begin{equation}
                     C_{V} \overset{def}{=} \left(\frac{\partial{Q}}{\partial{T}}\right)_{V} = \left(\frac{\partial{U}}{\partial{T}}\right)_{V}
@@ -260,8 +262,9 @@
                 \end{equation}
                 并规定系统对外做功取正。功也是过程函数。                
             \end{Itemize}
+            (理想气体热容的证明见\refleaf{prove7.3})
 
-            功与热是改变系统内能的两条也是唯二的途径，这就是\itr{First Law of Thermodynamics}{热力学第一定律}\linebreak
+            改变系统内能必须通过热与功，这就是\itr{First Law of Thermodynamics}{热力学第一定律}
             \begin{law}[First Law of Thermodynamics]
                 系统内能的增加量等于系统吸收的热和环境对系统所做的功的总和：
                 \begin{equation}
@@ -271,10 +274,11 @@
             \end{law}
             热力学第一定律也可以写成微分形式：
             \begin{equation}
-                \dif{U} = \dif{Q} - p\dif{V}
+                \dif{U} = \Delta{Q} - p\dif{V}
                 \nonumber
             \end{equation}
-        \subsection[过程介绍]{\itr{Process Introduction}{过程介绍}\mgnote{为方便查阅把熵的计算也写在此处}}
+        \subsection[过程介绍]{\itr{Process Introduction}{过程介绍}}
+        为方便查阅把熵的计算也写在此处
         \begin{Itemize}
             \item \itr{Isochoric Process}{等容过程}是指系统体积不变的过程，此时一般容器为刚性容器。            
             \begin{equation}
@@ -283,10 +287,13 @@
                     &Q = \Delta U = nC_{V}\Delta T = \frac{i}{2}V\Delta p \\
                     &W = 0 \\
                     &\Delta U = nC_{V}\Delta T = \frac{i}{2}V\Delta p \\ 
-                    &\Delta S = nC_{V}ln\frac{p_{2}}{p_{1}} =nC_{V}ln\frac{T_{2}}{T_{1}}
+                    &\Delta S = nC_{V}\ln\frac{p_{2}}{p_{1}} =nC_{V}\ln\frac{T_{2}}{T_{1}}
                 \end{aligned}
                 \nonumber
             \end{equation}
+        \end{Itemize}
+        (证明见\refleaf{prove7.4})
+        \begin{Itemize}
             \item \itr{Isobaric Process}{等压过程}是指系统压强不变的过程。
             \begin{equation}
                 \begin{aligned}
@@ -294,21 +301,27 @@
                     &Q = nC_{p}\Delta T =\frac{i+2}{2}p\Delta V\\
                     &W = p\Delta{V} \\
                     &\Delta U = Q - W = nC_{V}\Delta T = \frac{i}{2}p\Delta V \\ 
-                    &\Delta S = nC_{p}ln\frac{V_{2}}{V_{1}} =nC_{p}ln\frac{T_{2}}{T_{1}}
+                    &\Delta S = nC_{p}\ln\frac{V_{2}}{V_{1}} =nC_{p}\ln\frac{T_{2}}{T_{1}}
                 \end{aligned}
                 \nonumber
             \end{equation}
+        \end{Itemize}
+        (证明见\refleaf{prove7.4})
+        \begin{Itemize}
             \item \itr{Isothermal Process}{等温过程}是指系统温度不变的过程。
             \begin{equation}
                 \begin{aligned}
                     &pV = constant \\
-                    &Q = W = nRTln\frac{P_1}{P_2} = nRTln\frac{V_2}{V_1}\\
-                    &W = nRTln\frac{P_1}{P_2} = nRTln\frac{V_2}{V_1} \\
+                    &Q = W = nRT\ln\frac{p_1}{p_2} = nRT\ln\frac{V_2}{V_1}\\
+                    &W = nRT\ln\frac{p_1}{p_2} = nRT\ln\frac{V_2}{V_1} \\
                     &\Delta U = 0 \\ 
-                    &\Delta S = nRln\frac{V_{2}}{V_{1}} =nRln\frac{P_{1}}{P_{2}}
+                    &\Delta S = nR\ln\frac{V_{2}}{V_{1}} =nR\ln\frac{p_{1}}{p_{2}}
                 \end{aligned}
                 \nonumber
             \end{equation}
+        \end{Itemize}
+        (证明见\refleaf{prove7.5})
+        \begin{Itemize}
             \item \itr{Adiabatic Process}{绝热过程}是指系统不与环境交换能量的过程。
             \begin{equation}
                 \begin{aligned}
@@ -321,6 +334,7 @@
                 \nonumber
             \end{equation}
         \end{Itemize}
+        (证明见\refleaf{prove7.6})
     \section[热力学第二定律]{\itr{Second Law of Thermodynamics}{热力学第二定律}}
         \subsection[热机]{\itr{Heat Engine}{热机}}
             首先介绍一些基本概念
@@ -346,7 +360,7 @@
             \begin{singlefigure}[Otto Cycle]{Chapter7_otto.png}[0.4]
                 AB与CD为绝热过程，BC与DA为等容过程，循环沿ABCDA方向进行
             \end{singlefigure}
-            使用奥托循环的热机效率为：
+            使用奥托循环的热机效率为(证明见\refleaf{prove7.7})：
             \begin{equation}
                 e = 1 - \frac{T_{D} - T_{A}}{T_{C} - T_{B}}
                 \nonumber
@@ -356,7 +370,7 @@
             \begin{singlefigure}[Carnot Cycle]{Chapter7_carnot.png}[0.4]
                 AB与CD为等温过程，BC与DA为绝热过程，循环沿ABCDA方向进行时为正方向
             \end{singlefigure}
-            使用正卡诺循环的热机称为\itr{Carnot Heat Engine}{卡诺热机}，其热机效率为：
+            使用正卡诺循环的热机称为\itr{Carnot Heat Engine}{卡诺热机}，其热机效率为(证明见\refleaf{prove7.8})：
             \begin{equation}
                 e = 1 - \frac{T_{c}}{T_{h}}
                 \nonumber
@@ -379,20 +393,20 @@
             \end{equation}
             或写作微分形式，即取近平衡态间转变的过程视为可逆过程：
             \begin{equation}
-                \dif{S} = \frac{\dif{Q}}{T} 
+                \dif{S} = \frac{\Delta{Q}}{T} 
                 \nonumber
             \end{equation}
             
             熵是一个状态函数，熵的物理意义可以从下面这个公式中体现：
             \begin{equation}
-                S = k_{_B}ln\Omega
+                S = k_{_B}\ln\Omega
                 \nonumber
             \end{equation}
             其中$\Omega$表示所有可能的微观状态数量，也就是说，熵是系统可能的微观状态数量的度量，或者其他教材提到的“混乱度”。
             这个公式是连接微观与宏观间最重要的桥梁，也是统计力学的核心。
 
             考虑一个\itr{Free Expansion}{自由膨胀}过程，也就是说等温条件下气体向真空中膨胀。由于真空，气体自然无法做功，$W=0$；
-            由于等温，$\Delta U=0$；那么由热力学第一定律，自然有$Q=0$。但是计算它的熵变，这个值为$\Delta S = nRln\frac{V_2}{V_1}>0$。
+            由于等温，$\Delta U=0$；那么由热力学第一定律，自然有$Q=0$。但是计算它的熵变，这个值为$\Delta S = nR\ln\dfrac{V_2}{V_1}>0$(见\refleaf{example7.6}(b))。
             众所周知，这个过程是不可逆的，也就是说那个$\Delta S<0$的逆过程是无法发生的，
             这正是\itr{Second Law of Thermodynamics}{热力学第二定律}表明的。
             \begin{law}[Second Law of Thermodynamics]
@@ -414,14 +428,14 @@
 
                 或表述为：第二类永动机不能实现。
             \end{law}
-            熵给出了热的本质$\dif{Q} = T\dif{S}$，于是就有了下面的热力学基本公式：
+            熵给出了热的本质$\Delta{Q} = T\dif{S}$，于是就有了下面的热力学基本公式：
             \begin{equation}
                 \dif{U} = T\dif{S}-p\dif{V}
                 \nonumber
             \end{equation}
             它联合了热力学的两大定律，是热力学最基本的关系之一。
     \section[热力学第三定律]{\itr{Third Law of Thermodynamics}{热力学第三定律}}
-        我们再看一下卡诺循环的热机效率$e = 1-\frac{T_c}{T_h}$，注意到当低温热源$T_c = 0 \rm{K}$时，热机效率可以达到$100\%$。
+        我们再看一下卡诺循环的热机效率$e = 1-\dfrac{T_c}{T_h}$，注意到当低温热源$T_c = 0 \rm{K}$时，热机效率可以达到$100\%$。
         此时由于仍然是卡诺循环，我们并没有违反热力学第二定律，那么这是否意味着这是可行的呢？
 
         \itr{Third Law of Thermodynamics}{热力学第三定律}表明了这是无法实现的，因为我们无法找出一个\linebreak\itr{Absolute Zero}{绝对零度}
@@ -438,7 +452,7 @@
         根据我们的经验，信息量与事件发生概率成负相关，必然发生的事件比如\dove 的生日不在2月30日，就相当于什么都没说；
         信息量$Q$之间服从加法原则，事件概率$P$则服从乘法原则，故两者应为负对数关系：
         \begin{equation}
-            Q = - logP
+            Q = - \log P
             \nonumber
         \end{equation}
         至于对数的底其实是任意的，彼此相差一个系数而已，通常选择的是$2$。
@@ -446,7 +460,7 @@
         至此我们引出\itr{Information Entropy$\backslash$ Shannon Entropy}{信息熵$\backslash$ 香农熵}的概念，
         它是事件发生前可能产生的信息量的数学期望，即：
         \begin{equation}
-            S = E(Q) = \sum Q_{i}P_{i} = -\sum P_{i}logP_{i}
+            S = E(Q) = \sum Q_{i}P_{i} = -\sum P_{i}\log P_{i}
             \nonumber
         \end{equation}
         信息熵是信息的度量。
@@ -454,13 +468,13 @@
         然后再来了解一下\itr{Cross Entropy}{交叉熵}，对于某事件，假设其有两种概率分布为$p(x)$与$q(x)$，
         则其交叉熵为：
         \begin{equation}
-            H(p,q) = - \sum p({x_{i}})log(q({x_{i}}))
+            H(p,q) = - \sum p({x_{i}})\log(q({x_{i}}))
             \nonumber
         \end{equation}
 
         两个分布的差距为其中一个事件的概率分布与信息熵之差乘积的数学期望，即：
         \begin{equation}
-            D_{KL}(p||q) = - \sum p({x_{i}})log(\frac{q({x_{i}})}{p({x_{i}})}) = H(p,p)-H(p,q)
+            D_{KL}(p||q) = - \sum p({x_{i}})\log(\frac{q({x_{i}})}{p({x_{i}})}) = H(p,p)-H(p,q)
             \nonumber
         \end{equation} 
 
