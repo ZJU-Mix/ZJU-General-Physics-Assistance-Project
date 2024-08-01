@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-2, 0) {};
+		\node [style=none] (1) at (-2, 4) {};
+		\node [style=none] (2) at (8, 0) {};
+		\node [style=none] (3) at (2, 0) {};
+		\node [style=none] (4) at (2, 4) {};
+		\node [style=none] (5) at (-5, -3) {};
+		\node [style=none] (6) at (-1, -3) {};
+		\node [style=none] (7) at (-4.75, -3.25) {$z$};
+		\node [style=none] (8) at (-1.75, -0.5) {$O$};
+		\node [style=none] (9) at (-2.5, 4.25) {$y$};
+		\node [style=none] (10) at (1.5, 4.25) {$y'$};
+		\node [style=none] (11) at (2.25, -0.5) {$O'$};
+		\node [style=none] (12) at (-0.75, -3.25) {$z'$};
+		\node [style=none] (13) at (8, -0.5) {$x'$};
+		\node [style=none] (14) at (8, 0.5) {$x$};
+		\node [style=none] (15) at (2, 2.25) {};
+		\node [style=none] (16) at (3, 2.25) {};
+		\node [style=none] (17) at (3, 2.75) {};
+		\node [style=none] (18) at (3, 2.75) {$u$};
+		\node [style=none] (19) at (-1.5, 1) {};
+		\node [style=none] (20) at (2.5, 1) {};
+		\node [style=none] (21) at (-1.5, 1) {$S$};
+		\node [style=none] (22) at (2.5, 1) {$S'$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (0.center) to (1.center);
+		\draw [style=arrow] (0.center) to (2.center);
+		\draw [style=arrow] (3.center) to (4.center);
+		\draw [style=arrow] (0.center) to (5.center);
+		\draw [style=arrow] (3.center) to (6.center);
+		\draw [style=arrow] (15.center) to (16.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

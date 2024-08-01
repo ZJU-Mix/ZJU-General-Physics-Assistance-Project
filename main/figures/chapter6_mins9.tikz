@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-2, -2) {};
+		\node [style=none] (1) at (-2, 6) {};
+		\node [style=none] (2) at (6, -2) {};
+		\node [style=none] (3) at (-2, 3) {};
+		\node [style=none] (4) at (-2, 3) {};
+		\node [style=none] (5) at (-2.75, 0.5) {$a$};
+		\node [style=none] (6) at (0, 0.5) {$b$};
+		\node [style=none] (7) at (6, -2.75) {$x$};
+		\node [style=none] (8) at (-2.75, 6) {$ct$};
+		\node [style=none] (9) at (1, -1) {};
+		\node [style=none] (10) at (1, 0) {};
+		\node [style=none] (11) at (1, 2) {};
+		\node [style=none] (12) at (1, 1) {};
+		\node [style=none] (13) at (-2, 2) {};
+		\node [style=none] (14) at (-2, 1) {};
+		\node [style=none] (15) at (-2, 0) {};
+		\node [style=none] (16) at (-2, -1) {};
+		\node [style=none] (17) at (-0.5, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (0.center) to (1.center);
+		\draw [style=arrow] (0.center) to (2.center);
+		\draw [style=bold] (4.center) to (0.center);
+		\draw [style=dotted] (13.center) to (11.center);
+		\draw [style=dotted] (14.center) to (12.center);
+		\draw [style=dotted] (15.center) to (10.center);
+		\draw [style=dotted] (16.center) to (9.center);
+		\draw [style=bold, in=90, out=-90, looseness=0.75] (4.center) to (17.center);
+		\draw [style=bold, in=90, out=-90, looseness=0.75] (17.center) to (0.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

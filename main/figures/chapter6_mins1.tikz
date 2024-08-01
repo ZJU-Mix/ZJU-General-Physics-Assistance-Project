@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4, 0) {};
+		\node [style=none] (1) at (4, 0) {};
+		\node [style=none] (2) at (-4, 7) {};
+		\node [style=none] (3) at (4, -0.75) {$x$};
+		\node [style=none] (4) at (-4.75, 7) {$ct$};
+		\node [style=none] (5) at (-2, 3) {};
+		\node [style=none] (6) at (-0.5, 6) {};
+		\node [style=none] (7) at (-2.25, 2.5) {$a$};
+		\node [style=none] (8) at (0, 6.5) {$b$};
+		\node [style=none] (9) at (3.75, 6.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (0.center) to (2.center);
+		\draw [style=arrow] (0.center) to (1.center);
+		\draw (5.center) to (6.center);
+		\draw [style=dotted] (9.center) to (0.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

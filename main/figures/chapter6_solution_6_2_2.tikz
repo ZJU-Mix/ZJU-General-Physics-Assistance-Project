@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-0.75, 1) {};
+		\node [style=none] (1) at (0.75, 1) {};
+		\node [style=none] (2) at (0.75, -1) {};
+		\node [style=none] (3) at (-0.75, -1) {};
+		\node [style=none] (4) at (-2, 0) {$L$};
+		\node [style=none] (6) at (-0.5, 1.5) {};
+		\node [style=none] (7) at (0.5, 1.5) {};
+		\node [style=none] (8) at (0, 2) {$v$};
+		\node [style=none] (9) at (0, -2) {$sL$};
+		\node [style=mark dot] (10) at (0, -3.5) {};
+		\node [style=none] (11) at (0, -4) {O};
+		\node [style=none] (12) at (-1, -1.25) {$A$};
+		\node [style=none] (13) at (1, -1.25) {$B$};
+		\node [style=none] (14) at (1, 1.25) {$C$};
+		\node [style=none] (15) at (-1, 1.25) {$D$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=inner color outer line] (2.center)
+			 to (3.center)
+			 to (0.center)
+			 to (1.center)
+			 to cycle;
+		\draw [style=arrow] (6.center) to (7.center);
+		\draw [style=dotted] (0.center) to (10);
+		\draw [style=dotted] (3.center) to (10);
+	\end{pgfonlayer}
+\end{tikzpicture}

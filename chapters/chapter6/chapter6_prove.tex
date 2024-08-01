@@ -1,0 +1,249 @@
+\chapter[狭义相对论]{\itr{Special relativity}{狭义相对论}}
+\begin{prove}[\itr{Lorentz Transformation}{洛伦兹变换}]
+	这里仅仅给出简单证明。
+	\ctikzfig{chapter6_framess}
+	考虑对于坐标$(x,t)$的伽利略变换
+	\[\left\{
+	\begin{array}{l}
+		x'=x-vt\\
+		t'=t
+	\end{array}
+	\right.\]
+	
+	得出这样的结果，是因为在绝对时空观的假设中，长度和时间对于坐标系$S,S'$是相同的。
+	
+	现在，我们不再假设长度和时间对于$S$系和$S'$系是相同的，那么，两系中长度和时间的联系应该是怎样的？
+	
+	简单起见，我们大胆猜想，洛伦兹变换在伽利略变换的基础上只要添加一些变换因子。用数学表达式来描述就是
+	\begin{equation}
+		x'=\gamma(x-vt)
+	\end{equation}
+	其中$\gamma$是变换因子。
+	
+	如果这个式子真的能够描述两个坐标系间坐标的关系，那么，反过来，从$S'$系到$S$系，也一定有
+	\begin{equation}
+		x=\gamma(x'+vt')
+	\end{equation}
+	
+	现在，两个方程有三个未知数，还不足以支持我们解出$\gamma$。不过，我们还有光速不变的假设没有使用。
+	
+	不妨取一束在$x$轴上传播的光，并设光传播到某两个位置的事件在$S$系中为$(x_1,t_1),(x_2,t_2)$，在$S'$系中为$(x'_1,t'_1),(x'_2,t'_2)$，由光速不变，可知
+	\begin{equation}
+		\left\{
+			\begin{array}{l}
+				x_2-x_1=c(t_2-t_1)\\
+				x'_2-x'_1=c(t'_2-t'_1)
+			\end{array}
+		\right.
+	\end{equation}
+	将式$(6.1),(6.2)$代入式$(6.3)$中，可得
+	\begin{equation}
+		\left\{
+		\begin{array}{l}
+			\gamma[(x_2'-x_1')+v(t_2'-t_1')]=\gamma(c+v)(t_2'-t_1')=c(t_2-t_1)\\
+			\gamma[(x_2-x_1)-v(t_2-t_1)]=\gamma(c-v)(t_2-t_1)=c(t_2'-t_1')
+		\end{array}
+		\right.
+	\end{equation}
+	于是解得
+	\[\gamma^2(c^2-v^2)=c^2\]
+	即
+	\begin{equation}
+		\gamma = \dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}
+	\end{equation}
+	现在，我们已经得到了坐标$(x,t)\rightarrow x'$的变换公式：
+	\begin{equation}
+		x'=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}(x-vt)
+	\end{equation}
+	
+	我们将式$(6.5),(6.6)$再回代入式$(6.2)$，就可以得到时间$(x,t) \rightarrow t'$的变换公式：
+	\begin{equation}
+		t'=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}(t-\dfrac{v}{c^2}x)
+	\end{equation}
+	
+	综上，我们就得出了一个符合相对时空观两大假设的时空坐标变换公式
+	\begin{equation}
+		\left\{
+		\begin{array}{l}
+			x'=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}(x-vt)=\gamma(x-vt)\\
+			t'=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}(t-\dfrac{v}{c^2}x)=\gamma(t-\dfrac{v}{c^2}x)
+		\end{array}
+		\right.
+	\end{equation}
+	
+	至于为什么这个变换公式就是我们需要的洛伦兹变换，就不在本书讨论的范围内了。
+\end{prove}
+\begin{prove}[就长度而言，尺缩效应只对物体长度方向的速度生效]
+	\ctikzfig{chapter6_length_contraction}
+	
+	如图，我们省略$z$轴，考虑一根杆子，它在拥有$X,Y$轴的坐标系中静止，拥有原长$L$。考虑另一个坐标系，相对原坐标系有$X,Y$方向的速度，速度大小为$v$。
+	
+	我们之前关于洛伦兹变换的讨论中，两坐标系之间的相对速度都是只有一个坐标轴上的分量的。因此，这里我们选择重新建立坐标系$S,S'$，其中$S$系保持与杆相对静止，而$S'$系与$S$系有相对速度$v$，且$S,S'$系的$x,x'$轴与相对速度方向平行。
+	
+	这样，$S$系和$S'$系的相对速度就只有一个坐标轴上的分量，我们得以使用之前讨论的洛伦兹变换处理问题。
+	
+	设在$S$系中，杆的左端点坐标为$(x_1,y_1)$，右端点坐标为$(x_2,y_2)$，并记
+	\[\left\{
+		\begin{aligned}
+			L_x&=x_2-x_1\\
+			L_y&=y_2-y_1
+		\end{aligned}
+	\right.\]
+	
+	依据洛伦兹变换，有
+	\[\left\{
+	\begin{aligned}
+		x_1'&=\gamma(x_1-vt)\\
+		y_1'&=y_1\\
+		x_2'&=\gamma(x_2-vt)\\
+		y_2'&=y_2
+	\end{aligned}
+	\right.\]
+	
+	可以发现，$L_x'=x_2'-x_1'$的情况与尺缩效应中讨论的情况相同，易知
+	\[L_x'=\sqrt{1-\dfrac{v^2}{c^2}}L_x\]
+	又显然有\[L_y'=L_y\]
+	于是\[L'=\sqrt{(L_x')^2+(L_y')^2}=\sqrt{L^2-\dfrac{v^2}{c^2}L_x{}^2}\]
+	由几何关系有\[\dfrac{L_x}{L}=\dfrac{v_X}{v}\]
+	可得\[L'=\sqrt{1-\dfrac{v_X{}^2}{c^2}}L\]
+	
+	$v_X$即是$v$在$X$轴方向上的分量，与杆子长度方向平行，于是我们可以认为，\textbf{就长度而言，尺缩效应只对物体长度方向的速度生效。}
+	
+	需要注意的是，在$S'$系中，由于$x'$方向上的收缩，杆子的方向将与$S$系中的方向不同。
+\end{prove}
+\begin{prove}[\itr{Speed Transformation}{速度变换}]
+对于满足洛伦兹变换
+\[\left\{\begin{array}{l}
+	t'=\gamma(t-\beta\dfrac{x}{c})\\
+	x'=\gamma(x-vt)\\
+	y'=y\\
+	z'=z
+\end{array}\right.\]
+的$S$系和$S'$系，设物体在$S$系中的速度坐标为$(u_x,u_y,u_z)$，$S'$系中的速度坐标为$(u_x',u_y',u_z')$，则有
+\[\begin{aligned}
+	u_x'&=\dfrac{\dif x'}{\dif t'}&u_y'&=\dfrac{\dif y'}{\dif t'}&u_z'&=\dfrac{\dif z'}{\dif t'}\\[1ex]
+	&=\dfrac{\dif(x-vt)}{\dif(t-\dfrac{v}{c^2}x)}&&=\dfrac{\dif y}{\gamma\dif(t-\dfrac{v}{c^2}x)}&&=\dfrac{\dif z}{\gamma\dif(t-\dfrac{v}{c^2}x)}\\[1ex]
+	&=\dfrac{\dfrac{\dif x}{\dif t}-v}{1-\dfrac{v}{c^2}\dfrac{\dif x}{\dif t}}&&=s\dfrac{\dfrac{\dif y}{\dif t}}{1-\dfrac{v}{c^2}\dfrac{\dif x}{\dif t}}&&=s\dfrac{\dfrac{\dif z}{\dif t}}{1-\dfrac{v}{c^2}\dfrac{\dif x}{\dif t}}\\[1ex]
+	&=\dfrac{u_x-v}{1-\dfrac{vu_x}{c^2}}&&=s\dfrac{u_y}{1-\dfrac{vu_x}{c^2}}&&=s\dfrac{u_z}{1-\dfrac{vu_x}{c^2}}
+\end{aligned}\]
+
+\end{prove}
+\begin{prove}[$p=\gamma mv$]
+	动量守恒定律是非常重要的定律。因此，我们希望，在相对论中，动量守恒定律依旧成立。
+	
+	以此为突破点，我们尝试将牛顿力学中的动量修正为相对论动量。
+	
+	\ctikzfig{chapter6_momentum1}
+	我们考虑在惯性系$S$中分别拥有速度$v$和$-v$的小球$a,b$，且满足$a,b$在静止时，质量都为$m_0$。请注意，此时我们还没有``静质量''的概念。
+	
+	由于我们已经假设速度有上限$c$了，不妨再假设物体的质量是速度的函数。由于$a,b$的速度大小相同，我们认为，两个小球的质量相同。如果动量依旧保持$p=mv$的形式，那么两个小球动量大小相同，方向相反，在保证动量守恒的前提下，两个小球将会静止。
+	
+	我们再考虑一个与$a$相对静止的惯性系$S'$。
+	\ctikzfig{chapter6_momentum2}
+	在$S'$系中，由速度变换公式，有$b$的速度为
+	\[\dfrac{-v-v}{1-\dfrac{v(-v)}{c^2}}=\dfrac{-2v}{1+\dfrac{v^2}{c^2}}\]
+	
+	按照在$S$系中讨论的结果，我们知道，在$S'$系看来，碰撞后两个小球应当都以速度$-v$运动。
+	
+	不妨设碰撞前$a$的质量为$m_1$，$b$的质量为$m_2$，碰撞后两球的质量为$m_3$，则有
+	\begin{equation}
+		m_2\left(\dfrac{-2v}{1+\dfrac{v^2}{c^2}}\right)=2m_3(-v)
+	\end{equation}
+	除此之外，我们还希望碰撞前后依旧保持质量守恒，所以还应有
+	\begin{equation}
+		m_1+m_2=2m_3
+	\end{equation}
+	注意到$m_1$等于$b$静止时的质量，我们尝试求解$m_1$和$m_2$\footnote{这里不可以选择求解$m_1$和$m_3$的关系，尽管$m_3$对应的速度$v$看上去更为简单。这是因为，我们讨论的是完全非弹性碰撞，在牛顿力学中，这会引入内能，而在我们的推导中，我们并不清楚这个能量会不会对质量也产生影响，因此研究$m_3$和$m_1$的关系有可能导致错误的结论。}的关系。
+	
+	综合式$(6.9),(6.10)$，有
+	\[m_2\left(\dfrac{-2v}{1+\dfrac{v^2}{c^2}}\right)=(m_1+m_2)(-v)\]
+	解得
+	\begin{equation}
+		\dfrac{m_2}{m_1}=\dfrac{1+\dfrac{v^2}{c^2}}{1-\dfrac{v^2}{c^2}}
+	\end{equation}
+	
+	需要注意的是，这里要研究的是$\dfrac{m_2}{m_1}$与$m_2$的速度的关系($m_1$速度为$0$)。我们不妨记$v_b=\dfrac{-2v}{1+\dfrac{v^2}{c^2}}$，并尝试将式$(6.11)$中的$v$都替换成$v_b$。
+	
+	注意到
+	\[\left(\dfrac{v_b}{c}\right)^2=\dfrac{\left(1+\dfrac{v^2}{c^2}\right)^2-\left(1-\dfrac{v^2}{c^2}\right)^2}{\left(1+\dfrac{v^2}{c^2}\right)^2}\]
+	
+	于是恰好有
+	\begin{equation}
+		\dfrac{m_2}{m_1}=\dfrac{1}{\sqrt{1-\dfrac{v_b{}^2}{c^2}}}
+	\end{equation}
+	
+	可以注意到，$(6.12)$式恰好等价于
+	\begin{equation}
+		\dfrac{m_2}{m_1}=\dfrac{1/\sqrt{1-\dfrac{v_b{}^2}{c^2}}}{1/\sqrt{1-\dfrac{0^2}{c^2}}}
+	\end{equation}
+	所以可以推测，对于一个一般的物体，其质量$m$可以表示成静止质量$m_0$乘以一个与速度有关的系数的形式，即
+	\begin{equation}
+		m=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}m_0=\gamma m_0
+	\end{equation}
+	
+	当然，上面的内容严格来说并不能算证明，而只能说是得出相对论动量的一个合理的思路。至于其严谨性，还请不要过度深究。
+\end{prove}
+\begin{prove}[$K=W=(\gamma -1)M_0c^2$]
+	\[\begin{aligned}
+		W&=\int_0^{x_f} \dfrac{\dif p}{\dif t}\dif x=\int_0^{p_f}\dfrac{\dif x}{\dif t}\dif p\\
+		&=\int_0^{p_f}v\dif(Mv)=\int_0^{v_f}v(M\dif v)+\int_{M_0}^{M_f}v(v\dif M)\\
+		&=\int_0^{v_f}(Mv+v^2\dfrac{\dif M}{\dif v})\dif v
+	\end{aligned}\]
+	注意到
+	\[\dfrac{\dif M}{\dif v}=\dfrac{\dif}{\dif v}\left(\dfrac{M_0}{\sqrt{1-\dfrac{v^2}{c^2}}}\right)=\dfrac{\gamma^2}{c^2} Mv\]
+	于是
+	\[\begin{aligned}
+		W&=\int_0^{v_f}\left(Mv+\dfrac{v^2}{c^2}\gamma^2 Mv\right)\dif v\\
+		&=\int_0^{v_f}\gamma^2Mv\dif v\\
+		&=\int_0^{v_f}c^2\left(\dfrac{\gamma^2}{c^2}Mv^2\right)\dif v\\
+		&=\int_{M_0}^{M_f}c^2\dif M=\left.Mc^2\right|_{M_0}^{M_f}\\
+		&=(\gamma-1)M_0c^2
+	\end{aligned}\]
+	其中也取$M_f=\gamma M_0$。
+\end{prove}
+\begin{prove}[\itr{Energy and Momentum Transformation}{动量能量变换}]
+	\ctikzfig{chapter6_framess}
+	设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$p,p'$表示任一物体在$S$系，$S'$系中的动量，用$E,E'$表示该物体在$S$系，$S'$系中的能量。
+	
+	不妨设物体在$S$系中有质量$\gamma m_0$，速度$u=(u_x,u_y,u_z)$，由速度变换公式得
+	\[
+	\left\{\begin{aligned}
+		u_x'&=\dfrac{u_x-v}{1-\dfrac{vu_x}{c^2}}\\[1ex]
+		u_y'&=\sqrt{1-\frac{v^2}{c^2}}\dfrac{u_y}{1-\dfrac{vu_x}{c^2}}\\[1ex]
+		u_z'&=\sqrt{1-\frac{v^2}{c^2}}\dfrac{u_z}{1-\dfrac{vu_x}{c^2}}
+	\end{aligned}\right.
+	\]
+	于是\[\gamma'=\dfrac{1}{\sqrt{1-\dfrac{u_x'{}^2+u_y'{}^2+u_z'{}^2}{c^2}}}=\dfrac{1-\dfrac{vu_x}{c^2}}{\sqrt{1-\dfrac{v^2}{c^2}}\sqrt{1-\dfrac{u^2}{c^2}}}=\dfrac{1-\dfrac{vu_x}{c^2}}{\sqrt{1-\dfrac{v^2}{c^2}}}\gamma\]
+	(此处省略亿点计算)
+	
+	故有
+	\[
+	\left\{\begin{aligned}
+		E'&=\gamma'm_0c^2=\gamma m_0c^2\dfrac{1-\dfrac{vu_x}{c^2}}{\sqrt{1-\dfrac{v^2}{c^2}}}=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}E(1-\dfrac{vu_x}{c^2})\\
+		p_x'&=\gamma'm_0u_x'=\gamma m_0\dfrac{u_x-v}{\sqrt{1-\dfrac{v^2}{c^2}}}=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}(p_x-\dfrac{v}{c^2}E)\\
+		p_y'&=\gamma'm_0u_y'=\gamma m_0u_y=p_y\\
+		p_z'&=\gamma'm_0u_z'=\gamma m_0u_z=p_z
+	\end{aligned}\right.
+	\]
+\end{prove}
+\begin{prove}[Time order-preserving law]
+    由洛伦兹变换
+    \[\dif (ct)'=\gamma[\dif (ct)-\beta \dif x]\]
+    我们知道，要说明一个事件的时序是否颠倒，只需看$\dif (ct)'$的符号和$\dif (ct)$的是否相反。
+    
+    不妨设$\dif (ct)>0$,则只需注意$\dif (ct)'$的符号即可。
+    
+    对于类时和类光的间隔而言，
+    \[\left|\frac{\dif x}{\dif (ct)}\right|\le 1\]
+    故有
+    \[\dif (ct)'=\gamma[\dif (ct)-\beta \dif x] \ge \gamma[|\dif(ct)|-|\dif x|] \ge 0\]
+    所以事件间隔是保时序的。
+    
+    对于类空的间隔而言，
+    \[\left|\frac{\dif x}{\dif (ct)}\right|> 1\]
+    故存在变换使得
+    \[\dif (ct)'=\gamma[\dif (ct)-\beta \dif x] < 0\]
+    所以事件间隔不保时序。
+    
+    反之，当$\dif(ct)<0$，亦然。
+\end{prove}

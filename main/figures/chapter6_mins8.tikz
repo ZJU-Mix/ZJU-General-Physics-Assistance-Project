@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-3, -3) {};
+		\node [style=none] (1) at (-3, 5) {};
+		\node [style=none] (2) at (5, -3) {};
+		\node [style=none] (3) at (-1, 5) {};
+		\node [style=none] (4) at (5, -1) {};
+		\node [style=none] (5) at (-3.5, 5) {$ct$};
+		\node [style=none] (6) at (5, -3.5) {$x$};
+		\node [style=none] (7) at (5.5, -1.5) {$x'$};
+		\node [style=none] (8) at (-1.5, 5.5) {$ct'$};
+		\node [style=none] (12) at (-3, -3) {};
+		\node [style=none] (13) at (-2, 1) {};
+		\node [style=none] (14) at (-3, 0.75) {};
+		\node [style=none] (15) at (-3.5, -3) {$P$};
+		\node [style=none] (16) at (-3.5, 0.75) {$Q$};
+		\node [style=none] (17) at (-3.5, -1) {$c\tau$};
+		\node [style=none] (18) at (-1.75, -1) {$c\Delta t$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (0.center) to (1.center);
+		\draw [style=arrow] (0.center) to (2.center);
+		\draw [style=arrow] (0.center) to (3.center);
+		\draw [style=arrow] (0.center) to (4.center);
+		\draw [style=dotted] (13.center) to (14.center);
+		\draw [style=length] (12.center) to (14.center);
+		\draw [style=length] (12.center) to (13.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

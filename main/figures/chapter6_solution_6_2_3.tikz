@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4, 0) {};
+		\node [style=none] (1) at (-1, 0) {};
+		\node [style=none] (2) at (3, 0) {};
+		\node [style=none] (3) at (-4, 4) {};
+		\node [style=none] (4) at (3, 3) {};
+		\node [style=none] (5) at (0, 7) {};
+		\node [style=none] (6) at (-1, -0.5) {$A(A_v)$};
+		\node [style=none] (7) at (3.5, 3) {$B$};
+		\node [style=none] (8) at (0, 7.5) {$C$};
+		\node [style=none] (9) at (-4.5, 4) {$D$};
+		\node [style=none] (10) at (-4, -0.5) {$D_v$};
+		\node [style=none] (11) at (3, -0.5) {$B_v$};
+		\node [style=none] (12) at (0, 0.75) {};
+		\node [style=none] (13) at (0.25, 0) {};
+		\node [style=none] (14) at (0.75, 0.5) {$\theta$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=inner color outer line] (1.center)
+			 to (4.center)
+			 to (5.center)
+			 to (3.center)
+			 to cycle;
+		\draw (0.center) to (2.center);
+		\draw [style=dotted] (3.center) to (0.center);
+		\draw [style=dotted] (4.center) to (2.center);
+		\draw [bend left=45, looseness=0.75] (12.center) to (13.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

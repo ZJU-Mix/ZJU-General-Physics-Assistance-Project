@@ -1,0 +1,216 @@
+\ProvidesPackage{reftree}
+\RequirePackage{cleveref}
+\RequirePackage{xparse}
+%生成书签与超链接
+\RequirePackage{amsmath}
+\RequirePackage{xcolor}
+\RequirePackage{etoolbox}
+\RequirePackage{kvoptions}
+\RequirePackage{keyval}
+\newcounter{ClearRef}
+%用于遍历引用位置的计数器
+\newcommand{\RTref}[1]{\ref{#1}}
+%reftree--ref
+\SetupKeyvalOptions%
+{
+	family=@reftree,
+	prefix=@reftree@
+}
+\begin{comment}
+\newcommand{\reftreelabelcolor}{-red}
+\newcommand{\reftreerefcolor}{-green}
+%\def\reftree@color@label{-red}
+%\def\reftree@color@ref{-green}
+
+\define@key{color}{label}{%
+	%\def\reftree@color@label{#1}
+	\renewcommand{\reftreelabelcolor}{#1}
+}
+\define@key{color}{ref}{%
+	%\def\reftree@color@ref{#1}
+	\renewcommand{\reftreerefcolor}{#1}
+}
+\define@key{reftree}{color}{%
+	\setkeys{color}{#1}
+}
+\def\reftreestyle#1{%
+	\setkeys{reftree}{#1}
+}
+\def\reftreecolor#1{%
+	\setkeys{color}{#1}
+}
+\end{comment}
+\DeclareBoolOption[false]{Auto}
+\DeclareBoolOption[false]{English}
+\DeclareBoolOption[false]{Clever}
+\DeclareBoolOption[false]{Unified}
+\ProcessKeyvalOptions*
+\relax
+
+\if@reftree@Auto
+	\renewcommand{\RTref}[1]{\autoref{#1}}
+	\if@reftree@English
+	\else
+	\renewcommand{\figureautorefname}{图}
+	\renewcommand{\tableautorefname}{表}
+	\renewcommand{\equationautorefname}{式}
+	\renewcommand{\chapterautorefname}{章}
+	\renewcommand{\sectionautorefname}{节}
+	\renewcommand{\subsectionautorefname}{小节}
+	\renewcommand{\subsubsectionautorefname}{子小节}
+	\renewcommand{\paragraphautorefname}{段}
+	\renewcommand{\subparagraphautorefname}{子段}
+	\renewcommand{\footnoteautorefname}{脚注}
+	\fi
+\fi
+
+\if@reftree@Clever
+	\renewcommand{\RTref}[1]{\Cref{#1}}
+	\if@reftree@English
+	\else
+		\Crefname{figure}{图}{图}
+		\Crefname{table}{表}{表}
+		\Crefname{equation}{式}{式}
+		\Crefname{chapter}{章}{章}
+		\Crefname{section}{节}{节}
+		\Crefname{subsection}{小节}{小节}
+		\Crefname{subsubsection}{子小节}{子小节}
+		\Crefname{paragraph}{段}{段}
+		\Crefname{subparagraph}{子段}{子段}
+		\Crefname{footnote}{脚注}{脚注}
+	\fi
+\fi
+
+\newif\ifclearref
+\clearreffalse
+
+\newif\iffirstuse
+\firstusefalse
+
+%内置宏，用于检查标签定义情况
+
+\makeatletter 
+
+\newcommand{\checklabeldefined}[1]%
+{%  
+	\@ifundefined{r@#1}{\clearreffalse}{\clearreftrue}%  
+}%用于检查标签是否被定义 
+
+\newcommand{\reftreerefcolor}{-green}
+\newcommand{\reftreelabelcolor}{-red}
+\if@reftree@Unified
+	\renewcommand{\reftreelabelcolor}{-green}
+\fi
+\colorlet{refcolor}{\reftreerefcolor}
+\colorlet{labelcolor}{\reftreelabelcolor}
+%设置颜色
+\makeatother
+
+\providecommand{\Romannumeral}[1]{\uppercase\expandafter{\romannumeral #1}}
+%支持大写罗马字母显示
+
+\makeatletter 
+
+\newcommand{\safedefinecounter}[1]%
+{%  
+	\ifcsname c@#1\endcsname  
+	% 计数器已定义，不执行任何操作  
+	\else  
+	\newcounter{#1}
+	% 计数器未定义，定义它  
+	\fi  
+}  
+%安全地定义一个可能已存在的计数器
+
+
+	\NewDocumentCommand{\refleafmark}{m}%
+	{%
+		\safedefinecounter{#1}%
+		\stepcounter{#1}%
+		\makeatletter%
+		\label{#1_\the\csname c@#1\endcsname}%
+		{\color{refcolor}\em\RTref{#1}}%
+		\mbox{\tiny$_{\color{refcolor}\hspace{-0.12em}{\Roman{#1}}\hspace{-0.12em}}$}%
+		\makeatother
+	}
+	%较为安全的命令，可标明进行交叉引用的位置
+	
+	\NewDocumentCommand{\refleaf}{smo}%
+	{%	
+		\makeatletter%
+		\IfBooleanTF{#1}%
+		{%
+			\marginpar{\IfNoValueF{#3}{\vspace{#3}}\vspace*{-0.5ex}\frame{\parbox{6em}{\quad\\[-1ex]\centering\em{\color{refcolor}\Roman{#2}} -- 见P{\color{refcolor}\pageref{#2}}\\[-2.2ex]\quad}}\vspace*{-0.5ex}}%
+		}%
+		{%
+			\safedefinecounter{#2}%
+			\stepcounter{#2}%
+			\label{#2_\the\csname c@#2\endcsname}%
+			{\color{refcolor}\em\RTref{#2}}%
+			\mbox{\tiny$_{\color{refcolor}\hspace{-0.12em}{\Roman{#2}}\hspace{-0.12em}}$}%
+			\marginpar{\IfNoValueF{#3}{\vspace{#3}}\vspace*{-0.5ex}\frame{\parbox{6em}{\quad\\[-1ex]\centering\em{\color{refcolor}\Roman{#2}} -- 见P{\color{refcolor}\pageref{#2}}\\[-2.2ex]\quad}}\vspace*{-0.5ex}}%
+		}%
+		\makeatother%
+	}
+	%在边注位置生成对某处的交叉引用
+	%一般情况下，直接使用\refleaf即可
+	%如果无法使用边注，可以使用\refleafmark-\refleaf*的组合避免错误
+	
+	\NewDocumentCommand{\refleaftext}{m}%
+	{%
+		\makeatletter%
+		\safedefinecounter{#1}%
+		\stepcounter{#1}%
+		\label{#1_\the\csname c@#1\endcsname}%
+		{\color{refcolor}\em\RTref{#1}}%
+		\mbox{\tiny$_{\color{refcolor}\hspace{-0.12em}{\Roman{#1}}\hspace{-0.12em}}$}%
+		{\,\~{}\em\color{refcolor}\,P\,}%
+		{\color{refcolor}\em\pageref{#1}}%
+		\makeatother%
+	}
+	
+	\NewDocumentCommand{\labelrootmark}{m}%
+	{%
+		\label{#1}%
+		\setcounter{ClearRef}{1}%
+		\checklabeldefined{#1_\theClearRef}%
+		\loop\ifclearref%
+		\mbox{\tiny$_{\mathit{\color{labelcolor}\text{-}\hspace{-0.12em}\Roman{ClearRef}\hspace{-0.12em}}}$}%
+		\stepcounter{ClearRef}%
+		\checklabeldefined{#1_\theClearRef}%
+		\repeat%
+	}
+	%较为安全的命令，可标明被引用的位置
+	
+	\NewDocumentCommand{\labelroot}{smo}%
+	{%	
+		\setcounter{ClearRef}{1}%
+		\firstusetrue
+		\IfBooleanTF{#1}%
+		{%
+			\checklabeldefined{#2_\theClearRef}%
+			\loop\ifclearref%
+			\marginpar{\IfNoValueF{#3}{\iffirstuse\vspace{#3}\fi}\vspace*{-0.5ex}\frame{\parbox{6em}{\quad\\[-1ex]\centering\em{\color{labelcolor}\Roman{ClearRef}} -- P{\color{labelcolor}\pageref{#2_\theClearRef} }引\\[-2.2ex]\quad}}\vspace*{-0.5ex}}%
+			\stepcounter{ClearRef}%
+			\checklabeldefined{#2_\theClearRef}%
+			\firstusefalse%
+			\repeat%
+		}
+		{%
+			\label{#2}%
+			\checklabeldefined{#2_\theClearRef}%
+			\loop\ifclearref%
+			\mbox{\tiny$_{\mathit{\color{labelcolor}\text{-}\hspace{-0.12em}\Roman{ClearRef}\hspace{-0.12em}}}$}%
+			\marginpar{\IfNoValueF{#3}{\iffirstuse\vspace{#3}\fi}\vspace*{-0.5ex}\frame{\parbox{6em}{\quad\\[-1ex]\centering\em{\color{labelcolor}\Roman{ClearRef}} -- P{\color{labelcolor}\pageref{#2_\theClearRef} }引\\[-2.2ex]\quad}}\vspace*{-0.5ex}}%
+			\stepcounter{ClearRef}%
+			\checklabeldefined{#2_\theClearRef}%
+			\firstusefalse%
+			\repeat%
+		}%
+	}
+	
+	%在被交叉引用处提供返回使用引用处的超链接
+	%一般情况下，直接使用\labelroot即可
+	%如果被引用处不能使用旁注，可以使用\label-\labelroot*的组合避免错误
+	
+

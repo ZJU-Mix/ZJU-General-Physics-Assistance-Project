@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-2, 0) {};
+		\node [style=none] (1) at (-2, 4) {};
+		\node [style=none] (2) at (8, 0) {};
+		\node [style=none] (5) at (-5, -3) {};
+		\node [style=none] (7) at (-4.75, -3.25) {$z'$};
+		\node [style=none] (8) at (-1.75, -0.5) {$O'$};
+		\node [style=none] (9) at (-2.5, 4.25) {$y'$};
+		\node [style=none] (14) at (8, 0.5) {$x'$};
+		\node [style=none] (19) at (-1.5, 1) {};
+		\node [style=none] (21) at (-1.5, 1) {$S'$};
+		\node [style=dot] (22) at (0, 1) {$a$};
+		\node [style=dot] (23) at (4, 1) {$b$};
+		\node [style=none] (26) at (2.5, 2) {};
+		\node [style=none] (27) at (5.5, 2) {};
+		\node [style=none] (29) at (4, 3.5) {$\dfrac{-2v}{1+\dfrac{v^2}{c^2}}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (0.center) to (1.center);
+		\draw [style=arrow] (0.center) to (2.center);
+		\draw [style=arrow] (0.center) to (5.center);
+		\draw [style=arrow] (27.center) to (26.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

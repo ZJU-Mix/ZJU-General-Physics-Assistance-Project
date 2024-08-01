@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-2, -2) {};
+		\node [style=none] (1) at (-2, 6) {};
+		\node [style=none] (2) at (6, -2) {};
+		\node [style=none] (3) at (-2, 6) {};
+		\node [style=none] (4) at (-2.5, -2.5) {$O$};
+		\node [style=none] (5) at (-2.5, 6) {$ct$};
+		\node [style=none] (6) at (6, -2.5) {$x$};
+		\node [style=none] (7) at (2, 6) {};
+		\node [style=none] (8) at (6, 2) {};
+		\node [style=none] (9) at (1.5, 6.5) {$ct'$};
+		\node [style=none] (10) at (6.5, 1.5) {$x'$};
+		\node [style=none] (11) at (0.05, -2) {};
+		\node [style=none] (12) at (-1, -2.5) {$D$};
+		\node [style=none] (13) at (2, 1.25) {};
+		\node [style=none] (14) at (2, -5) {};
+		\node [style=none] (15) at (0.75, -0.625) {};
+		\node [style=none] (16) at (0.5, -0.75) {};
+		\node [style=none] (17) at (0.5, -0.75) {};
+		\node [style=none] (18) at (-0.75, -1) {$L$};
+		\node [style=mark dot] (19) at (0.75, -0.625) {};
+		\node [style=none] (21) at (0.5, -2.5) {$P$};
+		\node [style=none] (22) at (0, -0.25) {$Q_1$};
+		\node [style=none] (23) at (1.5, -0.75) {$Q_2$};
+		\node [style=none] (24) at (4, -3.5) {Calibration Curve};
+		\node [style=mark dot] (25) at (0.3, -0.85) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (0.center) to (3.center);
+		\draw [style=arrow] (0.center) to (2.center);
+		\draw [style=arrow] (0.center) to (7.center);
+		\draw [style=arrow] (0.center) to (8.center);
+		\draw [style=length] (0.center) to (11.center);
+		\draw [style=green, bend right=45, looseness=1.50] (13.center) to (14.center);
+		\draw [style=dotted] (15.center) to (11.center);
+		\draw [style=length] (0.center) to (17.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
