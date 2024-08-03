@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.3)  1 AUG 2024 21:03
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.3)  2 AUG 2024 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1750,16 +1750,34 @@ File: ../figures/figure6/chapter_6_3.jpg Graphic file (type bmp)
 [33]
 \c@prove6.5=\count436
 
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 239--239
+[][] 
+ []
+
+
 Overfull \hbox (4.37537pt too wide) in paragraph at lines 243--243
 []|$[]$ 
  []
 
 \c@prove6.6=\count437
 (./figures/chapter6_framess.tikz) [34] (./figures/chapter6_framess.tikz)
-[35] (./figures/chapter6_framess.tikz) [36]
+[35]
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 280--280
+[][] 
+ []
+
+(./figures/chapter6_framess.tikz) [36]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 295--295
 [][] 
  []
+
+
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 295--295
+[][] 
+ []
+
+
+LaTeX Warning: Marginpar on page 37 moved.
 
 File: ../figures/figure6/chapter_6_5.png Graphic file (type bmp)
 <../figures/figure6/chapter_6_5.png>
@@ -1798,8 +1816,13 @@ File: ../figures/figure6/chapter_6_24.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_24.jpg>
  [49]
 \c@solution6.7=\count447
- [50])
-(../chapters/chapter7/Chapter7_main.tex [51]
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--93
+| \TU/TimesNewRoman(0)/m/n/10.95 (iii) The energy-momentum relation for a photo
+n is that of a particle
+ []
+
+[50]) (../chapters/chapter7/Chapter7_main.tex [51]
 第七章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 3--3
@@ -2069,6 +2092,14 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 204--204
 [][] 
  []
 
+
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 204--204
+[][] 
+ []
+
+
+LaTeX Warning: Marginpar on page 86 moved.
+
 (./figures/chapter6_framess.tikz) [86]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 229--229
 [][] 
@@ -2302,9 +2333,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 69--69
 [][] 
  []
 
-File: ../figures/figure6/chapter_6_19.jpg Graphic file (type bmp)
-<../figures/figure6/chapter_6_19.jpg>
-[116] [117]
+(./figures/chapter6_solution_6_3.tikz) [116] [117] [118]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 138--138
 [][] 
  []
@@ -2312,29 +2341,28 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 138--138
 File: ../figures/figure6/chapter_6_20.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_20.jpg>
 (./figures/chapter6_solution_6_4_1.tikz)
-File: ../figures/figure6/chapter_6_22.jpg Graphic file (type bmp)
-<../figures/figure6/chapter_6_22.jpg>
- [118] [119] [120]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 171--171
+(./figures/chapter6_solution_6_4_2.tikz) [119] [120] [121]
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 198--198
 [][] 
  []
 
-[121]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 195--195
+File: ../figures/figure6/chapter_6_23.jpg Graphic file (type bmp)
+<../figures/figure6/chapter_6_23.jpg>
+[122] [123]
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 244--244
 [][] 
  []
 
-
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 212--212
+File: ../figures/figure6/chapter_6_24.jpg Graphic file (type bmp)
+<../figures/figure6/chapter_6_24.jpg>
+[124] [125]
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 291--291
 [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--230
-
- []
-
-[122] [123]) (../chapters/chapter7/Chapter7_answer.tex [124]
+\c@law6.5=\count472
+\c@chapter6_photon=\count473
+[126] [127]) (../chapters/chapter7/Chapter7_answer.tex [128]
 第七章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 3--3
@@ -2351,7 +2379,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 29--29
 [][] 
  []
 
-[125
+[129
 
 ]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 67--67
@@ -2368,26 +2396,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--134
 
  []
 
-[126] [127] [128]
+[130] [131] [132]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 168--168
 [][] 
  []
 
 File: ../figures/figure7/Chapter7_pV1.png Graphic file (type bmp)
 <../figures/figure7/Chapter7_pV1.png>
-[129]
+[133]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 249--249
 [][] 
  []
 
 File: ../figures/figure7/Chapter7_pV2.png Graphic file (type bmp)
 <../figures/figure7/Chapter7_pV2.png>
-[130] [131] [132]
+[134] [135] [136]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 358--358
 [][] 
  []
 
-[133]) [134] (./main.aux)
+[137]) [138] (./main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2022/08/05>
@@ -2396,12 +2424,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 42A6DCC4330FB85072993C132185387E;12070.
  ) 
 Here is how much of TeX's memory you used:
- 49436 strings out of 474924
- 1159421 string characters out of 5765037
+ 49523 strings out of 474924
+ 1161115 string characters out of 5765037
  1989189 words of memory out of 5000000
- 70497 multiletter control sequences out of 15000+600000
- 573403 words of font info for 161 fonts, out of 8000000 for 9000
+ 70573 multiletter control sequences out of 15000+600000
+ 576069 words of font info for 174 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  117i,20n,422p,3317b,1457s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (141 pages).
+Output written on main.pdf (145 pages).
