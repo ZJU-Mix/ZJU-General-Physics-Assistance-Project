@@ -17,17 +17,15 @@
 	等式两侧取积分，即有
 	\[\vec{\tau}_{net}=I\vec{\alpha}\]
 \end{prove}
-%\refleaf*{chapter3_connection}[-64ex]
-%\refleaf*{chapter3_double_cross_product}[-40ex]
-%\newpage
+
 \newpage
 \begin{prove}[\itr{Parallel Axis Theorem}{平行轴定理}\qquad$I=I_{CM}+Mh^2$]
-	不妨设$\vec{h}$的方向为从质心轴到任意轴，并取任意一质点$m_i$，其在选择质心轴时，位矢为$\vec{r}_{CMi}$，选择任意轴时，位矢为$\vec{r}_i$，则有\[\vec{r}_i=\vec{r}_{CMi}-\vec{h}\]
+	不妨设$\vec{h}$的方向为从质心轴到任意轴，并取任意一质点$m_i$，其在选择质心轴时，位矢为$\vec{r}_{_{CM}i}$，选择任意轴时，位矢为$\vec{r}_i$，则有\[\vec{r}_i=\vec{r}_{_{CM}i}-\vec{h}\]
 	于是有
 	\begin{align*}
-		I&=\sum_{i}m_i(\vec{r}_{CMi}-\vec{h})^2\\
-		&=\sum_{i}m_i(r_{CMi}{}^2+h^2-2\vec{r}_{CMi}\cdot\vec{h})\\
-		&=\sum_{i}m_ir_{CMi}{}^2+\sum_{i}m_ih^2-2\vec{h}\cdot\sum_{i}m_i\vec{r}_{CMi}\\
+		I&=\sum_{i}m_i(\vec{r}_{_{CM}i}-\vec{h})^2\\
+		&=\sum_{i}m_i(r_{_{CM}i}{}^2+h^2-2\vec{r}_{_{CM}i}\cdot\vec{h})\\
+		&=\sum_{i}m_ir_{_{CM}i}{}^2+\sum_{i}m_ih^2-2\vec{h}\cdot\sum_{i}m_i\vec{r}_{_{CM}i}\\
 		&=I_{CM}+Mh^2+0\qquad(\text{由质心的性质知最后一项为0})\\
 		&=I_{CM}+Mh^2
 	\end{align*}
@@ -44,23 +42,20 @@
 		&=\tau\omega&&=\tau\dif\theta
 	\end{align*}
 \end{prove}
-%\newpage
 \begin{prove}[\itr{Konig's Theorem}{柯尼希定理}\qquad$K=K_{CM}+K^{CM}$]
 	我们取质点$m_i$，记它在静止参考系中的速度为$\vec{v}_i$，在质心系中的速度为$\vec{v}^{CM}_i$，并记刚体的质心速度为$\vec{v}_{CM}$，则有
-	\[\vec{v}_i=\vec{v}_i^{CM}+\vec{v}_{CM}\]
+	\[\vec{v}_i=\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}}\]
 	于是有
 	\begin{align*}
-		K&=\sum_i\dfrac{1}{2}m_i(\vec{v}_i^{CM}+\vec{v}_{CM})^2\\
-		&=\sum_i\dfrac{1}{2}m_i{v_i^{CM}}^2+\sum_i\dfrac{1}{2}m_i{v_{CM}}^2+(\sum_im_i\vec{v}_i^{CM})\cdot\vec{v}_{CM}\\
+		K&=\sum_i\dfrac{1}{2}m_i(\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}})^2\\
+		&=\sum_i\dfrac{1}{2}m_i{v_i^{^{CM}}}^2+\sum_i\dfrac{1}{2}m_i{v_{_{CM}}}^2+(\sum_im_i\vec{v}_i^{^{CM}})\cdot\vec{v}_{_{CM}}\\
 		&=K^{CM}+K_{CM}\qquad(\text{由质心定义知前式最后一项为0})
 	\end{align*}
 	由刚体在质心系中只存在转动(见\refleaftext{chapter3_rotation_CM})，有
 	\[K^{CM}=\dfrac{1}{2}I_{CM}\omega^2\]
 	于是
-	\[K=\dfrac{1}{2}M{v_{CM}}^2+\dfrac{1}{2}I_{CM}\omega^2\]
+	\[K=\dfrac{1}{2}M{v_{_{CM}}}^2+\dfrac{1}{2}I_{CM}\omega^2\]
 \end{prove}
-%\refleaf*{chapter3_rotation_CM}[-22ex]
-%\newpage
 \begin{prove}[Angular Momentum\qquad$\displaystyle\vec{L}=\sum_i\vec{r}_i\times\vec{p}_{i/z}=I\vec{\omega}\quad\&\quad\dfrac{\dif \vec{L}}{\dif t}=\vec{\tau}$]
 	\qquad
 	$
@@ -86,19 +81,17 @@
 	\end{array}$
 	有关微分见\refleaftext{chapter3_derivation}
 \end{prove}
-%\refleaf*{chapter3_double_cross_product}[-62ex]
-%\refleaf*{chapter3_derivation}[-23ex]
 \begin{prove}[$\vec{L}=\vec{L}_{CM}+\vec{L}^{CM}$]
-	我们取质点$m_i$，记它在静止参考系中的速度为$\vec{v}_i$，极径矢量为$\vec{r}_i$在质心系中的速度为$\vec{v}^{CM}_i$，极径矢量为$\vec{r}_i^{CM}$，并记刚体在静止参考系中的质心速度为$\vec{v}_{CM}$，极径矢量为$\vec{r}_{CM}$则有
-	\[\vec{v}_i=\vec{v}_i^{CM}+\vec{v}_{CM}\]
-	\[\vec{r}_i=\vec{r}_i^{CM}+\vec{r}_{CM}\]
+	我们取质点$m_i$，记它在静止参考系中的速度为$\vec{v}_i$，极径矢量为$\vec{r}_i$在质心系中的速度为$\vec{v}^{^{CM}}_i$，极径矢量为$\vec{r}_i^{^{CM}}$，并记刚体在静止参考系中的质心速度为$\vec{v}_{_{CM}}$，极径矢量为$\vec{r}_{_{CM}}$则有
+	\[\vec{v}_i=\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}}\]
+	\[\vec{r}_i=\vec{r}_i^{^{CM}}+\vec{r}_{_{CM}}\]
 	于是有
 	\begin{align*}
 		\vec{L}&=\sum_im_i\vec{r}_i\times v_i\\
-		&=\sum_im_i(\vec{r}_i^{CM}+\vec{r}_{CM})(\vec{v}_i^{CM}+\vec{v}_{CM})\\
-		&=\sum_im_i\vec{r}_i^{CM}\times\vec{v}_i^{CM}+\sum_im_i\vec{r}_{CM}\times\vec{v}_{CM}\\
-		&+(\sum_im_ir_i^{CM})\times\vec{v}_{CM}+\vec{r}_{CM}\times(\sum_im_i\vec{v}_i^{CM})\\
-		&=\vec{L}^{CM}+\vec{L}_{CM}+\vec{0}\times\vec{v}_{CM}+\vec{r}_{CM}\times\vec{0}\quad(\text{利用质心性质})\\
+		&=\sum_im_i(\vec{r}_i^{^{CM}}+\vec{r}_{_{CM}})(\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}})\\
+		&=\sum_im_i\vec{r}_i^{^{CM}}\times\vec{v}_i^{^{CM}}+\sum_im_i\vec{r}_{_{CM}}\times\vec{v}_{_{CM}}\\
+		&+(\sum_im_ir_i^{^{CM}})\times\vec{v}_{_{CM}}+\vec{r}_{_{CM}}\times(\sum_im_i\vec{v}_i^{^{CM}})\\
+		&=\vec{L}^{CM}+\vec{L}_{CM}+\vec{0}\times\vec{v}_{_{CM}}+\vec{r}_{_{CM}}\times\vec{0}\quad(\text{利用质心性质})\\
 		&=\vec{L}^{CM}+\vec{L}_{CM}
 	\end{align*}
 \end{prove}
@@ -109,8 +102,8 @@
 	\begin{align*}
 		\vec{\tau}_g&=\sum_i\vec{r}_i\times(m_i\vec{g}_{/z})\\
 		&=(\sum_im_i\vec{r_i})\times\vec{g}_{/z}\\
-		&=M\vec{r}_{CM}\times\vec{g}_{/z}\quad(\text{由质心定义知})\\
-		&=\vec{r}_{CM}\times(M\vec{g}_{/z})\\
+		&=M\vec{r}_{_{CM}}\times\vec{g}_{/z}\quad(\text{由质心定义知})\\
+		&=\vec{r}_{_{CM}}\times(M\vec{g}_{/z})\\
 		&=\vec{\tau}_{g_{CM}}
 	\end{align*}
 	即刚体重心与质心重合。

@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-5, 0) {};
+		\node [style=none] (1) at (5, 0) {};
+		\node [style=gray dot] (2) at (-5, 0) {};
+		\node [style=gray dot] (3) at (5, 0) {};
+		\node [style=none] (4) at (-5, -0.5) {$S$};
+		\node [style=none] (5) at (5, -0.5) {observer};
+		\node [style=none] (6) at (5.5, 0.5) {};
+		\node [style=none] (7) at (4.5, 0.5) {};
+		\node [style=none] (8) at (5, 1) {$v$};
+		\node [style=none] (9) at (-4.5, 0) {};
+		\node [style=none] (10) at (-1.5, 0) {};
+		\node [style=none] (11) at (-1.5, 0.25) {};
+		\node [style=none] (12) at (-4.5, 0.25) {};
+		\node [style=none] (13) at (-4.5, -0.25) {};
+		\node [style=none] (14) at (-1.5, -0.25) {};
+		\node [style=none] (15) at (-3, 0.75) {$\nu_0$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=dotted] (0.center) to (1.center);
+		\draw [style=arrow] (6.center) to (7.center);
+		\draw [style=arrow] (12.center) to (11.center);
+		\draw [style=arrow] (9.center) to (10.center);
+		\draw [style=arrow] (13.center) to (14.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

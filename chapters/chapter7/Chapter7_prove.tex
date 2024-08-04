@@ -1,34 +1,31 @@
-%\documentclass{Physics_H_Notes}
-%\begin{document}
-    \chapter[热力学]{\itr{Thermodynamics}{热力学}}
+   \chapter[热力学]{\itr{Thermodynamics}{热力学}}
         本章将分为两部分，第一部分是一些简单理论与结果的推导，按照笔记顺序给出；
         第二部分则涉及统计力学与热力学的一些本质问题，希望从熵这一核心量开始建立统计力学与热力学的图景。
-        由于逻辑问题，这里证明的排列顺序无法与笔记中保持一致，将按照定理需要的先后来排布，供拓展阅读。
+        由于逻辑问题，这里证明的排列顺序无法与笔记中保持一致，将按照定理需要的先后来排布，供拓展阅读\footnote{仅从应试角度而言，第二部分的证明大多是拓展性质的，仅用作兴趣阅读。}。
         \section{Part 1}
         \begin{prove}[the Microscopic View of Pressure]
-            首先假设一些必要的物理量，设容器中的气体粒子质量为$\mu$，分子数密度为$\rho$。
+            首先，假设一些必要的物理量。设容器中的气体粒子质量为$\mu$，分子数密度为$\rho$。
 
-            然后我们来分析一下某个撞击器壁的气体分子，如果分子垂直于器壁方向设为$x$正方向，其在$x$正方向的速度为$v_x$，则其具有$\mu v_x$的动量。
+            然后，考虑某个撞击器壁的气体分子，如果把垂直于器壁的方向设为$x$正方向，且气体分子在$x$正方向的速度为$v_x$，则该气体分子具有$\mu v_x$的动量。
             由于理想气体的假设，其与器壁的碰撞为弹性碰撞，那么施加的冲量为$2\mu v_x$。
 
-            然后考虑在$\Delta t$时间内撞击器壁的分子数，取器壁上一块面积为$S$的区域，以这块区域为底，
-            高为$v_x \Delta t$的区域的粒子中向器壁运动的部分将会撞击器壁，由于粒子运动随机，
-            撞向器壁与远离器壁的粒子数可视为相同，即粒子数为：
-            \begin{equation}
-                n = \frac{1}{2} \rho S v_x \Delta t
-                \nonumber
-            \end{equation}
+            然后考虑在$\Delta t$时间内撞击器壁的分子数。取器壁上一块面积为$S$的面积区域，以这块区域为底，
+            高为$v_x \Delta t$的体积区域中的粒子，向器壁运动的部分将会撞击器壁。由于粒子运动随机，
+            撞向器壁与远离器壁的粒子数可视为相同。若设单位体积中粒子数为$\rho$，则参与撞击的粒子数为：
+            \begin{equation*}
+                N_{collision} = \frac{1}{2} \rho S v_x \Delta t
+            \end{equation*}
             从而有撞向器壁的总冲量大小为：
             \begin{equation}
-                I = n \mu v_x = \rho \mu S v_{x}^{2} \Delta t
+                I = N_{collision} \mu v_x = \rho \mu S v_{x}{}^{2} \Delta t
                 \nonumber
             \end{equation}
             那么根据压强的定义就有：
             \begin{equation}
-                p = \frac{\overline{F}}{S} = \frac{\overline{I}}{\Delta tS} = \rho \mu \overline{v_{x}^{2}}
+                p = \frac{\overline{F}}{S} = \frac{\overline{I}}{\Delta tS} = \rho \mu \overline{v_{x}{}^{2}}
                 \nonumber
             \end{equation}                                                                      
-            再次使用粒子运动随机的条件，其速度向规定的$x$、$y$、$z$方向的几率相等，从而：
+            再次使用粒子运动随机的条件，可认为$\overline{v_x{}^2}=\overline{v_y{}^2}=\overline{v_z{}^2}=\dfrac{1}{3}\overline{v^2}$。于是有:
             \begin{equation}
                 p = \frac{1}{3}\rho \mu \overline{v^{2}}
             \end{equation}          
@@ -38,19 +35,24 @@
             \begin{equation}
                 \overline{\epsilon_k} = \frac{1}{2}\mu \overline{v^{2}}  = \frac{3pV}{2N} = \frac{3}{2} k_{_B}T  
             \end{equation}
-            从而有分子平均动能仅和温度有关。
+            从而有理想气体分子的平均动能仅和温度有关。
         \end{prove}
         \begin{prove}[Mean Free Path]
-            首先我们假设除了作为研究对象的分子外，其余分子均是静止的理想情况。
+            首先，我们假设除了作为研究对象的分子外，其余分子均静止。
             
-            设所有分子半径均为$d$，平均速度为$\overline{v}$，分子数密度为$\rho$
-            那么当两个分子间的球心距离小于$d$时，它们将发生碰撞，故碰撞截面将是一个半径为$d$的圆，
-            扫过的区域可以视为若干个圆柱体。那么在$\Delta t$时间内，分子扫过体积内的分子数 （即碰撞次数）为：
+            设所有分子直径均为$d$，平均速度为$\overline{v}$，分子数密度为$\rho$。
+            
+            那么，当两个分子间的球心距离小于$d$时，它们将发生碰撞，故某个分子的碰撞截面将是一个半径为$d$的圆，
+            扫过的区域可以视为若干个圆柱体。
+            \begin{singlefigure}{chapter7_mean_path}[0.8]
+            	分子$A$的碰撞区域(该图片来自\url{https://zhuanlan.zhihu.com/p/579175648})
+            \end{singlefigure}
+            那么，在$\Delta t$时间内，分子扫过体积内的分子数 （即碰撞次数）为：
             \begin{equation}
                 Z =\rho SL =\rho \pi d^{2} \overline{v} \Delta t
                 \nonumber
             \end{equation}
-            但分子其实是运动的，所以我们需要用相对平均速度$\overline{u} = \sqrt{2}\overline{v}$（具体证明有兴趣可以看）
+            但分子其实是运动的，所以我们需要用相对平均速度$\overline{u} = \sqrt{2}\overline{v}$\footnote{若对具体证明有兴趣，见\refleaftext{prove7.13}。}
             代替这里的平均速度，这样我们就得到了碰撞频率的表达式：
             \begin{equation}
                 Z =\sqrt{2}\pi d^{2} \rho \overline{v} \Delta t
@@ -59,7 +61,6 @@
             \begin{equation}
                 l = \frac{s}{Z} = \frac{\overline{v}\Delta t }{\sqrt{2}\pi d^{2} \rho \overline{v} \Delta t} = \frac{1}{\sqrt{2}\pi d^{2} \rho}
             \end{equation}
-            证毕。
         \end{prove}
         \begin{prove}[Heat Capacity of Ideal Gas]
             对$1\rm{mol}$理想气体，其内能等于：
@@ -67,7 +68,7 @@
                 U = \frac{i}{2}RT
                 \nonumber
             \end{equation}
-            等容条件下，系统不做功，故根据热力学第一定律$Q = \Delta U$，代入等容热容定义中：
+            等容条件下，系统不做功，故由热力学第一定律有$Q = \Delta U$，代入等容热容定义中：
             \begin{equation}
                 C_{V} \overset{def}{=} \left(\frac{\partial{Q}}{\partial{T}}\right)_{V} =\frac{\Delta U}{\Delta T}
                 =\frac{i}{2}R
@@ -84,9 +85,9 @@
             \end{equation}
         \end{prove}
         \begin{prove}[Isochoric Process and Isobaric Process]
-            对等容过程,其他物理量的求法是显然的，熵则将$Q$微分得到$\Delta Q = nC_{V}dT$，代入定义中：
+            对等容过程,其他物理量的求法是显然的，熵则将$Q$微分得到$\delta Q = nC_{V}dT$，代入定义中：
             \begin{equation}
-                \Delta S = \int_{T_1}^{T_2} \frac{\Delta Q}{T} = \int_{T_1}^{T_2} \frac{nC_{V}dT}{T} = nC_{V}\ln\frac{T_2}{T_1}
+                \Delta S = \int_{T_1}^{T_2} \frac{\delta Q}{T} = \int_{T_1}^{T_2} \frac{nC_{V}dT}{T} = nC_{V}\ln\frac{T_2}{T_1}
             \end{equation}
             
             等压过程的熵类似等容过程，略。
@@ -98,11 +99,13 @@
             \end{equation}
             由热力学第一定律，$Q = W$，代入熵的定义中：
             \begin{equation}
-                \Delta S = \int_{T_1}^{T_2} \frac{\Delta Q}{T} =  \int_{V_1}^{V_2} \frac{nR}{V} \dif{V} = nR\ln\frac{V_2}{V_1}
+                \Delta S = \int_{T_1}^{T_2} \frac{\delta Q}{T} =  \int_{V_1}^{V_2} \frac{nR}{V} \dif{V} = nR\ln\frac{V_2}{V_1}
             \end{equation} 
         \end{prove}
+        \newpage
+        \vspace*{1ex}
         \begin{prove}[Adiabatic Process]
-            对绝热过程，有$Q = 0$，故$\Delta S = 0$，故由热力学第一定律有$\Delta U = -W$，我们将两边都用微分形式表示出来：
+            对绝热过程，有$Q = 0$，故$\Delta S = 0$。故由热力学第一定律，有$\Delta U = -W$，我们将两边都用微分形式表示出来：
             \begin{equation}
                 \frac{i}{2}nR\dif{T} = -p\dif{V} 
                 \nonumber
@@ -127,7 +130,7 @@
                 \frac{i+2}{i} \ln V  =-\ln p + C
                 \nonumber
             \end{equation}
-            设$\gamma = \frac{C_p}{C_V} = \frac{2+i}{i}$，那么就有：
+            设$\gamma = \dfrac{C_p}{C_V} = \dfrac{2+i}{i}$，那么就有：
             \begin{equation}
                 pV^{\gamma} = constant
             \end{equation}
@@ -139,15 +142,13 @@
         \end{prove}
         \begin{prove}[Efficiency of a Otto Cycle]
             奥托循环如下：
-            \begin{center}
-                \includegraphics[width=5cm,height=5cm]{Chapter7_otto.png}
-            \end{center}
+            \ctikzfig{chapter7_otto_cycle}
             AB与CD为绝热过程，$Q = 0$，我们只需考虑BC过程的吸热与DA过程的放热。
-            这是两个等压过程，它们的热为：
+            这是两个等压过程，它们的热(这里取绝对值)为：
             \begin{equation}
                 \begin{aligned}
-                    &Q_{in} = Q_{BC} = nC_{V}\Delta T_{BC}= nC_{V}(T_{C} - T_{B})\\
-                    &Q_{out} = -Q_{DA} = -nC_{V}\Delta T_{DA}= nC_{V}(T_{D} - T_{A})
+                    &Q_{in}  = |nC_{V}\Delta T_{BC}|= nC_{V}(T_{C} - T_{B})\\
+                    &Q_{out} = |nC_{V}\Delta T_{DA}|= nC_{V}(T_{D} - T_{A})
                 \end{aligned}
                 \nonumber
             \end{equation}
@@ -157,27 +158,25 @@
             \end{equation}
         \end{prove}
         \begin{prove}[Efficiency of a Carnot Cycle]
-            这和奥托循环的证明几乎一样
+            这和奥托循环的证明几乎一样。
 
             卡诺循环如下：
-            \begin{center}
-                \includegraphics[width=5cm,height=5cm]{Chapter7_carnot.png}
-            \end{center}
+            \ctikzfig{chapter7_carnot_cycle}
             AB与CD为绝热过程，$Q = 0$，我们只需考虑AB过程的吸热与CD过程的放热。
-            这是两个等温过程，它们的热为：
+            这是两个等温过程，它们的热(这里取绝对值)为：
             \begin{equation}
                 \begin{aligned}
-                    &Q_{in} = Q_{AB} = nRT_{h}\ln\frac{V_B}{V_A}\\
-                    &Q_{out} = -Q_{CD} = nRT_{c}\ln\frac{V_C}{V_D}
+                    &Q_{h} = nRT_{h}\ln\frac{V_B}{V_A}\\[1ex]
+                    &Q_{c} = nRT_{c}\ln\frac{V_C}{V_D}
                 \end{aligned}
                 \nonumber
             \end{equation}
-            绝热过程有：
+            绝热过程(\refleaftext{prove7.6})有：
             \begin{equation}
                 P_{C}V_{C}^{\gamma} = P_{B}V_{B}^{\gamma} \qquad   P_{A}V_{A}^{\gamma} = P_{D}V_{D}^{\gamma}
                 \nonumber
             \end{equation}
-            而根据理想气体定律$PV=nRT$，得到绝热过程温度与体积的关系：
+            根据理想气体定律$PV=nRT$，可得绝热过程温度与体积的关系：
             \begin{equation}
                 T_{c}V_{C}^{\gamma-1} = T_{h}V_{B}^{\gamma-1} \qquad T_{c}V_{D}^{\gamma-1} = T_{h}V_{A}^{\gamma-1}
                 \nonumber
@@ -189,7 +188,7 @@
             \end{equation}
             那么有热机效率：
             \begin{equation}
-                e = \frac{Q_{in}-Q_{out}}{Q_{in}} = 1 - \frac{T_{c}}{T_{h}}
+                e = \frac{Q_{h}-Q_{c}}{Q_{h}} = 1 - \frac{T_{c}}{T_{h}}
             \end{equation}
         \end{prove}
         \section{Part 2}
@@ -222,7 +221,7 @@
             \begin{equation}
                 \ln\Omega = \ln(N!)\sum_{i = 1}^{k}[{a_i}\ln(w_i) - \ln(a_i!)]
             \end{equation}
-            $N$是一个很大的数，我们假设所有的$a_i$也是很大的数\footnote{这一假设对真实气体并不严谨，但推导理想气体够用了}，
+            $N$是一个很大的数，我们假设所有的$a_i$也是很大的数\footnote{这一假设对真实气体并不严谨，但推导理想气体够用了。}，
             使用如下的积分估值：
             \begin{equation}
                 \ln(N!) = \ln(\prod_{i=1}^{N}i)=\sum_{i=1}^{N}\ln(i) \approx \int_{1}^{N}\ln x\dif{x} = N\ln N-N
@@ -435,4 +434,60 @@
             所以把能级近似为连续的考虑。这一假设对于振动能级开始已经不再成立，我们必须使用求和代替积分，这个计算出来的贡献相对前两者来说可以忽略，
             不过这部分的计算需要使用量子力学，这里就不给出振动贡献可忽略的证明了。
         \end{prove}
-%\end{document}
+		\begin{prove}[Relative average velocity of molecules]
+			我们需要先做一个基本假设，分子的速度在各个方向上的分布是均匀的，即球对称分布。
+			
+			设其中一个分子的速度为$\vec{v_1}$，另一个分子的速度为$\vec{v_2}$，相对速度$\vec{u} = \vec{v_2} - \vec{v_1}$。
+			
+			直接研究向量比较麻烦，我们选取某一个方向上的分量，比如$x$方向。此时我们需要一维的麦克斯韦分布，
+			速度空间一维只有两个方向，设微元为$\dif v$，积分区间为$-\infty$至$+\infty$即可，其他与三维一致（见\refleaftext{prove7.10}），由：
+			\begin{equation}
+				\int_{-\infty}^{+\infty} e^{-\tfrac{\mu v^{2}}{2k_{_B}T}}\dif{v} = \sqrt{\frac{2\pi k_{B}T}{\mu}}
+			\end{equation}
+			得到归一化系数$\sqrt{\dfrac{\mu}{2\pi k_{B}T}}$，从而有一维分布：
+			\begin{equation*}
+				f(v) = \sqrt{\frac{\mu}{2\pi k_{B}T}}e^{-\tfrac{\mu v^{2}}{2k_{_B}T}}
+			\end{equation*}
+			那么这两个粒子在$x$方向上的速度分布为：
+			\begin{equation*}
+				\begin{aligned}
+					&f_1(v_{1x}) = \sqrt{\frac{\mu}{2\pi k_{B}T}}e^{-\tfrac{\mu v_{1x}^{2}}{2k_{_B}T}}\\
+					&f_2(v_{2x}) = \sqrt{\frac{\mu}{2\pi k_{B}T}}e^{-\tfrac{\mu v_{2x}^{2}}{2k_{_B}T}}
+				\end{aligned}
+			\end{equation*}
+			设$f(u_x) = f(v_{2x} + (- v_{1x}))$为相对速率分布函数，它的变量是两个独立变量的和，
+			那么这个函数是这两个独立变量的分布函数的卷积（可参考任意“概率论与数理统计”教材）\footnote{这里假设不考虑量子效应，即假设速度分布是连续的}：
+			\begin{equation*}
+				\begin{aligned}
+					f(u_x) &= f_1(v_{1x}) \ast f_2(v_{2x}) = \int_{-\infty}^{+\infty} f_1(- v_{1x})f_2(u_x + v_{1x})\dif v_{1x}\\
+					&=\frac{\mu}{2\pi k_{B}T} \int_{-\infty}^{+\infty} e^{-\tfrac{\mu v_{1x}^{2}}{2k_{_B}T}} e^{-\tfrac{\mu (v_{1x} + u_x)^{2}}{2k_{_B}T}} \dif v_{1x}\\
+					&=\frac{\mu}{2\pi k_{B}T} \int_{-\infty}^{+\infty} e^{-\tfrac{\mu (2v_{1x}^{2}+ 2v_{1x}u_{x} + u_{x}^{2})}{2k_{_B}T}} \dif v_{1x}\\
+					&=\frac{\mu}{2\pi k_{B}T} \int_{-\infty}^{+\infty} e^{-\tfrac{\mu [2(v_{1x} + \frac{1}{2}u_{x})^{2}+ \frac{1}{2} u_{x}^{2})}{2k_{_B}T}} \dif v_{1x}\\
+				\end{aligned}
+			\end{equation*}
+			这是对$v_{1x}$的积分，利用$t = v_{1x} + \frac{1}{2}u_{x}$换元即可，结果为：
+			\begin{equation*}
+				f(u_x) = \frac{1}{2}\sqrt{\frac{\mu}{\pi k_{_B}T}}e^{\tfrac{\mu u_{x}^{2}}{4k_{_B}T}}
+			\end{equation*}
+			根据假设，速率分布与坐标轴的选取无关。这意味着对任意方向，我们都有以上的相对速率分布，
+			那么我们可以肯定$f(u_y)$、$f(u_z)$与$f(u_x)$的形式一致；同样由于速度分布于坐标轴的选取无关，
+			而相对速度的结果在任意坐标系中应一致，那么它与速度分布一样是球对称的。我们取一个球壳元$4\pi \dif u$，其中的粒子数为：
+			\begin{equation*}
+				\dif N = f(u)\dif u = f(u_x)f(u_y)f(u_z) 4\pi \dif u =  \frac{\pi}{2}\left(\frac{\mu}{\pi k_{_B}T}\right)^{\frac{3}{2}} u^{2} e^{\tfrac{\mu u^{2}}{4k_{_B}T}}\dif u
+			\end{equation*}
+			即：         
+			\begin{equation*}
+				f(u)= \frac{\pi}{2}\left(\frac{\mu}{\pi k_{_B}T}\right)^{\frac{3}{2}} u^{2} e^{\tfrac{\mu u^{2}}{4k_{_B}T}}
+			\end{equation*}   
+			相对平均分子速率即数学期望：
+			\begin{equation*}
+				\begin{aligned}
+					\upperline{u}&= \int_{0}^{+\infty}uf(u)\dif u\\
+					&=\frac{\pi}{2}\left(\frac{\mu}{\pi k_{_B}T}\right)^{\frac{3}{2}}\int_{0}^{+\infty} u^{3} e^{\tfrac{\mu u^{2}}{4k_{_B}T}}\dif u\\
+					&=\frac{\pi}{4}\left(\frac{\mu}{\pi k_{_B}T}\right)^{\frac{3}{2}}\int_{0}^{+\infty} v e^{\tfrac{\mu v}{4k_{_B}T}}\dif v\qquad(v = u^2)\\
+					&=\sqrt{2}\sqrt{\frac{8k_{_B}T}{\pi \mu}}\\
+					&=\sqrt{2}\upperline{v}
+				\end{aligned}
+			\end{equation*}
+			证毕。
+		\end{prove}

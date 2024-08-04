@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-6, 0) {};
+		\node [style=none] (1) at (6, 0) {};
+		\node [style=none] (2) at (6.5, 0) {$x$};
+		\node [style=none] (3) at (0, 6) {};
+		\node [style=none] (4) at (0, -2) {};
+		\node [style=none] (5) at (0, 6.5) {$y$};
+		\node [style=none] (6) at (-5, 0) {};
+		\node [style=none] (7) at (5, 0) {};
+		\node [style=none] (8) at (-5, -4.5) {};
+		\node [style=none] (9) at (-5, 6) {};
+		\node [style=none] (10) at (-5, 6.5) {$y'$};
+		\node [style=none] (11) at (-0.5, -0.5) {$O$};
+		\node [style=none] (12) at (5, -4.5) {};
+		\node [style=none] (13) at (-5, -4) {};
+		\node [style=none] (14) at (5, -4) {};
+		\node [style=none] (15) at (0, -3.5) {$L$};
+		\node [style=none] (16) at (3, 0) {};
+		\node [style=none] (17) at (4, 0) {};
+		\node [style=none] (18) at (3, 2.5) {};
+		\node [style=none] (19) at (4, 2.5) {};
+		\node [style=none] (20) at (3, 2) {};
+		\node [style=none] (21) at (4, 2) {};
+		\node [style=none] (22) at (3.5, 2.5) {$\dif x$};
+		\node [style=none] (23) at (0, 2) {};
+		\node [style=none] (24) at (1.5, 2.5) {$x$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (0.center) to (1.center);
+		\draw [style=arrow] (4.center) to (3.center);
+		\draw [style=dotted arrow] (8.center) to (9.center);
+		\draw [style=very bold] (6.center) to (7.center);
+		\draw [style=dotted] (7.center) to (12.center);
+		\draw [style=length] (13.center) to (14.center);
+		\draw (18.center) to (16.center);
+		\draw (19.center) to (17.center);
+		\draw [style=very bold red] (16.center) to (17.center);
+		\draw [style=length] (20.center) to (21.center);
+		\draw [style=length] (23.center) to (20.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

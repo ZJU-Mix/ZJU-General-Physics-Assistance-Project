@@ -184,7 +184,7 @@
 叉乘可以看成这样一个运算：按顺序输入两个向量$\vec{A},\vec{B}$，输出一个特定长度且与它们都正交的向量$\vec{C}$。当然，这样的描述是不精确的，一是长度需要确定的值，二是与$\vec{A},\vec{B}$都正交的向量方向不唯一\footnote{除了$\vec{0}$，还有正反两个方向}。因此，接下来，我们要对长度和方向作出具体描述。
 
 \begin{Itemize}
-	\item 长度：$C=AB\sin\theta$，其中$\theta$是由$\vec{A}$旋转至$\vec{B}$所成的小于$\frac{\pi}{2}$的角\footnotemark 。在几何意义上，$|\vec{C}|$即是$\vec{A},\vec{B}$构成的平行四边形的面积。
+	\item 长度：$C=AB\sin\theta$，其中$\theta$是由$\vec{A}$旋转至$\vec{B}$所成的小于$\dfrac{\pi}{2}$的角\footnotemark 。在几何意义上，$|\vec{C}|$即是$\vec{A},\vec{B}$构成的平行四边形的面积。
 	\item 方向：$\vec{C}$的方向是介绍长度时所述的$\vec{\theta}$(角度矢量的方向：\refleaftext{chapter3_direction})的方向。在几何意义上，$\vec{C}$与$\vec{A},\vec{B}$所张成平面的法向量平行。
 \end{Itemize}
 %\refleaf*{chapter3_direction}[-8ex]
@@ -323,12 +323,11 @@
 
 既然如此，我们便会有这样的想法：利用质心系，把同时发生平动和转动的物体转化成只发生转动的物体来研究。如此，便产生了柯尼希定理：
 \begin{law}[\itr{Konig's Theorem}{柯尼希定理}---\refleaftext{prove3.4}]
-	记一个系统$M$的质心速度为$v_{CM}$，在质心系中的动能为$K^{CM}$，在静止参考系中的动能为$K$，并记$K_{CM}=\dfrac{1}{2}Mv_{CM}^2$，则有
+	记一个系统$M$的质心速度为$v_{_{CM}}$，在质心系中的动能为$K^{CM}$，在静止参考系中的动能为$K$，并记$K_{CM}=\dfrac{1}{2}Mv_{_{CM}}{}^2$，则有
 	\[K=K_{CM}+K^{CM}\]
 	如果考虑对一个刚体使用柯尼希定理，则有：
-	\[K=\dfrac{1}{2}Mv_{CM}{}^2+\dfrac{1}{2}I_{CM}\omega^2\]
+	\[K=\dfrac{1}{2}Mv_{_{CM}}{}^2+\dfrac{1}{2}I_{CM}\omega^2\]
 \end{law}
-%\refleaf*{prove3.4}[-34ex]
 
 在研究一个同时发生平动和转动的物体的动能时，我们往往使用柯尼希定理，分别求解其质心的平动动能和在质心系中的转动动能。
 \section[角动量]{\itr{Angular Momentum}{角动量}}
@@ -362,10 +361,9 @@
 \subsection[质心系转化]{\itr{Center of Frame Translation}{质心系转化}}
 角动量在静止参考系和质心系间的转化与柯尼希定理类似。
 \begin{law}[\itr{Angular Momentum Translation Using C.M. Frame}{利用质心系的角动量变换}\footnotemark---\refleaftext{prove3.6}]
-	记质心角动量为$\vec{L}_{CM}=M\vec{r}_{CM}\times\vec{v}_{CM}$，刚体在质心系中的角动量为$\vec{L}^{CM}=\sum_im_i\vec{r}_i^{CM}\times\vec{v}^{CM}_i$，刚体在静止参考系中的角动量为$\vec{L}$，且保证两个参考系中选取的轴平行，则有
+	记质心角动量为$\vec{L}_{CM}=M\vec{r}_{_{CM}}\times\vec{v}_{_{CM}}$，刚体在质心系中的角动量为$\vec{L}^{CM}=\sum_im_i\vec{r}_i^{^{CM}}\times\vec{v}^{^{CM}}_i$，刚体在静止参考系中的角动量为$\vec{L}$，且保证两个参考系中选取的轴平行，则有
 	\[\vec{L}=\vec{L}_{CM}+\vec{L}^{CM}\]
 \end{law}
-%\refleaf*{prove3.6}[-22ex]
 \footnotetext{对于对点定义的角动量，也有类似的结论，证明方法也基本相同。}
 \section[重心]{\itr{Center of Gravity}{重心}}
 我们会注意到，在分析重力产生的合力矩时，依据定义，应该对每一个质元求分力矩，然后进行求和。这似乎是一件复杂的事情。有没有办法寻找一个点，使得刚体的合重力在此作用时，得到的力矩恰等于重力的合力矩呢？事实上，我们把这样的点称作重心。

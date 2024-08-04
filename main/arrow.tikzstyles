@@ -20,3 +20,8 @@
 \tikzstyle{length}=[thick, <->, draw=cyan]
 \tikzstyle{green }=[-, draw=green]
 \tikzstyle{inner color outer line}=[-, fill={rgb,255: red,255; green,191; blue,191}]
+\tikzstyle{blue dashed}=[-, dashed, draw={rgb,255: red,2; green,116; blue,255}]
+\tikzstyle{blue arrow}=[draw={rgb,255: red,0; green,115; blue,255}, ->]
+\tikzstyle{dotted arrow}=[dashed, ->]
+\tikzstyle{very bold}=[-, line width=2pt, draw=green]
+\tikzstyle{very bold red}=[-, draw=red, line width=2pt]

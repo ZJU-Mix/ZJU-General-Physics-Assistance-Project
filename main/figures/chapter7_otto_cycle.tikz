@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4, 4) {};
+		\node [style=none] (1) at (-4, -4) {};
+		\node [style=none] (2) at (4, -4) {};
+		\node [style=none] (3) at (-4.5, 4) {$P$};
+		\node [style=none] (4) at (4, -4.5) {$V$};
+		\node [style=none] (5) at (-2, -0.5) {};
+		\node [style=none] (6) at (-2, 3) {};
+		\node [style=none] (7) at (2, -2) {};
+		\node [style=none] (8) at (2, 1) {};
+		\node [style=none] (9) at (-2, 1.75) {};
+		\node [style=none] (10) at (-2, 2) {};
+		\node [style=none] (11) at (2, -1.25) {};
+		\node [style=none] (12) at (2, -1) {};
+		\node [style=none] (13) at (-0.75, 2) {};
+		\node [style=none] (15) at (-0.74, 1.992) {};
+		\node [style=none] (14) at (-0.25, -1.5) {};
+		\node [style=none] (16) at (-0.26, -1.495) {};
+		\node [style=none] (17) at (-2, -4) {};
+		\node [style=none] (18) at (2, -4) {};
+		\node [style=none] (19) at (-2, -4.5) {$V_2$};
+		\node [style=none] (20) at (2, -4.5) {$V_1$};
+		\node [style=none] (21) at (-2.5, -0.5) {$B$};
+		\node [style=none] (22) at (-2.5, 3) {$C$};
+		\node [style=none] (23) at (2.5, 1) {$D$};
+		\node [style=none] (24) at (2.5, -2) {$A$};
+		\node [style=none] (25) at (1, 1.25) {};
+		\node [style=none] (26) at (0.5, -1.75) {};
+		\node [style=none] (27) at (1.75, 2.25) {};
+		\node [style=none] (28) at (1.75, 3.5) {Adiabatic};
+		\node [style=none] (29) at (1.75, 2.75) {Processes};
+		\node [style=none] (30) at (-2.5, 1) {};
+		\node [style=none] (31) at (-1.5, 1) {};
+		\node [style=none] (32) at (1.5, -0.5) {};
+		\node [style=none] (33) at (2.5, -0.5) {};
+		\node [style=none] (34) at (-3, 1) {$Q_{in}$};
+		\node [style=none] (35) at (3.25, -0.5) {$Q_{out}$};
+		\node [style=none] (36) at (0, 0) {$W$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (1.center) to (0.center);
+		\draw [style=arrow] (1.center) to (2.center);
+		\draw [style=inner color outer line] (7.center)
+			 to [bend left=15] (5.center)
+			 to (6.center)
+			 to [bend right=15] (8.center)
+			 to cycle;
+		\draw [style=arrow] (9.center) to (10.center);
+		\draw [style=arrow] (12.center) to (11.center);
+		\draw [style=arrow] (13.center) to (15.center);
+		\draw [style=arrow] (14.center) to (16.center);
+		\draw [style=dotted] (5.center) to (17.center);
+		\draw [style=dotted] (7.center) to (18.center);
+		\draw [style=arrow] (27.center) to (25.center);
+		\draw [style=arrow] (27.center) to (26.center);
+		\draw [style=blue arrow] (32.center) to (33.center);
+		\draw [style=red arrow] (30.center) to (31.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
