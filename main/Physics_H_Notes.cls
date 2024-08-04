@@ -42,8 +42,6 @@
 }
 %单张图片，环境内容为注释，均居中
 %-------------------------------------------------------------
-%\RequirePackage{keyval}
-%模板key定制
 \definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
 \definecolor{c1}{RGB}{62, 97, 127}
 \definecolor{c2}{RGB}{104, 182, 182}
@@ -78,28 +76,43 @@
 \colorlet{orangepink}{orange!20!pink}
 
 %常用颜色，主要是护眼（）
-\newcommand{\itr}[2]%
-{%
-	\setlength{\ItrLenMax}{\maxof{\widthof{#1}}{\widthof{#2}}}%记录长度最大值
-	\stepcounter{ItrCtr}%
-	\ %前后距离修正
-	\makebox[\ItrLenMax][c]%
-	{%做一个盒子，取最大长度，美观起见居中
-		\switchocg{itr\theItrCtr}%
-		{%
-			\begin{ocg}{itr\theItrCtr}{itr\theItrCtr}{1}%
-				\textcolor{plaincyan}{\textit{#1}}%
-			\end{ocg}
-		}%
-	}%
-	\hspace{-\ItrLenMax}%长度修正，防止中英互换时盒子偏移
-	\makebox[\ItrLenMax][c]%
-	{%
-		\begin{ocmd}{\Not{itr\theItrCtr}}%
-			\textcolor{plaincyan}{#2}%
-		\end{ocmd}%
-	}%
+\RequirePackage{keyval}
+\SetupKeyvalOptions%
+{
+    family=@physicsHNotes,
+    prefix=@physicsHNotes@
 }
+\DeclareBoolOption[false]{stable}
+\ProcessKeyvalOptions*
+\relax
+
+\if@physicsHNotes@stable
+    \newcommand{\itr}[2]{\textcolor{plaincyan}{\textit{#1}\textrm{(}\textit{#2}\textrm{)}}}
+\else
+    \newcommand{\itr}[2]%
+    {%
+        \setlength{\ItrLenMax}{\maxof{\widthof{#1}}{\widthof{#2}}}%记录长度最大值
+        \stepcounter{ItrCtr}%
+        \ %前后距离修正
+        \makebox[\ItrLenMax][c]%
+        {%做一个盒子，取最大长度，美观起见居中
+            \switchocg{itr\theItrCtr}%
+            {%
+                \begin{ocg}{itr\theItrCtr}{itr\theItrCtr}{1}%
+                    \textcolor{plaincyan}{\textit{#1}}%
+                \end{ocg}
+            }%
+        }%
+        \hspace{-\ItrLenMax}%长度修正，防止中英互换时盒子偏移
+        \makebox[\ItrLenMax][c]%
+        {%
+            \begin{ocmd}{\Not{itr\theItrCtr}}%
+                \textcolor{plaincyan}{#2}%
+            \end{ocmd}%
+        }%
+    }
+\fi
+%模板key定制。stable用于支持功能较弱的pdf阅读器。
 %可交互词定义
 %-------------------------------------------------------------
 \newcommand{\En}[1]%
