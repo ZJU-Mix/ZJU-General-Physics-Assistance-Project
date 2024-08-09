@@ -17,15 +17,10 @@
 为了描述角度，我们引入极坐标系这一数学工具。
 
 极坐标系的基本要素是极点和极轴，其中极轴是一条从极点引出的有向轴。
-\begin{singlefigure}[极坐标系(O为极点，O点出发x轴方向为极轴方向)]{chapter3_polar_coordinate}[0.7]
-	\En{A \itr{planar}{平面的}, rigid object of \itr{arbitrary}{任意的} shape \itr{confined}{受限制} to
-	the xy plane and\\rotating about a fixed axis through O. The
-	axis is \itr{perpendicular}{垂直的}
-	to the\\plane of the figure, and
-	O is the \itr{origin}{原点} of an xy
-	coordinate system}
-\end{singlefigure}
-
+\ctikzfig{chapter3_polar_coordinate}
+\begin{center}
+	\em 这是一个极坐标系，$O$为极点，$x$轴方向为极轴方向
+\end{center}
 在极坐标系中，我们使用坐标$(r,\theta)$或者$(|\vec{r}|,|\vec{\theta}|)$描述点的位置。
 \begin{Itemize}
 	\item $\vec{r}$即起点为极点，终点为被描述点的向量，称为极径矢量。
@@ -100,6 +95,7 @@
 		
 		\coordinate (Q) at (1.9,1.97);
 		\node[below,xshift=2mm] at (Q) {$Q$};
+		\node[xshift=-3mm] at (O){$O$};
 		% \fill[black] (Q) circle (3pt);
 		
 		
@@ -187,7 +183,6 @@
 	\item 长度：$C=AB\sin\theta$，其中$\theta$是由$\vec{A}$旋转至$\vec{B}$所成的小于$\dfrac{\pi}{2}$的角\footnotemark 。在几何意义上，$|\vec{C}|$即是$\vec{A},\vec{B}$构成的平行四边形的面积。
 	\item 方向：$\vec{C}$的方向是介绍长度时所述的$\vec{\theta}$(角度矢量的方向：\refleaftext{chapter3_direction})的方向。在几何意义上，$\vec{C}$与$\vec{A},\vec{B}$所张成平面的法向量平行。
 \end{Itemize}
-%\refleaf*{chapter3_direction}[-8ex]
 \footnotetext{事实上，这里不规定旋转，对于长度是没有影响的。这里这么说，主要是希望在介绍长度和方向时，这个角度可以统一。回想一下，在介绍极坐标系时，我们就规定逆时针是正方向了，所以这么规定可以合理地引出正负。}
 
 如果这么说不够直观，我们可以参考右手定则：
@@ -277,9 +272,10 @@
 关于以上内容的证明，见\refleaftext{prove3.1}。
 
 其中，为了便于计算力矩，我们可以引入\itr{moment arm/force arm}{力臂}的概念，其大小即为转轴到力的作用线的距离。有了这一点，力矩的大小就可以通过力臂乘以力得到。
-\begin{singlefigure}[力臂示意图]{chapter3_moment_arm}[0.45]
-	$l_1$是$\vec{F}_1$的力臂，$l_2$是$\vec{F}_2$的力臂。
-\end{singlefigure}
+\ctikzfig{chapter3_moment_arm}
+\begin{center}
+	\em $l_1$是$\vec{F}_1$的力臂，$l_2$是$\vec{F}_2$的力臂。
+\end{center}
 
 对于常见的物体，其转动惯量是应当记住的：
 \begin{singlefigure}{chapter3_moment_inertia1}
@@ -385,7 +381,7 @@
 \begin{law}[\itr{Frame Translation with Rotation}{考虑转动的参考系变换}$^*$---\refleaftext{prove3.8}]
 	如果希望牛顿运动定律在一个转动参考系$\mathcal{F}'$中依然成立，我们需要对$\mathcal{F}'$中的物体添加三个假想力，分别是$-2m\vec{\omega}\times\vec{v}',-m\vec{\alpha}\times\vec{r}',m\omega^2\vec{r}'$。
 	
-	其中，$\vec{\omega}$是$\mathcal{F}'$的角速度，$\vec{\alpha}$是$\mathcal{F}'$的角加速度，$\vec{v}$是物体在$\mathcal{F}'$中的速度，$\vec{r}'$是物体在$\mathcal{F}'$中的极径矢量。
+	其中，$\vec{\omega}$是$\mathcal{F}'$的角速度，$\vec{\alpha}$是$\mathcal{F}'$的角加速度，$\vec{v}'$是物体在$\mathcal{F}'$中的速度，$\vec{r}'$是物体在$\mathcal{F}'$中的极径矢量。
 	
 	如果我们将条件简化，认为$\mathcal{F}'$没有角加速度，则无需考虑$-m\vec{\alpha}\times\vec{r}'$。
 	
@@ -407,7 +403,7 @@
 	&\begin{array}{l}{{\mathrm{If}}}\\{\vec{\alpha}=\mathrm{constant}}\left\{\begin{array}{l}{{\vec{\omega}_{f}=\vec{\omega}_{i}+\vec{\alpha} t}}\\{{\vec{\theta}_{f}-\vec{\theta}_{i}=\vec{\omega}_{i}t+\frac{1}{2}\vec{\alpha} t^{2}}}\\{{\omega_{f}{}^{2}=\omega_{i}{}^{2}+2\alpha(\theta_{f}-\theta_{i})}}\end{array}\right.\end{array}
 	&&
 	\begin{array}{l}{{\mathrm{If}}}\\{\vec{a}=\mathrm{constant}}\left\{\begin{array}{l}{{\vec{v}_{f}=\vec{v}_{i}+\vec{a}t}}\\{{\vec{x}_{f}-\vec{x}_{i}=\vec{v}_{i}t+\frac{1}{2}\vec{a}t^{2}}}\\{{v_{f}{}^{2}=v_{i}{}^{2}+2a(x_{f}-x_{i})}}\end{array}\right.\end{array}  \\
-	&\mathrm{Work}\ W=\int_{\theta_{i}}^{\theta_{f}}\tau d\theta && \mathrm{Work}\ W=\int_{x_{i}}^{x_{f}}F_{x}dx  \\
+	&\mathrm{Work}\ W=\int_{\theta_{i}}^{\theta_{f}}\tau \dif\theta && \mathrm{Work}\ W=\int_{x_{i}}^{x_{f}}F_{x}\dif x  \\
 	&\mathrm{Rotational~kinetic~energy~}K_{\mathrm{R}}=\frac{1}{2}I\omega^{2}&& \mathrm{Kinetic~energy~}K=\frac{1}{2}mv^{2}  \\
 	&\mathrm{Power}\ P=\vec{\tau}\cdot\vec{\omega}&& \mathrm{Power}\ P=\vec{F}\cdot\vec{v}  \\
 	&\mathrm{Angular~momentum~}\vec{L}=I\vec{\omega} && \mathrm{Linear~momentum~}\vec{p}=m\vec{v}  \\

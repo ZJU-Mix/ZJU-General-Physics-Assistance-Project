@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.3)  4 AUG 2024 17:54
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.3)  9 AUG 2024 11:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,7 +6,7 @@ entering extended mode
 (./main.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
-(c:/texlive/texmf-local/tex/latex/local/documentclass/Physics_H_Notes.cls
+(./Physics_H_Notes.cls
 Document Class: Physics_H_Notes 
 (c:/texlive/2023/texmf-dist/tex/latex/ctex/ctexbook.cls
 (c:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -1482,6 +1482,10 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 6--6
 
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <14.4> not available
 (Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 6.
+
+LaTeX Font Warning: Font shape `TU/SimSun(0)/b/it' undefined
+(Font)              using `TU/SimSun(0)/b/n' instead on input line 9.
+
 ) (../chapters/chapter1/chapter1_exercise.tex [2
 
 ]
@@ -1509,12 +1513,10 @@ Overfull \hbox (4.37537pt too wide) in paragraph at lines 2--2
 []|$[]$ 
  []
 
-File: ../figures/figure3/chapter3_polar_coordinate.png Graphic file (type bmp)
-<../figures/figure3/chapter3_polar_coordinate.png>
-[5
+(./figures/chapter3_polar_coordinate.tikz) [5
 
 ]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 34--34
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 29--29
 [][] 
  []
 
@@ -1542,13 +1544,13 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
-Underfull \hbox (badness 4647) in paragraph at lines 167--167
+Underfull \hbox (badness 4647) in paragraph at lines 163--163
 [][]\TU/SimSun(0)/m/n/9 本 图 来 自[][]$[][][][][] [] [] [] [][][] [] [][][][][][][
 ][][][][] [] [][][] [] [][][][][] [] [][][][][][][] []
  []
 
 [6]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 179--179
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 175--175
 [][] 
  []
 
@@ -1556,22 +1558,22 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 179--179
 File: ../figures/figure3/chapter3_right_hand_rule.png Graphic file (type bmp)
 <../figures/figure3/chapter3_right_hand_rule.png>
 [7]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 201--201
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 196--196
 [][] 
  []
 
 
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 202--202
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 197--197
 [][] 
  []
 
 
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 202--202
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 197--197
 [][] 
  []
 
 
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 202--202
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 197--197
 [][] 
  []
 
@@ -1585,13 +1587,13 @@ LaTeX Warning: Marginpar on page 8 moved.
 LaTeX Warning: Marginpar on page 8 moved.
 
 [8]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 245--245
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 240--240
 [][] 
  []
 
 \c@chapter3_cross_product=\count411
 
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 258--258
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 253--253
 [][] 
  []
 
@@ -1599,8 +1601,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 258--258
 File: ../figures/figure3/chapter3_torque.png Graphic file (type bmp)
 <../figures/figure3/chapter3_torque.png>
 \c@prove3.1=\count412
-File: ../figures/figure3/chapter3_moment_arm.png Graphic file (type bmp)
-<../figures/figure3/chapter3_moment_arm.png>
+ (./figures/chapter3_moment_arm.tikz)
 File: ../figures/figure3/chapter3_moment_inertia1.png Graphic file (type bmp)
 <../figures/figure3/chapter3_moment_inertia1.png>
  [10
@@ -1609,20 +1610,28 @@ File: ../figures/figure3/chapter3_moment_inertia1.png Graphic file (type bmp)
 File: ../figures/figure3/chapter3_moment_inertia2.png Graphic file (type bmp)
 <../figures/figure3/chapter3_moment_inertia2.png>
 
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 290--290
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 286--286
 [][] 
  []
 
 \c@chapter3_axis=\count413
 [11]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 295--295
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 291--291
 [][] 
  []
 
 \c@prove3.2=\count414
+
+Underfull \hbox (badness 6284) in paragraph at lines 291--291
+[]\TU/SimSun(0)/m/it/10.95 定 理 \TU/TimesNewRoman(0)/m/it/12 3\TU/TimesNewRoman(
+0)/m/it/10.95 .1[][][] []Parallel Axis Theorem/Steiner Theorem(\TU/SimSun(0)/m/
+it/10.95 平 行 轴 定 理\TU/TimesNewRoman(0)/m/it/10.95 /\TU/SimSun(0)/m/it/10.95 施 泰
+ 纳 定 理\TU/TimesNewRoman(0)/m/it/10.95 )[]—
+ []
+
 \c@prove3.3=\count415
 
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 322--322
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 318--318
 [][] 
  []
 
@@ -1635,17 +1644,16 @@ p)
  [13]
 \c@prove3.6=\count418
 \c@prove3.7=\count419
-
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 379--379
+ [14]
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 375--375
 [][] 
  []
 
-[14]
 \c@chapter3_translation=\count420
 \c@prove3.8=\count421
 File: ../figures/figure3/chapter3_earth.png Graphic file (type bmp)
 <../figures/figure3/chapter3_earth.png>
- [15]) (../chapters/chapter3/chapter3_exercise.tex [16]
+[15] [16]) (../chapters/chapter3/chapter3_exercise.tex [17]
 \c@solution3.1=\count422
 File: ../figures/figure3/chapter3_example_1.png Graphic file (type bmp)
 <../figures/figure3/chapter3_example_1.png>
@@ -1654,39 +1662,39 @@ File: ../figures/figure3/chapter3_example_2.png Graphic file (type bmp)
 <../figures/figure3/chapter3_example_2.png>
 \c@solution3.3=\count424
 
-(./figures/chapter3_example_3_3.tikz) [17]
+(./figures/chapter3_example_3_3.tikz) [18]
 \c@solution3.4=\count425
 File: ../figures/figure3/chapter3_massive_pulley.png Graphic file (type bmp)
 <../figures/figure3/chapter3_massive_pulley.png>
 \c@solution3.5=\count426
 File: ../figures/figure3/chapter3_string.png Graphic file (type bmp)
 <../figures/figure3/chapter3_string.png>
- [18]
+ [19]
 \c@solution3.6=\count427
 File: ../figures/figure3/chapter3_rotating_rod_1.png Graphic file (type bmp)
 <../figures/figure3/chapter3_rotating_rod_1.png>
 File: ../figures/figure3/chapter3_rotating_rod_2.png Graphic file (type bmp)
 <../figures/figure3/chapter3_rotating_rod_2.png>
 )
-(../chapters/chapter4/chapter4_main.tex [19]
+(../chapters/chapter4/chapter4_main.tex [20]
 第四章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 6--6
 [][][][][][][][][]  
  []
 
-[20
+[21
 
-] [21]) (../chapters/chapter4/chapter4_exercise.tex
+] [22]) (../chapters/chapter4/chapter4_exercise.tex
 \c@solution4.1=\count428
 File: ../figures/figure4/chapter4_流体静力学.png Graphic file (type bmp)
 <../figures/figure4/chapter4_流体静力学.png>
- [22]
+ [23]
 \c@solution4.2=\count429
 File: ../figures/figure4/chapter4_流体动力学.png Graphic file (type bmp)
 <../figures/figure4/chapter4_流体动力学.png>
 )
-(../chapters/chapter5/chapter5_main.tex [23]
+(../chapters/chapter5/chapter5_main.tex [24]
 第五章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
@@ -1694,7 +1702,7 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
  []
 
 ) (../chapters/chapter5/chapter5_exercise.tex)
-(../chapters/chapter6/chapter6_main.tex [24
+(../chapters/chapter6/chapter6_main.tex [25
 
 ]
 第六章
@@ -1703,14 +1711,14 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-(./figures/chapter6_frames.tikz) [25
+(./figures/chapter6_frames.tikz) [26
 
 ]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 52--52
 [][] 
  []
 
-[26]
+[27]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 61--61
 [][] 
  []
@@ -1719,7 +1727,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 61--61
 (./figures/chapter6_framess.tikz)
 File: ../figures/figure6/chapter_6_2.png Graphic file (type bmp)
 <../figures/figure6/chapter_6_2.png>
- [27] [28]
+ [28] [29]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 117--117
 [][] 
  []
@@ -1730,95 +1738,84 @@ Overfull \hbox (4.37537pt too wide) in paragraph at lines 127--127
 []|$[]$ 
  []
 
-[29]
+[30]
 \c@prove6.3=\count432
- [30]
-File: ../figures/figure6/chapter_6_6.png Graphic file (type bmp)
-<../figures/figure6/chapter_6_6.png>
+ [31] (./figures/chapter6_example_6_2.tikz)
 \c@chapter6_length_contraction=\count433
 \c@law6.1=\count434
- [31]
-Overfull \hbox (4.37537pt too wide) in paragraph at lines 202--202
+ [32]
+Overfull \hbox (4.37537pt too wide) in paragraph at lines 201--201
 []|$[]$ 
  []
 
 \c@prove6.4=\count435
 File: ../figures/figure6/chapter_6_3.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_3.jpg>
-[32]
+[33]
 \c@prove6.5=\count436
 
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 239--239
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 238--238
 [][] 
  []
 
 
-Overfull \hbox (4.37537pt too wide) in paragraph at lines 243--243
+Overfull \hbox (4.37537pt too wide) in paragraph at lines 242--242
 []|$[]$ 
  []
 
 \c@prove6.6=\count437
-(./figures/chapter6_framess.tikz) [33] (./figures/chapter6_framess.tikz)
-[34]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 280--280
+(./figures/chapter6_framess.tikz) [34] (./figures/chapter6_framess.tikz)
+[35]
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 279--279
 [][] 
  []
 
-(./figures/chapter6_framess.tikz) [35]
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 295--295
-[][] 
- []
-
-
-Overfull \hbox (12.69998pt too wide) in paragraph at lines 295--295
+(./figures/chapter6_framess.tikz) [36]
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 294--294
 [][] 
  []
 
 
-LaTeX Warning: Marginpar on page 36 moved.
+Overfull \hbox (12.69998pt too wide) in paragraph at lines 294--294
+[][] 
+ []
 
-(./figures/chapter6_dpl.tikz) [36]
+
+LaTeX Warning: Marginpar on page 37 moved.
+
+(./figures/chapter6_dpl.tikz) [37]
 \c@chapter6_principle_of_relativity=\count438
+ [38]
 \c@chapter6_invariant=\count439
- [37] (./figures/chapter6_mins1.tikz)
-(./figures/chapter6_mins4.tikz) [38] (./figures/chapter6_mins2.tikz)
-Underfull \hbox (badness 1383) in paragraph at lines 381--382
-[] [] [] \TU/SimSun(0)/m/n/10.95 我 们 把 光 子 的 世 界 线 称 为 [] []，|  并 认 为 图 中 的 黄 色
- 区 域 在
- []
-
-[39] (./figures/chapter6_mins3.tikz) [40] (./figures/chapter6_mins5.tikz)
-(./figures/chapter6_mins6.tikz) [41]
+ (./figures/chapter6_mins1.tikz)
+[39] (./figures/chapter6_mins4.tikz) (./figures/chapter6_mins2.tikz) [40]
+(./figures/chapter6_mins3.tikz) [41] (./figures/chapter6_mins5.tikz) [42]
+(./figures/chapter6_mins6.tikz)
 \c@prove6.7=\count440
- (./figures/chapter6_mins7.tikz)
-(./figures/chapter6_mins8.tikz) [42] [43] (./figures/chapter6_mins9.tikz)
-[44]) (../chapters/chapter6/chapter6_exercise.tex [45]
+ [43] (./figures/chapter6_mins7.tikz)
+(./figures/chapter6_mins8.tikz) [44] [45] (./figures/chapter6_mins9.tikz)
+[46]) (../chapters/chapter6/chapter6_exercise.tex [47]
 \c@solution6.1=\count441
 File: ../figures/figure6/chapter_6_7.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_7.jpg>
 \c@solution6.2=\count442
 
-(./figures/chapter6_solution_6_2_1.tikz) [46]
+(./figures/chapter6_solution_6_2_1.tikz) [48]
 \c@solution6.3=\count443
 \c@solution6.4=\count444
 File: ../figures/figure6/chapter_6_20.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_20.jpg>
- [47]
+ [49]
 \c@solution6.5=\count445
 File: ../figures/figure6/chapter_6_23.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_23.jpg>
 \c@solution6.6=\count446
 File: ../figures/figure6/chapter_6_24.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_24.jpg>
- [48]
+ [50]
 \c@solution6.7=\count447
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--93
-| \TU/TimesNewRoman(0)/m/n/10.95 (iii) The energy-momentum relation for a photo
-n is that of a particle
- []
-
-[49]) (../chapters/chapter7/chapter7_main.tex [50]
+ [51])
+(../chapters/chapter7/chapter7_main.tex [52]
 第七章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
@@ -1827,23 +1824,38 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--9
-[] []
+\TU/SimSun(0)/m/it/10.95 学\TU/TimesNewRoman(0)/m/n/10.95 )[]\TU/SimSun(0)/m/n/1
+0.95 与[]\TU/TimesNewRoman(0)/m/it/10.95 Themiodynamics\TU/TimesNewRoman(0)/m/n/
+10.95 (\TU/SimSun(0)/m/it/10.95 热 力 学\TU/TimesNewRoman(0)/m/n/10.95 )[]
  []
 
-[51
+[53
 
 ]
 \c@prove7.11=\count448
 \c@prove7.1=\count449
- [52]
-\c@prove7.10=\count450
- [53]
-\c@prove7.9=\count451
  [54]
-\c@prove7.2=\count452
+\c@prove7.10=\count450
  [55] [56]
-\c@prove7.3=\count453
+\c@prove7.9=\count451
+\c@prove7.2=\count452
  [57]
+Underfull \hbox (badness 2253) in paragraph at lines 199--201
+[][]\TU/TimesNewRoman(0)/m/it/10.95 System\TU/TimesNewRoman(0)/m/n/10.95 (\TU/S
+imSun(0)/m/it/10.95 系 统\TU/TimesNewRoman(0)/m/n/10.95 )[]\TU/SimSun(0)/m/n/10.9
+5 是 选 定 作 为 研 究 对 象 的 那 部 分 物 质 及 其 所 占 有 的 空 间，|  系 统 是
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
+\TU/SimSun(0)/m/n/10.95 有[]\TU/TimesNewRoman(0)/m/it/10.95 Boundary\TU/TimesNew
+Roman(0)/m/n/10.95 (\TU/SimSun(0)/m/it/10.95 边 界\TU/TimesNewRoman(0)/m/n/10.95 
+)[]
+ []
+
+[58] [59]
+\c@prove7.3=\count453
+ [60]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 262--262
 [][] 
  []
@@ -1856,12 +1868,12 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 275--275
 \c@prove7.4=\count454
 \c@prove7.5=\count455
 \c@prove7.6=\count456
-[58] [59] (./figures/chapter7_otto_cycle.tikz)
+[61] [62] (./figures/chapter7_otto_cycle.tikz)
 \c@prove7.7=\count457
 
 (./figures/chapter7_carnot_cycle.tikz)
 \c@prove7.8=\count458
- [60]
+ [63]
 \c@example7.6=\count459
 
 Underfull \hbox (badness 2409) in paragraph at lines 411--422
@@ -1870,37 +1882,38 @@ Underfull \hbox (badness 2409) in paragraph at lines 411--422
  无 法 发 生 的。|  这 正 是
  []
 
-[61] [62]
+[64] [65]
 Overfull \hbox (4.37537pt too wide) in paragraph at lines 471--471
 []|$[]$ 
  []
 
-) (../chapters/chapter7/chapter7_exercise.tex [63]
+) (../chapters/chapter7/chapter7_exercise.tex [66]
 \c@solution7.1=\count460
 \c@solution7.2=\count461
 \c@solution7.3=\count462
+ [67]
 \c@solution7.4=\count463
 
-(./figures/chapter7_solution_7_4.tikz) [64]
+(./figures/chapter7_solution_7_4.tikz)
 \c@solution7.5=\count464
-
-(./figures/chapter7_solution_7_5.tikz) [65]
+ (./figures/chapter7_solution_7_5.tikz)
+[68]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 84--84
 [][] 
  []
 
 \c@solution7.6=\count465
-) [66]
+) [69]
 Missing character: There is no ^^88 ("88) in font nullfont!
 Missing character: There is no ^^88 ("88) in font nullfont!
-(../chapters/chapter1/chapter1_prove.tex [67]
+(../chapters/chapter1/chapter1_prove.tex [70]
 第一章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-) (../chapters/chapter2/chapter2_prove.tex [68
+) (../chapters/chapter2/chapter2_prove.tex [71
 
 ]
 第二章
@@ -1909,7 +1922,7 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-) (../chapters/chapter3/chapter3_prove.tex [69
+) (../chapters/chapter3/chapter3_prove.tex [72
 
 ]
 第三章
@@ -1925,7 +1938,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 2--2
 
 \c@chapter3_connection=\count466
 \c@chapter3_double_cross_product=\count467
-[70
+[73
 
 ]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 22--22
@@ -1943,18 +1956,18 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 45--45
  []
 
 \c@chapter3_rotation_CM=\count468
-[71]
+[74]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 59--59
 [][] 
  []
 
 \c@chapter3_derivation=\count469
-[72]
+[75]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 84--84
 [][] 
  []
 
-[73]
+[76]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 100--100
 [][] 
  []
@@ -1965,21 +1978,21 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 100--100
  []
 
 
-LaTeX Warning: Marginpar on page 74 moved.
+LaTeX Warning: Marginpar on page 77 moved.
 
 
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 156--156
 [][] 
  []
 
-[74] [75]) (../chapters/chapter4/chapter4_prove.tex [76]
+[77] [78]) (../chapters/chapter4/chapter4_prove.tex [79]
 第四章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 2--2
 [][][][][][][][][]  
  []
 
-) (../chapters/chapter5/chapter5_prove.tex [77
+) (../chapters/chapter5/chapter5_prove.tex [80
 
 ]
 第五章
@@ -1988,7 +2001,7 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-) (../chapters/chapter6/chapter6_prove.tex [78
+) (../chapters/chapter6/chapter6_prove.tex [81
 
 ]
 第六章
@@ -2002,14 +2015,14 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 2--2
 [][] 
  []
 
-(./figures/chapter6_framess.tikz) [79
+(./figures/chapter6_framess.tikz) [82
 
-] [80]
+] [83]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 77--77
 [][] 
  []
 
-(./figures/chapter6_length_contraction.tikz) [81]
+(./figures/chapter6_length_contraction.tikz) [84]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 115--115
 [][] 
  []
@@ -2020,12 +2033,12 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 132--132
  []
 
 (./figures/chapter6_momentum1.tikz) (./figures/chapter6_momentum2.tikz)
-[82] [83]
+[85] [86]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 187--187
 [][] 
  []
 
-[84]
+[87]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 205--205
 [][] 
  []
@@ -2036,14 +2049,14 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 205--205
  []
 
 
-LaTeX Warning: Marginpar on page 85 moved.
+LaTeX Warning: Marginpar on page 88 moved.
 
-(./figures/chapter6_framess.tikz) [85]
+(./figures/chapter6_framess.tikz) [88]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 230--230
 [][] 
  []
 
-) (../chapters/chapter7/chapter7_prove.tex [86]
+) (../chapters/chapter7/chapter7_prove.tex [89]
 第七章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
@@ -2055,7 +2068,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 6--6
 [][] 
  []
 
-[87
+[90
 
 ]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 40--40
@@ -2065,7 +2078,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 40--40
 File: ../figures/figure7/chapter7_mean_path.png Graphic file (type bmp)
 <../figures/figure7/chapter7_mean_path.png>
 \c@prove7.13=\count470
-[88]
+[91]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 65--65
 [][] 
  []
@@ -2081,14 +2094,14 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 87--87
  []
 
 
-LaTeX Warning: Marginpar on page 89 moved.
+LaTeX Warning: Marginpar on page 92 moved.
 
 
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 95--95
 [][] 
  []
 
-[89]
+[92]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 107--107
 [][] 
  []
@@ -2099,14 +2112,14 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 107--107
  []
 
 
-LaTeX Warning: Marginpar on page 90 moved.
+LaTeX Warning: Marginpar on page 93 moved.
 
 
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 143--143
 [][] 
  []
 
-(./figures/chapter7_otto_cycle.tikz) [90]
+(./figures/chapter7_otto_cycle.tikz) [93]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 160--160
 [][] 
  []
@@ -2116,7 +2129,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 195--195
 [][] 
  []
 
-[91] [92] [93]
+[94] [95] [96]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 314--314
 [][] 
  []
@@ -2127,9 +2140,9 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 314--314
  []
 
 
-LaTeX Warning: Marginpar on page 94 moved.
+LaTeX Warning: Marginpar on page 97 moved.
 
-[94]
+[97]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 360--360
 [][] 
  []
@@ -2140,17 +2153,17 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 360--360
  []
 
 
-LaTeX Warning: Marginpar on page 95 moved.
+LaTeX Warning: Marginpar on page 98 moved.
 
-[95] [96]
+[98] [99]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 437--437
 [][] 
  []
 
-[97] [98])
+[100] [101])
 Missing character: There is no ^^88 ("88) in font nullfont!
 Missing character: There is no ^^88 ("88) in font nullfont!
-(../chapters/chapter1/chapter1_answer.tex [99
+(../chapters/chapter1/chapter1_answer.tex [102
 
 ]
 第一章
@@ -2164,7 +2177,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 9--9
 [][] 
  []
 
-) (../chapters/chapter2/chapter2_answer.tex [100
+) (../chapters/chapter2/chapter2_answer.tex [103
 
 ]
 第二章
@@ -2173,7 +2186,7 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-) (../chapters/chapter3/chapter3_answer.tex [101
+) (../chapters/chapter3/chapter3_answer.tex [104
 
 ]
 第三章
@@ -2189,7 +2202,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 11--11
 
 File: ../figures/figure3/chapter3_example_1.png Graphic file (type bmp)
 <../figures/figure3/chapter3_example_1.png>
-[102
+[105
 
 ]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 37--37
@@ -2199,21 +2212,21 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 37--37
 File: ../figures/figure3/chapter3_example_2.png Graphic file (type bmp)
 <../figures/figure3/chapter3_example_2.png>
 \c@chapter3_moment_inertia2=\count471
-[103] [104]
+[106] [107]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 87--87
 [][] 
  []
 
 (./figures/chapter3_example_3_3.tikz)
 \c@law3.1=\count472
- [105]
+ [108]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 119--119
 [][] 
  []
 
 File: ../figures/figure3/chapter3_massive_pulley.png Graphic file (type bmp)
 <../figures/figure3/chapter3_massive_pulley.png>
-[106]
+[109]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 150--150
 [][] 
  []
@@ -2229,7 +2242,7 @@ File: ../figures/figure3/chapter3_rotating_rod_1.png Graphic file (type bmp)
 <../figures/figure3/chapter3_rotating_rod_1.png>
 File: ../figures/figure3/chapter3_rotating_rod_2.png Graphic file (type bmp)
 <../figures/figure3/chapter3_rotating_rod_2.png>
-[107] [108] [109]) (../chapters/chapter4/chapter4_answer.tex [110]
+[110] [111] [112]) (../chapters/chapter4/chapter4_answer.tex [113]
 第四章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
@@ -2245,23 +2258,23 @@ File: ../figures/figure4/chapter4_流体静力学.png Graphic file (type bmp)
 <../figures/figure4/chapter4_流体静力学.png>
 File: ../figures/figure4/chapter4_E1_A1.png Graphic file (type bmp)
 <../figures/figure4/chapter4_E1_A1.png>
-[111
+[114
 
-] [112]
+] [115]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 36--36
 [][] 
  []
 
 File: ../figures/figure4/chapter4_流体动力学.png Graphic file (type bmp)
 <../figures/figure4/chapter4_流体动力学.png>
-) (../chapters/chapter5/chapter5_answer.tex [113]
+) (../chapters/chapter5/chapter5_answer.tex [116]
 第五章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-) (../chapters/chapter6/chapter6_answer.tex [114
+) (../chapters/chapter6/chapter6_answer.tex [117
 
 ]
 第六章
@@ -2277,7 +2290,7 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 17--17
 
 File: ../figures/figure6/chapter_6_7.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_7.jpg>
-[115
+[118
 
 ]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 38--38
@@ -2285,12 +2298,12 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 38--38
  []
 
 (./figures/chapter6_solution_6_2_2.tikz)
-(./figures/chapter6_solution_6_2_3.tikz) [116]
+(./figures/chapter6_solution_6_2_3.tikz) [119]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 69--69
 [][] 
  []
 
-(./figures/chapter6_solution_6_3.tikz) [117] [118] [119]
+(./figures/chapter6_solution_6_3.tikz) [120] [121] [122]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 138--138
 [][] 
  []
@@ -2298,28 +2311,28 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 138--138
 File: ../figures/figure6/chapter_6_20.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_20.jpg>
 (./figures/chapter6_solution_6_4_1.tikz)
-(./figures/chapter6_solution_6_4_2.tikz) [120] [121] [122]
+(./figures/chapter6_solution_6_4_2.tikz) [123] [124] [125]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 198--198
 [][] 
  []
 
 File: ../figures/figure6/chapter_6_23.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_23.jpg>
-[123] [124]
+[126] [127]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 244--244
 [][] 
  []
 
 File: ../figures/figure6/chapter_6_24.jpg Graphic file (type bmp)
 <../figures/figure6/chapter_6_24.jpg>
-[125] [126]
+[128] [129]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 291--291
 [][] 
  []
 
 \c@law6.5=\count473
 \c@chapter6_photon=\count474
-[127] [128]) (../chapters/chapter7/chapter7_answer.tex [129]
+[130] [131]) (../chapters/chapter7/chapter7_answer.tex [132]
 第七章
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
@@ -2331,14 +2344,14 @@ Overfull \hbox (12.69998pt too wide) in paragraph at lines 3--3
 [][] 
  []
 
-[130
+[133
 
 ]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 28--28
 [][] 
  []
 
-[131]
+[134]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 70--70
 [][] 
  []
@@ -2353,39 +2366,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--137
 
  []
 
-[132] [133]
+[135] [136]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 171--171
 [][] 
  []
 
-(./figures/chapter7_solution_7_4.tikz) [134] [135]
+(./figures/chapter7_solution_7_4.tikz) [137] [138]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 251--251
 [][] 
  []
 
 (./figures/chapter7_solution_7_5.tikz)
 \c@law7.2=\count475
- [136] [137] [138]
+ [139] [140] [141]
 Overfull \hbox (12.69998pt too wide) in paragraph at lines 411--411
 [][] 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--411
+\TU/TimesNewRoman(0)/m/it/10.95 (a) Suppose the amount of heat exchange during 
+the []isothermal process(\TU/SimSun(0)/m/it/10.95 等
+ []
+
+
+Underfull \hbox (badness 7777) in paragraph at lines 411--411
+\TU/SimSun(0)/m/it/10.95 温 过 程\TU/TimesNewRoman(0)/m/it/10.95 )[] with the hot 
+(cold) heat bath is $\OML/cmm/m/it/10.95 Q[]$ \TU/TimesNewRoman(0)/m/it/10.95 (
+$\OML/cmm/m/it/10.95 Q[]$\TU/TimesNewRoman(0)/m/it/10.95 ), and determine the e
+n-
+ []
+
+
+Underfull \hbox (badness 6775) in paragraph at lines 411--411
+\TU/TimesNewRoman(0)/m/it/10.95 tropy change $\OT1/cmr/m/n/10.95 ^^A\OML/cmm/m/
+it/10.95 S[]$ \TU/TimesNewRoman(0)/m/it/10.95 and $\OT1/cmr/m/n/10.95 ^^A\OML/c
+mm/m/it/10.95 S[]$ \TU/TimesNewRoman(0)/m/it/10.95 of the working substance in 
+the respective pro-
+ []
+
+
+Underfull \hbox (badness 7944) in paragraph at lines 411--411
+\TU/TimesNewRoman(0)/m/it/10.95 cess. Then, specify $\OT1/cmr/m/n/10.95 ^^A\OML
+/cmm/m/it/10.95 S[]$ \TU/TimesNewRoman(0)/m/it/10.95 and $\OT1/cmr/m/n/10.95 ^^
+A\OML/cmm/m/it/10.95 S[]$ \TU/TimesNewRoman(0)/m/it/10.95 are positive or negat
+ive. Here, take
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 411--411
+\TU/TimesNewRoman(0)/m/it/10.95 the positive sign of $\OML/cmm/m/it/10.95 Q[]$ 
+\TU/TimesNewRoman(0)/m/it/10.95 and $\OML/cmm/m/it/10.95 Q[]$ \TU/TimesNewRoman
+(0)/m/it/10.95 for the heat input from the heat bath to the
+ []
+
 \c@chapter7_process_introduction=\count476
-[139]) [140] (./main.aux)
+[142]) [143] (./main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2022/08/05>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B023B809AD617AB8721AEC222271E706;12070.
  ) 
 Here is how much of TeX's memory you used:
- 49960 strings out of 474924
- 1171183 string characters out of 5765037
+ 47344 strings out of 474924
+ 1117448 string characters out of 5765037
  1989189 words of memory out of 5000000
- 70986 multiletter control sequences out of 15000+600000
+ 68362 multiletter control sequences out of 15000+600000
  578417 words of font info for 183 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  117i,20n,422p,3317b,1457s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (148 pages).
+Output written on main.pdf (151 pages).

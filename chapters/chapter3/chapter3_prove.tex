@@ -9,7 +9,7 @@
 	于是在等式两侧同左叉乘以$\vec{r}$，即有
 	\[\vec{r}\times\dif\vec{F}_t= \vec{r}\times(\vec{\alpha}\times\vec{r})\dif m\]
 	由双重叉乘的运算律(见\refleaftext{chapter3_double_cross_product})，知
-	\[\vec{r}\times\vec{\alpha}\times\vec{r}=(\vec{r}\cdot\vec{r})\vec{\alpha}-(\vec{r}\cdot\vec{\alpha})\vec{r}=r^2\vec{\alpha}\]
+	\[\vec{r}\times(\vec{\alpha}\times\vec{r})=(\vec{r}\cdot\vec{r})\vec{\alpha}-(\vec{r}\cdot\vec{\alpha})\vec{r}=r^2\vec{\alpha}\]
 	注意到
 	\[\vec{r}\times\dif\vec{F}_t=\vec{r}\times\dif\vec{F}_{/z}\]
 	即得
@@ -34,8 +34,8 @@
 	在只发生转动的物体中，有\[v=v_t=\omega r\]于是有
 	\begin{align*}
 		K_R&=\sum_i\dfrac{1}{2}m_iv_i{}^2&U&=\int_0^{\theta}\kappa\alpha\dif\alpha\\
-		&=\sum_i(\dfrac{1}{2}m_i r_i{}^2)\omega^2&&=\dfrac{1}{2}\kappa\alpha^2\left|_0^{\theta}\right.\\
-		&=I\omega^2&&=\dfrac{1}{2}\kappa\theta^2\\
+		&=\dfrac{1}{2}\sum_i(m_i r_i{}^2)\omega^2&&=\dfrac{1}{2}\kappa\alpha^2\left|_0^{\theta}\right.\\
+		&=\dfrac{1}{2}I\omega^2&&=\dfrac{1}{2}\kappa\theta^2\\
 		P&=\vec{F}\cdot \vec{v}&\dif W&=\vec{F}\cdot\dif \vec{x}\\
 		&=F_tv&&=F_t\dif x\\
 		&=F_tr_\omega&&=F_tr\dif\theta\\
@@ -64,7 +64,7 @@
 		&=\displaystyle\sum_im_i\vec{r}_i\times(\vec{v}_{ir}+\vec{v}_{it})\\
 		&=\displaystyle\sum_im_i(\vec{r}_i\times\vec{v}_{ir}+\vec{r}_i\times\vec{v}_{it})\\
 		&=\displaystyle\sum_im_i(\vec{0}+\vec{r}_i\times(\vec{\omega}\times\vec{r}_i))\\
-		&=\displaystyle\sum_im_i((\vec{r}_i\cdot\vec{r}_i)\vec{\omega}+(\vec{r_i}\cdot\vec{\omega})\vec{r}_i)\\
+		&=\displaystyle\sum_im_i((\vec{r}_i\cdot\vec{r}_i)\vec{\omega}-(\vec{r_i}\cdot\vec{\omega})\vec{r}_i)\\
 		&=\displaystyle\sum_im_ir_i{}^2\vec{\omega}\\
 		&=I\vec{\omega}
 	\end{array}$有关双重叉乘见\refleaftext{chapter3_double_cross_product}
@@ -197,7 +197,7 @@
 	关于加速度，我们有类似的定义
 	\[\left\{\begin{array}{c}
 		\vec{a}=a_x\base{i}+a_y\base{j}+a_z\base{k}\\[1ex]
-		a_x=\dfrac{\dif v_x}{\dif t},a_y=\dfrac{\dif v_y}{\dif t},a_z=\dfrac{\dif v_z)}{\dif t}
+		a_x=\dfrac{\dif v_x}{\dif t},a_y=\dfrac{\dif v_y}{\dif t},a_z=\dfrac{\dif v_z}{\dif t}
 	\end{array}
 	\right.\]
 	\[\left\{\begin{array}{c}

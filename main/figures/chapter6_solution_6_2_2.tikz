@@ -8,7 +8,7 @@
 		\node [style=none] (6) at (-0.5, 1.5) {};
 		\node [style=none] (7) at (0.5, 1.5) {};
 		\node [style=none] (8) at (0, 2) {$v$};
-		\node [style=none] (9) at (0, -2) {$sL$};
+		\node [style=none] (9) at (0.25, -1.5) {$sL$};
 		\node [style=mark dot] (10) at (0, -3.5) {};
 		\node [style=none] (11) at (0, -4) {O};
 		\node [style=none] (12) at (-1, -1.25) {$A$};
