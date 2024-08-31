@@ -1,11 +1,11 @@
 \ProvidesClass{Physics_H_Notes}
 %模板名称
 %-------------------------------------------------------------
-\LoadClass[openany, 11pt, a4paper, oneside]{ctexbook}
+\LoadClass[openany, 12pt, a4paper, oneside]{ctexbook}
 %使用中文书籍文档类
 %-------------------------------------------------------------
 \RequirePackage{geometry}
-\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
+\geometry{left=1.8cm,right=4.7cm,top=3cm,bottom=3cm}
 %版面大小设计
 %-------------------------------------------------------------
 \RequirePackage{comment}
@@ -28,39 +28,22 @@
     %{../figures/cover/}
 }
 %图片地址
-\newcommand{\illustyle}{\itshape}
-\NewDocumentEnvironment{singlefigure}{omO{0.95}}%
-{%
-	\begin{figure}[H]%
-		\centering%
-		\includegraphics[width=#3\textwidth]{#2}%
-		\IfNoValueTF{#1}{\par}{\vspace{-1.2ex}\caption{#1\labelrootmark{#2}}}%
-		\illustyle%
-}%
-{%
-	\end{figure}%
-}
-%单张图片，环境内容为注释，均居中
+
 %-------------------------------------------------------------
-\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
-\definecolor{c1}{RGB}{62, 97, 127}
-\definecolor{c2}{RGB}{104, 182, 182}
-\definecolor{c3}{RGB}{107, 190, 190}
-\definecolor{c4}{RGB}{100, 172, 174}
-\definecolor{c5}{RGB}{95, 162, 162}
+
 \setmainfont{Times New Roman}
 
 %-------------------------------------------------------------
 \RequirePackage%
 [	bookmarksopen=true,
-	bookmarksnumbered=true,
-	pdfborder={0 0 0},
-	colorlinks=true,
-	linkcolor=blue,
-	hyperfootnotes=false,
-	urlcolor=blue,
-	anchorcolor=blue,
-	citecolor=blue
+bookmarksnumbered=true,
+pdfborder={0 0 0},
+colorlinks=true,
+linkcolor=thisblue,
+hyperfootnotes=false,
+urlcolor=thisblue,
+anchorcolor=thisblue,
+citecolor=thisblue
 ]{hyperref}
 %启用超链接和书签目录
 %-------------------------------------------------------------
@@ -70,10 +53,6 @@
 %为方便计算交互词长度，使用宏包calc
 \newlength{\ItrLenMax}
 \newcounter{ItrCtr}
-\colorlet{plainred}{red!80!black}
-\colorlet{plaincyan}{cyan!80!black}
-\colorlet{plaingreen}{green!70!black}
-\colorlet{orangepink}{orange!20!pink}
 
 %常用颜色，主要是护眼（）
 \RequirePackage{keyval}
@@ -83,8 +62,107 @@
     prefix=@physicsHNotes@
 }
 \DeclareBoolOption[false]{stable}
+\DeclareBoolOption[false]{dark}
 \ProcessKeyvalOptions*
 \relax
+
+\if@physicsHNotes@dark
+	\colorlet{thisred}{-red}
+	\colorlet{thisskyblue}{red}
+	\colorlet{thiscyan}{-cyan}
+	\colorlet{thisgreen}{-green}
+	\colorlet{thisblack}{black!15!white}
+	\colorlet{thiswhite}{white!10!black}
+	\colorlet{thisyellow}{-yellow}
+	\colorlet{thisblue}{-blue}
+	\colorlet{thisteal}{-teal}
+	\colorlet{thispink}{-pink}
+	\colorlet{thisorange}{-orange}
+	\definecolor{backgroundcolor}{RGB}{39,38,38}
+	\definecolor{textcolor}{RGB}{202,201,201}
+	\RequirePackage[DarkBjornstrup]{fncychap}
+	\newcommand{\illustyle}{\itshape}
+	\NewDocumentCommand{\thisincludegraphics}{O{}m}{\includegraphics[#1]{inversed_#2}}
+	\definecolor{titlepagecolor}{cmyk}{0,.40,1,.60}
+	\definecolor{c1}{RGB}{193, 158, 128}
+	\definecolor{c2}{RGB}{151, 73, 73}
+	\definecolor{c3}{RGB}{148, 65, 65}
+	\definecolor{c4}{RGB}{155, 93, 91}
+	\definecolor{c5}{RGB}{160, 93, 93}
+	\definecolor{lawcolbacktitle}{RGB}{44,44,44}
+	\definecolor{lawcolback}{RGB}{53,54,55}
+	\definecolor{provecolbacktitle}{RGB}{44,44,44}
+	\definecolor{provecolback}{RGB}{53,54,55}
+	\definecolor{examplecolbacktitle}{RGB}{44,44,44}
+	\definecolor{examplecolback}{RGB}{53,54,55}
+	\definecolor{excolbacktitle}{RGB}{44,44,44}
+	\definecolor{excolback}{RGB}{53,54,55}
+	\definecolor{solutioncolbacktitle}{RGB}{44,44,44}
+	\definecolor{solutioncolback}{RGB}{53,54,55}
+	\definecolor{socolbacktitle}{RGB}{44,44,44}
+	\definecolor{socolback}{RGB}{53,54,55}
+	\definecolor{colframe}{RGB}{46,45,45}
+	\definecolor{thisreftreecolor}{RGB}{203,153,255}
+	\definecolor{plaincyan}{RGB}{102,255,178}
+\else
+	\colorlet{thisred}{red}
+	\colorlet{thisskyblue}{-red}
+	\colorlet{thiscyan}{cyan}
+	\colorlet{thisgreen}{green}
+	\colorlet{thisblack}{black}
+	\colorlet{thiswhite}{white}
+	\colorlet{thisyellow}{yellow}
+	\colorlet{thisteal}{teal}
+	\colorlet{thisblue}{blue}
+	\colorlet{thispink}{pink}
+	\colorlet{thisorange}{orange}
+	\definecolor{backgroundcolor}{RGB}{255, 255, 255}
+	\definecolor{textcolor}{RGB}{0, 0, 0}
+	\RequirePackage[Bjornstrup]{fncychap}
+	\newcommand{\illustyle}{\itshape}
+	\NewDocumentCommand{\thisincludegraphics}{O{}m}{\includegraphics[#1]{#2}}
+	\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
+	\definecolor{c1}{RGB}{62, 97, 127}
+	\definecolor{c2}{RGB}{104, 182, 182}
+	\definecolor{c3}{RGB}{107, 190, 190}
+	\definecolor{c4}{RGB}{100, 172, 174}
+	\definecolor{c5}{RGB}{95, 162, 162}
+	\colorlet{provecolbacktitle}{thisyellow!7!thiswhite}
+	\colorlet{provecolback}{thiscyan!7!thiswhite}
+	\colorlet{lawcolbacktitle}{thisyellow!7!thiswhite}
+	\colorlet{lawcolback}{thiscyan!7!thiswhite}
+	\colorlet{examplecolbacktitle}{thisyellow!7!thiswhite}
+	\colorlet{examplecolback}{thisgreen!2!thiswhite}
+	\colorlet{excolback}{thiscyan!5!thiswhite}
+	\colorlet{excolbacktitle}{thisred!5!thiswhite}
+	\colorlet{solutioncolback}{thisgreen!1.5!thiswhite}
+	\colorlet{solutioncolbacktitle}{thisyellow!3!thiswhite}
+	\colorlet{socolback}{thisgreen!1.5!thiswhite}
+	\colorlet{socolbacktitle}{thisyellow!3!thiswhite}
+	\colorlet{colframe}{thisblack!50!thiswhite}
+	\colorlet{thisreftreecolor}{-green}
+	\colorlet{plaincyan}{thiscyan!60!thisblack}
+\fi
+	\colorlet{plainred}{thisred!80!thisblack}
+	\colorlet{plaingreen}{thisgreen!70!thisblack}
+	\colorlet{orangepink}{thisorange!20!thispink}
+\pagecolor{backgroundcolor}
+\color{textcolor}
+
+\NewDocumentEnvironment{singlefigure}{omO{0.95}}%
+{%
+	\begin{figure}[H]%
+		\centering%
+		\thisincludegraphics[width=#3\textwidth]{#2}%
+		\IfNoValueTF{#1}{\par}{\vspace{-1.2ex}\caption{#1\labelroot{#2}}}%
+		\illustyle%
+	}%
+	{%
+	\end{figure}%
+}
+%单张图片，环境内容为注释，均居中
+%根据dark是否启用调整配色方案
+
 
 \if@physicsHNotes@stable
     \newcommand{\itr}[2]{\textcolor{plaincyan}{\textit{#1}\textrm{(}\textit{#2}\textrm{)}}}
@@ -112,24 +190,25 @@
         }%
     }
 \fi
+
 %模板key定制。stable用于支持功能较弱的pdf阅读器。
 %可交互词定义
 %-------------------------------------------------------------
 \newcommand{\En}[1]%
 {%
-	\textcolor{plainred}{\textit{#1}}%
+	\textit{#1}%
 }
-%写英文时使用该命令，修改颜色
+%写英文时使用该命令
 %-------------------------------------------------------------
 \counterwithin{footnote}{chapter}
 %让脚注编号随章改变
 \renewcommand{\thefootnote}%
 {%
-	{\textcolor{teal!60!black}{[\arabic{footnote}]}}%
+	{\textcolor{thisteal!60!thisblack}{[\arabic{footnote}]}}%
 }
 %设置脚注样式
-
-\RequirePackage[Mgcounter=chapter,Mglength=5em]{mgnote}
+\RequirePackage{tcolorbox}
+\RequirePackage[father=chapter,width=8.5em,betweensep=1.2ex,numbercolor=thisred,textcolor=textcolor,sidesep=20pt]{mgnote}
 %使用自己编写的mgnote包编辑边注
 %-------------------------------------------------------------
 \RequirePackage{xcolor}
@@ -148,8 +227,7 @@
 \cfoot{\em\large\thepage}
 %页面样式设置
 
-\RequirePackage[Bjornstrup]{fncychap}
-%章结构优化显示
+
 %-------------------------------------------------------------
 \newcommand{\dove}%
 {%
@@ -177,9 +255,11 @@
 %使用新构建命令\upperline获得带上划线的文字，默认在数学模式下使用
 \renewcommand{\vec}[1]{\boldsymbol{#1}}
 %向量采用粗体显示
+\providecommand{\Romannumeral}[1]{\uppercase\expandafter{\romannumeral #1}}
+%支持大写罗马字母显示
 %-------------------------------------------------------------
 
-\RequirePackage[Clever,Unified]{reftree}
+\RequirePackage[clever,framecolor=textcolor,refcolor=thisreftreecolor,labelcolor=thisreftreecolor,width=7em]{reftree}
 %交叉引用设置采用自己编写的reftree宏包，实现超链接卡片
 %-------------------------------------------------------------
 \newcommand{\eg}{{\itshape e.g.}\ }
@@ -192,16 +272,10 @@
 \RequirePackage{tabularray}
 %利用tabularray宏包编写表格
 %-------------------------------------------------------------
-\RequirePackage{tcolorbox}
+
 \tcbuselibrary{most}
 \newenvironment{Itemize}{\begin{itemize}}{\end{itemize}}
-\tcolorboxenvironment{Itemize}%
-{
-	blanker,
-	before skip = 10pt,
-	after skip = 10pt,
-	borderline west = {3mm}{15.5pt}{red!10!white}
-}
+
 %设计书签格式itemize
 
 \newcounter{law}
@@ -209,18 +283,18 @@
 \renewcommand{\thelaw}{{\large\arabic{chapter}}.\arabic{law}}
 \newtcolorbox{lawbox}[1][1]%
 {
-	colback=cyan!10!white,
-	colbacktitle=yellow!10!white,
+	colback=lawcolback,
+	colbacktitle=lawcolbacktitle,
 	coltitle=plainred,
-	title={\itshape 定理\thelaw\labelrootmark{law\arabic{chapter}.\arabic{law}}\ #1},
-	colframe=black!50!white,
+	title={\itshape 定理\thelaw\labelroot{law\arabic{chapter}.\arabic{law}}\ #1},
+	colframe=colframe,
+	coltext=textcolor,
 	boxrule=0.6pt,
 	breakable
 }
 \NewDocumentEnvironment{law}{O{未命名定理}}%
 {%
 	\refstepcounter{law}%
-	\labelroot*{law\arabic{chapter}.\arabic{law}}[3.2ex]%
 	\begin{lawbox}[#1]%
 }%
 {%
@@ -234,18 +308,18 @@
 \renewcommand{\theprove}{{\large\arabic{chapter}}.\arabic{prove}}
 \newtcolorbox{provebox}[1][1]%
 {
-	colback=cyan!10!white,
-	colbacktitle=yellow!10!white,
+	colback=provecolback,
+	colbacktitle=provecolbacktitle,
 	coltitle=plainred,
-	title={\itshape 证明\theprove\labelrootmark{prove\arabic{chapter}.\arabic{prove}}\ #1},
-	colframe=black!50!white,
+	title={\itshape 证明\theprove\labelroot{prove\arabic{chapter}.\arabic{prove}}\ #1},
+	colframe=colframe,
+	coltext=textcolor,
 	boxrule=0.6pt,
 	breakable
 }
 \NewDocumentEnvironment{prove}{O{未知证明目标}}%
 {%
 	\refstepcounter{prove}%
-	\labelroot*{prove\arabic{chapter}.\arabic{prove}}[3.2ex]%
 	\begin{provebox}[#1]%
 }%
 {%
@@ -258,18 +332,18 @@
 \renewcommand{\theexample}{{\large\arabic{chapter}}.\arabic{example}}
 \newtcolorbox{examplebox}[1][1]%
 {
-	colback=green!2!white,
-	colbacktitle=yellow!10!white,
+	colback=examplecolback,
+	colbacktitle=examplecolbacktitle,
 	coltitle=plaingreen,
-	title={\itshape 习题\theexample\labelrootmark{example\arabic{chapter}.\arabic{example}}\ #1},
-	colframe=black!50!white,
+	title={\itshape 习题\theexample\labelroot{example\arabic{chapter}.\arabic{example}}\ #1},
+	colframe=colframe,
+	coltext=textcolor,
 	boxrule=0.6pt,
 	breakable
 }
 \NewDocumentEnvironment{example}{O{未命名习题}}%
 {%
 	\refstepcounter{example}%
-	\labelroot*{example\arabic{chapter}.\arabic{example}}[3.2ex]%
 	\begin{examplebox}[#1]%
 }%
 {%
@@ -282,18 +356,18 @@
 \renewcommand{\theex}{{\large\arabic{chapter}}.\arabic{ex}}
 \newtcolorbox{exbox}[1][1]%
 {
-	colback=cyan!5!white,
-	colbacktitle=red!5!white,
-	coltitle=black!70!white,
-	title={\itshape 例题\theex\labelrootmark{ex\arabic{chapter}.\arabic{ex}}\ #1},
-	colframe=black!50!white,
+	colback=excolback,
+	colbacktitle=excolbacktitle,
+	coltitle=thisblack!70!thiswhite,
+	title={\itshape 例题\theex\labelroot{ex\arabic{chapter}.\arabic{ex}}\ #1},
+	colframe=colframe,
+	coltext=textcolor,
 	boxrule=0.6pt,
 	breakable
 }
 \NewDocumentEnvironment{ex}{O{未命名例题}}%
 {%
 	\refstepcounter{ex}%
-	\labelroot*{ex\arabic{chapter}.\arabic{ex}}[3.2ex]%
 	\begin{exbox}[#1]%
 	}%
 	{%
@@ -306,18 +380,21 @@
 \renewcommand{\thesolution}{{\large\arabic{chapter}}.\arabic{solution}}
 \newtcolorbox{solutionbox}[1][1]%
 {
-	colback=green!2!white,
-	colbacktitle=yellow!5!white,
-	coltitle=green!50!black,
-	title={\itshape {\large Solution:\thesolution\labelrootmark{solution\arabic{chapter}.\arabic{solution}}}\ #1},
-	colframe=black!50!white,
+	colback=solutioncolback,
+	colbacktitle=solutioncolbacktitle,
+	coltitle=thisgreen!50!thisblack,
+	title={\itshape Solution:\thesolution\labelroot{solution\arabic{chapter}.\arabic{solution}}\ #1},
+	colframe=colframe,
+	coltext=textcolor,
 	boxrule=0.6pt,
-	breakable
+	breakable,
 }
+\newcommand{\tcbrule}{\begin{center}\begin{tikzpicture}
+		\draw[textcolor, dashed, line width=1.2pt] (0.05\linewidth,0) -- (0.95\linewidth,0);
+	\end{tikzpicture}\end{center}}
 \NewDocumentEnvironment{solution}{O{未给定习题解答}}%
 {%
 	\refstepcounter{solution}%
-	\labelroot*{solution\arabic{chapter}.\arabic{solution}}[3.2ex]%
 	\begin{solutionbox}[#1]%
 }%
 {%
@@ -330,18 +407,18 @@
 \renewcommand{\theso}{{\large\arabic{chapter}}.\arabic{so}}
 \newtcolorbox{sobox}[1][1]%
 {
-	colback=green!2!white,
-	colbacktitle=yellow!5!white,
-	coltitle=green!50!black,
-	title={\itshape {\large 解答\theso\labelrootmark{so\arabic{chapter}.\arabic{so}}}\ #1},
-	colframe=black!50!white,
+	colback=socolback,
+	colbacktitle=socolbacktitle,
+	coltitle=thisgreen!50!thisblack,
+	title={\itshape {\large 解答\theso\labelroot{so\arabic{chapter}.\arabic{so}}}\ #1},
+	colframe=colframe,
+	coltext=textcolor,
 	boxrule=0.6pt,
 	breakable
 }
-\NewDocumentEnvironment{so}{O{未给定习题解答}}%
+\NewDocumentEnvironment{so}{O{未给定例题解答}}%
 {%
 	\refstepcounter{so}%
-	\labelroot*{so\arabic{chapter}.\arabic{so}}[3.2ex]%
 	\begin{sobox}[#1]%
 	}%
 	{%
@@ -352,70 +429,15 @@
 \Crefname{example}{习题}{习题}
 \Crefname{solution}{Solution}{Solution}
 \Crefname{prove}{Prove}{Prove}
-\Crefname{EXAMPLE}{例题}{例题}
+\Crefname{ex}{例题}{例题}
+\Crefname{so}{解答}{解答}
 %各环境的引用头
 %-------------------------------------------------------------
 \newcounter{apart}
 \counterwithin{chapter}{apart}
-\newcommand{\apart}[1]%
-{
-	\newpage
-	\thispagestyle{empty}
-	\stepcounter{apart}%
-	\addcontentsline{toc}{chapter}{\large #1}%
-	\begin{tikzpicture}[overlay,remember picture,font=\sffamily\bfseries]
-		\fill[fill=green!2!white] (current page.south west) rectangle (current page.north east);
-
-		\draw[ultra thick,c4,name path=big arc] ([xshift=-2mm]current page.north) arc(150:285:11)
-		coordinate[pos=0.225] (x0);
-		\begin{scope}
-			\clip ([xshift=-2mm]current page.north) arc(150:285:11) --(current page.north
-			east);
-			\fill[c4!50,opacity=0.25] ([xshift=4.55cm]x0) circle (4.55);
-			\fill[c4!50,opacity=0.25] ([xshift=3.4cm]x0) circle (3.4);
-			\fill[c4!50,opacity=0.25] ([xshift=2.25cm]x0) circle (2.25);
-			\draw[ultra thick,c4!50] (x0) arc(-90:30:6.5);
-			\draw[ultra thick,c4] (x0) arc(90:-30:8.75);
-			\draw[ultra thick,c4!50,name path=arc1] (x0) arc(90:-90:4.675);
-			\draw[ultra thick,c4!50] (x0) arc(90:-90:2.875);
-			\path[name intersections={of=big arc and arc1,by=x1}];
-			\draw[ultra thick,c4,name path=arc2] (x1) arc(135:-20:4.75);
-			\draw[ultra thick,c4!50] (x1) arc(135:-20:8.75);
-			\path[name intersections={of=big arc and arc2,by={aux,x2}}];
-			\draw[ultra thick,c4!50] (x2) arc(180:50:2.25);
-		\end{scope}
-		\path[decoration={text along path,text color=c4,
-			raise = -2.8ex,
-			text  along path,
-			text = {|\sffamily\bfseries|},
-			text align = center,
-		},
-		decorate
-		] ([xshift=-2mm]current page.north) arc(150:245:11);
-		%
-		\begin{scope}
-			\path[clip,postaction={fill=yellow!10!white}]
-			([xshift=2cm,yshift=-9.5cm]current page.center) rectangle ++ (4.2,7.7);
-			\draw[ultra thick,plaincyan] ([xshift=-1.5cm,yshift=-9.5cm]current page.center)
-			arc(180:0:2);
-			\draw[ultra thick,plaincyan] ([xshift=0.5cm,yshift=-9.5cm]current page.center)
-			arc(180:0:2);
-			\draw[ultra thick,plaincyan] ([xshift=2.5cm,yshift=-9.5cm]current page.center)
-			arc(180:0:2);
-			\draw[ultra thick,plaincyan] ([xshift=4.5cm,yshift=-9.5cm]current page.center)
-			arc(180:0:2);
-			\fill[red!20!white] ([xshift=2.5cm,yshift=-9.5cm]current page.center) +(60:2) circle(1.5mm);
-			\node[text=c5!80!black] at ([xshift=4.7cm,yshift=-6.7cm]current page.center) {\LARGE \hspace*{-3.9em}G.P.A};
-		\end{scope}
-		%
-		\fill[red!5!white] ([xshift=2cm,yshift=-9.5cm]current page.center) rectangle ++ (-13.7,7.7);
-		\fill[red!10!white]([xshift=-2cm,yshift=-7.3cm]current page.center) rectangle ++ (-9.7,3);
-		\node[text=black!60!white,anchor=west,scale=4,inner sep=0pt] at
-		([xshift=-10.55cm,yshift=-5.8cm]current page.center) {\ \,#1};
-		\fill[orangepink!60!white] ([xshift=-2cm,yshift=-7.3cm]current page.center) -- ([xshift=-2cm,yshift=-4.3cm]current page.center) -- ([xshift=-1cm,yshift=-5.8cm]current page.center) -- cycle;
-	\end{tikzpicture}
-}
 \renewcommand{\thechapter}{\arabic{chapter}}
+\linespread{1.5}
+
 \endinput
 
 

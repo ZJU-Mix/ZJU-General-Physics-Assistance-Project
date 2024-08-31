@@ -1,79 +1,406 @@
-
-\ProvidesPackage{mgnote}
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{mgnote}[enhanced margin notes]
 \RequirePackage{kvoptions}
+\RequirePackage{tikz}
+\usetikzlibrary{calc,positioning}
+\RequirePackage{calc}
+\RequirePackage{etoolbox}
+\RequirePackage{atbegshi}
 \SetupKeyvalOptions%
 {
 	family=@MGNOTE,
 	prefix=@MGNOTE@
 }
-\DeclareStringOption[section]{Mgcounter}
-\DeclareStringOption[8em]{Mglength}
-\DeclareStringOption[raggedright]{Mgalign}
+\DeclareStringOption[section]{father}
+%决定MgCtr的父计数器
+\DeclareStringOption[8em]{width}
+%决定边注的宽度
+\DeclareStringOption[left]{align}
+%决定边注的对齐方式
+\DeclareBoolOption[false]{nonumber}
+%决定边注是不是要带序号
+\DeclareStringOption[1ex]{betweensep}
+%决定边注与边注之间的间隔
+\DeclareStringOption[red!70!black]{numbercolor}
+%决定边注序号的颜色
+\DeclareStringOption[\footnotesize]{fontsize}
+%决定边注字号
+\DeclareStringOption[\normalfont]{fontshape}
+%决定边注字体
+\DeclareStringOption[12pt]{sidesep}
+%边注与页边的距离
+\DeclareStringOption[12pt]{tcolorboxoffset}
+%在tcolorbox中的横坐标偏移量，方向向里
+\DeclareStringOption[black]{textcolor}
+%边注文字颜色
 \ProcessKeyvalOptions*
 \relax
 
-\RequirePackage{xcolor}
+\newcounter{OverAllMgCtr}
 
-\newcounter{mgnote}[\@MGNOTE@Mgcounter]
-\providecommand{\mgnotelength}{\@MGNOTE@Mglength}
-\providecommand{\mgnotealign}{\csname \@MGNOTE@Mgalign\endcsname}
-\newcounter{temporarymgnote}
+\newcommand{\MgIfStrEqual}[4]{%
+	\ifnum\pdfstrcmp{#1}{#2}=0
+		#3%
+	\else
+		#4%
+	\fi
+}
+%判断字符串是否相等
+\MgIfStrEqual{\@MGNOTE@align}{right}{
+    \providecommand{\MgAlign}{\raggedleft}
+}{}
+\MgIfStrEqual{\@MGNOTE@align}{left}{
+    \providecommand{\MgAlign}{\raggedright}
+}{}
+\MgIfStrEqual{\@MGNOTE@align}{center}{
+    \providecommand{\MgAlign}{\centering}
+}{}
 
-\NewDocumentCommand{\mgnotestyle}{sm}{%
-	\IfBooleanTF{#1}{%
-		\mbox{\tiny$_{\color{red!70!black}(\hspace{-0.12em}{#2}\hspace{-0.12em})}$}%
-	}{%
-		\mbox{\color{red!70!black}(#2)}%
-	}%
+%根据align键值修改边注对齐方式
+\providecommand{\MgFontsize}{\@MGNOTE@fontsize}
+\providecommand{\MgFontshape}{\@MGNOTE@fontshape}
+\providecommand{\MgWidth}{\@MGNOTE@width}
+\providecommand{\MgSep}{\@MGNOTE@betweensep}
+\providecommand{\MgSideSep}{\@MGNOTE@sidesep}
+\providecommand{\MgTcolorBoxOffset}{\@MGNOTE@tcolorboxoffset}
+\colorlet{MgTextColor}{\@MGNOTE@textcolor}
+
+\newcommand{\MgCurrentTop}{0pt}
+%当前边注顶部高度
+\newcommand{\MgLastBottom}{0pt}
+%上次边注底部高度
+\newcommand{\MgLastTop}{0pt}
+
+\newlength{\MgOffset}
+%控制marginnote的垂直偏移
+
+\newif\ifMgPushed
+\MgPushedfalse
+%提示是否发生push
+\AtBeginShipout{%
+	\ifMgPushed
+		\global\MgPushedfalse
+	\else
+		\global\def\MgLastBottom{0pt}%
+	\fi
+}
+%在每页开始时，初始化两个宏
+
+\@ifpackageloaded{tcolorbox}{
+	% 如果 tcolorbox 已加载，定义标志变量
+	\newif\ifintcolorbox
+	\intcolorboxfalse
+	% 修改 tcolorbox 的行为：进入时设为 true，离开时设为 false
+	\tcbset{
+		before title={\intcolorboxtrue},
+		before upper={\intcolorboxtrue},
+		before lower={\intcolorboxtrue},
+		after lower={\intcolorboxfalse}
+	}
+}{
+	% 如果 tcolorbox 未加载，定义一个空的标志变量
+	\newif\ifintcolorbox
+	\intcolorboxfalse
 }
 
-\newcommand{\reftemporarycounter}[2]{%
-	\setcounter{#1}{#2}\addtocounter{#1}{-1}\refstepcounter{#1}%
+\newcommand{\UpdateMgCurrentTop}{%
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[inner sep=0pt](MgTop\theOverAllMgCtr){};
+        \path(MgTop\theOverAllMgCtr.center);
+        \pgfgetlastxy{\Tmpx}{\Tmpy}%
+        \path(MgTop\theOverAllMgCtr.center);
+        \pgfgetlastxy{\Tx}{\Ty}%
+        %不知道为什么，有时一页中第一次获取的坐标会有问题，因此这里获取两次
+        \path(current page.east);
+        \pgfgetlastxy{\Ox}{\Oy}%
+        \pgfmathparse{\Ty-\Oy +1pt}%
+        \edef\MgTmpCurrentTop{\pgfmathresult pt}%
+        \global\let\MgCurrentTop\MgTmpCurrentTop%
+    \end{tikzpicture}%
 }
+%通过tikz获取当前边注顶部高度
 
-\RenewDocumentCommand{\themgnote}{s}{%
-	\IfBooleanTF{#1}{%
-		\mgnotestyle*{\arabic{mgnote}}%
-	}{%
-		\mgnotestyle{\arabic{mgnote}}%
-	}%
+\newcommand{\InitMgLastBottom}{%
+	\begin{tikzpicture}[remember picture]%
+		\global\edef\MgLastBottom{0pt}%
+	\end{tikzpicture}%
 }
+%初始化上一次的底部高度。由于所有高度的判断都取决于这一点，所以这就相当于初始化了全部
 
-\RenewDocumentCommand{\thetemporarymgnote}{s}{%
-	\IfBooleanTF{#1}{%
-		\mgnotestyle*{\arabic{temporarymgnote}}%
-	}{%
-		\mgnotestyle{\arabic{temporarymgnote}}%
-	}%
-}
-\newcommand{\anewmgnote}{\setcounter{mgnote}{0}}
-
-\NewDocumentCommand{\mgnotemark}{o}{%
-	\IfNoValueTF{#1}{%
-		\themgnote*%
-	}{%
-		\reftemporarycounter{temporarymgnote}{#1}%
-		\thetemporarymgnote*%
-	}%
-}
-\NewDocumentCommand{\mgnote}{somO{0pt}}{%
-		\IfBooleanTF{#1}{\marginpar{\vspace*{0.8ex}\vspace*{#4}{\vrule width 0.8pt}\,\parbox{\mgnotelength}{\mgnotealign\footnotesize #3}\vspace*{1.6ex}}}{\IfNoValueTF{#2}{%
-				{\refstepcounter{mgnote}%
-					\mgnotemark\marginpar{\vspace*{#4}{\vrule width 0.8pt}\,\parbox{\mgnotelength}{\mgnotealign\footnotesize\themgnote\,#3}\vspace*{0.8ex}}}%
-			}{%
-				{\reftemporarycounter{temporarymgnote}{#2}%
-					\mgnotemark[#2]\marginpar{\vspace*{0.8ex}\vspace*{#4}{\vrule width 0.8pt}\,\parbox{\mgnotelength}{\mgnotealign\footnotesize\thetemporarymgnote\,#3}\vspace*{0.8ex}}}%
-			}}%
-}
-
-\NewDocumentCommand{\mgnotetext}{omO{0pt}}{%
-	\IfNoValueTF{#1}{%
-		{\refstepcounter{mgnote}%
-		\marginpar{\vspace*{0.8ex}\vspace*{#3}{\vrule width 0.8pt}\,\parbox{\mgnotelength}{\mgnotealign\footnotesize\themgnote\,#2}\vspace*{0.8ex}}}%
-	}{%
-		{\reftemporarycounter{temporarymgnote}{#1}%
-		\marginpar{\vspace*{0.8ex}\vspace*{#3}{\vrule width 0.8pt}\,\parbox{\mgnotelength}{\mgnotealign\footnotesize\thetemporarymgnote\,#2}\vspace*{0.8ex}}}%
-	}%
-}
+\if@MGNOTE@nonumber
+	\NewDocumentCommand{\mgnote}{O{0pt}mO{0pt}}{%
+		\stepcounter{OverAllMgCtr}%
+		\UpdateMgCurrentTop%
+		\ifdefined\@captype\else%
+		%不在浮动体中
+			\ifdim\dimexpr\MgLastBottom\relax=0pt\else%
+			%不处于初始化状态
+				\ifdim\dimexpr\MgCurrentTop-\MgLastTop\relax>0pt%
+				%说明发生了push
+					\InitMgLastBottom%
+					%初始化
+					\global\MgPushedtrue%
+					%提示发生了push
+				\fi%
+			\fi%
+		\fi%
+		\begin{tikzpicture}[remember picture,overlay]
+			\global\let\MgLastTop\MgCurrentTop%
+			\path(MgTop\theOverAllMgCtr.center);
+			\pgfgetlastxy{\Tx}{\Ty}%
+			\path(current page.east);
+			\pgfgetlastxy{\Ox}{\Oy}%
+			\ifdim\dimexpr\MgCurrentTop-\MgLastBottom+\MgSep\relax>0pt%
+				\ifdefined\@captype%
+					\setlength{\MgOffset}{#3}%
+					\ifintcolorbox%
+						\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#1 , \Ty+1pt-\MgOffset) {%
+							\parbox[t][][]{\MgWidth}{%
+								\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+							}%
+						};
+					\else%
+						\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#1 , \Ty+1pt-\MgOffset) {%
+							\parbox[t][][]{\MgWidth}{%
+								\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+							}%
+						};
+					\fi%
+				\else%
+					\ifdim\dimexpr\MgLastBottom\relax=0pt%
+						\setlength{\MgOffset}{#3}%
+						\ifintcolorbox%
+							\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#1 , \Ty+1pt-\MgOffset) {%
+								\parbox[t][][]{\MgWidth}{%
+									\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+								}%
+							};
+						\else%
+							\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#1 , \Ty+1pt-\MgOffset) {%
+								\parbox[t][][]{\MgWidth}{%
+									\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+								}%
+							};
+						\fi%
+						\node[below = 0pt of MgAnchor\theOverAllMgCtr ,inner sep=0pt](MgBottom\theOverAllMgCtr) {};
+						\path(MgBottom\theOverAllMgCtr.center);
+						\pgfgetlastxy{\Bx}{\By}
+						\pgfmathparse{\By-\Oy}
+						\edef\MgTmpLastBottom{\pgfmathresult pt}
+						\global\let\MgLastBottom\MgTmpLastBottom
+					\else%
+						\setlength{\MgOffset}{\MgCurrentTop-\MgLastBottom+\MgSep+#3}%
+						\ifintcolorbox%
+							\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#1 , \Ty+1pt-\MgOffset) {%
+								\parbox[t][][]{\MgWidth}{%
+									\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+								}%
+							};
+						\else%
+							\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#1 , \Ty+1pt-\MgOffset) {%
+								\parbox[t][][]{\MgWidth}{%
+									\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+								}%
+							};
+						\fi%
+						\node[below = 0pt of MgAnchor\theOverAllMgCtr ,inner sep=0pt](MgBottom\theOverAllMgCtr) {};
+						\path(MgBottom\theOverAllMgCtr.center);
+						\pgfgetlastxy{\Bx}{\By}
+						\pgfmathparse{\By-\Oy}
+						\edef\MgTmpLastBottom{\pgfmathresult pt}
+						\global\let\MgLastBottom\MgTmpLastBottom
+					\fi%
+				\fi%
+			\else%
+				\setlength{\MgOffset}{#3}%
+				\ifintcolorbox%
+					\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#1 , \Ty+1pt-\MgOffset) {%
+						\parbox[t][][]{\MgWidth}{%
+							\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+						}%
+					};
+				\else%
+					\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#1 , \Ty+1pt-\MgOffset) {%
+						\parbox[t][][]{\MgWidth}{%
+							\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+						}%
+					};
+				\fi%
+				\node[below = 0pt of MgAnchor\theOverAllMgCtr ,inner sep=0pt](MgBottom\theOverAllMgCtr) {};
+				\path(MgBottom\theOverAllMgCtr.center);
+				\pgfgetlastxy{\Bx}{\By}
+				\pgfmathparse{\By-\Oy}
+				\edef\MgTmpLastBottom{\pgfmathresult pt}
+				\global\let\MgLastBottom\MgTmpLastBottom
+			\fi%
+		\end{tikzpicture}%
+	}
+	\NewDocumentCommand{\fixedmgnote}{O{0pt}mO{0pt}}{
+		\stepcounter{OverAllMgCtr}%
+		\begin{tikzpicture}[remember picture,overlay]
+			\node[inner sep=0pt] (MgTop\theOverAllMgCtr){};
+			\path(MgTop\theOverAllMgCtr.center);
+			\pgfgetlastxy{\Tx}{\Ty}%
+			\path(current page.east);
+			\pgfgetlastxy{\Ox}{\Oy}%
+			\setlength{\MgOffset}{#3}%
+			\ifintcolorbox%
+				\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#1 , \Ty+1pt-\MgOffset) {%
+					\parbox[t][][]{\MgWidth}{%
+						\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+					}%
+				};
+			\else%
+				\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#1 , \Ty+1pt-\MgOffset) {%
+					\parbox[t][][]{\MgWidth}{%
+						\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape #2%
+					}%
+				};
+			\fi%
+		\end{tikzpicture}%
+	}
+\else
+	\RequirePackage{xcolor}
+	\colorlet{MgColor}{\@MGNOTE@numbercolor}
+	\newcounter{MgCtr}[\@MGNOTE@father]
+	\NewDocumentCommand{\mgnote}{sO{0pt}mO{0pt}}{%
+		\stepcounter{OverAllMgCtr}%
+		\UpdateMgCurrentTop%
+		\ifdefined\@captype\else%
+			%不在浮动体中
+			\ifdim\dimexpr\MgLastBottom\relax=0pt\else%
+				%不处于初始化状态
+				\ifdim\dimexpr\MgCurrentTop-\MgLastTop\relax>0pt%
+					%说明发生了push
+					\InitMgLastBottom%
+					%初始化
+					\global\MgPushedtrue%
+					%提示发生了push
+				\fi%
+			\fi%
+		\fi%
+		\begin{tikzpicture}[overlay,remember picture]
+			\global\let\MgLastTop\MgCurrentTop%
+			\path(MgTop\theOverAllMgCtr.center);
+			\pgfgetlastxy{\Tx}{\Ty}%
+			\path(current page.east);
+			\pgfgetlastxy{\Ox}{\Oy}%
+			\ifdim\dimexpr\MgCurrentTop-\MgLastBottom+\MgSep\relax>0pt%
+				\ifdefined\@captype%
+					\setlength{\MgOffset}{#4}%
+					\ifintcolorbox%
+						\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#2 , \Ty+1pt-\MgOffset) {%
+							\parbox[t][][]{\MgWidth}{%
+								\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+							}%
+						};
+					\else%
+						\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#2 , \Ty+1pt-\MgOffset) {%
+							\parbox[t][][]{\MgWidth}{%
+								\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+							}%
+						};
+					\fi%
+				\else%
+					\ifdim\dimexpr\MgLastBottom\relax=0pt%
+						\setlength{\MgOffset}{#4}%
+						\ifintcolorbox%
+							\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#2 , \Ty+1pt-\MgOffset) {%
+								\parbox[t][][]{\MgWidth}{%
+									\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+								}%
+							};
+						\else%
+							\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#2 , \Ty+1pt-\MgOffset) {%
+								\parbox[t][][]{\MgWidth}{%
+									\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+								}%
+							};
+						\fi%
+						\node[below = 0pt of MgAnchor\theOverAllMgCtr ,inner sep=0pt](MgBottom\theOverAllMgCtr) {};
+						\path(MgBottom\theOverAllMgCtr.center);
+						\pgfgetlastxy{\Bx}{\By}
+						\pgfmathparse{\By-\Oy}
+						\edef\MgTmpLastBottom{\pgfmathresult pt}
+						\global\let\MgLastBottom\MgTmpLastBottom
+					\else%
+						\setlength{\MgOffset}{\MgCurrentTop-\MgLastBottom+\MgSep+#4}%
+						\ifintcolorbox%
+							\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#2 , \Ty+1pt-\MgOffset) {%
+								\parbox[t][][]{\MgWidth}{%
+									\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+								}%
+							};
+						\else%
+							\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#2 , \Ty+1pt-\MgOffset) {%
+								\parbox[t][][]{\MgWidth}{%
+									\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+								}%
+							};
+						\fi%
+						\node[below = 0pt of MgAnchor\theOverAllMgCtr ,inner sep=0pt](MgBottom\theOverAllMgCtr) {};
+						\path(MgBottom\theOverAllMgCtr.center);
+						\pgfgetlastxy{\Bx}{\By}
+						\pgfmathparse{\By-\Oy}
+						\edef\MgTmpLastBottom{\pgfmathresult pt}
+						\global\let\MgLastBottom\MgTmpLastBottom
+					\fi%
+				\fi%
+			\else%
+				\setlength{\MgOffset}{#4}%
+				\ifintcolorbox%
+					\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#2 , \Ty+1pt-\MgOffset) {%
+						\parbox[t][][]{\MgWidth}{%
+							\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+						}%
+					};
+				\else%
+					\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#2 , \Ty+1pt-\MgOffset) {%
+						\parbox[t][][]{\MgWidth}{%
+							\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+						}%
+					};
+				\fi%
+				\node[below = 0pt of MgAnchor\theOverAllMgCtr ,inner sep=0pt](MgBottom\theOverAllMgCtr) {};
+				\path(MgBottom\theOverAllMgCtr.center);
+				\pgfgetlastxy{\Bx}{\By}
+				\pgfmathparse{\By-\Oy}
+				\edef\MgTmpLastBottom{\pgfmathresult pt}
+				\global\let\MgLastBottom\MgTmpLastBottom
+			\fi%
+		\end{tikzpicture}%
+		\IfBooleanF{#1}{%
+			\mbox{\textcolor{MgColor}{$_{_{(\theMgCtr)}}$}}%
+		}%
+	}
+	\NewDocumentCommand{\fixedmgnote}{sO{0pt}mO{0pt}}{
+		\stepcounter{OverAllMgCtr}%
+		\begin{tikzpicture}[overlay,remember picture]
+			\node[inner sep=0pt] (MgTop\theOverAllMgCtr){};
+			\path(MgTop\theOverAllMgCtr.center);
+			\pgfgetlastxy{\Tx}{\Ty}%
+			\path(current page.east);
+			\pgfgetlastxy{\Ox}{\Oy}%
+			\setlength{\MgOffset}{#4}%
+			\ifintcolorbox%
+				\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep-\MgTcolorBoxOffset+#2 , \Ty+1pt-\MgOffset) {%
+					\parbox[t][][]{\MgWidth}{%
+						\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+					}%
+				};
+			\else%
+				\node[anchor=north west](MgAnchor\theOverAllMgCtr) at (\Ox - \MgWidth-\MgSideSep+#2 , \Ty+1pt-\MgOffset) {%
+					\parbox[t][][]{\MgWidth}{%
+						\color{MgTextColor}\MgAlign\MgFontsize\MgFontshape\IfBooleanF{#1}{\refstepcounter{MgCtr}\textcolor{MgColor}{\normalfont(\theMgCtr)}} #3%
+					}%
+				};
+			\fi%
+		\end{tikzpicture}%
+		\IfBooleanF{#1}{%
+			\mbox{\textcolor{MgColor}{$_{_{(\theMgCtr)}}$}}%
+		}%
+	}
+\fi
+%依据可选参数，确认是否有序号
 
 

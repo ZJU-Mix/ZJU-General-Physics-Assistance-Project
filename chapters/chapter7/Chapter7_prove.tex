@@ -52,7 +52,7 @@
                 Z =\rho SL =\rho \pi d^{2} \overline{v} \Delta t
                 \nonumber
             \end{equation}
-            但分子其实是运动的，所以我们需要用相对平均速度$\overline{u} = \sqrt{2}\overline{v}$\footnote{若对具体证明有兴趣，见\refleaftext{prove7.13}。}
+            但分子其实是运动的，所以我们需要用相对平均速度$\overline{u} = \sqrt{2}\overline{v}$\mgnote{若对具体证明有兴趣，见\refleaftext{prove7.13}。}
             代替这里的平均速度，这样我们就得到了碰撞频率的表达式：
             \begin{equation}
                 Z =\sqrt{2}\pi d^{2} \rho \overline{v} \Delta t
@@ -102,8 +102,7 @@
                 \Delta S = \int_{T_1}^{T_2} \frac{\delta Q}{T} =  \int_{V_1}^{V_2} \frac{nR}{V} \dif{V} = nR\ln\frac{V_2}{V_1}
             \end{equation} 
         \end{prove}
-        \newpage
-        \vspace*{1ex}
+        
         \begin{prove}[Adiabatic Process]
             对绝热过程，有$Q = 0$，故$\Delta S = 0$。故由热力学第一定律，有$\Delta U = -W$，我们将两边都用微分形式表示出来：
             \begin{equation}
@@ -221,7 +220,7 @@
             \begin{equation}
                 \ln\Omega = \ln(N!)\sum_{i = 1}^{k}[{a_i}\ln(w_i) - \ln(a_i!)]
             \end{equation}
-            $N$是一个很大的数，我们假设所有的$a_i$也是很大的数\footnote{这一假设对真实气体并不严谨，但推导理想气体够用了。}，
+            $N$是一个很大的数，我们假设所有的$a_i$也是很大的数\mgnote{这一假设对真实气体并不严谨，但推导理想气体够用了。}，
             使用如下的积分估值：
             \begin{equation}
                 \ln(N!) = \ln(\prod_{i=1}^{N}i)=\sum_{i=1}^{N}\ln(i) \approx \int_{1}^{N}\ln x\dif{x} = N\ln N-N
@@ -367,13 +366,12 @@
                 A = -k_{_B}NT\ln Z
             \end{equation}
             这里的配分函数我们已经计算过了，直接代入\ref{of_Z}
-            \footnote{严谨来说应该把外势场以及转动动能考虑进去，不过那样配分函数还是$Z=\ln(Vf(T))$的形式，区别只是$f(T)$不影响推导}：
+            \mgnote{严谨来说应该把外势场以及转动动能考虑进去，不过那样配分函数还是$Z=\ln(Vf(T))$的形式，区别只是$f(T)$不影响推导}：
             \begin{equation}
                 A = -k_{_B}NT\ln\left[V\left(\frac{2\pi k_{_B}T}{\mu}\right)^{\frac{3}{2}}\right]
                 \label{of_A}
             \end{equation}
-            代入热力学基本方程$dU=T\dif{S}-p\dif{V}$，可以得到
-            \footnote{事实上热力学基本方程有四个，这也被视为其中一个，还有两个分别关于焓$H$与吉布斯自由能$G$}:
+            代入热力学基本方程$dU=T\dif{S}-p\dif{V}$，可以得到\mgnote{事实上热力学基本方程有四个，这也被视为其中一个，还有两个分别关于焓$H$与吉布斯自由能$G$}:
             \begin{equation}
                 \dif{A} = -S\dif{T} - p\dif{V}
                 \label{of_dif_A}
@@ -456,7 +454,7 @@
 				\end{aligned}
 			\end{equation*}
 			设$f(u_x) = f(v_{2x} + (- v_{1x}))$为相对速率分布函数，它的变量是两个独立变量的和，
-			那么这个函数是这两个独立变量的分布函数的卷积（可参考任意“概率论与数理统计”教材）\footnote{这里假设不考虑量子效应，即假设速度分布是连续的}：
+			那么这个函数是这两个独立变量的分布函数的卷积（可参考任意“概率论与数理统计”教材）\mgnote{这里假设不考虑量子效应，即假设速度分布是连续的}：
 			\begin{equation*}
 				\begin{aligned}
 					f(u_x) &= f_1(v_{1x}) \ast f_2(v_{2x}) = \int_{-\infty}^{+\infty} f_1(- v_{1x})f_2(u_x + v_{1x})\dif v_{1x}\\

@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (1, 0) {};
+		\node [style=none] (1) at (4, 0) {};
+		\node [style=none] (2) at (6, 2) {};
+		\node [style=none] (3) at (-1, 5) {};
+		\node [style=none] (4) at (1, -4) {};
+		\node [style=none] (5) at (4, -0.5) {$\vec{v}_0$};
+		\node [style=none] (6) at (1.5, -4) {$\vec{g}$};
+		\node [style=none] (7) at (6.5, 2.25) {$x$};
+		\node [style=none] (8) at (-0.5, 5.25) {$y$};
+		\node [style=none] (9) at (2.25, 0.5) {};
+		\node [style=none] (10) at (2.25, 0) {};
+		\node [style=none] (11) at (2.75, 0.35) {$\theta$};
+		\node [style=none] (12) at (-6, 0) {$\displaystyle\left\{\begin{aligned}x&=v_0t\cos\theta-\frac{gt^2\sin\theta}{2}\\ y&=-v_0t\sin\theta-\frac{gt^2\cos\theta}{2}\\ v_x&=v_0\cos\theta-gt\sin\theta\\ v_y&=-v_0\sin\theta-gt\cos\theta\end{aligned}\right.$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=red arrow] (0.center) to (1.center);
+		\draw [style=arrow] (0.center) to (2.center);
+		\draw [style=arrow] (0.center) to (3.center);
+		\draw [style=blue arrow] (0.center) to (4.center);
+		\draw [bend left=45, looseness=0.75] (9.center) to (10.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

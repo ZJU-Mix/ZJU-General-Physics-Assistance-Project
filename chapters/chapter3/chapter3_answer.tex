@@ -1,17 +1,20 @@
 \chapter[转动动力学]{\itr{Rotation Dynamics}{转动动力学}}
-\begin{solution}[{\large\color{plainred}Determine the Moment of Inertia of an Irregularly Shaped Object}\\
+\begin{solution}[{Determine the Moment of Inertia of an Irregularly Shaped Object}]
 	This problem describes one experimental method of
 	determining the moment of inertia of an irregularly
-	shaped object such as the \itr{payload}{有效负载} for a satellite. \\
+	shaped object such as the \itr{payload}{有效负载} for a satellite. 
+	\begin{center}
+		\thisincludegraphics[width=0.6\textwidth]{chapter3_example_1}
+	\end{center}
+	
 	The figure shows a mass $m$ \itr{suspended}{悬挂} by a \itr{cord}{绳子} \itr{wound}{被缠绕}
 	around a spool of radius $r$, forming part of a \itr{turntable}{转台}
 	supporting the object. When the mass is released from
 	rest, it \itr{descends}{下降} through a distance $h$, acquiring a speed
 	$\vec{v}$. Show that the moment of inertia $I$ of the equipment
-	(including the turntable) is\quad$mr^2(\dfrac{2gh}{v^2}-1)$. ]
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{chapter3_example_1}
-	\end{center}
+	(including the turntable) is\quad$mr^2(\dfrac{2gh}{v^2}-1)$. 
+	
+	\tcbrule
 	
 	这是一道基础的转动力学题目，一般的求解思路为：列力学方程---列运动方程---列关联方程---求解。
 	
@@ -28,19 +31,19 @@
 		\right.\]
 	联立求解即得\[I=mr^2(\dfrac{2gh}{v^2}-1)\]
 \end{solution}
-\begin{solution}[{\large\color{plainred}Rolling Items}\\
+\begin{solution}[{Rolling Items}]
 	Three objects of \itr{uniform density}{均匀的密度} --- a \itr{solid sphere}{实心球}, a \itr{solid
 		cylinder}{实心圆柱}, and a \itr{hollow cylinder}{空心圆柱} --- are placed at the top of
-	an \itr{incline}{斜坡}. \\
+	an \itr{incline}{斜坡}. 
+	\begin{center}
+		\thisincludegraphics[width=0.6\textwidth]{chapter3_example_2}
+	\end{center}
 	If they all are released from rest
 	at the same \itr{elevation}{高度} and roll without \itr{slipping}{滑动}, which object reaches the bottom first?
-	]
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{chapter3_example_2}
-	\end{center}
+	
+	\tcbrule
 	
 	本题是经典的纯滚动问题。所谓纯滚动，就是滚动体与接触面接触的点速度为$\vec{0}$(即旋转速度和质心速度相抵消)。
-	%分析纯滚动时，我们往往以接触线为转动轴，以避免引入非惯性系，将问题复杂化。
 	
 	我们往往选择过质心的轴作为旋转轴，建立参考系。这是因为，即使这样建立的参考系是一个非惯性系，只要它不发生转动，那么，使用证明“均匀重力场中重力可以等效作用在质心”中用到的方法(\refleaftext{prove3.7})，就可以证明惯性力可以等效作用在质心。由于我们选择的是质心轴，惯性力产生的力矩恒为$0$，因此也就不会对转动的分析产生影响\footnote{很多解析都直接选择了一个非惯性质心系来分析转动，却并没有讲解惯性力可以忽略的原因。}。
 	
@@ -68,7 +71,7 @@
 			a_3=\dfrac{m_3r_3{}^2}{I_3+m_3r_3{}^2}g\sin\theta
 		\end{array}
 	\right.\]
-	由常见物体的转动惯量(见\refleaftext{chapter3_moment_inertia2})知
+	由常见物体的转动惯量\mgnote{见\refleaftext{chapter3_moment_inertia2}}知
 	\begin{align*}
 		I_1&=\dfrac{2}{5}m_1r_1{}^2\\
 		I_2&=\dfrac{1}{2}m_2r_2{}^2\\
@@ -78,14 +81,18 @@
 	\[a_1>a_2>a_3\]
 	故实心球快于实心圆柱快于空心圆柱。
 \end{solution}
-%\refleaf*{law3.1}[-40ex]
-%\refleaf*{chapter3_moment_inertia2}[-35.6ex]
-\newpage
-\begin{solution}[\En{\large Calculation of the Moment of Inertia}\\A rod's \itr{linear density}{线密度} is given by $\lambda=kx$, where $x$ represents the distance from the point to the rod's center. \\
-	Given the length of the rod $l$, try to calculate the moment of inertia of the rod, given the rotation axis at:\\	
-	(1) Center $O$ as the $y$ axis shows.\\
-	(2) One end as the $y'$ axis shows.]
+
+\begin{solution}[Calculation of the Moment of Inertia]
+	A rod's \itr{linear density}{线密度} is given by $\lambda=kx$, where $x$ represents the distance from the point to the rod's center. 
 	\ctikzfig{chapter3_example_3_3}
+	Given the length of the rod $L$, try to calculate the moment of inertia of the rod, given the rotation axis at:
+	
+	(1) Center $O$ as the $y$ axis shows.
+	
+	(2) One end as the $y'$ axis shows.
+	
+	\tcbrule
+	
 	(1)由于$O$也是质心位置，不妨先求$I_{CM}$，再利用平行轴定理求解$I_{end}$。
 	注意到
 	\[\dif m=\lambda\dif x=k|x|\dif x\]
@@ -106,20 +113,25 @@
 	故
 	\[I_{end}=I_{CM}+m(\dfrac{L}{2})^2=\dfrac{3}{32}kL^4\]
 \end{solution}
-\begin{solution}[\En{\large Massive \itr{Pulley}{滑轮}}\\Consider two \itr{cylinders}{圆柱} having masses $m_1$
+\begin{solution}[\En{ Massive \itr{Pulley}{滑轮}}]
+	Consider two \itr{cylinders}{圆柱} having masses $m_1$
 	and $m_2$, where $m_1 < m_2$, connected by a
 	string passing over a pulley. The pulley
 	has a radius $R$ and moment of inertia $I$
-	about its axis of rotation. The string does
-	not \itr{slip}{滑动} on the pulley, and the system
-	is released from rest. Find the linear
+	about its axis of rotation.
+	\begin{singlefigure}{chapter3_massive_pulley}[0.3]
+		The string does
+		not \itr{slip}{滑动} on the pulley, and the system
+		is released from rest. 
+	\end{singlefigure}
+	Find the linear
 	speeds of the cylinders after
 	cylinder 2 \itr{descends}{下降} through a
 	distance $h$, and the angular
-	speed $\omega$ of the pulley at this time.]
-	\begin{center}
-		\includegraphics[width=0.3\textwidth]{chapter3_massive_pulley}
-	\end{center}
+	speed $\omega$ of the pulley at this time.
+	
+	\tcbrule
+	
 	本题可从运动角度或能量角度考虑。\\
 	法一：运动分析\\
 	设左绳的张力为$T_1$，右绳的张力为$T_2$，则有
@@ -142,42 +154,42 @@
 	亦可解得
 	\[v=\sqrt{2ah}=\sqrt{\dfrac{m_2-m_1}{m_1+m_2+\frac{I}{R^2}}2gh},\quad\omega=\sqrt{\dfrac{m_2-m_1}{(m_1+m_2)R^2+I}2gh}\]
 \end{solution}
-\begin{solution}[\En{\large Object rotating on a string
-		of changing length}\\Initially, the mass \itr{revolves}{转动} with a speed $v_1$ = 2.4 m/s in
+\begin{solution}[\En{ Object rotating on a string
+		of changing length}]
+		Initially, the mass \itr{revolves}{转动} with a speed $v_1$ = 2.4 m/s in
 		a circle of radius $R_1$ = 0.80 m.
 		The string is then pulled slowly through the hole so
 		that the radius is reduced to $R_2$ = 0.48 m. What is the
-		speed, $v_2$, of the mass now?]
-	\begin{center}
-		\includegraphics[width=0.7\textwidth]{chapter3_string}
-	\end{center}
+		speed, $v_2$, of the mass now?
+		\begin{singlefigure}{chapter3_string}[0.7]
+		\end{singlefigure}
+		
+		\tcbrule
+		
 	本题考察角动量守恒。可以注意到，绳子对物块的力始终是径向的，对应的力矩始终为$\vec{0}$，因此，物块的角动量守恒。不妨就以洞为轴，有
 	\[I_1\omega_1=I_2\omega_2\Rightarrow R_1{}^2\omega_1=R_2{}^2\omega_2\]
 	代入$\omega_1=\dfrac{v_1}{R_1},\quad\omega_2=\dfrac{v_2}{R_2}$，即得
 	\[v_1R_1=v_2R_2\]
 	代入数据即得$v_2=4.0$m/s.
 \end{solution}
-\begin{solution}[\En{\large Rotation of a sliding rigid rod}\\Consider a rod with mass m and length L standing straight on the friction-less ground. When we
-	release the rod, it will fall from the unstable \itr{equilibrium position}{平衡位置}\!.\\
+
+\begin{solution}[\En{ Rotation of a sliding rigid rod}]
+	Consider a rod with mass m and length L standing straight on the friction-less ground. When we
+	release the rod, it will fall from the unstable \itr{equilibrium position}{平衡位置}.
+	\begin{center}
+		\tikzfig{chapter3_rotating_rod_1}
+		\quad
+		\tikzfig{chapter3_rotating_rod_2}
+	\end{center}
 	(a) Calculate the angular velocity of the rod, when it has an angle of $\theta$ with respect to the ground
 	as illustrated in Figure 1.\\
 	(b) What is the final angular velocity $\omega_1$ of the rod before it hits the ground?\\
 	(c) If the same rod is leaning to a frictionless wall with an initial angle of α to the frictionless
 	ground (see Figure 2), what is the final angular velocity $\omega_2$ of the rod before it hits the ground?\\
-	{\em Note that there is a possibility that the right end of the rod leaves from the wall before the rod hits the ground.}]
-	\begin{center}
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{chapter3_rotating_rod_1}\\
-			Figure 1
-		\end{minipage}
-		\quad
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{chapter3_rotating_rod_2}\\
-			Figure 2
-		\end{minipage}
-	\end{center}
+	{\em Note that there is a possibility that the right end of the rod leaves from the wall before the rod hits the ground.}
+	
+	\tcbrule
+	
 	本题主要考察转动中的能量守恒，以及对平动速度和角速度关系的分析。
 	
 	(a) 首先，由题意知不存在摩擦力，而支持力做功始终为零，所以以棍子为研究对象，有机械能守恒。又注意到，棍子在水平方向始终不受力，因此质心是在垂直下降。于是有
@@ -208,10 +220,10 @@
 			\coordinate (BB) at (0,1.414);
 			\coordinate (AA) at (-1.414,0);
 			
-			\draw [green](A) -- (B) ; 
+			\draw [red](A) -- (B) ; 
 			\draw [thick=3pt](D)--(O);
 			\draw [thick=3pt](O)--(E);
-			\draw [green,dashed](AA)--(BB);
+			\draw [red,dashed](AA)--(BB);
 			
 			\coordinate (M) at ($(A)!0.5!(B)$);  
 			\coordinate (N) at ($(AA)!0.5!(BB)$);

@@ -1,17 +1,17 @@
-\chapter[热力学]{\itr{Thermodynamics}{热力学}}
+\chapter[热力学]{\itr{Thermodynamics}{热力学}\mgnote*{\raggedleft 作者：23级-陈若轩\\ 23级-陈锦浩}}
     \section[导论]{\itr{Introduction}{导论}}
         假设一个体系有$N$个粒子，且体系中经典力学分析依然成立，那么对第$i$个粒子，其受到其余$N-1$个粒子的作用，其动力学方程应有如下形式：
         \begin{equation*}
             \sum_{i\neq j}^N \vec{F_{ij}} = \mu_j \vec{a_j}
         \end{equation*}    
         其中共有$N$个变量，故对整个系统分析将会列出共计$N^2$个变量的方程。当$N$足够大时，求解这样的方程显然是极其繁琐且不现实的。
-        于是，我们引出\itr{Statistical Physics}{统计物理学}与\itr{Themiodynamics}{热力学}\linebreak 这两个研究超多粒子体系的分支。
+        于是，我们引出 \itr{Statistical Physics}{统计物理学} 与 \itr{Themiodynamics}{热力学} 这两个研究超多粒子体系的分支。
 
-        \itr{Statistical Physics}{统计物理学}从微观角度出发，利用统计学方法对宏观物体的热运动性质及其规律做出解释。本章将会介绍其中的分子动理论。
+        \itr{Statistical Physics}{统计物理学} 从微观角度出发，利用统计学方法对宏观物体的热运动性质及其规律做出解释。本章将会介绍其中的分子动理论。
 
-        \itr{Thermodynamics}{热力学}从宏观角度研究物质的热运动性质及其规律，并给出少数关键宏观量的联系。本章将重点介绍这些关键宏观量以及确立它们之间联系的热力学定律。
+        \itr{Thermodynamics}{热力学} 从宏观角度研究物质的热运动性质及其规律，并给出少数关键宏观量的联系。本章将重点介绍这些关键宏观量以及确立它们之间联系的热力学定律。
     \section[理想气体]{\itr{Ideal Gas}{理想气体}}
-        \itr{Ideal Gas}{理想气体}是一种理想模型，它满足的条件如下：
+        \itr{Ideal Gas}{理想气体} 是一种理想模型，它满足的条件如下：
         
         \begin{Itemize}
             \item 包含大量的分子，且分子自身占据的体积对分子间距而言可以忽略。
@@ -19,13 +19,13 @@
             \item 分子间以及分子与容器壁的碰撞都是弹性碰撞，且除分子的相互碰撞外忽略分子之间的作用力。
             \item 所有气体分子是相同的。
         \end{Itemize}
-        \newpage
-        理想气体适合\itr{Ideal Gas Law}{理想气体定律}\quad$pV=nRT=Nk_{B}T$，其中涉及的物理量与常数如下：
+        
+        理想气体适合 \itr{Ideal Gas Law}{理想气体定律}\quad$pV=nRT=Nk_{B}T$，其中涉及的物理量与常数如下：
         \begin{Itemize}
-            \item \itr{Amount of Substance}{物质的量}用于衡量分子数量，用$n$表示，国际单位为摩尔（$\rm{mol}$）。
+            \item \itr{Amount of Substance}{物质的量} 用于衡量分子数量，用$n$表示，国际单位为摩尔（$\rm{mol}$）。
             \item \itr{Avogadro Constant}{阿伏伽德罗常数}，记为$N_{A}$，约为$6.022\times 10^{23}\rm{mol}^{-1}$。
             表示$1\rm{mol}$物质中含有的粒子数。若用$N$代表分子个数，则有$N=nN_{A}$。
-            \item \itr{Temperature}{热力学温度}表示气体热运动的剧烈程度，用$T$表示，国际单位为开尔文（$\rm{K}$）。
+            \item \itr{Temperature}{热力学温度}\labelroot{chapter7_thermodynamic_temperature} 表示气体热运动的剧烈程度，用$T$表示，国际单位为开尔文（$\rm{K}$）。
             热力学温度与摄氏温度的转化为：$T = t + 273.15$，其中$t$为摄氏温度。
             \item \itr{Boltzmann Constant}{玻尔兹曼常数}，记为$k_{B}$，约为$1.381\times 10^{-23}\rm{J}\cdot K^{-1}$。
             玻尔兹曼常数反映了微观状态数与熵的关系。
@@ -50,21 +50,21 @@
                 \upperline{\epsilon_{k}} = \frac{3}{2}k_{B}T
                 \nonumber
             \end{equation}
-            它表明理想气体的分子平均动能只与温度有关。
+            它表明，理想气体的分子平均动能只与温度有关。
         \subsection[能量均分原理]{\itr{Equipartition Theorem}{能量均分原理}}
-            首先介绍\itr{Degrees of Freedom}{自由度}的概念，它表示在坐标系中确定分子运动状态所需要的独立坐标数。总体来看，
+            首先介绍\itr{Degrees of Freedom}{自由度} 的概念，它表示在坐标系中确定分子运动状态所需要的独立坐标数。总体来看，
             对于每个在三维坐标系中的原子，不考虑其内部的电子与原子核，我们需要3个独立坐标来确定其位置，如笛卡尔坐标系中的$x$，$y$，$z$，
-            球坐标系中的$r$，$\theta$，$\phi$。故对于一个由$k$个原子组成的分子，其自由度总量为$3k$。而自由度又分为三个部分：
+            球坐标系中的$r$，$\theta$，$\varphi$。故对于一个由$k$个原子组成的分子，其自由度总量为$3k$。而自由度又分为三个部分：
             \begin{Itemize}
-                \item \itr{Translational Degree of Freedom}{平动自由度}表示确定分子质心在坐标系中的位置所需要的独立坐标数，
+                \item \itr{Translational Degree of Freedom}{平动自由度} 表示确定分子质心在坐标系中的位置所需要的独立坐标数，
                 对所有分子均为3，并且单原子分子只有平动自由度。
-                \item \itr{Rotational Degrees of Freedom}{转动自由度}表示确定分子在坐标系中的空间取向所需要的独立坐标数。
+                \item \itr{Rotational Degrees of Freedom}{转动自由度} 表示确定分子在坐标系中的空间取向所需要的独立坐标数。
                 对于线性分子（如$\rm{CO_{2}}$），由于其绕通过分子的轴的旋转不改变分子构型，故旋转自由度为2，其余分子为3。
-                \item \itr{Vibrational Degrees of Freedom}{振动自由度}表示确定分子内原子之间的相对运动状态所需要的独立坐标数。
+                \item \itr{Vibrational Degrees of Freedom}{振动自由度} 表示确定分子内原子之间的相对运动状态所需要的独立坐标数。
                 通常利用总自由度-平动自由度-转动自由度的方式计算，对线性分子为$3k-5$，对非线性分子为$3k-6$。
             \end{Itemize}
-            \ \newline 
-            有了自由度的概念，根据大量的实验事实总结有如下关系成立(\refleaftext{prove7.11})：
+
+            有了自由度的概念后，根据大量的实验事实总结，有如下关系成立\mgnote{证明见\refleaftext{prove7.11}}：
             \begin{equation}
                 U = \frac{i}{2}Nk_{B}T
             \end{equation}
@@ -75,7 +75,7 @@
             或远大于它（电子能隙与原子核能隙），均分定理所需的假设“能级组成平滑连续能谱”不再成立，其贡献变为$0$。
             事实上，当温度降低到一定值时，这一定理也会因为同样的原因失效。}，
             而$\dfrac{1}{2}k_{B}T$正是上一部分中我们计算得到的分子动能平分到某个方向上的结果，
-            这一结论也由此解释为气体系统动能平均分配到每一个自由度上，得名\itr{Equipartition Theorem}{能量均分原理}。
+            这一结论也由此解释为气体系统动能平均分配到每一个自由度上，得名 \itr{Equipartition Theorem}{能量均分原理}。
         \subsection[麦克斯韦分布]{\itr{Maxwell Distribution}{麦克斯韦分布}}
             速率分布函数是这样一个函数，它的自变量为速度，因变量为速度落在$[v,v+\dif{v}]$区间内的粒子占总粒子数的比值，
             定义式如下：
@@ -90,7 +90,7 @@
             \end{equation}
             根据定义，速率分布函数是\textbf{归一化}的，即其在$[0,+\infty)$上的积分为1。
                 
-            \itr{Maxwell Distribution}{麦克斯韦分布}给出了理想气体的速率分布规律，它给出的速率分布函数如下(\refleaftext{prove7.10})：
+            \itr{Maxwell Distribution}{麦克斯韦分布} 给出了理想气体的速率分布规律，它给出的速率分布函数如下(证明见\refleaftext{prove7.10})：
             \begin{equation}
                 f(v)\dif{v}=\left(\dfrac \mu{2\pi k_{_B}T}\right)^{\frac{3}{2}}e^{-\frac{\mu v^{2}}{2k_{_B}T}}4\pi v^2\dif{v}
                 \nonumber
@@ -101,19 +101,19 @@
 
             利用速率分布函数，我们可以计算如下的特征速度：
             \begin{Itemize}
-                \item \itr{Most Probable Speed}{最概然速率}表示粒子数最多的区间微元对应的速度，定义式为：
+                \item \itr{Most Probable Speed}{最概然速率} 表示粒子数最多的区间微元对应的速度，定义式为：
                 \begin{equation}
                     v_{p} \quad \text{where} \quad \frac{\dif N({v_{p}})}{\dif{v}} = 0
                     \nonumber
                 \end{equation}
                 对麦克斯韦分布，其值等于$\sqrt{\dfrac{2k_{_B}T}{\mu}}$或$\sqrt{\dfrac{2RT}{M}}$，$M$为摩尔质量。
-                \item \itr{Average Speed}{平均速率}表示所有粒子速率的平均值，用于计算分子自由程等，定义式为：
+                \item \itr{Average Speed}{平均速率} 表示所有粒子速率的平均值，用于计算分子自由程等，定义式为：
                 \begin{equation}
                     \upperline{v} = \int_{0}^{+\infty} vf(v) \dif v
                     \nonumber
                 \end{equation}
                 对麦克斯韦分布，其值等于$\sqrt{\dfrac{8k_{_B}T}{\pi \mu}}$或$\sqrt{\dfrac{8RT}{\pi M}}$。
-                \item \itr{Root Mean Speed}{方均根速率}表示所有粒子速度平方的平均值的平方根，用于计算分子动能等，定义式为：
+                \item \itr{Root Mean Speed}{方均根速率} 表示所有粒子速度平方的平均值的平方根，用于计算分子动能等，定义式为：
                 \begin{equation}
                     v_{rms} = \sqrt{\int_{0}^{+\infty} v^{2}f(v)\dif v}
                     \nonumber
@@ -149,7 +149,7 @@
                 \rho = \rho_{0}e^{-\tfrac{\epsilon_{p}}{k_{_B}T}}
                 \nonumber
             \end{equation}
-            这一分布称为\itr{Boltzmann Distribution}{玻尔兹曼分布}(\refleaftext{prove7.9})。
+            这一分布称为 \itr{Boltzmann Distribution}{玻尔兹曼分布}(\refleaftext{prove7.9})。
             若将处于势能零点的粒子称为基态粒子，那么这个式子反映了能量高于$\epsilon_{p}$的粒子相对基态粒子的数量。
             
             利用它，我们可以轻松推出流体力学中压强随高度（假设温度不变）的分布，只需注意到压强与分子数成正比，
@@ -159,7 +159,7 @@
                 \nonumber    
             \end{equation}
         \subsection[平均自由程]{\itr{Mean Free Path}{平均自由程}}
-            \itr{Mean Free Path}{平均自由程}是指分子在相邻两次碰撞之间走过的平均路程，它等于分子在一段时间内通过的路程与平均碰撞次数的比值。
+            \itr{Mean Free Path}{平均自由程} 是指分子在相邻两次碰撞之间走过的平均路程，它等于分子在一段时间内通过的路程与平均碰撞次数的比值。
             如将分子视为直径为$d$的球体，且分子做平均速度为$v$的折线运动，可以得到平均碰撞次数$\upperline{Z}$为(\refleaftext{prove7.2})：
             \begin{equation}
                 \upperline{Z} = \sqrt{2}\pi \rho d^{2} v
@@ -181,7 +181,7 @@
     \section[热力学第零定律]{\itr{Zeroth Law of Thermodynamics}{热力学第零定律}}
         \subsection[引言]{Introduction}
             从这节从此开始均为热力学部分。在开始之前，想阐述（吐槽）一下热力学学习中可能遇到的一些问题，复习/补天选手可以跳过。
-           
+            
             关于各个课程热力学量符号各成一体的问题，以功为例。在高中课程与普通物理中均用$W$表示物体对外界做功，
             但高中时规定对内做功为正，普通物理规定对外做功为正；大学物理（甲）则用$A$表示外界对物体做功，
             且外界对物体做正功时为正；而物理化学则用$w$表示物体对外界做功并强调它不是一个状态量，规定对内做功为正。
@@ -194,41 +194,43 @@
             然后是贯穿本章的一个问题，这部分选取的统计力学与热力学由于是比较原始的部分，
             学完总会给人一种这章全是记忆性知识，到处给理论打补丁的感觉，不像力学与电磁学那样能自成体系，
             所以在证明的第二部分特意给出了这些定律到底是如何从底层给出的，供感兴趣者阅读。
+            
         \subsection[基本概念]{\itr{Basic Concepts}{基本概念}}
             \begin{Itemize}
-                \item \itr{System}{系统}是选定作为研究对象的那部分物质及其所占有的空间，系统是有\itr{Boundary}{边界}\linebreak 的，
+                \item \itr{System}{系统} 是选定作为研究对象的那部分物质及其所占有的空间，系统是有 \itr{Boundary}{边界}\linebreak 的，
                 系统与环境的物质与能量交换均发生在边界上。
-                \item \itr{Surroundings}{环境}是除了系统之外的部分，可以与系统交换物质与能量。
-                \item \itr{Open System}{开放系统}与环境既有物质交换，又有能量交换。
-                \item \itr{Closed System}{封闭系统}与环境只有能量交换，没有物质交换。
-                \item \itr{Isolated System}{孤立系统}与环境既无物质交换，又无能量交换。
-                \item \itr{Thermodynamic Equilibrium}{热力学平衡态}是系统内的各性质与组分保持稳定的一种状态，
+                \item \itr{Surroundings}{环境} 是除了系统之外的部分，可以与系统交换物质与能量。
+                \item \itr{Open System}{开放系统} 与环境既有物质交换，又有能量交换。
+                \item \itr{Closed System}{封闭系统} 与环境只有能量交换，没有物质交换。
+                \item \itr{Isolated System}{孤立系统} 与环境既无物质交换，又无能量交换。
+                \item \itr{Thermodynamic Equilibrium}{热力学平衡态} 是系统内的各性质与组分保持稳定的一种状态，
                 它要求系统达到与环境的力平衡（合外力为0，刚性器壁除外），热平衡（无能量交换）
                 以及系统的相平衡（各相变过程达到平衡）与化学平衡（各化学反应达到平衡）。之后讨论的状态均为热力学平衡态。
-                \item \itr{State Function}{状态函数}是函数值只与状态有关的函数，其在两个态之间的变化量与路径无关。
+                \item \itr{State Function}{状态函数} 是函数值只与状态有关的函数，其在两个态之间的变化量与路径无关。
                 在数学上即其因变量在定义域内可表示为自变量的全微分。
-                \item \itr{Process Function}{过程函数}与状态函数相对，在两个态之间的函数变化量与路径有关。
+                \item \itr{Process Function}{过程函数} 与状态函数相对，在两个态之间的函数变化量与路径有关。
             \end{Itemize}
         \subsection[温度]{\itr{Temperature}{温度}}
-            \itr{Temperature}{温度}是一个相对的概念，它的建立基于\itr{Zeroth Law of Thermodynamics}{热力学第零定律}
+            \itr{Temperature}{温度} 是一个相对的概念，它以 \itr{Zeroth Law of Thermodynamics}{热力学第零定律}为基础：
             \begin{law}[Zeroth Law of Thermodynamics]
                 若两个热力学系统均与第三个系统处于热平衡状态，此两个系统也必互相处于热平衡。
             \end{law}
           
-            它揭示了热平衡的可传递性，这样只需选定两个温度作为基准，就可以建立一个温度体系。
-
-            热力学温度是以\itr{Absolute Zero}{绝对零度}为温度零点的，且温度线斜率与摄氏温度一致。
+            热力学第零定律揭示了热平衡的可传递性。在此基础上，温度被定义为描述系统中物质粒子平均动能的一种物理量，且认为\textbf{当两个物体处于热平衡时，它们的温度相同}。这样，只要选定两组达到热平衡的物体，分别赋予一个温度的值作为基准，就可以建立一个温度体系，而这样的基准则被称作\textbf{温标}。所以说，对温度的定量测量依赖于温标，这也是我们说温度是相对概念的原因。
+			
+			我们知道，分子的热运动剧烈程度与温度有关。我们假设有一个极限温度，在这种温度下，分子的热运动完全停止了。这样的极限被称作 \itr{Absolute Zero}{绝对零度}。
+			
+            热力学温度\mgnote{见\refleaf{chapter7_thermodynamic_temperature}}是以 \itr{Absolute Zero}{绝对零度} 为温度零点的，且温度线斜率与摄氏温度一致。
     \section[热力学第一定律]{\itr{First Law of Thermodynamics}{热力学第一定律}}
         \subsection[热与功]{\itr{Heat and Work}{热与功}\footnote{关于本小节中等容热容和等压热容的定义，有一点需要说明：有些资料，如普通化学中，等容热容和等压热容的定义与本书中定义有所出入。这些材料另用了摩尔等容热容$C_{V,m}$和摩尔等压热容$C_{p,m}$来表示体积(压强)一定的情况下，$1\mathrm{mol}$物质上升单位温度所需吸收的热量，而等容热容$C_V$和等压热容$C_p$则定义为体积(压强)一定的情况下，所研究物质上升单位温度所需吸收的热量。本书采用了路欣老师2023学年春夏学期某一节ppt内的定义。事实上，老师的多节ppt内关于该符号的定义也并未统一。}}
             \begin{Itemize}
-                \item \itr{Heat}{热}是由系统和周围环境之间的温差导致而在系统边界上传递的能量，用$Q$表示。热是过程函数。
+                \item \itr{Heat}{热}是由系统和周围环境之间的温差导致而在系统边界上传递的能量，用$Q$表示。热是\textbf{过程函数}。
                 热的传递导致温度的传递，它们的关系如下：
                 \begin{equation}
                     \frac{\dif{Q}}{\dif{t}} = \kappa_{t}A\frac{\dif{T}}{\dif{x}}
                 \end{equation}
-                这是\itr{Fourier's Law}{傅里叶定律}，其中$\kappa_{t}$表示介质的热传导率，与介质种类有关；$A$为截面面积；\\[1ex]
-                $\dfrac{\dif{T}}{\dif{x}}$代表了温度梯度，即两端的温差大小。
-                \item \itr{Heat Capacity at Constant Volume}{等容热容}是在体积一定的情况下，$1\mathrm{mol}$物质上升单位温度所需要吸收的热量：
+                这是 \itr{Fourier's Law}{傅里叶定律}，其中$\kappa_{t}$表示介质的热传导率，与介质种类有关；$A$为截面面积；$\dfrac{\dif{T}}{\dif{x}}$则代表了温度梯度，即两端的温差大小。
+                \item \itr{Heat Capacity at Constant Volume}{等容热容} 是在体积一定的情况下，$1\mathrm{mol}$物质上升单位温度所需要吸收的热量：
                 \begin{equation}
                     C_{V} \overset{def}{=} \left(\frac{\partial{Q}}{\partial{T}}\right)_{V} = \left(\frac{\partial{U}}{\partial{T}}\right)_{V}
                     \nonumber
@@ -238,7 +240,7 @@
                     C_{V} = \frac{i}{2}R
                     \nonumber
                 \end{equation}
-                \item \itr{Heat Capacity at Constant Pressure}{等容热容}是在压强一定的情况下，$1\mathrm{mol}$物质上升单位温度所需要吸收的热量：
+                \item \itr{Heat Capacity at Constant Pressure}{等容热容} 是在压强一定的情况下，$1\mathrm{mol}$物质上升单位温度所需要吸收的热量：
                 \begin{equation}
                     C_{p} \overset{def}{=} \left(\frac{\partial{Q}}{\partial{T}}\right)_{p} 
                     \nonumber
@@ -248,17 +250,18 @@
                     C_{p} = \frac{i+2}{2}R = C_{V}+R
                     \nonumber
                 \end{equation}
-                \item \itr{Work}{功}与力学时的定义一致，同样用$W$表示：
+                
+                以上对理想气体热容的证明，见\refleaftext{prove7.3}。
+                \item \itr{Work}{功} 与力学时的定义一致，同样用$W$表示：
                 \begin{equation}
                     W \overset{def}{=} \int F\dif{x} = \int pS\dif{x} = \int p\dif{V}
                     \nonumber
                 \end{equation}
-                并规定系统对外做功取正。功也是过程函数。                
+                并规定系统对外做功取正。功也是\textbf{过程函数}。                
             \end{Itemize}
-            (理想气体热容的证明见\refleaftext{prove7.3})
 
-            改变系统内能必须通过热与功，这就是\itr{First Law of Thermodynamics}{热力学第一定律}。
-            \newpage
+            改变系统内能必须通过热与功，这就是 \itr{First Law of Thermodynamics}{热力学第一定律}。
+
             \begin{law}[First Law of Thermodynamics]
                 系统内能的增加量等于系统吸收的热和环境对系统所做的功的总和：
                 \begin{equation}
@@ -272,10 +275,10 @@
                 \nonumber
             \end{equation}
             其中，$Q$前不使用$\dif$而使用$\delta$是为了暗示$Q$是一个过程函数。
-        \subsection[过程介绍]{\itr{Process Introduction}{过程介绍}\labelroot{chapter7_process_introduction}}
+        \subsection[过程介绍]{\itr{Process Introduction}{过程介绍}\labelroot[16pt]{chapter7_process_introduction}}
         为方便查阅，把熵的计算也写在此处。此处讨论的均为理想气体。
         \begin{Itemize}
-            \item \itr{Isovolumetric/Isochoric Process}{等容过程}是指系统体积不变的过程，此时一般容器为刚性容器。            
+            \item \itr{Isovolumetric/Isochoric Process}{等容过程} 是指系统体积不变的过程，此时一般容器为刚性容器。            
             \begin{equation}
                 \begin{aligned}
                     &\frac{p}{T} = constant \\
@@ -289,7 +292,7 @@
         
         (证明见\refleaftext{prove7.4})
         
-            \item \itr{Isobaric Process}{等压过程}是指系统压强不变的过程。
+            \item \itr{Isobaric Process}{等压过程} 是指系统压强不变的过程。
             \begin{equation}
                 \begin{aligned}
                     &\frac{V}{T} = constant \\
@@ -304,7 +307,7 @@
         (证明见\refleaftext{prove7.4})
     	\end{Itemize}
     	\begin{Itemize}
-            \item \itr{Isothermal Process}{等温过程}是指系统温度不变的过程。
+            \item \itr{Isothermal Process}{等温过程} 是指系统温度不变的过程。
             \begin{equation}
                 \begin{aligned}
                     &pV = constant \\
@@ -318,7 +321,7 @@
         
         (证明见\refleaftext{prove7.5})
         
-            \item \itr{Adiabatic Process}{绝热过程}是指系统不与环境交换能量的过程。
+            \item \itr{Adiabatic Process}{绝热过程} 是指系统不与环境交换能量的过程。
             \begin{equation}
                 \begin{aligned}
                     &pV^{\gamma} = constant \qquad \gamma = \frac{C_p}{C_V} = \frac{i+2}{i}\\
@@ -336,60 +339,63 @@
         \subsection[热机]{\itr{Heat Engine}{热机}}
             首先介绍一些基本概念。
             \begin{Itemize}
-                \item \itr{Cycle}{循环}是终态与始态相同的过程，其在$p-V$图上的路径为一闭合曲线。
-                \item \itr{Reversible/Quasi-Static Process}{可逆/准静态过程}是指存在逆过程使得系统与环境都恢复原状态的过程。
+                \item \itr{Cycle}{循环} 是终态与始态相同的过程，其在$p-V$图上的路径为一闭合曲线。
+                \item \itr{Reversible/Quasi-Static Process}{可逆/准静态过程} 是指存在逆过程使得系统与环境都恢复原状态的过程。
                 可逆过程经过一系列无限接近平衡态的状态，且不存在热传导、气体的自由膨胀、扩散等过程。如果对一个过程，
-                使系统恢复原状态一定会导致环境改变（能量耗散），则称之为\itr{Irreversible Process}{不可逆过程}。
-                \item \itr{Heat Engine}{热机}是指各种利用内能做功的机械。
+                使系统恢复原状态一定会导致环境改变（能量耗散），则称之为 \itr{Irreversible Process}{不可逆过程}。
+                \item \itr{Heat Engine}{热机} 是指各种利用内能做功的机械。
             \end{Itemize}
             \begin{Itemize}
-                \item \itr{Efficiency of Heat Engine}{热机效率}是一个循环内热机对外做功与其吸收的热的比值，即：
+                \item \itr{Efficiency of Heat Engine}{热机效率} 是一个循环内热机对外做功与其吸收的热的比值，即：
                 \begin{equation}
                     e \overset{def}{=} \frac{W}{Q_{in}} = \frac{Q_{in}-Q_{out}}{Q_{in}}
                     \nonumber
                 \end{equation}
                 $Q_{in}$表示吸热，$Q_{out}$表示放热，注意这里取的都是绝对值。
-                \item \itr{Perpetual Motion Machine}{永动机}是不需要物质与能量输入而可以永久向环境做功的热机，是无法实现的。
+                \item \itr{Perpetual Motion Machine}{永动机} 是不需要物质与能量输入而可以永久向环境做功的热机，是无法实现的。
                 第一类永动机试图寻找无能量消耗的热机，违反了能量守恒定律；第二类永动机则试图从单一热源取热并把它全部变为功，
                 违反了热力学第二定律。
             \end{Itemize}
-            然后我们来看两个经典的循环。
+            
+            然后，我们来看两个经典的循环。
 
-            \itr{Otto Cycle}{奥托循环}由两个等容过程与两个绝热过程组成，如图所示：
+            \itr{Otto Cycle}{奥托循环} 由两个等容过程与两个绝热过程组成，如图所示：
             \vspace{1ex}
             \ctikzfig{chapter7_otto_cycle}
             \begin{center}
             	\em AB与CD为绝热过程，BC与DA为等容过程，循环沿ABCDA方向进行
             \end{center}
+            
             使用奥托循环的热机效率为(\refleaftext{prove7.7})：
             \begin{equation}
                 e = 1 - \frac{T_{D} - T_{A}}{T_{C} - T_{B}}
                 \nonumber
             \end{equation}
             
-            \itr{Carnot Cycle}{卡诺循环}由两个等温过程与两个绝热过程组成，如图所示:
+            \itr{Carnot Cycle}{卡诺循环} 由两个等温过程与两个绝热过程组成，如图所示:
             \vspace{1ex}
             \ctikzfig{chapter7_carnot_cycle}
             \begin{center}
             	\em AB与CD为等温过程，BC与DA为绝热过程，循环沿ABCDA方向进行时为正方向
             \end{center}
-            使用正卡诺循环的热机称为\itr{Carnot Heat Engine}{卡诺热机}，其热机效率为(\refleaftext{prove7.8})：
+            
+            使用正卡诺循环的热机称为 \itr{Carnot Heat Engine}{卡诺热机}，其效率为：
             \begin{equation}
-                e = 1 - \frac{T_{c}}{T_{h}}
+                e = 1 - \frac{T_{c}}{T_{h}}\mgnote{证明见\refleaftext{prove7.8}}
                 \nonumber
             \end{equation}
-            其中$T_c$为低温热源的温度，$T_h$为高温热源的温度\footnote{$T_c$的下标$c$可理解成cold，$T_h$的下标$h$可理解成heat。}。
+            其中$T_c$为低温热源的温度，$T_h$为高温热源的温度\mgnote{$T_c$的下标$c$可理解成cold，$T_h$的下标$h$可理解成heat。}。
 
-            卡诺热机是所有热机中效率最高的，提高热机效率的手段为提高高温热源温度或降低低温热源温度。
+            卡诺热机是所有热机中效率最高的，它提高热机效率的手段为提高高温热源温度或降低低温热源温度。
             
             如果倒转卡诺循环，则得到卡诺冷机，此时其制冷系数为：
             \begin{equation}
                 e^{\prime} \overset{def}{=} \frac{Q_c}{W} = \frac{T_c}{T_h - T_c}
                 \nonumber
             \end{equation}
-            同样的，其效率也是所有冷机中最高的。
+            同样地，其效率也是所有冷机中最高的。
         \subsection[熵]{\itr{Entropy}{熵}}
-            \itr{Entropy}{熵}的变化量被定义为可逆过程中热与温度的比值，即：
+            \itr{Entropy}{熵} 的变化量被定义为可逆过程中热与温度的比值，即：
             \begin{equation}
                 \Delta S \overset{def}{=} \frac{Q_r}{T} 
                 \nonumber
@@ -400,7 +406,7 @@
                 \nonumber
             \end{equation}
             
-            熵是一个状态函数，熵的物理意义可以从下面这个公式中体现：
+            由于定义中\textbf{可逆过程}的要求，熵是一个状态函数。它的物理意义可以从下面这个公式中体现：
             \begin{equation}
                 S = k_{_B}\ln\Omega
                 \nonumber
@@ -408,10 +414,12 @@
             其中$\Omega$表示所有可能的微观状态数量，也就是说，熵是系统可能的微观状态数量的度量，或者其他教材提到的“混乱度”。
             这个公式是连接微观与宏观间最重要的桥梁，也是统计力学的核心。
 
-            考虑一个\itr{Free Expansion}{自由膨胀}过程，也就是说等温条件下气体向真空中膨胀。由于真空，气体自然无法做功，$W=0$；
-            由于等温，$\Delta U=0$；那么由热力学第一定律，自然有$Q=0$。\\[1ex]但是计算它的熵变，这个值为$\Delta S = nR\ln\dfrac{V_2}{V_1}>0$ (见\refleaftext{example7.6}(b))。
-            众所周知，这个\\[1ex]过程是不可逆的，也就是说，那个$\Delta S<0$的逆过程是无法发生的。
-            这正是\linebreak\itr{Second Law of Thermodynamics}{热力学第二定律}所表明的。
+            考虑一个 \itr{Free Expansion}{自由膨胀} 过程，也就是说等温条件下气体向真空中膨胀。由于真空，气体自然无法做功，$W=0$；
+            由于等温，$\Delta U=0$；那么由热力学第一定律，自然有$Q=0$。但是计算它的熵变，会发现这个值为
+            \[\Delta S = nR\ln\dfrac{V_2}{V_1}>0\mgnote{见\refleaftext{example7.6}(b)}\] 
+            
+            众所周知，自由膨胀过程是不可逆的，也就是说，它对应的$\Delta S<0$的逆过程是无法发生的。
+            这正是\itr{Second Law of Thermodynamics}{热力学第二定律} 所表明的。
             \begin{law}[Second Law of Thermodynamics]
                 孤立系统的熵不可能减少:
                 \begin{equation}
@@ -441,7 +449,7 @@
         我们再看一下卡诺循环的热机效率$e = 1-\dfrac{T_c}{T_h}$。注意到当低温热源$T_c = 0 \rm{K}$时，热机效率可以达到$100\%$。
         此时由于仍然是卡诺循环，我们并没有违反热力学第二定律，那么这是否意味着这是可行的呢？
 
-        \itr{Third Law of Thermodynamics}{热力学第三定律}表明了这是无法实现的，因为我们无法找出一个温度为\itr{Absolute Zero}{绝对零度}
+        \itr{Third Law of Thermodynamics}{热力学第三定律}表明了这是无法实现的，因为我们无法找出一个温度为 \itr{Absolute Zero}{绝对零度} 
         的物体。
         \begin{law}[Third Law of Themiodynamics]
             绝对零度无法达到。
@@ -460,7 +468,7 @@
         \end{equation}
         至于对数的底其实是任意的，彼此相差一个系数而已，通常选择的是$2$。
 
-        至此我们引出\itr{Information Entropy$\backslash$ Shannon Entropy}{信息熵$\backslash$ 香农熵}的概念，
+        至此，我们引出 \itr{Information Entropy$\backslash$ Shannon Entropy}{信息熵$\backslash$ 香农熵} 的概念，
         它是事件发生前可能产生的信息量的数学期望，即：
         \begin{equation}
             S = E(Q) = \sum Q_{i}P_{i} = -\sum P_{i}\log P_{i}
@@ -468,7 +476,7 @@
         \end{equation}
         信息熵是信息的度量。
 
-        然后再来了解一下\itr{Cross Entropy}{交叉熵}\mgnote{该知识不作要求。}。对于某事件，假设其有两种概率分布为$p(x)$与$q(x)$，
+        然后再来了解一下 \itr{Cross Entropy}{交叉熵}$^*$。对于某事件，假设其有两种概率分布为$p(x)$与$q(x)$，
         则其交叉熵为：
         \begin{equation}
             H(p,q) = - \sum p({x_{i}})\log(q({x_{i}}))
@@ -481,6 +489,6 @@
             \nonumber
         \end{equation} 
 
-        仅当$p$与$q$分布完全一致时差距为0，也就是说交叉熵刻画了两个分布的差距。在人工智能的逻辑回归中，
+        仅当$p$与$q$分布完全一致时差距为$0$，也就是说交叉熵刻画了两个分布的差距。在人工智能的逻辑回归中，
         其训练用的损失函数正是交叉熵损失函数。
 

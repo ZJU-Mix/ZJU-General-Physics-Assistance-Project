@@ -1,4 +1,4 @@
-\chapter[转动动力学]{\itr{Rotation Dynamics}{转动动力学}}
+\chapter[转动动力学]{\itr{Rotation Dynamics}{转动动力学}\mgnote*{\raggedleft 作者：23级-陈锦浩}}
 在质点运动学中，我们讨论的都是质点。然而，物体往往是占据着一定的空间，有着自己的质量分布特性的。那么，只靠质点运动学，还能够解决物体的运动问题吗？答案是否定的。为了解决这个问题\mgnote{更严谨地说，刚体的运动问题}，物理学家们建立了转动动力学。
 \section[刚体]{\itr{Rigid Body}{刚体}}
 想象一个物体，它受到力产生加速度的同时，各个部位还会发生形变，这样的运动显然是非常复杂的。我们简化了研究对象，选择那些具有体积，且形状固定不变的物体。这样的物体就叫做刚体。
@@ -11,23 +11,24 @@
 \section[转动]{\itr{Rotation}{转动}}
 我们已经非常了解平动了。鉴于刚体的运动可以分为平动和转动，我们不妨先放弃平动，单独对转动做出分析。
 
-\subsection[极坐标系]{\itr{Polar Coordinate \& Cylindrical Coordinate}{极坐标系与柱坐标系}}
+\subsection[极坐标系]{\itr{Polar Coordinate \& Cylindrical Coordinate}{极坐标系与柱坐标系}\mgnote*[30pt]{作者：23级-陈锦浩}}
 转动显然涉及旋转，旋转又显然涉及角度，而角度大小的确定需要一个基准，这就给了我们“选定一个旋转轴”分析转动的思想。
 
 为了描述角度，我们引入极坐标系这一数学工具。
 
-极坐标系的基本要素是极点和极轴，其中极轴是一条从极点引出的有向轴。
+极坐标系\footnote{你可能会注意到，在\refleaftext{chapter2_polar_coordinate} 中，我们已经介绍过了极坐标系。然而，这里将引入的极坐标系，其中的一些约定将与之前有所不同。传统上，我们对极坐标系的基底的定义与之前的定义相同，这是因为，我们只考虑了二维的情况，无法再添加一个维度来描述角度矢量。而在这里，为了更好地研究旋转，我们在对角度矢量的定义中引入了垂直于平面的方向。在本章及其证明与习题中所提到的极坐标系，都按照本章的约定方式。}的基本要素是极点和极轴，其中极轴是一条从极点引出的有向轴。
 \ctikzfig{chapter3_polar_coordinate}
 \begin{center}
 	\em 这是一个极坐标系，$O$为极点，$x$轴方向为极轴方向
 \end{center}
 在极坐标系中，我们使用坐标$(r,\theta)$或者$(|\vec{r}|,|\vec{\theta}|)$描述点的位置。
+
 \begin{Itemize}
 	\item $\vec{r}$即起点为极点，终点为被描述点的向量，称为极径矢量。
-	\item $\vec{\theta}$即角度矢量，方向\labelrootmark{chapter3_direction}垂直于坐标平面向纸面外。我们规定，从极轴出发旋转到位矢的旋转角，\itr{counterclockwise}{逆时针}时方向为正，\itr{clockwise}{顺时针}时方向为负\footnotemark。
+	\item $\vec{\theta}$即角度矢量，方向\labelroot{chapter3_direction}垂直于坐标平面向纸面外。我们规定，从极轴出发旋转到极径矢量的旋转角，\itr{counterclockwise}{逆时针} 时方向为正，\itr{clockwise}{顺时针} 时方向为负\footnotemark。
 \end{Itemize}
-\labelroot*{chapter3_direction}[-8ex]
 \footnotetext{当然，对于一个第四象限的点，你可以认为它是逆时针旋转得到的优角（就是大于180度的角），也可以认为它是顺时针旋转得到的锐角。在本书中，由于叉乘的考量，我们往往取锐角考虑。}
+
 然而，仅仅介绍极坐标系是不足够的，因为极坐标系仅有二维，但一个刚体的运动却极有可能是三维的。因此，我们还需要进一步介绍柱坐标系。
 
 柱坐标系是极坐标系往$z$轴平面的延伸。柱坐标相比极坐标的$r,\theta$还多了一个$z$，用于指示点在$z$轴上的投影位置。
@@ -160,7 +161,7 @@
 	\end{tikzpicture}
 	\refstepcounter{figure}
 	
-	图\thefigure: 柱坐标系\footnote{本图来自\url{https://www.latexstudio.net/index/details/index/mid/813.html}}
+	图\thefigure: 柱坐标系\footnote{本图来自 \url{https://www.latexstudio.net/index/details/index/mid/813.html}}
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
 	如图，这是一个以$x$轴为极轴的柱坐标系，$P$的坐标为$(r,\theta,z)$。
@@ -172,16 +173,16 @@
 在对刚体运动进行描述时，我们往往选取刚体的旋转轴作为$z$轴建立柱坐标系，然后借助柱坐标系说明其运动的相关参数。
 
 	
-\subsection[叉乘]{\itr{Cross Product}{叉乘}\labelroot{chapter3_cross_product}}
+\subsection[叉乘]{\itr{Cross Product}{叉乘}\labelroot[16pt]{chapter3_cross_product}}
 在介绍转动的有关概念前，我们还需引入叉乘这一数学工具。
 
 由于叉乘的具体内容介绍属于线性代数与数学分析的任务，这里并不会展开讲。
 
-叉乘可以看成这样一个运算：按顺序输入两个向量$\vec{A},\vec{B}$，输出一个特定长度且与它们都正交的向量$\vec{C}$。当然，这样的描述是不精确的，一是长度需要确定的值，二是与$\vec{A},\vec{B}$都正交的向量方向不唯一\footnote{除了$\vec{0}$，还有正反两个方向}。因此，接下来，我们要对长度和方向作出具体描述。
+叉乘可以看成这样一个运算：按顺序输入两个向量$\vec{A},\vec{B}$，输出一个特定长度且与它们都正交的向量$\vec{C}$。当然，这样的描述是不精确的，一是长度需要确定的值，二是与$\vec{A},\vec{B}$都正交的向量方向不唯一\mgnote{除了$\vec{0}$，还有正反两个方向}。因此，接下来，我们要对长度和方向作出具体描述。
 
 \begin{Itemize}
-	\item 长度：$C=AB\sin\theta$，其中$\theta$是由$\vec{A}$旋转至$\vec{B}$所成的小于$\dfrac{\pi}{2}$的角\footnotemark 。在几何意义上，$|\vec{C}|$即是$\vec{A},\vec{B}$构成的平行四边形的面积。
-	\item 方向：$\vec{C}$的方向是介绍长度时所述的$\vec{\theta}$(角度矢量的方向：\refleaftext{chapter3_direction})的方向。在几何意义上，$\vec{C}$与$\vec{A},\vec{B}$所张成平面的法向量平行。
+	\item 长度： $C=AB\sin\theta$，其中$\theta$是由$\vec{A}$旋转至$\vec{B}$所成的小于$\dfrac{\pi}{2}$的角\footnotemark 。在几何意义上，$|\vec{C}|$即是$\vec{A},\vec{B}$构成的平行四边形的面积。
+	\item 方向： $\vec{C}$的方向是介绍长度时所述的$\vec{\theta}$的方向\mgnote{关于角度矢量的方向，可回见\\\refleaftext{chapter3_direction}。}。在几何意义上，$\vec{C}$与$\vec{A},\vec{B}$所张成平面的法向量平行。
 \end{Itemize}
 \footnotetext{事实上，这里不规定旋转，对于长度是没有影响的。这里这么说，主要是希望在介绍长度和方向时，这个角度可以统一。回想一下，在介绍极坐标系时，我们就规定逆时针是正方向了，所以这么规定可以合理地引出正负。}
 
@@ -193,21 +194,19 @@
 \end{singlefigure}
 
 下面不加证明地给出叉乘的有关性质和定理：
-\labelroot*{chapter3_derivation}[15ex]
-\labelroot*{chapter3_double_cross_product}[20ex]
 
 \begin{Itemize}
 	\item \itr{Anti-Commutative Law}{反交换律} $\vec{A}\times\vec{B}=-\vec{B}\times\vec{A}$，即交换两向量顺序，它们的夹角方向会取反。
 	\item \itr{Distributive Law}{分配律} $\vec{A}\times(\vec{B}+\vec{C})=\vec{A}\times\vec{B}+\vec{A}\times\vec{C}$
-	\item \itr{Derivative}{导数} $\dfrac{\dif}{\dif t}(\vec{A}\times\vec{B})=\dfrac{\dif\vec{A}}{\dif t}\times \vec{B}+\vec{A}\times\dfrac{\dif\vec{B}}{\dif t}$\labelrootmark{chapter3_derivation}\\
+	\item \itr{Derivative}{导数} $\dfrac{\dif}{\dif t}(\vec{A}\times\vec{B})=\dfrac{\dif\vec{A}}{\dif t}\times \vec{B}+\vec{A}\times\dfrac{\dif\vec{B}}{\dif t}$\labelroot{chapter3_derivation}\\
 	\En{It is important to preserve the
-		multiplicative order of A and B}\\
+		multiplicative order of A and B.}\\
 	鉴于反交换率，保证叉乘的顺序正确是十分重要的。
-	\item \itr{Lagrange's Identity}{拉格朗日恒等式}$(\vec{A}\times\vec{B})\cdot(\vec{C}\times\vec{D})=\left|\begin{array}{cc}
+	\item \itr{Lagrange's Identity}{拉格朗日恒等式} $(\vec{A}\times\vec{B})\cdot(\vec{C}\times\vec{D})=\left|\begin{array}{cc}
 		\vec{A}\cdot\vec{C}&\vec{A}\cdot\vec{D}\\
 		\vec{B}\cdot\vec{C}&\vec{B}\cdot\vec{D}
 	\end{array}\right|$
-	\item \itr{Double Cross Product}{二重叉乘}\labelrootmark{chapter3_double_cross_product}\begin{align*}
+	\item \itr{Double Cross Product}{二重叉乘}\labelroot{chapter3_double_cross_product}\begin{align*}
 		(\vec{A}\times\vec{B})\times\vec{C}&=(\vec{A}\cdot\vec{C})\vec{B}-(\vec{B}\cdot\vec{C})\vec{A}\\
 		\vec{A}\times(\vec{B}\times\vec{C})&=(\vec{A}\cdot\vec{C})\vec{B}-(\vec{A}\cdot\vec{B})\vec{C}
 	\end{align*}
@@ -221,11 +220,10 @@
 在定好一个柱坐标系后之后，确定刚体的角度矢量及其与时间的关系，就能确定刚体的转动。
 
 \begin{Itemize}
-	\item \itr{Angular displacement}{角位移}\footnotemark $\Delta\vec{\theta}=\vec{\theta}_f-\vec{\theta}_i$
+	\item \itr{Angular displacement}{角位移}\mgnote{$\vec{\theta}$的单位rad属于数学单位，它是一个无量纲量。} $\Delta\vec{\theta}=\vec{\theta}_f-\vec{\theta}_i$
 	\item \itr{Instantaneous angular velocity}{瞬时角速度} $\vec{\omega} = \dfrac{\dif\vec{\theta}}{\dif t}$
 	\item \itr{Instantaneous angular acceleration}{瞬时角加速度}  $\vec{\alpha}=\dfrac{\dif\vec{\omega}}{\dif t}$
 \end{Itemize}
-\footnotetext{$\vec{\theta}$的单位rad属于数学单位，它是一个无量纲量。}
 
 \En{When rotating about
 	a fixed axis, every
@@ -259,19 +257,18 @@
 		resistance of an object to changes in its rotational
 		motion, just as mass is a measure of the tendency
 		of an object to resist changes in its linear motion.}
-	\item \itr{Torque}{力矩} $\vec{\tau}=\vec{r}\times\vec{F}_{/z}$，其中$\vec{r}$是力$\vec{F}$的作用点对应的极径矢量，$\vec{F}_{/z}=\vec{F}-\vec{F}_z$，$\vec{F}_z$即$\vec{F}$在$z$轴上的分矢量\labelrootmark{chapter3_lower/z}\footnotemark。
+	\item \itr{Torque}{力矩} $\vec{\tau}=\vec{r}\times\vec{F}_{/z}$，其中$\vec{r}$是力$\vec{F}$的作用点对应的极径矢量，$\vec{F}_{/z}=\vec{F}-\vec{F}_z$，$\vec{F}_z$即$\vec{F}$在$z$轴上的分矢量\labelroot{chapter3_lower/z}\footnotemark。
 	\item \itr{Net Torque}{合外力矩} $\displaystyle\vec{\tau}_{net}=\sum_{i}\vec{\tau}_i$
 	\item 类似牛顿第二定律，有：在惯性系中，$\vec{\tau}_{net}=I\vec{\alpha}$，即合外力矩等于刚体的转动惯量乘以角加速度。
 \end{Itemize}
-\labelroot*{chapter3_lower/z}[-22ex]
-\footnotetext{事实上，力矩拥有两种定义，一种是对点定义的，为$\vec{r}\times\vec{F}$；另一种是对轴定义的，为$\vec{r}\times\vec{F}_{/z}$。鉴于我们使用了柱坐标系建立这些概念，这里选择对轴定义的力矩。}\clearpage
+\footnotetext{事实上，力矩拥有两种定义，一种是对点定义的，为$\vec{r}\times\vec{F}$；另一种是对轴定义的，为$\vec{r}\times\vec{F}_{/z}$。鉴于我们使用了柱坐标系建立这些概念，这里选择对轴定义的力矩。}
 \begin{singlefigure}[力矩示意图]{chapter3_torque}[0.5]
 	在本图中，由于$\vec{F}$没有$z$轴上的分量，所以$\vec{F}=\vec{F}_{/z}$。\\
 	事实上，普物\Romannumeral{1}中基本没有出现过$\vec{F}$有$z$轴分量的情况。
 \end{singlefigure}
 关于以上内容的证明，见\refleaftext{prove3.1}。
 
-其中，为了便于计算力矩，我们可以引入\itr{moment arm/force arm}{力臂}的概念，其大小即为转轴到力的作用线的距离。有了这一点，力矩的大小就可以通过力臂乘以力得到。
+其中，为了便于计算力矩，我们可以引入 \itr{moment arm/force arm}{力臂} 的概念，其大小即为转轴到力的作用线的距离。有了这一点，力矩的大小就可以通过力臂乘以力得到。
 \ctikzfig{chapter3_moment_arm}
 \begin{center}
 	\em $l_1$是$\vec{F}_1$的力臂，$l_2$是$\vec{F}_2$的力臂。
@@ -283,17 +280,16 @@
 \vspace*{-2ex}
 \begin{singlefigure}[常见物体的转动惯量]{chapter3_moment_inertia2}
 \end{singlefigure}
-\labelroot*{chapter3_moment_inertia2}[-4ex]
 对于更一般的物体，则往往通过积分的方式求取它们的转动惯量。
 \section[平行轴定理/施泰纳定理]{\itr{Parallel Axis Theorem/Steiner Theorem}{平行轴定理/施泰纳定理}}
-在之前对转动的动力学概念的讨论中，我们默认转轴是选定的(见\refleaftext{chapter3_axis})，这是因为，当转轴不同时，转动惯量与合力矩都会发生变化。平行轴定理是解决转轴变化过程中转动惯量变化的利器，其表述如下：
-\newpage
+在之前对转动的动力学概念的讨论中，我们默认转轴是选定的\mgnote{见\refleaftext{chapter3_axis}}，这是因为，当转轴不同时，转动惯量与合力矩都会发生变化。平行轴定理是解决转轴变化过程中转动惯量变化的利器，其表述如下：
+
 \begin{law}[\itr{Parallel Axis Theorem/Steiner Theorem}{平行轴定理/施泰纳定理}---\refleaftext{prove3.2}]
 	记刚体$M$以过质心的轴(简称质心轴)为转动轴时的转动惯量为$I_{CM}$，以任意平行于质心轴的轴为转动轴时的转动惯量为$I$，这两条轴之间的距离为$h$，则有
 	\[I=I_{CM}+Mh^2\]
 \end{law}
 
-幸于拥有平行轴公式，我们在背诵常见刚体的转动惯量时，一般只要记下其以质心轴为转动轴时的转动惯量即可。
+幸于拥有平行轴公式，我们在背诵常见刚体的转动惯量时，一般只要记下它以质心轴为转动轴时的转动惯量即可。
 
 \section[刚体中的能量]{\itr{Energy in a Rigid Body}{刚体中的能量}}
 好比从牛顿三律进发到能量定律，我们将开始研究刚体中的能量。
@@ -318,6 +314,7 @@
 答案是否定的。如果刚体在质心系中发生平动，那么质心就会拥有平动速度，然而，在质心系中，质心又一直处于原点，这与质心拥有平动速度相矛盾，因此刚体在质心系中只能发生转动\labelroot{chapter3_rotation_CM}。
 
 既然如此，我们便会有这样的想法：利用质心系，把同时发生平动和转动的物体转化成只发生转动的物体来研究。如此，便产生了柯尼希定理：
+
 \begin{law}[\itr{Konig's Theorem}{柯尼希定理}---\refleaftext{prove3.4}]
 	记一个系统$M$的质心速度为$v_{_{CM}}$，在质心系中的动能为$K^{CM}$，在静止参考系中的动能为$K$，并记$K_{CM}=\dfrac{1}{2}Mv_{_{CM}}{}^2$，则有
 	\[K=K_{CM}+K^{CM}\]
@@ -335,12 +332,13 @@
 \end{Itemize}
 以上内容证明见\refleaftext{prove3.5}。
 
-\footnotetext{对于这句话需持谨慎态度。在本文所定义的概念体系中，这句话是成立的，但由于大多数对角动量的定义都是对点定义，即$\displaystyle\sum_i\vec{r}_i\times\vec{p}_i$，就出现了角动量方向与角速度方向不一致的说法。\textbf{当出现这类判断时，请优先考虑不一致的说法}。}
+\footnotetext{对于这句话需持谨慎态度。在本章所定义的概念体系中，这句话是成立的，但由于大多数对角动量的定义都是对点定义，即$\displaystyle\sum_i\vec{r}_i\times\vec{p}_i$，就出现了角动量方向与角速度方向不一致的说法。\textbf{当出现这类判断时，请读者优先考虑不一致的说法}。}
 \subsection[角动量守恒]{\itr{Conservation of Angular Momentum}{角动量守恒}}
 \begin{Itemize}
 	\item \itr{Conservation of Angular Momentum}{角动量守恒}由角动量的性质，我们可以发现，当合外力矩的值为$\vec{0}$时，系统的角动量保持守恒。
 	\[\vec{\tau}_{net}=0\Leftrightarrow\vec{L}=Constant\]
 \end{Itemize}
+
 利用角动量守恒，可以解释开普勒第二定律。
 \begin{singlefigure}[\En{Kepler's Second Law}]{chapter3_kepler's_second_law}
 	对$M_p$分析，有$\vec{\tau}_{net}=\vec{r}\times\vec{F}_g=\vec{0}$，因此角动量守恒\\[1ex]
@@ -348,7 +346,7 @@
 \end{singlefigure}
 \En{When a force is directed toward or away from a
 	fixed point and is function of $\vec{r}$ only, it is called a
-	\itr{Central Force}{中心力}}
+	\itr{Central Force}{中心力}.}
 	
 	总是可以选择合适的轴，使得中心力产生的力矩为$\vec{0}$。
 	
@@ -375,7 +373,7 @@
 由于转动动力学的所有定律都是基于牛顿运动定律，结合数学方法推出的，因此，对于一个拥有加速度$\vec{a}_{frame}$的平动非惯性参考系\labelroot{chapter3_translation}，我们需要在分析其中的物体时添上惯性力$\vec{F}_{fictious}=-m\vec{a}_{frame}$，其中$m$为物体的质量。此时，牛顿运动定律保持成立，转动动力学中的定律也保持成立。
 
 \subsection[科里奥利力*]{\itr{Coriolis Force}{科里奥利力}*}
-你可能注意到了，之前的表述中，我们讲的是“拥有加速度$\vec{a}_{frame}$的平动非惯性参考系”(\refleaftext{chapter3_translation})。这暗示着，如果参考系还发生着转动，情况又会有所不同。
+你可能注意到了，之前的表述中，我们讲的是“拥有加速度$\vec{a}_{frame}$的平动非惯性参考系”\mgnote{见\refleaftext{chapter3_translation}}。这暗示着，如果参考系还发生着转动，情况又会有所不同。
 
 对于一个仅发生转动的参考系，有如下定理：
 \begin{law}[\itr{Frame Translation with Rotation}{考虑转动的参考系变换}$^*$---\refleaftext{prove3.8}]
@@ -385,7 +383,7 @@
 	
 	如果我们将条件简化，认为$\mathcal{F}'$没有角加速度，则无需考虑$-m\vec{\alpha}\times\vec{r}'$。
 	
-	我们称$-2m\vec{\omega}\times\vec{v}'$为\itr{Coriolis Force}{科里奥利力}，$m\omega^2\vec{r}'$为\itr{Centrifugal Force}{离心力}。
+	我们称$-2m\vec{\omega}\times\vec{v}'$为 \itr{Coriolis Force}{科里奥利力}，$m\omega^2\vec{r}'$为 \itr{Centrifugal Force}{离心力}。
 \end{law}
 \begin{singlefigure}[地球的科里奥利力]{chapter3_earth}[0.42]
 如果考虑地球的科里奥利力，我们会发现，在北半球上，\\科里奥利

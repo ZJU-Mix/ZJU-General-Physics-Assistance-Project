@@ -1,5 +1,6 @@
 \chapter[狭义相对论]{\itr{Special relativity}{狭义相对论}}
-\begin{solution}[{\large\color{plainred}Fizeau effect}\\In this problem we show that the relativistic velocity addition law can be used to
+\begin{solution}[{ Fizeau effect}]
+	In this problem we show that the relativistic velocity addition law can be used to
 	explain the Fizeau experiment without invoking the existence of \itr{ether}{以太}. The speed of light in stationary water is less than its speed $c$ in \itr{vacuum}{真空}.
 	Traditionally it is written as $\frac{c}{n}$, where $n\approx \frac{4}{3}$ is the \itr{index of refraction}{折射率} of water. The water flowed in the \itr{pipe}{管道} with
 	velocity $v$. In the lower arm $T_2$ of the \itr{interferometer}{干涉仪} (as shown in the figure), one would expect that, from the nonrelativistic addition law, the
@@ -14,10 +15,13 @@
 	a confirmation of a rather \itr{elaborate}{复杂的} \itr{contemporary}{同时代的} ether-theoretical
 	calculation based on the idea that the water was partially successful in
 	dragging ether along with it. Einstein later said that it was of
-	fundamental importance in his thinking.]
+	fundamental importance in his thinking.
       \begin{center}
-      	\includegraphics[width=5.5cm, height=4cm]{chapter_6_7}
+      	\thisincludegraphics[width=5.5cm, height=4cm]{chapter_6_7}
       \end{center}
+      
+      \tcbrule
+      
       此类题目主要是要选取恰当的参考系，并列出对应参数。
       
       以地面为$S$系，水流为$S^{\prime}$系，并设光前进方向为$x$轴正方向。
@@ -35,10 +39,17 @@
       代入表达式中，并忽略$v^{2}$相关的高阶小量，即有：
       \[w\approx(\frac{c}{n}+v)(1-\frac{v}{nc})=\frac{c}{n}+v(1-\frac{1}{n^{2}})\]
 \end{solution}
-\begin{solution}[{\large\itr{Terrel Rotation}{特雷尔旋转}}\\  A square with proper-length-$L$ sides flies past you at a speed $v$, in a direction parallel to two of its sides. You stand in the plane of the square. When you see the square at its nearest point to you, show that it looks to you like it is rotated, instead of contracted. (Assume that $L$ is small compared with the distance between you and the square.)]
+\begin{solution}[{\itr{Terrel Rotation}{特雷尔旋转}}]
+	\ctikzfig{chapter6_solution_6_2_1}
+	
+	A square with proper-length-$L$ sides flies past you at a speed $v$, in a direction parallel to two of its sides. You stand in the plane of the square. When you see the square at its nearest point to you, show that it looks to you like it is rotated, instead of contracted. (Assume that $L$ is small compared with the distance between you and the square.)
+	
+	\tcbrule
+	
     \itr{Terrel Rotation}{特雷尔旋转} 是相对论效应之一，即当物体以接近光速运动时，观察者会看到物体在视觉上旋转。
     
     \ctikzfig{chapter6_solution_6_2_2}
+    
     首先，正如图中标明的，由于尺缩效应，与运动同向的边$AB,CD$在$O$系中长度缩短为$sL$。
     
     之后，注意到我们处理的是视觉效应，那么我们就要考虑光信号到达人眼中才能成像的问题。举边$AD$为例，边上的每一个点发出的光到达人眼的时间都是不同的。在这里，我们考虑$A,D$两点。
@@ -58,15 +69,20 @@
     这里我们发现，恰有$(\beta L)^2 + (sL)^2 = L^2$。因此，人眼所看见的，就好像是图中旋转后的正方形$ABCD$在运动方向的投影。且对于旋转的角度$\theta$，有
     \[\sin\theta=\dfrac{\beta L}{L}=\beta\]
 \end{solution}
-\begin{solution}[{\large\color{plainred}Lots of transformations}\\A train with proper length $L$ moves at speed $\dfrac{c}{2}$ with respect to the ground. A ball is thrown from the back to the front, at speed $\dfrac{c}{3}$ with respect to the train. How much time does this take, and what distance does the ball cover, in:
-	\\(a) The train frame?
-	\\(b)The ground frame? Solve this by:
-	\\\hspace*{2em}i. Using a velocity-addition argument.
-	\\\hspace*{2em}ii. Using the Lorentz transformations to go from the train
-	frame to the ground frame.
-	\\(c)The ball frame?
-	\\(d) Verify that the \itr{invariant interval}{不变(时空)间隔} is indeed the same in all three
-	frames.]
+\begin{solution}[{ Lots of transformations}]
+	
+		A train with proper length $L$ moves at speed $\dfrac{c}{2}$ with respect to the ground. A ball is thrown from the back to the front, at speed $\dfrac{c}{3}$ with respect to the train. How much time does this take, and what distance does the ball cover, in:
+		\\(a) The train frame?
+		\\(b)The ground frame? Solve this by:
+		\\\hspace*{2em}i. Using a velocity-addition argument.
+		\\\hspace*{2em}ii. Using the Lorentz transformations to go from the train
+		frame to the ground frame.
+		\\(c)The ball frame?
+		\\(d) Verify that the \itr{invariant interval}{不变(时空)间隔} is indeed the same in all three
+		frames.
+		
+		\tcbrule
+		
         \ctikzfig{chapter6_solution_6_3}
         (a)火车相对自身是静止的，故火车系下其长度就是原长，而火车系下球的速度已知，故有
         \begin{equation*}
@@ -123,21 +139,22 @@
         
         注：如果老师上课时定义的时空间隔与此处不同，注意符号问题或者在回答时说明好。
 \end{solution}
-\newpage
-\begin{solution}[{\large\color{plainred}Train And \itr{Tunnel}{隧道} \itr{Paradox}{悖论}}\\
-	Consider a train running at a constant speed $V$ on the straight track in the $x$ direction, and passing through a tunnel (see the figure). The proper length of the train is $L$, and the proper length of the tunnel is $D$. Here we assume $L>D$. Define $(x,ct)$ as the time and the space coordinates of the track frame, and $(x',ct')$ as those of the train frame. Here, $x$ and $x' $\textbf{ are in the same direction}.	
-	\\
-	(a) Suppose that an observer standing on the ground sees that the train is shorter than the tunnel, so that the whole train can be inside the tunnel. Determine the smallest possible speed of the train.
-	\\
-	(b) Suppose that the rear end of the tunnel (see the figure) is at $x=0$, and set the time $t=t'=0$ when the rear end of the train reaches the rear end of the tunnel. Draw the Minkowski diagram \textbf{ taking $x$ coordinate for the horizontal axis and $ct$ coordinate for the vertical axis.} In addition, \itr{specify}{指明} $L$ and $D$ in the diagram.
-	\\
-	(c) When the rear end of the train enters the rear end of the tunnel, the rear-end and front-end sliding doors of the tunnel (see the figure) are closed at the same time in the track frame. These two events are denoted by $R_{close}$ and $F_{close}$, respectevely. Then, when the front-end of the train reaches the front end of the tunnel, both the rear-end and front-end sliding doors are opened at the same time in the track frame. These events are denoted by $R_{open}$ and $F_{open}$, respectively.
-	\\
-	Show the events $R_{close},F_{close},R_{open}$, and $F_{open}$ in the Minkowski diagram in (b),
-	and put the four events in the order of being seen by an observer in the train.
-	]
+
+\begin{solution}[{Train And \itr{Tunnel}{隧道} \itr{Paradox}{悖论}}]
+	Consider a train running at a constant speed $V$ on the straight track in the $x$ direction, and passing through a tunnel (see the figure). The proper length of the train is $L$, and the proper length of the tunnel is $D$. Here we assume $L>D$. Define $(x,ct)$ as the time and the space coordinates of the track frame, and $(x',ct')$ as those of the train frame. Here, $x$ and $x' $\textbf{ are in the same direction}.
 	\begin{singlefigure}{chapter_6_20}[1]    
 	\end{singlefigure}
+	(a) Suppose that an observer standing on the ground sees that the train is shorter than the tunnel, so that the whole train can be inside the tunnel. Determine the smallest possible speed of the train.
+	
+	(b) Suppose that the rear end of the tunnel (see the figure) is at $x=0$, and set the time $t=t'=0$ when the rear end of the train reaches the rear end of the tunnel. Draw the Minkowski diagram \textbf{ taking $x$ coordinate for the horizontal axis and $ct$ coordinate for the vertical axis.} In addition, \itr{specify}{指明} $L$ and $D$ in the diagram.
+	
+	(c) When the rear end of the train enters the rear end of the tunnel, the rear-end and front-end sliding doors of the tunnel (see the figure) are closed at the same time in the track frame. These two events are denoted by $R_{close}$ and $F_{close}$, respectevely. Then, when the front-end of the train reaches the front end of the tunnel, both the rear-end and front-end sliding doors are opened at the same time in the track frame. These events are denoted by $R_{open}$ and $F_{open}$, respectively.
+	
+	Show the events $R_{close},F_{close},R_{open}$, and $F_{open}$ in the Minkowski diagram in (b),
+	and put the four events in the order of being seen by an observer in the train.
+	
+	\tcbrule
+	
     (a)
     \\根据尺缩效应，在轨道参考系中，火车的长度为
     \[\sqrt{1-\dfrac{v^2}{c^2}}L\]
@@ -155,7 +172,7 @@
     
     接下来，设$OQ$是$x'$轴上的，可以表示$L$的线段。
     
-    首先，需要过$P$做校准曲线，与$x'$轴相交于$Q_1$点。由于题目条件$L>D$，因此$Q$在$Q_1$右侧。
+    首先，需要过$P$作校准曲线，与$x'$轴相交于$Q_1$点。由于题目条件$L>D$，因此$Q$在$Q_1$右侧。
     
     另外，还需要过$P$作$ct'$轴的平行线，交$x'$轴于$Q_2$点。这是因为列车在轨道系(也就是$x-ct$系)中的长度应当小于$D$，且列车头的世界线斜率与$ct'$轴斜率相同。于是，过$Q$的$ct'$轴的平行线与$x$轴的交点应在$P$的左侧，等价于$Q$在$Q_2$的左侧。
     
@@ -178,26 +195,28 @@
     由于题目要求比较在列车系中各时间的发生先后，我们取四个事件在$ct'$轴上的分量。由图即得时序为
     \[F_{close}\rightarrow F_{open}\rightarrow R_{close}\rightarrow R_{open}\]
 \end{solution}
-\newpage
-\begin{solution}[{\large\color{plainred}Conservation of momentum in SR}\\
-		In class, we showed that the classical definition of the linear
-		momentum cannot be right in the relativistic case. We illustrated by the
-		example of the collision of two particles with equal mass $m$. In the rest
-		frame (for the center of mass) $K$, the two particles have velocities with
-		the same amplitude $v$ but opposite directions along $x$ axis before the
-		collision, as illustrated in Fig.(a). After the collision, they move away along $y$ axis with the same speed $v$, as illustrated in Fig.(b). \\Now, in a frame $K'$ that moves with speed $v$ along the positive $x$ direction with respect to the rest frame $K$, as illustrated in Fig.(c), one particle is at rest before the
-		collision. 
-		\\(i) What is the velocity of the other particle before the
-		collision? 
-		\\(ii) After the collision, as illustrated in Fig.(d), what are the velocities of
-		the two particles? Specify the components of the velocities along $x$ and
-		$y$ axes.
-		\\(iii) Show that if you use the definition of the relativistic
-		momentum, you will maintain the conservation of linear momentum in
-		the moving frame $K'$.
-	]
-		\begin{singlefigure}{chapter_6_23}[0.6]   
-		\end{singlefigure}
+
+\begin{solution}[{ Conservation of momentum in SR}]
+	In class, we showed that the classical definition of the linear
+	momentum cannot be right in the relativistic case. We illustrated by the
+	example of the collision of two particles with equal mass $m$. In the rest
+	frame (for the center of mass) $K$, the two particles have velocities with
+	the same amplitude $v$ but opposite directions along $x$ axis before the
+	collision, as illustrated in Fig.(a). After the collision, they move away along $y$ axis with the same speed $v$, as illustrated in Fig.(b). \\Now, in a frame $K'$ that moves with speed $v$ along the positive $x$ direction with respect to the rest frame $K$, as illustrated in Fig.(c), one particle is at rest before the
+	collision. 
+	\\(i) What is the velocity of the other particle before the
+	collision? 
+	\\(ii) After the collision, as illustrated in Fig.(d), what are the velocities of
+	the two particles? Specify the components of the velocities along $x$ and
+	$y$ axes.
+	\\(iii) Show that if you use the definition of the relativistic
+	momentum, you will maintain the conservation of linear momentum in
+	the moving frame $K'$.
+	\begin{singlefigure}{chapter_6_23}[0.6]   
+	\end{singlefigure}
+	
+	\tcbrule
+	
       (i) 不妨记``the other particle''在$K'$系中碰撞前的速度为$v'$，由速度变换公式有
         \[v'=\dfrac{v+v}{1+\dfrac{v^{2}}{c^{2}}}=\dfrac{2v}{1+\dfrac{v^{2}}{c^{2}}} \]
       (ii) 这题相当于考察我们$K$系中如图(b)的速度在$K'$系中如何变化，使用速度变换公式即可。
@@ -234,16 +253,18 @@
         故$p_i=p_f$，系统保持动量守恒
 
 \end{solution}
-\newpage
-\begin{solution}[{\large\color{plainred}Perfectly Inelastic Collison of two Relastivistic Particles}\\
+
+\begin{solution}[{ Perfectly Inelastic Collison of two Relastivistic Particles}]
 	Consider a perfectly inelastic collision of two relativistic particles $A$ and $B$ with equal rest mass $m$. In the center-of-mass frame $K$, the two particles have velocities with the same magnitude $v$, but opposite directions along $x$ axis before the collision, as illustrated in the top left part of the figure. After the collision, they stick together, as illustrated in the bottom left part of the figure. Now, in another frame $K'$ that moves with speed $v$ along the negative $x$ direction with respect to the $K$-frame (right part of the figure), particle $A$ is at rest before the collision.
 	\\(a) Considering the energy conservation for the collision in $K$-frame, calculate the
 	rest mass $M$ of each particle after the collision.
 	\\(b) In $K'$-frame, what is the velocity $u$ of particle $B$ before the collision?
 	\\(c) In $K'$-frame, show that the linear momentum and energy are conserved in the collision process.
-	]
-	\begin{singlefigure}{chapter_6_24}[0.6]    
+	\begin{singlefigure}{chapter_6_24}[0.7]    
 	\end{singlefigure}
+	
+	\tcbrule
+	
     (a) 由能量守恒
     \[2\frac{mc^2}{\sqrt{1-\dfrac{v^2}{c^2}}}=2Mc^2\]
     解得\[
@@ -273,22 +294,23 @@
     
     PS：其实狭义相对论考察能动量相对来说是最为简单的，如果不涉及变换，只要列出守恒方程一顿算就好了(不是)
 \end{solution}
-\newpage
-\begin{solution}[{\large\color{plainred}Relastivistic Scattering between a Photon and an Electron}\\
-	\small
-	 In this problem, a particular scattering process between a photon and an electron known as \itr{Compton Scattering}{康普顿散射} will be addressed. For simplicity, we will consider only one spatial dimension so that spatial vectors $\vec{a}=a\vec{e}_x$  \itr{possess}{拥有} only one non-zero component and where $\vec{e}_x$ is the unit vector along the $x$ axis. In this setting, a photon of energy $E_\mathrm{ph}$ is \itr{propagating}{传播} along the $x$ axis and hits an electron. We want to understand with which energy the photon is scattered back along the $x$ axis in terms of the initial parameters. Let $c$ be the speed of light.
+
+\begin{solution}[{ Relastivistic Scattering between a Photon and an Electron}]
+	In this problem, a particular scattering process between a photon and an electron known as \itr{Compton Scattering}{康普顿散射} will be addressed. For simplicity, we will consider only one spatial dimension so that spatial vectors $\vec{a}=a\vec{e}_x$  \itr{possess}{拥有} only one non-zero component and where $\vec{e}_x$ is the unit vector along the $x$ axis. In this setting, a photon of energy $E_\mathrm{ph}$ is \itr{propagating}{传播} along the $x$ axis and hits an electron. We want to understand with which energy the photon is scattered back along the $x$ axis in terms of the initial parameters. Let $c$ be the speed of light.
 	\\(a) As a first step, write down
 	\\\hspace*{2em}(i) the relativistic expressions for the energy $E$ and momentum $\vec{p}$ of a particle of mass $m$ and velocity $\vec{v} = v\vec{e}_x$.
 	\\\hspace*{2em}(ii) the expressions for $\dfrac{E'}{c}$ and $\vec{p}'$ in terms of $\dfrac{E}{c}$ and $\vec{p}$ in an inertial frame that moves with
 	velocity $\vec{u}=u\vec{e}_{x}$ relative to the one where the particle has energy $\dfrac{E}{c}$ and momentum $\vec{p}$.\\
-	Hint: the Lorentz transformation of the position four-vector is \[(ct^{\prime},x^{\prime},0,0)=(\gamma ct-\beta\gamma x,\gamma x-\beta \gamma ct, 0, 0), \beta = \dfrac{u}{c}, \gamma = \dfrac{1}{\sqrt {1- \beta ^2}}\]. 
+	Hint: the Lorentz transformation of the position four-vector is \[(ct^{\prime},x^{\prime},0,0)=(\gamma ct-\beta\gamma x,\gamma x-\beta \gamma ct, 0, 0), \beta = \dfrac{u}{c}, \gamma = \dfrac{1}{\sqrt {1- \beta ^2}}\]
 	(b) Consider the energy-momentum four-vector $\vec{P}$ defined as $\vec{P}=(\dfrac{E}{c},\vec{p})$.\\
 	\hspace*{2em}(i) Show that $\vec{P}\cdot\vec{P}$ yields the energy-momentum relation, where $\vec{P}\cdot\vec{P}$ denotes the scalar product of four-vector $\vec{P}$ with itself.\\ Hint: For four-vectors $\vec{A}=(a_0,\vec{a})$ and $\vec{B}=(b_0,\vec{b})$, the scalar product is defined as  \[\vec{A}\cdot\vec{B}=a_{0}b_{0}-\vec{a}\cdot\vec{b}\]
 	\hspace*{2em}(ii) Show that $\vec{P}'\cdot\vec{P}'=\vec{P}\cdot\vec{P}$ where $\vec{P}'=(\dfrac{E'}{c},\vec{p}')$.\\
 	\hspace*{2em}(iii) The energy-momentum relation for a photon is that of a particle \itr{of vanishing rest mass}{无静质量}. If $\vec{K} = ( \dfrac{E_{\mathrm{ph}}}{c}, \vec{k} )$ is the energy-momentum four-vector of a photon, what is the value of $\vec{K}\cdot\vec{K}$?\\
 	(c) Consider now a photon of 4-momentum $\vec{K}$ that is propagating along the $x$ axis and hits an electron with mass $m$ and 4-momentum $\vec{P}$ and is scattered back elastically along the x axis with energy $E_{\mathrm{ph}}^{\mathrm{fi}}.$ What is $E_\mathrm{ph}^\mathrm{fi}$ in terms of $m$ and $E_\mathrm{ph}?$ The result is commonly quoted in terms of $\dfrac{1}{E_\mathrm{ph}^\mathrm{fi}}$.\\
 	Hint: One way to proceed is to choose the rest frame of the electron before the collision, write down the energy-momentum four-vectors before and after the collision and relate the four-vectors before and after the collision using energy and momentum conservation.
-	]
+	
+	\tcbrule
+	
 (a-i) (纯纯默写公式)
     \[E=\frac{mc^{2}}{\sqrt{1-\dfrac{v^2}{c^{2}}}}\quad\vec{P}=\frac{m\vec{v}}{\sqrt{1-\dfrac{v^2}{c^{2}}}}\]
     (a-ii) 即能动量变换的同一量纲形式(\refleaftext{law6.5}，\refleaftext{prove6.6})
@@ -303,11 +325,11 @@
     \end{aligned}\right.\]
 (b-i) 由题给定义有
  \[\vec{P}\cdot \vec{P}= \frac {E^{2}}{c^{2}}- P^{2}\]
-由洛伦兹不变量$\left(\dfrac{E}{c}\right)^2-p^2=(mc)^2$(\refleaftext{chapter6_invariant})得
+由洛伦兹不变量$\left(\dfrac{E}{c}\right)^2-p^2=(mc)^2$\mgnote{见\refleaftext{chapter6_invariant}}得
 \[\vec{P}\cdot\vec{P}=m^2c^2\]
  (b-ii) 处理方法同(b-i)，有
 \[\vec{P}'\cdot \vec{P}'= \frac {E'{}^{2}}{c^{2}}- P'{}^{2}=m^2c^2=\vec{P}\cdot\vec{P}\]
-(b-iii) 我们知道，没有静质量的光子的能动量较为特殊(\refleaftext{chapter6_photon})，有
+(b-iii) 我们知道，没有静质量的光子的能动量较为特殊\mgnote{见\refleaftext{chapter6_photon}}，有
 \[\dfrac{E_{\mathrm{ph}}}{c}=k\]
 注意这里根据题意，$\vec{k}$即表示光子的动量，不要在符号上疑惑。
 

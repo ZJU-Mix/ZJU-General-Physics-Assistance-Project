@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-7, 0) {};
+		\node [style=none] (1) at (7, 0) {};
+		\node [style=none] (2) at (0, 5) {};
+		\node [style=none] (3) at (0, -5) {};
+		\node [style=none] (4) at (-7, 5) {};
+		\node [style=none] (5) at (7, -5) {};
+		\node [style=none] (6) at (-4.5, 3.25) {};
+		\node [style=none] (7) at (-4.5, 0) {};
+		\node [style=none] (8) at (0, 0) {};
+		\node [style=none] (9) at (-0.5, -0.5) {$O$};
+		\node [style=none] (10) at (-2.5, -0.5) {$x_{max}$};
+		\node [style=none] (11) at (-5.75, 1.5) {$kx_{max}$};
+		\node [style=none] (12) at (-3, 4.5) {$\displaystyle\mathrm{Area}=\frac{1}{2}kx_{max}{}^2$};
+		\node [style=none] (13) at (0.75, 5) {$F_s$};
+		\node [style=none] (14) at (7, -0.5) {$x$};
+		\node [style=none] (15) at (8, 3) {$\displaystyle W_{s}=\int_{x_{i}}^{x_{f}}F_{s}\mathrm{d}x=\int_{-x_{max}}^{0}(-kx)\mathrm{d}x=\frac{1}{2} kx_{max}^{2}$};
+		\node [style=none] (16) at (4.25, -1.5) {$F_s=-kx$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (3.center) to (2.center);
+		\draw [style=yellow zone] (7.center)
+			 to (8.center)
+			 to (6.center)
+			 to cycle;
+		\draw [style=blue line] (4.center) to (5.center);
+		\draw [style=black] (6.center) to (7.center);
+		\draw [style=arrow] (0.center) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,8 +1,160 @@
 
 %\definecolor{softblue}{rgb}{0.92,0.95,0.99}
 \thispagestyle{empty}
+\if@physicsHNotes@dark
+	\newcommand{\apart}[1]%
+	{
+		\newpage
+		\thispagestyle{empty}
+		\stepcounter{apart}%
+		\addcontentsline{toc}{chapter}{\large #1}%
+		\begin{tikzpicture}[overlay,remember picture,font=\sffamily\bfseries]
+			\fill[fill=backgroundcolor] (current page.south west) rectangle (current page.north east);
+			
+			\draw[ultra thick,gray4,name path=big arc] ([xshift=-2mm]current page.north) arc(150:285:11)
+			coordinate[pos=0.225] (x0);
+			\begin{scope}
+				\clip ([xshift=-2mm]current page.north) arc(150:285:11) --(current page.north
+				east);
+				\fill[gray2!95!plaincyan] ([xshift=4.55cm]x0) circle (4.55);
+				\fill[gray3!95!plaincyan] ([xshift=3.4cm]x0) circle (3.4);
+				\fill[gray4!95!plaincyan] ([xshift=2.25cm]x0) circle (2.25);
+				\draw[ultra thick,gray5!90!plaincyan] (x0) arc(-90:30:6.5);
+				\draw[ultra thick,gray5!90!plaincyan] (x0) arc(90:-30:8.75);
+				\draw[ultra thick,gray5!90!plaincyan,name path=arc1] (x0) arc(90:-90:4.675);
+				\draw[ultra thick,gray5!90!plaincyan] (x0) arc(90:-90:2.875);
+				\path[name intersections={of=big arc and arc1,by=x1}];
+				\draw[ultra thick,gray5!90!plaincyan,name path=arc2] (x1) arc(135:-20:4.75);
+				\draw[ultra thick,gray5!90!plaincyan] (x1) arc(135:-20:8.75);
+				\path[name intersections={of=big arc and arc2,by={aux,x2}}];
+				\draw[ultra thick,gray5!90!plaincyan] (x2) arc(180:50:2.25);
+			\end{scope}
+			\path[decoration={text along path,text color=textcolor,
+				raise = -2.8ex,
+				text  along path,
+				text = {|\sffamily\bfseries|},
+				text align = center,
+			},
+			decorate
+			] ([xshift=-2mm]current page.north) arc(150:245:11);
+			%
+			\begin{scope}
+				\path[clip,postaction={fill=gray2}]
+				([xshift=2cm,yshift=-9.5cm]current page.center) rectangle ++ (4.2,7.7);
+				\draw[ultra thick,gray4!80!plaincyan] ([xshift=-1.5cm,yshift=-9.5cm]current page.center)
+				arc(180:0:2);
+				\draw[ultra thick,gray4!80!plaincyan] ([xshift=0.5cm,yshift=-9.5cm]current page.center)
+				arc(180:0:2);
+				\draw[ultra thick,gray4!80!plaincyan] ([xshift=2.5cm,yshift=-9.5cm]current page.center)
+				arc(180:0:2);
+				\draw[ultra thick,gray4!80!plaincyan] ([xshift=4.5cm,yshift=-9.5cm]current page.center)
+				arc(180:0:2);
+				\fill[gray!50] ([xshift=2.5cm,yshift=-9.5cm]current page.center) +(60:2) circle(1.5mm);
+				\node[text=textcolor!50!plaincyan] at ([xshift=4.7cm,yshift=-6.7cm]current page.center) {\LARGE \hspace*{-3.9em}G.P.A};
+			\end{scope}
+			%
+			\fill[gray3] ([xshift=2cm,yshift=-9.5cm]current page.center) rectangle ++ (-13.7,7.7);
+			\fill[backgroundcolor!90]([xshift=-2cm,yshift=-7.3cm]current page.center) rectangle ++ (-9.7,3);
+			\node[text=textcolor!60!plaincyan,anchor=west,scale=4,inner sep=0pt] at
+			([xshift=-10.55cm,yshift=-5.8cm]current page.center) {\ \,#1};
+			\fill[gray4!80!plaincyan] ([xshift=-2cm,yshift=-7.3cm]current page.center) -- ([xshift=-2cm,yshift=-4.3cm]current page.center) -- ([xshift=-1cm,yshift=-5.8cm]current page.center) -- cycle;
+		\end{tikzpicture}
+	}
+	\tikzset{pics/.cd,
+		triple circle/.style={code={
+				\fill[gray2] (4,0) circle (4);
+				\fill[gray4] (3,0) circle (3);
+				\fill[gray6] (2,0) circle (2);
+	}}}
+	\begin{tikzpicture}[overlay,remember picture]
+		\fill[backgroundcolor] (current page.north west) rectangle (current page.south east); 
+		\draw[gray] ([xshift=-1cm]current page.north) 
+		-- node[midway, above, sloped, font=\LARGE, text=white] {$\displaystyle E=\gamma mc^2$}
+		++ (-60:9) pic[rotate=90-60,scale=0.7] {triple circle};
+		\draw[gray] (current page.north west) 
+		-- node[midway, above, sloped, font=\LARGE, text=white] {$\displaystyle x'=\gamma\left(x-\beta ct\right)\qquad\qquad$}
+		node[midway, below, sloped, font=\LARGE, text=white] {$\qquad\qquad\displaystyle ct'=\gamma\left(ct-\beta x\right)$}
+		++ (-40:20) pic[rotate=90-40,scale=0.3] {triple circle};
+		\draw[gray] ([yshift=-11cm]current page.north east) 
+		-- node[midway, above, sloped, font=\LARGE, text=white] {$\displaystyle \vec{F}=m\vec{a}$}
+		++ (-110:15) coordinate (endPoint) pic[rotate=90-110,scale=0.8] {triple circle};
+		\node[above right=12cm and 2cm of current page.south west,font=\Huge\itshape,white] (H)
+		{\underline{普通物理の超绝援助}};
+		\node[below=1mm of H.south west,anchor=north west,font=\bfseries\LARGE,color=textcolor]{\ General Physics Assistance};
+		\node[below=1.4cm of H.south west,anchor=north west,font=\itshape\LARGE,color=textcolor]{\ 混合普物{\bfseries\normalfont(H)}笔记小组\,\raisebox{0.2ex}{\tikz{\draw(0.15,0.15)circle(0.15);
+					\draw(0.15,0.15)circle(0.1);}} 著};
+		\node[above right=9cm and 12cm of current page.south west] (PPP) {};
+		\node[right = 1mm of current page.south west] (PPL) {};
+		\node[right = 2mm of current page.south west] (PPR) {};
+		\draw[gray, thick] (current page.south west) 
+		to[out=20, in=180] (PPP);
+		\draw[gray, thick] (PPL) 
+		to[out=20, in=180] (PPP);
+		\draw[gray, thick] (PPR) 
+		to[out=16, in=180] (PPP);
+	\end{tikzpicture}
+	%暗色版封面参考https://www.latexstudio.net/index/details/index/mid/3310
+\else
+	\newcommand{\apart}[1]%
+	{
+		\newpage
+		\thispagestyle{empty}
+		\stepcounter{apart}%
+		\addcontentsline{toc}{chapter}{\large #1}%
+		\begin{tikzpicture}[overlay,remember picture,font=\sffamily\bfseries]
+			\fill[fill=thisgreen!2!thiswhite] (current page.south west) rectangle (current page.north east);
+			
+			\draw[ultra thick,c4,name path=big arc] ([xshift=-2mm]current page.north) arc(150:285:11)
+			coordinate[pos=0.225] (x0);
+			\begin{scope}
+				\clip ([xshift=-2mm]current page.north) arc(150:285:11) --(current page.north
+				east);
+				\fill[c4!50,opacity=0.25] ([xshift=4.55cm]x0) circle (4.55);
+				\fill[c4!50,opacity=0.25] ([xshift=3.4cm]x0) circle (3.4);
+				\fill[c4!50,opacity=0.25] ([xshift=2.25cm]x0) circle (2.25);
+				\draw[ultra thick,c4!50] (x0) arc(-90:30:6.5);
+				\draw[ultra thick,c4] (x0) arc(90:-30:8.75);
+				\draw[ultra thick,c4!50,name path=arc1] (x0) arc(90:-90:4.675);
+				\draw[ultra thick,c4!50] (x0) arc(90:-90:2.875);
+				\path[name intersections={of=big arc and arc1,by=x1}];
+				\draw[ultra thick,c4,name path=arc2] (x1) arc(135:-20:4.75);
+				\draw[ultra thick,c4!50] (x1) arc(135:-20:8.75);
+				\path[name intersections={of=big arc and arc2,by={aux,x2}}];
+				\draw[ultra thick,c4!50] (x2) arc(180:50:2.25);
+			\end{scope}
+			\path[decoration={text along path,text color=c4,
+				raise = -2.8ex,
+				text  along path,
+				text = {|\sffamily\bfseries|},
+				text align = center,
+			},
+			decorate
+			] ([xshift=-2mm]current page.north) arc(150:245:11);
+			%
+			\begin{scope}
+				\path[clip,postaction={fill=thisyellow!10!thiswhite}]
+				([xshift=2cm,yshift=-9.5cm]current page.center) rectangle ++ (4.2,7.7);
+				\draw[ultra thick,plaincyan] ([xshift=-1.5cm,yshift=-9.5cm]current page.center)
+				arc(180:0:2);
+				\draw[ultra thick,plaincyan] ([xshift=0.5cm,yshift=-9.5cm]current page.center)
+				arc(180:0:2);
+				\draw[ultra thick,plaincyan] ([xshift=2.5cm,yshift=-9.5cm]current page.center)
+				arc(180:0:2);
+				\draw[ultra thick,plaincyan] ([xshift=4.5cm,yshift=-9.5cm]current page.center)
+				arc(180:0:2);
+				\fill[thisred!20!thiswhite] ([xshift=2.5cm,yshift=-9.5cm]current page.center) +(60:2) circle(1.5mm);
+				\node[text=c5!80!thisblack] at ([xshift=4.7cm,yshift=-6.7cm]current page.center) {\LARGE \hspace*{-3.9em}G.P.A};
+			\end{scope}
+			%
+			\fill[thisred!5!thiswhite] ([xshift=2cm,yshift=-9.5cm]current page.center) rectangle ++ (-13.7,7.7);
+			\fill[thisred!10!thiswhite]([xshift=-2cm,yshift=-7.3cm]current page.center) rectangle ++ (-9.7,3);
+			\node[text=thisblack!60!thiswhite,anchor=west,scale=4,inner sep=0pt] at
+			([xshift=-10.55cm,yshift=-5.8cm]current page.center) {\ \,#1};
+			\fill[orangepink!60!thiswhite] ([xshift=-2cm,yshift=-7.3cm]current page.center) -- ([xshift=-2cm,yshift=-4.3cm]current page.center) -- ([xshift=-1cm,yshift=-5.8cm]current page.center) -- cycle;
+		\end{tikzpicture}
+	}
 	\begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
-		\fill[green!2!white] (current page.south west) rectangle (current page.north east);
+		\fill[thisgreen!2!thiswhite] (current page.south west) rectangle (current page.north east);
 		
 		\coordinate (B1) at ([xshift=-8pt,yshift=-400pt]current page.north west);
 		\coordinate (B2) at ([xshift=-8pt,yshift=-125pt]current page.north west);
@@ -15,7 +167,7 @@
 		\begin{scope}[decoration=Koch snowflake]
 			\draw (B3)  ++(43:7)coordinate(C3)  ++(123:7)coordinate(D3);
 			
-			\draw[titlepagecolor!20,line width=2pt,fill = red!5!white]
+			\draw[titlepagecolor!20,line width=2pt,fill = thisred!5!thiswhite]
 			decorate{decorate{decorate{decorate{(D3) -- (C3) -- (B3)}}}};
 			
 			\draw (B7)  ++(140:8)coordinate(C7)  ++(-175:8)coordinate(D7);
@@ -25,7 +177,7 @@
 			
 			\draw (B6) ++(100:10) coordinate(C6)  ;
 			
-			\draw[titlepagecolor!80,line width=1pt,fill = yellow!10!white]
+			\draw[titlepagecolor!80,line width=1pt,fill = thisyellow!10!thiswhite]
 			decorate{decorate{decorate{decorate{(current page.south west) -- (B1) -- (C6) --
 							(B6)}}}} -- cycle ;
 			
@@ -39,22 +191,23 @@
 			\draw[titlepagecolor!50,line width=1pt,]
 			decorate{decorate{decorate{decorate{(E2) -- (B2)}}}};
 			
-			\draw[titlepagecolor!30,line width=3pt,rounded corners=6pt,fill=cyan!5!white]
+			\draw[titlepagecolor!30,line width=3pt,rounded corners=6pt,fill=thiscyan!5!thiswhite]
 			(B5) -- ++(135:2) -- ++(45:2);
 			
-			\draw[titlepagecolor!60,line width=4pt,rounded corners=6pt,fill=cyan!5!white]
+			\draw[titlepagecolor!60,line width=4pt,rounded corners=6pt,fill=thiscyan!5!thiswhite]
 			(B4) -- ++(135:5) -- ++(45:5);
 		\end{scope}
 		\node [xslant=0.2, scale = 3.1, anchor = north east,inner xsep = 0pt, ](author) at ([shift={(-0.1\paperwidth,0.35\paperheight)}]current page.east) {普\,通\,物\,理\,の\,超\,绝\,援\,助
-			};
+		};
 		
 		\draw[line width=3pt] (author.south west) -- (author.south east);
 		
 		\node [scale = 3, anchor = north east, inner xsep = 0pt, ] at ([shift={(-0.1\paperwidth,0.24\paperheight)}]current page.east) {General Physics Assistance};
 		
 		\node [scale = 2, anchor = north east,inner xsep = 0pt, ] at ([shift={(-0.1\paperwidth,0.17\paperheight)}]current page.east) {混合普物(H)笔记小组\,\raisebox{-0.2ex}{\tikz{\draw(0.15,0.15)circle(0.15);
-					\draw(0.15,0.15)circle(0.1);}}   著};
-		
-		%\node [align = left, scale = 3, anchor = south west,inner xsep = 0pt, ] at ([shift={(0.1\paperwidth,0.15\paperheight)}]current page.south west) {  };
+					\draw(0.15,0.15)circle(0.1);}}  \color{textcolor} 著};
 	\end{tikzpicture}%
+	
+\fi
+	
 	\setcounter{page}{0}

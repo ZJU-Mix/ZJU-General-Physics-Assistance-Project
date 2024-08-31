@@ -1,13 +1,14 @@
-\ProvidesPackage{reftree}
-\RequirePackage{cleveref}
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{reftree}[strong label and ref]
 \RequirePackage{xparse}
-%生成书签与超链接
 \RequirePackage{amsmath}
 \RequirePackage{xcolor}
 \RequirePackage{etoolbox}
 \RequirePackage{kvoptions}
 \RequirePackage{keyval}
-\newcounter{ClearRef}
+\RequirePackage{mgnote}
+
+\newcounter{RTCtr}
 %用于遍历引用位置的计数器
 \newcommand{\RTref}[1]{\ref{#1}}
 %reftree--ref
@@ -16,57 +17,59 @@
 	family=@reftree,
 	prefix=@reftree@
 }
-\begin{comment}
-\newcommand{\reftreelabelcolor}{-red}
-\newcommand{\reftreerefcolor}{-green}
-%\def\reftree@color@label{-red}
-%\def\reftree@color@ref{-green}
 
-\define@key{color}{label}{%
-	%\def\reftree@color@label{#1}
-	\renewcommand{\reftreelabelcolor}{#1}
-}
-\define@key{color}{ref}{%
-	%\def\reftree@color@ref{#1}
-	\renewcommand{\reftreerefcolor}{#1}
-}
-\define@key{reftree}{color}{%
-	\setkeys{color}{#1}
-}
-\def\reftreestyle#1{%
-	\setkeys{reftree}{#1}
-}
-\def\reftreecolor#1{%
-	\setkeys{color}{#1}
-}
-\end{comment}
-\DeclareBoolOption[false]{Auto}
-\DeclareBoolOption[false]{English}
-\DeclareBoolOption[false]{Clever}
-\DeclareBoolOption[false]{Unified}
+\DeclareBoolOption[false]{english}
+%英文引用还是中文引用
+
+\DeclareBoolOption[true]{clever}
+%需不需要cleverref包定制引用头
+
+\DeclareStringOption[-green]{refcolor}
+%引用颜色
+
+\DeclareStringOption[-green]{labelcolor}
+%标签颜色
+
+\DeclareStringOption[\itshape]{fontshape}
+%引用的字体
+
+\DeclareStringOption[black]{framecolor}
+%边框颜色
+
+\DeclareBoolOption[false]{arabic}
+%引用序号用罗马数字还是阿拉伯数字
+
+\DeclareStringOption[6em]{width}
+%卡片长度
+
 \ProcessKeyvalOptions*
 \relax
 
-\if@reftree@Auto
-	\renewcommand{\RTref}[1]{\autoref{#1}}
-	\if@reftree@English
-	\else
-	\renewcommand{\figureautorefname}{图}
-	\renewcommand{\tableautorefname}{表}
-	\renewcommand{\equationautorefname}{式}
-	\renewcommand{\chapterautorefname}{章}
-	\renewcommand{\sectionautorefname}{节}
-	\renewcommand{\subsectionautorefname}{小节}
-	\renewcommand{\subsubsectionautorefname}{子小节}
-	\renewcommand{\paragraphautorefname}{段}
-	\renewcommand{\subparagraphautorefname}{子段}
-	\renewcommand{\footnoteautorefname}{脚注}
-	\fi
+\newif\ifRTEnglish
+\if@reftree@english
+	\RTEnglishtrue
+\else
+	\RTEnglishfalse
 \fi
+%英文引用还是中文引用
 
-\if@reftree@Clever
+\newcommand{\RTFontshape}{\@reftree@fontshape}
+%引用时使用的字体
+\newcommand{\RTWidth}{\@reftree@width}
+%卡片长度
+
+\if@reftree@arabic
+	\newcommand{\RTCtrFmt}[1]{\arabic{#1}}
+\else
+	\newcommand{\RTCtrFmt}[1]{\Roman{#1}}
+\fi
+%引用序号的样式
+
+\if@reftree@clever
+    \RequirePackage{cleveref}
 	\renewcommand{\RTref}[1]{\Cref{#1}}
-	\if@reftree@English
+	\if@reftree@english
+		\Crefname{MgCtr}{marginnote}{marginnote}
 	\else
 		\Crefname{figure}{图}{图}
 		\Crefname{table}{表}{表}
@@ -78,139 +81,203 @@
 		\Crefname{paragraph}{段}{段}
 		\Crefname{subparagraph}{子段}{子段}
 		\Crefname{footnote}{脚注}{脚注}
+		\Crefname{MgCtr}{边注}{边注}
 	\fi
 \fi
+%是否使用cleverref包定制引用头
 
-\newif\ifclearref
-\clearreffalse
+\newif\ifRTRef
+\RTReffalse
 
-\newif\iffirstuse
-\firstusefalse
+\newif\ifRTFirstUse
+\RTFirstUsefalse
 
 %内置宏，用于检查标签定义情况
 
-\makeatletter 
+\newcommand{\RTCheckLabelDefined}[1]{%
+	\@ifundefined{r@#1}{\RTReffalse}{\RTReftrue}%
+}
+%用于检查标签是否被定义
 
-\newcommand{\checklabeldefined}[1]%
-{%  
-	\@ifundefined{r@#1}{\clearreffalse}{\clearreftrue}%  
-}%用于检查标签是否被定义 
-
-\newcommand{\reftreerefcolor}{-green}
-\newcommand{\reftreelabelcolor}{-red}
-\if@reftree@Unified
-	\renewcommand{\reftreelabelcolor}{-green}
-\fi
-\colorlet{refcolor}{\reftreerefcolor}
-\colorlet{labelcolor}{\reftreelabelcolor}
+\colorlet{RTRefColor}{\@reftree@refcolor}
+\colorlet{RTLabelColor}{\@reftree@labelcolor}
+\colorlet{RTFrameColor}{\@reftree@framecolor}
 %设置颜色
-\makeatother
 
-\providecommand{\Romannumeral}[1]{\uppercase\expandafter{\romannumeral #1}}
-%支持大写罗马字母显示
-
-\makeatletter 
-
-\newcommand{\safedefinecounter}[1]%
-{%  
-	\ifcsname c@#1\endcsname  
-	% 计数器已定义，不执行任何操作  
-	\else  
-	\newcounter{#1}
-	% 计数器未定义，定义它  
-	\fi  
-}  
+\newcommand{\RTSafeDefineCtr}[1]%
+{%
+	\ifcsname c@#1\endcsname
+	% 计数器已定义，不执行任何操作
+	\else
+		\newcounter{#1}
+		% 计数器未定义，定义它
+	\fi
+}
 %安全地定义一个可能已存在的计数器
 
-
-	\NewDocumentCommand{\refleafmark}{m}%
-	{%
-		\safedefinecounter{#1}%
-		\stepcounter{#1}%
-		\makeatletter%
-		\label{#1_\the\csname c@#1\endcsname}%
-		{\color{refcolor}\em\RTref{#1}}%
-		\mbox{\tiny$_{\color{refcolor}\hspace{-0.12em}{\Roman{#1}}\hspace{-0.12em}}$}%
-		\makeatother
-	}
-	%较为安全的命令，可标明进行交叉引用的位置
-	
-	\NewDocumentCommand{\refleaf}{smo}%
-	{%	
-		\makeatletter%
-		\IfBooleanTF{#1}%
-		{%
-			\marginpar{\IfNoValueF{#3}{\vspace{#3}}\vspace*{-0.5ex}\frame{\parbox{6em}{\quad\\[-1ex]\centering\em{\color{refcolor}\Roman{#2}} -- 见P{\color{refcolor}\pageref{#2}}\\[-2.2ex]\quad}}\vspace*{-0.5ex}}%
-		}%
-		{%
-			\safedefinecounter{#2}%
-			\stepcounter{#2}%
-			\label{#2_\the\csname c@#2\endcsname}%
-			{\color{refcolor}\em\RTref{#2}}%
-			\mbox{\tiny$_{\color{refcolor}\hspace{-0.12em}{\Roman{#2}}\hspace{-0.12em}}$}%
-			\marginpar{\IfNoValueF{#3}{\vspace{#3}}\vspace*{-0.5ex}\frame{\parbox{6em}{\quad\\[-1ex]\centering\em{\color{refcolor}\Roman{#2}} -- 见P{\color{refcolor}\pageref{#2}}\\[-2.2ex]\quad}}\vspace*{-0.5ex}}%
-		}%
-		\makeatother%
-	}
-	%在边注位置生成对某处的交叉引用
-	%一般情况下，直接使用\refleaf即可
-	%如果无法使用边注，可以使用\refleafmark-\refleaf*的组合避免错误
-	
-	\NewDocumentCommand{\refleaftext}{m}%
-	{%
-		\makeatletter%
-		\safedefinecounter{#1}%
-		\stepcounter{#1}%
-		\label{#1_\the\csname c@#1\endcsname}%
-		{\color{refcolor}\em\RTref{#1}}%
-		\mbox{\tiny$_{\color{refcolor}\hspace{-0.12em}{\Roman{#1}}\hspace{-0.12em}}$}%
-		{\,\~{}\em\color{refcolor}\,P\,}%
-		{\color{refcolor}\em\pageref{#1}}%
-		\makeatother%
-	}
-	
-	\NewDocumentCommand{\labelrootmark}{m}%
-	{%
-		\label{#1}%
-		\setcounter{ClearRef}{1}%
-		\checklabeldefined{#1_\theClearRef}%
-		\loop\ifclearref%
-		\mbox{\tiny$_{\mathit{\color{labelcolor}\text{-}\hspace{-0.12em}\Roman{ClearRef}\hspace{-0.12em}}}$}%
-		\stepcounter{ClearRef}%
-		\checklabeldefined{#1_\theClearRef}%
+\newlength{\RTLabelOffset}
+\newlength{\RTRefOffset}
+\setlength{\RTLabelOffset}{-\MgSep-7.9pt}
+%\MgSep是mgnote中的命令
+\setlength{\RTRefOffset}{0pt}
+\if@MGNOTE@nonumber
+	\NewDocumentCommand{\labelroot}{O{0pt}m}{%
+		\setcounter{RTCtr}{1}%
+		\RTFirstUsetrue%
+		\label{RT:#2}%
+		\RTCheckLabelDefined{RT:#2:\theRTCtr}%
+		\loop\ifRTRef%
+			\mbox{%
+				\normalfont$_{_{\text{\color{RTLabelColor}\hspace*{-0.1em}-\hspace{-0.1em}\RTCtrFmt{RTCtr}\hspace{-0.1em}}}}$%
+			}%
+			\mgnote[#1]{%
+				\color{RTFrameColor}%
+				\footnotesize%
+				\frame{%
+					\parbox{\RTWidth}{%
+						\quad\\[-1ex]
+						\centering
+						\RTFontshape
+						\textcolor{RTLabelColor}{\RTCtrFmt{RTCtr}} -- %
+						P\textcolor{RTLabelColor}{\pageref{RT:#2:\theRTCtr} }%
+						\ifRTEnglish%
+							ref%
+						\else%
+							引%
+						\fi%
+						\\[-2.2ex]\quad
+					}%
+				}%
+			}[\RTLabelOffset]%
+			\stepcounter{RTCtr}%
+			\RTCheckLabelDefined{RT:#2:\theRTCtr}%
+			\RTFirstUsefalse%
 		\repeat%
+		\hspace*{0.06em}%
 	}
-	%较为安全的命令，可标明被引用的位置
-	
-	\NewDocumentCommand{\labelroot}{smo}%
-	{%	
-		\setcounter{ClearRef}{1}%
-		\firstusetrue
-		\IfBooleanTF{#1}%
-		{%
-			\checklabeldefined{#2_\theClearRef}%
-			\loop\ifclearref%
-			\marginpar{\IfNoValueF{#3}{\iffirstuse\vspace{#3}\fi}\vspace*{-0.5ex}\frame{\parbox{6em}{\quad\\[-1ex]\centering\em{\color{labelcolor}\Roman{ClearRef}} -- P{\color{labelcolor}\pageref{#2_\theClearRef} }引\\[-2.2ex]\quad}}\vspace*{-0.5ex}}%
-			\stepcounter{ClearRef}%
-			\checklabeldefined{#2_\theClearRef}%
-			\firstusefalse%
-			\repeat%
-		}
-		{%
-			\label{#2}%
-			\checklabeldefined{#2_\theClearRef}%
-			\loop\ifclearref%
-			\mbox{\tiny$_{\mathit{\color{labelcolor}\text{-}\hspace{-0.12em}\Roman{ClearRef}\hspace{-0.12em}}}$}%
-			\marginpar{\IfNoValueF{#3}{\iffirstuse\vspace{#3}\fi}\vspace*{-0.5ex}\frame{\parbox{6em}{\quad\\[-1ex]\centering\em{\color{labelcolor}\Roman{ClearRef}} -- P{\color{labelcolor}\pageref{#2_\theClearRef} }引\\[-2.2ex]\quad}}\vspace*{-0.5ex}}%
-			\stepcounter{ClearRef}%
-			\checklabeldefined{#2_\theClearRef}%
-			\firstusefalse%
-			\repeat%
+	\NewDocumentCommand{\refleaf}{O{0pt}m}{%
+		\makeatletter%
+			\RTSafeDefineCtr{RT:#2}%
+			\stepcounter{RT:#2}%
+			\label{RT:#2:\the\csname c@RT:#2\endcsname}%
+			\mbox{\RTFontshape\color{RTRefColor}\RTref{RT:#2}}%
+			\mbox{%
+				\tiny\color{RTRefColor}%
+				$_{\text{\hspace{-0.12em}\RTCtrFmt{RT:#2}\hspace{-0.12em}}}$%
+			}%
+			\hspace*{0.1em}%
+			\mgnote[#1]{%
+				\footnotesize%
+				\color{RTFrameColor}%
+				\frame{%
+					\parbox{\RTWidth}{%
+						\quad\\[-1ex]
+						\centering
+						\RTFontshape
+						\textcolor{RTRefColor}{\RTCtrFmt{RT:#2}} -- %
+						\ifRTEnglish%
+							see %
+						\else%
+							见%
+						\fi%
+						P\textcolor{RTRefColor}{\pageref{RT:#2}}%
+						\\[-2.2ex]\quad
+					}%
+				}%
+			}[\RTRefOffset]%
+		\makeatother%
+	}
+	\NewDocumentCommand{\refleaftext}{m}{%
+		\makeatletter%
+		\RTSafeDefineCtr{RT:#1}%
+		\stepcounter{RT:#1}%
+		\label{RT:#1:\the\csname c@RT:#1\endcsname}%
+		\mbox{\textcolor{RTRefColor}{\RTFontshape\RTref{RT:#1}}}%
+		\mbox{%
+			\tiny\color{RTRefColor}%
+			$_{\text{\hspace{-0.12em}\RTCtrFmt{RT:#1}\hspace{-0.12em}}}$%
 		}%
+		\mbox{\,\~{}\RTFontshape\color{RTRefColor}\,P\,\pageref{RT:#1}\hspace*{0.1em}}%
+		\makeatother%
 	}
-	
-	%在被交叉引用处提供返回使用引用处的超链接
-	%一般情况下，直接使用\labelroot即可
-	%如果被引用处不能使用旁注，可以使用\label-\labelroot*的组合避免错误
-	
-
+\else
+	\NewDocumentCommand{\labelroot}{O{0pt}m}{%
+		\setcounter{RTCtr}{1}%
+		\RTFirstUsetrue%
+		\label{RT:#2}%
+		\RTCheckLabelDefined{RT:#2:\theRTCtr}%
+		\loop\ifRTRef%
+			\mbox{%
+				$_{_{\text{\color{RTLabelColor}\hspace*{-0.1em}-\hspace{-0.1em}\RTCtrFmt{RTCtr}\hspace{-0.1em}}}}$%
+			}%
+			\mgnote*[#1]{%
+				\footnotesize%
+				\color{RTFrameColor}%
+				\frame{%
+					\parbox{\RTWidth}{%
+						\quad\\[-1ex]
+						\centering
+						\RTFontshape
+						\textcolor{RTLabelColor}{\RTCtrFmt{RTCtr}} -- %
+						P\textcolor{RTLabelColor}{\pageref{RT:#2:\theRTCtr} }%
+						\ifRTEnglish%
+							ref%
+						\else%
+							引%
+						\fi%
+						\\[-2.2ex]\quad
+					}%
+				}%
+			}[\RTLabelOffset]%
+			\stepcounter{RTCtr}%
+			\RTCheckLabelDefined{RT:#2:\theRTCtr}%
+			\RTFirstUsefalse%
+		\repeat%
+		\hspace*{0.06em}%
+	}
+	\NewDocumentCommand{\refleaf}{O{0pt}m}{%
+		\makeatletter%
+		\RTSafeDefineCtr{RT:#2}%
+		\stepcounter{RT:#2}%
+		\label{RT:#2:\the\csname c@RT:#2\endcsname}%
+		\mbox{\RTFontshape\color{RTRefColor}\RTref{RT:#2}}%
+		\mbox{%
+			\tiny\color{RTRefColor}%
+			$_{\text{\hspace{-0.12em}\RTCtrFmt{RT:#2}\hspace{-0.12em}}}$%
+		}%
+		\hspace*{0.1em}%
+		\mgnote*[#1]{%
+			\footnotesize%
+			\color{RTFrameColor}%
+			\frame{%
+				\parbox{\RTWidth}{%
+					\quad\\[-1ex]
+					\centering
+					\RTFontshape
+					\textcolor{RTRefColor}{\RTCtrFmt{RT:#2}} -- %
+					\ifRTEnglish%
+						see %
+					\else%
+						见%
+					\fi%
+					P\textcolor{RTRefColor}{\pageref{RT:#2}}%
+					\\[-2.2ex]\quad
+				}%
+			}%
+		}[\RTRefOffset]%
+		\makeatother%
+	}
+	\NewDocumentCommand{\refleaftext}{m}{%
+		\makeatletter%
+		\RTSafeDefineCtr{RT:#1}%
+		\stepcounter{RT:#1}%
+		\label{RT:#1:\the\csname c@RT:#1\endcsname}%
+		\mbox{\textcolor{RTRefColor}{\RTFontshape\RTref{RT:#1}}}%
+		\mbox{%
+			\tiny\color{RTRefColor}%
+			$_{\text{\hspace{-0.12em}\RTCtrFmt{RT:#1}\hspace{-0.12em}}}$%
+		}%
+		\mbox{\,\~{}\RTFontshape\color{RTRefColor}\,P\,\pageref{RT:#1}\hspace*{0.1em}}%
+		\makeatother%
+	}
+\fi

@@ -1,6 +1,10 @@
     \chapter[热力学]{\itr{Thermodynamics}{热力学}}
-    \begin{solution}[{\color{plainred}\large Pressure}\\In \itr{state-of-the-art}{最先进的} \itr{vacuum systems}{真空系统}, pressures as low as $1.00\times10^{-9}\rm{Pa}$ are being attained. 
-    	Calculate the number of molecules in a $1.00\rm{m^{3}}$ \itr{vessel}{容器} at this pressure if the temperature is 27°C.]
+    \begin{solution}[ Pressure]
+    	In \itr{state-of-the-art}{最先进的} \itr{vacuum systems}{真空系统}, pressures as low as $1.00\times10^{-9}\rm{Pa}$ are being attained. 
+    	Calculate the number of molecules in a $1.00\rm{m^{3}}$ \itr{vessel}{容器} at this pressure if the temperature is 27°C.
+    	
+    	\tcbrule
+    	
         由理想气体方程$pV=Nk_{_B}T$得：
         \begin{equation*}
             N = \frac{pV}{k_{_B}T} = \frac{1.00\times10^{-9}\times 1.00}{1.38\times 10^{-23}\times (27+273)} = 2.40 \times 10^{11}
@@ -8,24 +12,27 @@
         很简单的题目，一是强调热力学温度单位应统一使用开尔文；二是想说明热力学的题目套公式记得从已知条件出发。
         有的同学可能会考虑压强的微观表达公式，但这里并没有给出方均根速率，还需要结合麦克斯韦分布，这就显得繁琐了。
     \end{solution}
-    \newpage
-    \begin{solution}[{\color{plainred}\large Idea Gas}\\The root-mean-square 
-        speed of molecules in air (mostly $\rm{N_2}$) is comparable to 
-        the speed of sound in air (or in an ideal gas).\\
-        (a) Using the equation of state of an ideal gas, calculate the \itr{bulk 
-        modulus}{体积模量} (at temperature $T$), which is defined as:
-        \begin{equation*}
-            B = \frac{volume \ stress}{volume \ strain} = -\frac{\Delta F/A}{\Delta V/V} = -\frac{\Delta P}{\Delta V/V}
-        \end{equation*}
-        (b) Recall that the speed of sound in a fluid $v=\sqrt{B/\rho}$ depends on
-        the elastic and inertial properties of the fluid, where $B$ is the bulk
-        modulus and $\rho$ is the density of air. Express the speed of sound 
-        waves in terms of molecular mass $m$, temperature $T$, as well as 
-        the Boltzmann's constant $k_{_B}$.\\
-        (c) In fact, the speed of sound has an additional factor of $\sqrt{\gamma}$ ,
-        where $\gamma$ is the \itr{adiabatic index}{绝热膨胀系数} ($\gamma = 7/5 = 1.400$ \ for \itr{diatomic molecules}{双原子分子} 
-        at room temperature). Compute the result in (b) at room temperature (The molar
-        mass of air is $29 \rm{g/mol}$). ]
+    \begin{solution}[Idea Gas]
+    	The root-mean-square 
+    	speed of molecules in air (mostly $\rm{N_2}$) is comparable to 
+    	the speed of sound in air (or in an ideal gas).\\
+    	(a) Using the equation of state of an ideal gas, calculate the \itr{bulk 
+    		modulus}{体积模量} (at temperature $T$), which is defined as:
+    	\begin{equation*}
+    		B = \frac{volume \ stress}{volume \ strain} = -\frac{\Delta F/A}{\Delta V/V} = -\frac{\Delta P}{\Delta V/V}
+    	\end{equation*}
+    	(b) Recall that the speed of sound in a fluid $v=\sqrt{B/\rho}$ depends on
+    	the elastic and inertial properties of the fluid, where $B$ is the bulk
+    	modulus and $\rho$ is the density of air. Express the speed of sound 
+    	waves in terms of molecular mass $m$, temperature $T$, as well as 
+    	the Boltzmann's constant $k_{_B}$.\\
+    	(c) In fact, the speed of sound has an additional factor of $\sqrt{\gamma}$ ,
+    	where $\gamma$ is the \itr{adiabatic index}{绝热膨胀系数} ($\gamma = 7/5 = 1.400$ \ for \itr{diatomic molecules}{双原子分子} 
+    	at room temperature). Compute the result in (b) at room temperature (The molar
+    	mass of air is $29 \rm{g/mol}$). 
+    	
+    	\tcbrule
+    	
         读懂题目照着意思写就行。
 
         (a)根据$pV=nRT$，在温度确定时有$p=\dfrac{nRT}{V}$，即：
@@ -51,23 +58,27 @@
         \end{equation*}
         这一结果(这里没有注意有效数字)与声速常用值$340\rm{m/s}$十分相近。
     \end{solution}
-    \newpage
-    \begin{solution}[{\color{plainred}\large The Van Der Waals Gas}\\The van der Waals equation of state is as follows:
-        \begin{equation*}
-            (p+\frac{a}{V^{2}})(V-b)=nRT
-        \end{equation*}
-        (a) Calculate the \itr{isothermal compressibility}{等温压缩系数} of the van der Waals gas in terms of $(V,T)$ and
-        determine the high-temperature limit. How does this result compare to that for an ideal gas?\\
-        Hint: The isothermal compressibility $\kappa_T$ is defined through $\kappa_{T}=-\dfrac{1}{V}\left(\dfrac{\partial V}{\partial p}\right)_{T}$\\
-        (b) The van der Waals equation possesses a so-called critical point, where
-        \begin{equation*}
-            \left(\frac{\partial p}{\partial V}\right)_{T} = \left(\frac{\partial^{2} p}{\partial V^{2}}\right)_{T} = 0
-        \end{equation*}
-        Determine the critical pressure $p_c$, the critical volume $V_c$ and the critical temperature $T_c$. What
-        is the behavior of $\kappa_T$ at the critical point?\\
-        (c) Use the expressions for $V_c$, $p_c$, and $T_c$ in the van der Waals equation of state and show that it
-        assumes a simple form independent of $a$ and $b$ when $T$,$V$, and $p$ are measured in terms of $T_c$,
-        $V_c$, $p_c$, $i.e.$, when expressing the van der Waals equation in terms of $T/T_c$ , $V/V_c$ , $p/p_c$.]
+    
+    \begin{solution}[The Van Der Waals Gas]
+    	The van der Waals equation of state is as follows:
+    	\begin{equation*}
+    		(p+\frac{a}{V^{2}})(V-b)=nRT
+    	\end{equation*}
+    	(a) Calculate the \itr{isothermal compressibility}{等温压缩系数} of the van der Waals gas in terms of $(V,T)$ and
+    	determine the high-temperature limit. How does this result compare to that for an ideal gas?\\
+    	Hint: The isothermal compressibility $\kappa_T$ is defined through $\kappa_{T}=-\dfrac{1}{V}\left(\dfrac{\partial V}{\partial p}\right)_{T}$\\
+    	(b) The van der Waals equation possesses a so-called critical point, where
+    	\begin{equation*}
+    		\left(\frac{\partial p}{\partial V}\right)_{T} = \left(\frac{\partial^{2} p}{\partial V^{2}}\right)_{T} = 0
+    	\end{equation*}
+    	Determine the critical pressure $p_c$, the critical volume $V_c$ and the critical temperature $T_c$. What
+    	is the behavior of $\kappa_T$ at the critical point?\\
+    	(c) Use the expressions for $V_c$, $p_c$, and $T_c$ in the van der Waals equation of state and show that it
+    	assumes a simple form independent of $a$ and $b$ when $T$,$V$, and $p$ are measured in terms of $T_c$,
+    	$V_c$, $p_c$, $i.e.$, when expressing the van der Waals equation in terms of $T/T_c$ , $V/V_c$ , $p/p_c$.
+    	
+    	\tcbrule
+    	
         本质仍然是一道阅读理解，理解后难度只在计算。
 
         (a)利用隐函数求导法则两边求导：
@@ -158,19 +169,22 @@
             (p_{_R}+\frac{3}{V_R^{2}})(V_R-\frac{1}{3})=\frac{8}{3}T_R
         \end{equation*}
     \end{solution}
-    \begin{solution}[{\color{red}\large Heat and Work}\\An ideal \itr{diatomic}{双原子的} gas, in a \itr{cylinder}{圆柱体} with a movable \itr{piston}{活塞}, undergoes the rectangular cyclic process shown
-        . Assume that the temperature is always such
-        that rotational degrees of freedom are active, but vibrational modes are “frozen out.” Also assume that the only
-        type of work done on the gas is \itr{quasistatic}{准静态的} compression-expansion work. \\
-        (a) For each of the four steps $A$ through $D$, compute the work done on the gas, the heat added to
-        the gas, and the change in the internal energy of the gas.
-        Express all answers in terms of $P_1$, $P_2$, $V_1$, and $V_2$. \\
-        (b) Compute the net work done on the gas, the net
-        heat added to the gas, and the net change in the internal
-        energy of the gas during the entire cycle. Are the results
-        as you expected? Explain briefly.]
-        \ctikzfig{chapter7_solution_7_4}
+    \begin{solution}[Heat and Work]
+    	An ideal \itr{diatomic}{双原子的} gas, in a \itr{cylinder}{圆柱体} with a movable \itr{piston}{活塞}, undergoes the rectangular cyclic process shown
+    	. Assume that the temperature is always such
+    	that rotational degrees of freedom are active, but vibrational modes are “frozen out.” Also assume that the only
+    	type of work done on the gas is \itr{quasistatic}{准静态的} compression-expansion work.
+    	\ctikzfig{chapter7_solution_7_4}
+    	(a) For each of the four steps $A$ through $D$, compute the work done on the gas, the heat added to
+    	the gas, and the change in the internal energy of the gas.
+    	Express all answers in terms of $P_1$, $P_2$, $V_1$, and $V_2$. \\
+    	(b) Compute the net work done on the gas, the net
+    	heat added to the gas, and the net change in the internal
+    	energy of the gas during the entire cycle. Are the results
+    	as you expected? Explain briefly.
 
+		\tcbrule
+		
         基本的$p-V$图计算，注意认清每个过程。根据题意，忽略振动对于内能的贡献，所有功均为体积功。
         双原子气体必然为线性分子，故有$i = 5$。
 
@@ -226,30 +240,35 @@
 
         对总过程有$\Delta U = Q - W$成立。这是符合预期的。
     \end{solution}
-    \newpage
-    \begin{solution}[{\color{plainred}\large Carnot Cycle}\\For a van der Waals gas, its equation of state implies a phase transition between
-        liquid and gas below a critical temperature $T_c$: In the $P-V$ phase
-        diagram, the \itr{isothermal line}{等温线} for a given temperature $T_{0} < T_{c}$ is not \itr{monotonically}{单调地}
-        decreasing with respect to $V$, but a constant function of $V$ in some region (see the
-        figure). This region corresponds to a phase transition from liquid to gas state (with a
-        volume change from $V_{L}^{mol}$ to $V_{G}^{mol}$), and the mole \itr{latent heat}{潜热} is $L$ for the transition.
-        Suppose we use 1 mole of this van der Waals gas/liquid mixture as the \itr{medium}{介质} for
-        a Carnot cycle operating between the high temperature $T_{_0}$ and the low temperature
-        $T_{_0}-\Delta T$\ —\ which are connected by two \itr{adiabatic processes}{绝热过程} $D\rightarrow A$ and $B\rightarrow C$.
-        The pressure in the flat region changes from $P_{_0}$ to $P_{_0}-\Delta P$ when the temperature
-        changes from $T_{_0}$ to $T_{_0}-\Delta T$.\\
-        (a) Specify the heat transfer and work done in each process of $A\rightarrow B$, $B\rightarrow C$,
-        $C\rightarrow D$, and $D\rightarrow A$ in such a Carnot cycle. Here, we assume that the volume
-        change in $B\rightarrow C$ and $D\rightarrow A$ is negligible.\\
-        (b) Calculate the total work done to the environment for this Carnot cycle and express
-        its efficiency $\epsilon$ from $\epsilon = W/Q_H$. where $W$ and $Q_H$ is the total work output in
-        the cycle and the heat input at the high temperature, respectively.\\
-        (c) For a Carnot engine with efficiency $\epsilon = 1-\dfrac{T_C}{T_H}$, verify the \itr{Clapeyron equation}{克拉伯龙方程}:
-        \begin{equation*}
-            \frac{\dif{P}}{\dif{T}}=\frac{L}{T(V_{G}^{mol}-V_{L}^{mol})}
-        \end{equation*}    
-        for the liquid/gas mixture.]
-        \ctikzfig{chapter7_solution_7_5}
+
+    \begin{solution}[Carnot Cycle]
+    	For a van der Waals gas, its equation of state implies a phase transition between
+    	liquid and gas below a critical temperature $T_c$: In the $P-V$ phase
+    	diagram, the \itr{isothermal line}{等温线} for a given temperature $T_{0} < T_{c}$ is not \itr{monotonically}{单调地}
+    	decreasing with respect to $V$, but a constant function of $V$ in some region (see the
+    	figure). This region corresponds to a phase transition from liquid to gas state (with a
+    	volume change from $V_{L}^{mol}$ to $V_{G}^{mol}$), and the mole \itr{latent heat}{潜热} is $L$ for the transition.
+    	Suppose we use 1 mole of this van der Waals gas/liquid mixture as the \itr{medium}{介质} for
+    	a Carnot cycle operating between the high temperature $T_{_0}$ and the low temperature
+    	$T_{_0}-\Delta T$\ —\ which are connected by two \itr{adiabatic processes}{绝热过程} $D\rightarrow A$ and $B\rightarrow C$.
+    	The pressure in the flat region changes from $P_{_0}$ to $P_{_0}-\Delta P$ when the temperature
+    	changes from $T_{_0}$ to $T_{_0}-\Delta T$.
+    	\ctikzfig{chapter7_solution_7_5}
+    	
+    	(a) Specify the heat transfer and work done in each process of $A\rightarrow B$, $B\rightarrow C$,
+    	$C\rightarrow D$, and $D\rightarrow A$ in such a Carnot cycle. Here, we assume that the volume
+    	change in $B\rightarrow C$ and $D\rightarrow A$ is negligible.\\
+    	(b) Calculate the total work done to the environment for this Carnot cycle and express
+    	its efficiency $\epsilon$ from $\epsilon = W/Q_H$. where $W$ and $Q_H$ is the total work output in
+    	the cycle and the heat input at the high temperature, respectively.\\
+    	(c) For a Carnot engine with efficiency $\epsilon = 1-\dfrac{T_C}{T_H}$, verify the \itr{Clapeyron equation}{克拉伯龙方程}:
+    	\begin{equation*}
+    		\frac{\dif{P}}{\dif{T}}=\frac{L}{T(V_{G}^{mol}-V_{L}^{mol})}
+    	\end{equation*}    
+    	for the liquid/gas mixture.
+    	
+    	\tcbrule
+    	
         (a) 注意对理想气体成立的结论对范德华气体不再成立。
 
         $A\rightarrow B$是等压相变过程，由于假设，体积变化量视为$V_{G}^{mol}-V_{L}^{mol}$：
@@ -395,20 +414,24 @@
             \frac{\dif{P}}{\dif{T}}=\frac{L}{T(V_{G}^{mol}-V_{L}^{mol})}
         \end{equation*}
     \end{solution}
-    \begin{solution}[{\color{plainred}\large Entropy}\\ Consider the Carnot cycle operating with a hot and cold heat baths whose temperatures are $T_h$ and
-        $T_c$ ($T_h > T_c$), respectively. Working \itr{substance}{材料} means the gas in the engine, and we consider a gas in
-        general for the working substance.\\
-        (a) Suppose the amount of heat exchange during the \itr{isothermal process}{等温过程} with the hot (cold) heat bath is
-        $Q_h$ ($Q_c$), and determine the entropy change $\Delta S_h$ and $\Delta S_c$ of the working substance in the respective
-        process. Then, specify $\Delta S_h$ and $\Delta S_c$ are positive or negative. Here, take the positive sign of $Q_h$ and $Q_c$ for the heat input from the heat bath to the \linebreak working substance.\\
-        (b) Now we use an ideal gas as the working substance and consider a free expansion process. Suppose the
-        initial temperature of the gas is $T_i$ and the volume of the gas increases from $V_i$ to $V_f$. Determine the
-        heat input $Q_{fe}$ and the entropy change $\Delta S_{fe}$ of the working substance through the free expansion
-        process.\\
-        (c) By replacing a \itr{quasi-static}{准静态} isothermal expansion process in the Carnot cycle by a free expansion
-        process, it seems that it is possible to construct a cycle with a single heat bath. Does this fact
-        \itr{violate}{违背} the second law of thermodynamics? Answer by yes or no, then explain your answer using
-        the case of the Carnot cycle.]
+    \begin{solution}[Entropy]
+    	Consider the Carnot cycle operating with a hot and cold heat baths whose temperatures are $T_h$ and
+    	$T_c$ ($T_h > T_c$), respectively. Let working \itr{substance}{材料} be the gas in the engine, and we consider a gas in
+    	general for the working substance.\\
+    	(a) Suppose that the amount of heat exchange during the \itr{isothermal process}{等温过程} with the hot (cold) heat bath is
+    	$Q_h$ ($Q_c$), determine the entropy change $\Delta S_h$ and $\Delta S_c$ of the working substance in the respective
+    	process. Then, specify $\Delta S_h$ and $\Delta S_c$ are positive or negative. Here, take the positive sign of $Q_h$ and $Q_c$ for the heat input from the heat bath to the \linebreak working substance.\\
+    	(b) Now we use an ideal gas as the working substance and consider a free expansion process. Suppose the
+    	initial temperature of the gas is $T_i$ and the volume of the gas increases from $V_i$ to $V_f$. Determine the
+    	heat input $Q_{fe}$ and the entropy change $\Delta S_{fe}$ of the working substance through the free expansion
+    	process.\\
+    	(c) By replacing a \itr{quasi-static}{准静态} isothermal expansion process in the Carnot cycle by a free expansion
+    	process, it seems that it is possible to construct a cycle with a single heat bath. Does this fact
+    	\itr{violate}{违背} the second law of thermodynamics? Answer by yes or no, then explain your answer using
+    	the case of the Carnot cycle.
+    	
+    	\tcbrule
+    	
         (a) 等温过程，高温时系统吸热，低温时系统放热，代入熵的定义中：
         \begin{equation*}
             \begin{aligned}
@@ -420,7 +443,7 @@
 		
         (b) 根据自由膨胀，有条件外界真空($W_{fe} = 0$)与绝热($Q_{fe} = 0$)。
 
-        熵变则利用熵是状态函数与自由膨胀始态与终态温度相等的特性，用等温过程(\refleaftext{chapter7_process_introduction})连接始态与终态，熵变为：
+        熵变则利用熵是状态函数与自由膨胀始态与终态温度相等的特性，用等温过程\mgnote{见\refleaftext{chapter7_process_introduction}}连接始态与终态，熵变为：
         \begin{equation*}
             \Delta S_{fe} = nR\ln{\frac{V_f}{V_i}}
         \end{equation*}

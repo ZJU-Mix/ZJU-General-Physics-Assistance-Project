@@ -3,7 +3,7 @@
     \usepackage{upgreek}
     \begin{document}
     \end{comment}
-        \chapter[流体力学]{\itr{Fluid Mechanics}{流体力学}}
+        \chapter[流体力学]{\itr{Fluid Mechanics}{流体力学}\mgnote*{\raggedleft 作者：22级-薛宇航}}
         本章节存在一定的特殊性：在2022年及之前，流体力学是普物\Romannumeral{1}的内容，而在2023级，这一块内容被路欣老师为代表的教学组删去了。
 
         当看到流体力学的时候，你想到的是什么？或许是初中的水的压强，又或者是湍流等复杂情景。其实都无所谓，毕竟它们都是流体的研究。当今世界对于流体力学的探究也是一个重要的力学方向，小到潜水，大到飞机飞船，都需要关注流体对于物体的影响。
@@ -11,17 +11,17 @@
         \section[流体的定义与性质]{\itr{Definition \& Properties of Fluids}{流体的定义与性质}}
         生活中的物体可分为固体、液体和气体三大类，其中，我们一般将液体和气体统称为流体。它们一般受到的力是不一样的：
         \begin{Itemize}
-            \item \itr{solid}{固体}:\itr{compression force}{压缩力}(指物体能够从两侧被挤压), \itr{tensile force}{拉力}(指物体能够受力被拉伸), 
+            \item \itr{solid}{固体}: \itr{compression force}{压缩力}(指物体能够从两侧被挤压), \itr{tensile force}{拉力}(指物体能够受力被拉伸), 
                 \itr{shearing force}{剪切力}(指物体能够受到不在同一直线上的两个相反方向的力而保持形状不变)
-            \item \itr{liquid}{液体}:compression force, tensile force, no shearing force
-            \item \itr{gas}{气体}:compression force, no tensile force, no shearing force
+            \item \itr{liquid}{液体}: compression force, tensile force, no shearing force
+            \item \itr{gas}{气体}: compression force, no tensile force, no shearing force
         \end{Itemize}
         
         在静止的液体中，我们已经了解到物体一定会受到水的压力，进而定义压强。
         \begin{law}[静止流体中的压强]
             利用微元法分析，我们可以知道物体受到的静止流体的压强为：
             \begin{center}
-                $\dfrac{dp}{dy}=-\rho g$，积分可得$p=p_0+\rho gh$
+                $\dfrac{\dif p}{\dif y}=-\rho g$，积分可得$p=p_0+\rho gh$
             \end{center}
 
             其中$p_0$是液体表面的压力，$h$为深度，$y$为该点相对于参考平面的高度。
@@ -29,7 +29,7 @@
         
         对于静止流体，我们也有两个重要的而且很直观的性质：
         \begin{law}[\itr{Pascal's Principle}{帕斯卡原理}]
-            施加在封闭流体上的力被不减弱地传递到流体的每一部分和容器的壁上。假设流体中受力面积为$S$的某点处原有压强为$p_0$，在其上方平面施加垂直向下的力F，则该点处当前的压力为：
+            施加在封闭流体上的力被不减弱地传递到流体的每一部分和容器的壁上。假设流体中受力面积为$S$的某点处原有压强为$p_0$，在其上方平面施加垂直向下的力$F$，则该点处当前的压力为：
             \begin{center}
                 $F^{'}=p_0 S +F$
             \end{center}
@@ -74,5 +74,4 @@
 
         只需要在使用中注意的一点是，这里的$y$表示的是位置相对于参考平面的高度，而非相对于液面的深度。在满足上述条件的情况下，只要是同一个连通的流体，在其内部每一点处，上述等式左边的结果均相等。
 
-        当然，看到这里，我们已经了解了两个重要的方程。结合中学的压强的定义，我们已经可以用两个方程大步走入流体力学的世界了。最后，这些已经足够我们普物的内容了，更为复杂的情况，交给流体力学的专家们解决吧
-        %\end{document}
+        当然，看到这里，我们已经了解了两个重要的方程。结合中学的压强的定义，我们已经可以用两个方程大步走入流体力学的世界了。最后，这些已经足够我们普物的内容了，更为复杂的情况，交给流体力学的专家们解决吧。
