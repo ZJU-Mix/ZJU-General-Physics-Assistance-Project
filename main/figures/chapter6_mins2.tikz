@@ -21,11 +21,11 @@
 		\node [style=none] (19) at (-5, -5) {};
 		\node [style=none] (20) at (5, -5) {};
 		\node [style=none] (21) at (0, 6) {};
-		\node [style=gray dot] (22) at (0, 0) {0};
-		\node [style=gray dot] (23) at (1.5, 3) {1};
-		\node [style=gray dot] (24) at (-1.25, -2) {2};
-		\node [style=gray dot] (25) at (3, 1) {3};
-		\node [style=gray dot] (26) at (-3, -1) {4};
+		\node [style=mark dot] (22) at (0, 0) {0};
+		\node [style=mark dot] (23) at (1.5, 3) {1};
+		\node [style=mark dot] (24) at (-1.25, -2) {2};
+		\node [style=mark dot] (25) at (3, 1) {3};
+		\node [style=mark dot] (26) at (-3, -1) {4};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style=arrow] (0.center) to (1.center);

@@ -1,1 +1,124 @@
-\chapter{}
+\chapter[质点运动学与动力学基础]{\itr{Fundamentals of particle kinematics and dynamics}{质点运动学与动力学基础}}
+\begin{solution}[质点运动学计算]
+    计算练习：已知$a(t)=at^{\alpha }$，$\alpha$是正的常数，初始时间、速度和位置$t_{i}$，$v_{i}$，$x_{i}$都是已知的，求出$v(t)$，$x(t)$这两个表达式。 
+    
+    \tcbrule
+    
+    解：
+\[  
+	\begin{aligned}
+	    v(t)&=\int_{t_{i}}^{t}a(t')\dif t'+v_{i} \\
+	    &=a\int_{t_{i}}^{t}(t')^{\alpha}\dif t'+v_{i}\\
+	    &=\frac{a}{\alpha+1}(t^{\alpha+1}-t_{i}^{\alpha+1})+v_{i}\\[1ex]
+	    x(t)&=\int_{t_{i}}^{t}v(t')\dif t'+x_{i}\\
+        &=\int_{t_{i}}^{t}\left(\frac{a}{\alpha+1}(t^{\alpha+1}-t_{i}^{\alpha+1})+v_{i}\right)\dif t'+x_{i}\\
+        &=\frac{a}{(\alpha+1)(\alpha+2)}(t^{\alpha+2}-t_{i}^{\alpha+2})+(t-t_{i})\left(-\frac{a}{\alpha+1}t_{i}^{\alpha+1}+v_{i}\right)+x_{i}\\
+        &=\frac{a}{(\alpha+1)(\alpha+2)}t^{\alpha+2}+\frac{a}{\alpha+2}t_{i}^{\alpha+2}+t\left(-\frac{a}{\alpha+1}t_{i}^{\alpha+1}+v_{i}\right)-t_{i}v_{i}+x_{i}
+    \end{aligned}
+\]
+
+\end{solution}
+\begin{solution}[质点运动学计算]
+    Automotive engineers refer to the time rate of change
+    of acceleration as the `\itr{jerk}{加加速度}'. If an object moves in one dimension such that its jerk $J$ is constant,\\   
+    (a) determine expressions for its acceleration $a_{t}$, velocity $v_{t}$, and position $x_{t}$, given that its initial acceleration, speed, and position are $a_{0}$, $ v_{0} $ , and $x_{0}$, respectively.\\
+    (b) Show that $ a_{t}{}^ {2} = a_{0}{}^ {2}  +2J(  v_ {t}  -  v_ {0}  )$.
+	
+	\tcbrule
+	
+	(a) 这是一道基础的质点运动学的题目，只需利用积分求解即可。
+	\[\left\{
+		\begin{aligned}
+			&a_{t}=a_{0}+\int_{0}^{t}J\dif t'=a_{0}+Jt\\
+            &v_{t}=v_{0}+\int_{0}^{t}a_{t}\dif t'=v_{0}+a_{0}t+\frac{1}{2}Jt^{2}\\
+            &x_{t}=x_{0}+\int_{0}^{t}v_{t}\dif t'=x_{0}+v_{0}t+\frac{1}{2}a_{0}t^{2}+\frac{1}{6}Jt^{3}
+		\end{aligned}
+		\right.\]
+    
+    (b) 用上面的表达式代入易证明
+\end{solution}
+\begin{solution}[质点动力学计算]
+    Assume that the \itr{resistive force}{阻力} acting on a speed skater
+	is $f=- kmv^ {2} $ , where $k$ is a constant and m is the skater's
+	mass. The skater crosses the finish line of a straight-line
+	race with speed $ v_ {f } $ and then slows down by coasting on
+	his skates. Show that the skater's speed at any time t
+	after crossing the finish line is $v_{t} = v_ {f}  / (1+  ktv_ {f}  )$.
+
+	
+	首先由牛顿第二定律，过线后$t$时刻的加速度为
+    \[
+    a_{t}=\frac{f}{m}=-kv^{2}
+    \]
+    由加速度定义式
+    \[
+    \frac{\dif v}{\dif t}=a=-kv^{2}
+    \]
+    综上可改写为
+    \[
+    \frac{\dif v}{v^{2}}=-k\dif t
+    \]
+    式子两边同时积分，注意起止的对应
+    \[
+        \int_{v_{f}}^{v_{t}}\frac{\dif v}{v^{2}}=\int_{0}^{t}-k\dif t 
+    \]
+    化简即证。
+\end{solution}
+\begin{solution}[质点动力学计算]
+    A \itr{semisphere}{半球} of mass $M$ and radius $R$ is put on a \itr{frictionless}{无摩擦的} horizontal table and can move freely.
+	A block of mass m is located on the top of this semisphere.
+	Initially both the semisphere and the block are at rest.
+	Then the block is \itr{perturbed}{扰动} such that it starts to slide down the semisphere from rest.
+	The block \itr{detaches}{脱离} the semisphere at angle $\theta$.
+	Neglect the size of the block and the friction between the block and the semisphere.
+	
+	\begin{singlefigure}[第四题图]{chapter2_problem3.png}[0.45]
+	\end{singlefigure}
+	
+    (a) Find the angle $\theta$ (It is enough to give the equation in which $\theta$ is the only unknown quantity. You do not need to solve this equation if it is too complicated for you).\\
+    (b) What is the value of $\theta$ when $m \ll M$ and $m \gg M$?
+    
+	\tcbrule
+	
+    (a)假设$M$向左运动的速度为$v_{1}$，$m$ \underline{\textbf{相对M的速度}}为$v_{2}$，在脱离的临界时刻有下面三个关系式：
+    \[\left\{
+		\begin{aligned}
+			&Mv_{1}=m(v_{2}\cos\theta-v_{1})&\hspace{-3em}\cdots\text{水平方向动量守恒}&\\
+            &\frac{1}{2}Mv_{1}^{2}+\frac{1}{2}m(v_{1}^{2}+v_{2}^{2}-2v_{1}v_{2}\cos\theta)=mgR(1-\cos\theta)&\hspace{-3em}\cdots\text{机械能守恒}&\\
+			&mg\cos\theta=m\frac{v_{2}^{2}}{R}&\hspace{-3em}\cdots\text{脱离瞬间圆周运动方程}&
+		\end{aligned}
+		\right.\]
+    综上解得关于$\theta$的隐式方程为
+    \[
+    \frac{m}{M+m}\cos^{3}\theta-3\cos\theta+2=0
+    \]
+    (b)根据两个条件对隐式方程近似化简即可。\\
+    当$m \ll M$时，
+    \[
+    \theta\to \arccos\frac{2}{3}
+    \]
+    当$m \gg M$时，
+    \[
+    \theta\to 0
+    \]
+\end{solution}
+
+\begin{solution}[质点动力学计算]
+    A small mass m is pulled to the top of a \itr{frictionless}{无摩擦的} \itr{half-cylinder}{半圆柱} (of radius $R$) by a \itr{cord}{线} that passes over the top of the cylinder.\\
+	(a) If the mass moves at a constant speed, show that $F=mg\cos\theta$ (Hint:If the mass moves at a constant speed, the component of its acceleration tangent to the cylinder must be zero at all times.).\\
+	(b) By directly integrating $\displaystyle W=\int \vec{F}\cdot \dif \vec{s}$, find the work done in moving the mass at constant speed from the bottom to the top of the half-cylinder. Here $\dif \vec{s}$ represents an \itr{incremental}{增加的} displacement of the small mass.
+ 
+    \begin{singlefigure}[第五题图]{chapter2_problem4.png}[0.5]
+	\end{singlefigure}
+	
+	\tcbrule
+	
+    (a) 沿切线方向分解$m$所受的力。由于$m$匀速直线运动，合力为$\vec{0}$，即得
+    \[
+    F=mg\cos\theta
+    \]
+    (b)
+    \[
+    W=\int_{0}^{\frac{\pi}{2}}mg\cos\theta R\dif \theta=mgR
+    \]
+\end{solution}

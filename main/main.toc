@@ -51,93 +51,93 @@
 \contentsline {subsection}{\numberline {2.7.4}自由落体加速度}{30}{subsection.1.2.7.4}%
 \contentsline {subsection}{\numberline {2.7.5}卫星运动}{30}{subsection.1.2.7.5}%
 \contentsline {subsection}{\numberline {2.7.6}火箭推进}{32}{subsection.1.2.7.6}%
-\contentsline {section}{\numberline {2.8}}{33}{section.1.2.8}%
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}转动动力学}{34}{chapter.1.3}%
-\contentsline {section}{\numberline {3.1}刚体}{34}{section.1.3.1}%
-\contentsline {section}{\numberline {3.2}转动}{34}{section.1.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}极坐标系}{34}{subsection.1.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}叉乘}{36}{subsection.1.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}运动学概念}{38}{subsection.1.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}动力学概念}{39}{subsection.1.3.2.4}%
-\contentsline {section}{\numberline {3.3}平行轴定理/施泰纳定理}{41}{section.1.3.3}%
-\contentsline {section}{\numberline {3.4}刚体中的能量}{42}{section.1.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}纯转动中的能量}{42}{subsection.1.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}同时发生转动与平动时的能量}{42}{subsection.1.3.4.2}%
-\contentsline {section}{\numberline {3.5}角动量}{43}{section.1.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}定义}{43}{subsection.1.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}角动量守恒}{44}{subsection.1.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}质心系转化}{44}{subsection.1.3.5.3}%
-\contentsline {section}{\numberline {3.6}重心}{45}{section.1.3.6}%
-\contentsline {section}{\numberline {3.7}非惯性系情形}{45}{section.1.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}非惯性力}{45}{subsection.1.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}科里奥利力*}{45}{subsection.1.3.7.2}%
-\contentsline {section}{\numberline {3.8}回顾与总结}{47}{section.1.3.8}%
-\contentsline {section}{\numberline {3.9}课后习题：转动动力学}{48}{section.1.3.9}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}流体力学}{52}{chapter.1.4}%
-\contentsline {section}{\numberline {4.1}流体的定义与性质}{52}{section.1.4.1}%
-\contentsline {section}{\numberline {4.2}流体动力学}{54}{section.1.4.2}%
-\contentsline {section}{\numberline {4.3}课后习题:流体力学}{55}{section.1.4.3}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}title}{57}{chapter.1.5}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}狭义相对论}{58}{chapter.1.6}%
-\contentsline {section}{\numberline {6.1}引入}{58}{section.1.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}绝对时空观}{58}{subsection.1.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}相对时空观}{59}{subsection.1.6.1.2}%
-\contentsline {section}{\numberline {6.2}洛伦兹变换}{60}{section.1.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}尺缩效应}{61}{subsection.1.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}动钟变慢}{63}{subsection.1.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}速度变换}{64}{subsection.1.6.2.3}%
-\contentsline {section}{\numberline {6.3}相对论能动量}{66}{section.1.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}相对论动量}{66}{subsection.1.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}相对论能量}{66}{subsection.1.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}不同惯性系中的转换}{67}{subsection.1.6.3.3}%
-\contentsline {section}{\numberline {6.4}一些关联}{68}{section.1.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}量纲统一}{68}{subsection.1.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}不变量}{70}{subsection.1.6.4.2}%
-\contentsline {section}{\numberline {6.5}多普勒效应}{71}{section.1.6.5}%
-\contentsline {section}{\numberline {6.6}相对论的几何表述}{72}{section.1.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}闵氏时空}{72}{subsection.1.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}闵氏几何中的洛伦兹变换}{74}{subsection.1.6.6.2}%
-\contentsline {subsection}{\numberline {6.6.3}时序和因果关系}{75}{subsection.1.6.6.3}%
-\contentsline {subsection}{\numberline {6.6.4}回顾}{77}{subsection.1.6.6.4}%
-\contentsline {section}{\numberline {6.7}课后习题：狭义相对论}{81}{section.1.6.7}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}热力学}{88}{chapter.1.7}%
-\contentsline {section}{\numberline {7.1}导论}{88}{section.1.7.1}%
-\contentsline {section}{\numberline {7.2}理想气体}{88}{section.1.7.2}%
-\contentsline {section}{\numberline {7.3}分子动理论}{89}{section.1.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}压强的微观解释}{89}{subsection.1.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}能量均分原理}{90}{subsection.1.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}麦克斯韦分布}{91}{subsection.1.7.3.3}%
-\contentsline {subsection}{\numberline {7.3.4}玻尔兹曼分布}{92}{subsection.1.7.3.4}%
-\contentsline {subsection}{\numberline {7.3.5}平均自由程}{93}{subsection.1.7.3.5}%
-\contentsline {subsection}{\numberline {7.3.6}范德华状态方程}{93}{subsection.1.7.3.6}%
-\contentsline {section}{\numberline {7.4}热力学第零定律}{93}{section.1.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}引言}{93}{subsection.1.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}基本概念}{94}{subsection.1.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}温度}{95}{subsection.1.7.4.3}%
-\contentsline {section}{\numberline {7.5}热力学第一定律}{96}{section.1.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}热与功}{96}{subsection.1.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}过程介绍}{97}{subsection.1.7.5.2}%
-\contentsline {section}{\numberline {7.6}热力学第二定律}{99}{section.1.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}热机}{99}{subsection.1.7.6.1}%
-\contentsline {subsection}{\numberline {7.6.2}熵}{100}{subsection.1.7.6.2}%
-\contentsline {section}{\numberline {7.7}热力学第三定律}{102}{section.1.7.7}%
-\contentsline {section}{\numberline {7.8}信息}{102}{section.1.7.8}%
-\contentsline {section}{\numberline {7.9}课后习题：热力学}{103}{section.1.7.9}%
-\contentsline {chapter}{\large 证明部分}{108}{example.1.7.6}%
-\contentsline {chapter}{\numberline {第一章\hspace {.3em}}测量}{109}{chapter.2.1}%
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}质点运动学与动力学}{110}{chapter.2.2}%
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}转动动力学}{117}{chapter.2.3}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}流体力学}{125}{chapter.2.4}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}title}{126}{chapter.2.5}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}狭义相对论}{127}{chapter.2.6}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}热力学}{136}{chapter.2.7}%
-\contentsline {section}{\numberline {7.1}Part 1}{136}{section.2.7.1}%
-\contentsline {section}{\numberline {7.2}Part 2}{142}{section.2.7.2}%
-\contentsline {chapter}{\large 答案部分}{150}{MgCtr.2.7.5}%
-\contentsline {chapter}{\numberline {第一章\hspace {.3em}}测量}{151}{chapter.3.1}%
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}}{152}{chapter.3.2}%
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}转动动力学}{153}{chapter.3.3}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}流体力学}{163}{chapter.3.4}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}title}{167}{chapter.3.5}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}狭义相对论}{168}{chapter.3.6}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}热力学}{185}{chapter.3.7}%
+\contentsline {section}{\numberline {2.8}课后习题：质点运动学与动力学}{33}{section.1.2.8}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}转动动力学}{35}{chapter.1.3}%
+\contentsline {section}{\numberline {3.1}刚体}{35}{section.1.3.1}%
+\contentsline {section}{\numberline {3.2}转动}{35}{section.1.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}极坐标系}{35}{subsection.1.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}叉乘}{37}{subsection.1.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}运动学概念}{39}{subsection.1.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}动力学概念}{40}{subsection.1.3.2.4}%
+\contentsline {section}{\numberline {3.3}平行轴定理/施泰纳定理}{42}{section.1.3.3}%
+\contentsline {section}{\numberline {3.4}刚体中的能量}{43}{section.1.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}纯转动中的能量}{43}{subsection.1.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}同时发生转动与平动时的能量}{43}{subsection.1.3.4.2}%
+\contentsline {section}{\numberline {3.5}角动量}{44}{section.1.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}定义}{44}{subsection.1.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}角动量守恒}{45}{subsection.1.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}质心系转化}{45}{subsection.1.3.5.3}%
+\contentsline {section}{\numberline {3.6}重心}{46}{section.1.3.6}%
+\contentsline {section}{\numberline {3.7}非惯性系情形}{46}{section.1.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}非惯性力}{46}{subsection.1.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}科里奥利力*}{46}{subsection.1.3.7.2}%
+\contentsline {section}{\numberline {3.8}回顾与总结}{48}{section.1.3.8}%
+\contentsline {section}{\numberline {3.9}课后习题：转动动力学}{49}{section.1.3.9}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}流体力学}{53}{chapter.1.4}%
+\contentsline {section}{\numberline {4.1}流体的定义与性质}{53}{section.1.4.1}%
+\contentsline {section}{\numberline {4.2}流体动力学}{55}{section.1.4.2}%
+\contentsline {section}{\numberline {4.3}课后习题:流体力学}{56}{section.1.4.3}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}title}{58}{chapter.1.5}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}狭义相对论}{59}{chapter.1.6}%
+\contentsline {section}{\numberline {6.1}引入}{59}{section.1.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}绝对时空观}{59}{subsection.1.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}相对时空观}{60}{subsection.1.6.1.2}%
+\contentsline {section}{\numberline {6.2}洛伦兹变换}{61}{section.1.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}尺缩效应}{62}{subsection.1.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}动钟变慢}{64}{subsection.1.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}速度变换}{65}{subsection.1.6.2.3}%
+\contentsline {section}{\numberline {6.3}相对论能动量}{67}{section.1.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}相对论动量}{67}{subsection.1.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}相对论能量}{67}{subsection.1.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}不同惯性系中的转换}{68}{subsection.1.6.3.3}%
+\contentsline {section}{\numberline {6.4}一些关联}{69}{section.1.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}量纲统一}{69}{subsection.1.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}不变量}{71}{subsection.1.6.4.2}%
+\contentsline {section}{\numberline {6.5}多普勒效应}{72}{section.1.6.5}%
+\contentsline {section}{\numberline {6.6}相对论的几何表述}{73}{section.1.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}闵氏时空}{73}{subsection.1.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}闵氏几何中的洛伦兹变换}{75}{subsection.1.6.6.2}%
+\contentsline {subsection}{\numberline {6.6.3}时序和因果关系}{76}{subsection.1.6.6.3}%
+\contentsline {subsection}{\numberline {6.6.4}回顾}{78}{subsection.1.6.6.4}%
+\contentsline {section}{\numberline {6.7}课后习题：狭义相对论}{82}{section.1.6.7}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}热力学}{89}{chapter.1.7}%
+\contentsline {section}{\numberline {7.1}导论}{89}{section.1.7.1}%
+\contentsline {section}{\numberline {7.2}理想气体}{89}{section.1.7.2}%
+\contentsline {section}{\numberline {7.3}分子动理论}{90}{section.1.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}压强的微观解释}{90}{subsection.1.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}能量均分原理}{91}{subsection.1.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}麦克斯韦分布}{92}{subsection.1.7.3.3}%
+\contentsline {subsection}{\numberline {7.3.4}玻尔兹曼分布}{93}{subsection.1.7.3.4}%
+\contentsline {subsection}{\numberline {7.3.5}平均自由程}{94}{subsection.1.7.3.5}%
+\contentsline {subsection}{\numberline {7.3.6}范德华状态方程}{94}{subsection.1.7.3.6}%
+\contentsline {section}{\numberline {7.4}热力学第零定律}{94}{section.1.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}引言}{94}{subsection.1.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}基本概念}{95}{subsection.1.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}温度}{96}{subsection.1.7.4.3}%
+\contentsline {section}{\numberline {7.5}热力学第一定律}{97}{section.1.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}热与功}{97}{subsection.1.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}过程介绍}{98}{subsection.1.7.5.2}%
+\contentsline {section}{\numberline {7.6}热力学第二定律}{100}{section.1.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}热机}{100}{subsection.1.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}熵}{101}{subsection.1.7.6.2}%
+\contentsline {section}{\numberline {7.7}热力学第三定律}{103}{section.1.7.7}%
+\contentsline {section}{\numberline {7.8}信息}{103}{section.1.7.8}%
+\contentsline {section}{\numberline {7.9}课后习题：热力学}{104}{section.1.7.9}%
+\contentsline {chapter}{\large 证明部分}{109}{example.1.7.6}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}测量}{110}{chapter.2.1}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}质点运动学与动力学}{111}{chapter.2.2}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}转动动力学}{118}{chapter.2.3}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}流体力学}{126}{chapter.2.4}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}title}{127}{chapter.2.5}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}狭义相对论}{128}{chapter.2.6}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}热力学}{137}{chapter.2.7}%
+\contentsline {section}{\numberline {7.1}Part 1}{137}{section.2.7.1}%
+\contentsline {section}{\numberline {7.2}Part 2}{143}{section.2.7.2}%
+\contentsline {chapter}{\large 答案部分}{151}{MgCtr.2.7.5}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}测量}{152}{chapter.3.1}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}质点运动学与动力学基础}{153}{chapter.3.2}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}转动动力学}{157}{chapter.3.3}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}流体力学}{167}{chapter.3.4}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}title}{171}{chapter.3.5}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}狭义相对论}{172}{chapter.3.6}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}热力学}{189}{chapter.3.7}%

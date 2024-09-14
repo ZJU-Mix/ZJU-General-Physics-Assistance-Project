@@ -1,0 +1,48 @@
+\newpage
+\section{课后习题：质点运动学与动力学}
+\begin{example}[质点运动学的计算---\refleaftext{solution2.1}]
+	计算练习：已知$a(t)=at^{\alpha }$,$\alpha$是正的常数，$v_{i}$,$x_{i}$都是已知的，求出$v(t)$,$x(t)$这两个表达式。
+\end{example}
+\begin{example}[质点运动学的计算---\refleaftext{solution2.2}]
+	Automotive engineers refer to the time rate of change
+    of acceleration as the 'jerk'. If an object moves in one
+    dimension such that its jerk J is constant,
+    
+    (a) determine expressions for its acceleration $a_{t}$, velocity $v_{t}$ , and position $x_{t}$, given that its initial acceleration, speed, and position are $a_{0}$, $ v_{0} $ , and $x_{0}$, respectively.
+    
+    (b) Show that $ a_{t}^ {2} $ = $ a_{0}^ {2} $ +2J( $ v_ {t} $ - $ v_ {0} $ ).
+\end{example}
+
+\begin{example}[质点动力学的计算---\refleaftext{solution2.3}]
+	Assume that the \itr{resistive force}{阻力} acting on a speed skater
+	is f=-$ kmv^ {2} $ , where k is a constant and m is the skater's
+	mass. The skater crosses the finish line of a straight-line
+	race with speed $ v_ {f } $ and then slows down by coasting on
+	his skates. Show that the skater's speed at any time t
+	after crossing the finish line is v(t) = $ v_ {f} $ / (1+ $ ktv_ {f} $ ).
+	
+\end{example}
+
+\begin{example}[质点动力学相关计算---\refleaftext{solution2.4}]
+	A \itr{semisphere}{半球} of mass M and radius R is put on a \itr{frictionless}{无摩擦的} horizontal table and can move freely.
+	A block of mass m is located on the top of this semisphere.
+	Initially both the semisphere and the block are at rest.
+	Then the block is \itr{perturbed}{扰动} such that it starts to slide down the semisphere from rest.
+	The block \itr{detaches}{脱离} the semisphere at angle $\theta$.
+	Neglect the size of the block and the friction between the block and the semisphere.
+	\begin{singlefigure}[第四题图]{chapter2_problem3.png}[0.45]
+	\end{singlefigure}
+    (a)Find the angle $\theta$.(It is enough to give the equation in which $\theta$ is the only unknown quantity.You do not need to solve this equation if it is too complicated for you.)
+    
+	(b)What is the value of $\theta$ when $m \ll M$ and $m \gg M$?
+\end{example}
+
+\begin{example}[质点动力学相关计算---\refleaftext{solution2.5}]
+	A small mass m is pulled to the top of a \itr{frictionless}{无摩擦的} \itr{half-cylinder}{半圆柱}(of radius R)by a \itr{cord}{线} that passes over the top of the cylinder.
+
+	(a)If the mass moves at a constant speed,show that $F=mg\cos\theta$.(Hint:If the mass moves at a constant speed,the component of its acceleration tangent to the cylinder must be zero at all times.)
+
+	(b)By directly integrating $W=\int \vec{F}\cdot \mathrm{d}\vec{s}$,find the work done in moving the mass at constant speed from the bottom to the top of the half-cylinder.Here $\mathrm{d}\vec{s}$ represents an \itr{incremental}{增加的} displacement of the small mass.
+	\begin{singlefigure}[第五题图]{chapter2_problem4.png}[0.45]
+	\end{singlefigure}
+\end{example}
