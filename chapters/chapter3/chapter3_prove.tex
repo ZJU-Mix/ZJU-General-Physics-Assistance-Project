@@ -1,192 +1,192 @@
 \chapter[转动动力学]{\itr{Rotation Dynamics}{转动动力学}}
 \vspace*{-4ex}
 \begin{prove}[Concepts in Dynamics\qquad$\vec{\tau}_{net}=I\vec{\alpha}$]
-	要搞清楚的一点是，我们依旧基于牛顿力学来思考有关转动的问题。
-	
-	我们先承认一件事实：刚体的内部存在着非常复杂的相互作用力，这些作用力合理地分配，最终使得整个刚体可以做转动。于是，任意取一个质元$\dif m$分析，都有\[\dif \vec{F}_t=\dif m\vec{a}_t\]
-	
-	依据平动和转动的联系(见\refleaftext{chapter3_connection})，我们有
-	\[\vec{a}_t\dif m=(\vec{\alpha}\times\vec{r})\dif m\]
-	于是在等式两侧同左叉乘以$\vec{r}$，即有
-	\[\vec{r}\times\dif\vec{F}_t= \vec{r}\times(\vec{\alpha}\times\vec{r})\dif m\]
-	由双重叉乘的运算律(见\refleaftext{chapter3_double_cross_product})，知
-	\[\vec{r}\times(\vec{\alpha}\times\vec{r})=(\vec{r}\cdot\vec{r})\vec{\alpha}-(\vec{r}\cdot\vec{\alpha})\vec{r}=r^2\vec{\alpha}\]
-	注意到
-	\[\vec{r}\times\dif\vec{F}_t=\vec{r}\times\dif\vec{F}_{/z}\]
-	即得
-	\[\vec{r}\times\dif\vec{F}_{/z}=r^2\vec{\alpha}\dif m\Leftrightarrow\dif\vec{\tau}=r^2\vec{\alpha}\dif m\]
-	等式两侧取积分，即有
-	\[\vec{\tau}_{net}=I\vec{\alpha}\]
+    要搞清楚的一点是，我们依旧基于牛顿力学来思考有关转动的问题。
+
+    我们先承认一件事实：刚体的内部存在着非常复杂的相互作用力，这些作用力合理地分配，最终使得整个刚体可以做转动。于是，任意取一个质元$\dif m$分析，都有\[\dif \vec{F}_t=\dif m\vec{a}_t\]
+
+    依据平动和转动的联系(见\refleaftext{chapter3_connection})，我们有
+    \[\vec{a}_t\dif m=(\vec{\alpha}\times\vec{r})\dif m\]
+    于是在等式两侧同左叉乘以$\vec{r}$，即有
+    \[\vec{r}\times\dif\vec{F}_t= \vec{r}\times(\vec{\alpha}\times\vec{r})\dif m\]
+    由双重叉乘的运算律(见\refleaftext{chapter3_double_cross_product})，知
+    \[\vec{r}\times(\vec{\alpha}\times\vec{r})=(\vec{r}\cdot\vec{r})\vec{\alpha}-(\vec{r}\cdot\vec{\alpha})\vec{r}=r^2\vec{\alpha}\]
+    注意到
+    \[\vec{r}\times\dif\vec{F}_t=\vec{r}\times\dif\vec{F}_{/z}\]
+    即得
+    \[\vec{r}\times\dif\vec{F}_{/z}=r^2\vec{\alpha}\dif m\Leftrightarrow\dif\vec{\tau}=r^2\vec{\alpha}\dif m\]
+    等式两侧取积分，即有
+    \[\vec{\tau}_{net}=I\vec{\alpha}\]
 \end{prove}
 \begin{prove}[\itr{Parallel Axis Theorem}{平行轴定理}\qquad$I=I_{CM}+Mh^2$]
-	不妨设$\vec{h}$的方向为从质心轴到任意轴，并取任意一质点$m_i$，其在选择质心轴时，位矢为$\vec{r}_{_{CM}i}$，选择任意轴时，位矢为$\vec{r}_i$，则有\[\vec{r}_i=\vec{r}_{_{CM}i}-\vec{h}\]
-	于是有
-	\begin{align*}
-		I&=\sum_{i}m_i(\vec{r}_{_{CM}i}-\vec{h})^2\\
-		&=\sum_{i}m_i(r_{_{CM}i}{}^2+h^2-2\vec{r}_{_{CM}i}\cdot\vec{h})\\
-		&=\sum_{i}m_ir_{_{CM}i}{}^2+\sum_{i}m_ih^2-2\vec{h}\cdot\sum_{i}m_i\vec{r}_{_{CM}i}\\
-		&=I_{CM}+Mh^2+0\qquad(\text{由质心的性质知最后一项为0})\\
-		&=I_{CM}+Mh^2
-	\end{align*}
+    不妨设$\vec{h}$的方向为从质心轴到任意轴，并取任意一质点$m_i$，其在选择质心轴时，位矢为$\vec{r}_{_{CM}i}$，选择任意轴时，位矢为$\vec{r}_i$，则有\[\vec{r}_i=\vec{r}_{_{CM}i}-\vec{h}\]
+    于是有
+    \begin{align*}
+        I & =\sum_{i}m_i(\vec{r}_{_{CM}i}-\vec{h})^2                                           \\
+          & =\sum_{i}m_i(r_{_{CM}i}{}^2+h^2-2\vec{r}_{_{CM}i}\cdot\vec{h})                     \\
+          & =\sum_{i}m_ir_{_{CM}i}{}^2+\sum_{i}m_ih^2-2\vec{h}\cdot\sum_{i}m_i\vec{r}_{_{CM}i} \\
+          & =I_{CM}+Mh^2+0\qquad(\text{由质心的性质知最后一项为0})                                         \\
+          & =I_{CM}+Mh^2
+    \end{align*}
 \end{prove}
 \begin{prove}[Energy in Rotation ONLY]
-	在只发生转动的物体中，有\[v=v_t=\omega r\]于是有
-	\begin{align*}
-		K_R&=\sum_i\dfrac{1}{2}m_iv_i{}^2&U&=\int_0^{\theta}\kappa\alpha\dif\alpha\\
-		&=\dfrac{1}{2}\sum_i(m_i r_i{}^2)\omega^2&&=\dfrac{1}{2}\kappa\alpha^2\left|_0^{\theta}\right.\\
-		&=\dfrac{1}{2}I\omega^2&&=\dfrac{1}{2}\kappa\theta^2\\
-		P&=\vec{F}\cdot \vec{v}&\dif W&=\vec{F}\cdot\dif \vec{x}\\
-		&=F_tv&&=F_t\dif x\\
-		&=F_tr_\omega&&=F_tr\dif\theta\\
-		&=\tau\omega&&=\tau\dif\theta
-	\end{align*}
+    在只发生转动的物体中，有\[v=v_t=\omega r\]于是有
+    \begin{align*}
+        K_R & =\sum_i\dfrac{1}{2}m_iv_i{}^2            & U      & =\int_0^{\theta}\kappa\alpha\dif\alpha              \\
+            & =\dfrac{1}{2}\sum_i(m_i r_i{}^2)\omega^2 &        & =\dfrac{1}{2}\kappa\alpha^2\left|_0^{\theta}\right. \\
+            & =\dfrac{1}{2}I\omega^2                   &        & =\dfrac{1}{2}\kappa\theta^2                         \\
+        P   & =\vec{F}\cdot \vec{v}                    & \dif W & =\vec{F}\cdot\dif \vec{x}                           \\
+            & =F_tv                                    &        & =F_t\dif x                                          \\
+            & =F_tr_\omega                             &        & =F_tr\dif\theta                                     \\
+            & =\tau\omega                              &        & =\tau\dif\theta
+    \end{align*}
 \end{prove}
 \begin{prove}[\itr{Konig's Theorem}{柯尼希定理}\qquad$K=K_{CM}+K^{CM}$]
-	我们取质点$m_i$，记它在静止参考系中的速度为$\vec{v}_i$，在质心系中的速度为$\vec{v}^{CM}_i$，并记刚体的质心速度为$\vec{v}_{CM}$，则有
-	\[\vec{v}_i=\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}}\]
-	于是有
-	\begin{align*}
-		K&=\sum_i\dfrac{1}{2}m_i(\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}})^2\\
-		&=\sum_i\dfrac{1}{2}m_i{v_i^{^{CM}}}^2+\sum_i\dfrac{1}{2}m_i{v_{_{CM}}}^2+(\sum_im_i\vec{v}_i^{^{CM}})\cdot\vec{v}_{_{CM}}\\
-		&=K^{CM}+K_{CM}\qquad(\text{由质心定义知前式最后一项为0})
-	\end{align*}
-	由刚体在质心系中只存在转动\mgnote{见\refleaftext{chapter3_rotation_CM}}，有
-	\[K^{CM}=\dfrac{1}{2}I_{CM}\omega^2\]
-	于是
-	\[K=\dfrac{1}{2}M{v_{_{CM}}}^2+\dfrac{1}{2}I_{CM}\omega^2\]
+    我们取质点$m_i$，记它在静止参考系中的速度为$\vec{v}_i$，在质心系中的速度为$\vec{v}^{CM}_i$，并记刚体的质心速度为$\vec{v}_{CM}$，则有
+    \[\vec{v}_i=\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}}\]
+    于是有
+    \begin{align*}
+        K & =\sum_i\dfrac{1}{2}m_i(\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}})^2                                                               \\
+          & =\sum_i\dfrac{1}{2}m_i{v_i^{^{CM}}}^2+\sum_i\dfrac{1}{2}m_i{v_{_{CM}}}^2+(\sum_im_i\vec{v}_i^{^{CM}})\cdot\vec{v}_{_{CM}} \\
+          & =K^{CM}+K_{CM}\qquad(\text{由质心定义知前式最后一项为0})
+    \end{align*}
+    由刚体在质心系中只存在转动\mgnote{见\refleaftext{chapter3_rotation_CM}}，有
+    \[K^{CM}=\dfrac{1}{2}I_{CM}\omega^2\]
+    于是
+    \[K=\dfrac{1}{2}M{v_{_{CM}}}^2+\dfrac{1}{2}I_{CM}\omega^2\]
 \end{prove}
 \begin{prove}[Angular Momentum\qquad$\displaystyle\vec{L}=\sum_i\vec{r}_i\times\vec{p}_{i/z}=I\vec{\omega}\quad\&\quad\dfrac{\dif \vec{L}}{\dif t}=\vec{\tau}$]
-	\qquad
-	$
-	\begin{array}{r@{\ }l}
-		\vec{L}&=\displaystyle\sum_i\vec{r}_i\times\vec{p}_{i/z}\\
-		&=\displaystyle\sum_im_i\vec{r}_i\times(\vec{v}_{ir}+\vec{v}_{it})\\
-		&=\displaystyle\sum_im_i(\vec{r}_i\times\vec{v}_{ir}+\vec{r}_i\times\vec{v}_{it})\\
-		&=\displaystyle\sum_im_i(\vec{0}+\vec{r}_i\times(\vec{\omega}\times\vec{r}_i))\mgnote{有关双重叉乘见\refleaftext{chapter3_double_cross_product}}\\
-		&=\displaystyle\sum_im_i((\vec{r}_i\cdot\vec{r}_i)\vec{\omega}-(\vec{r_i}\cdot\vec{\omega})\vec{r}_i)\\
-		&=\displaystyle\sum_im_ir_i{}^2\vec{\omega}\\
-		&=I\vec{\omega}
-	\end{array}$
-	\\[2ex]
-	\hspace*{0.9em}
-	$
-	\begin{array}{r@{\ }l}
-		\dfrac{\dif\vec{L}}{\dif t}&=\dfrac{\dif\displaystyle\sum_i(\vec{r}_i\times\vec{p}_{i/z})}{\dif t}\\[1.4ex]
-		&=\displaystyle\sum_i\dfrac{\dif(\vec{r}_i\times\vec{p}_{i/z})}{\dif t}\\
-		&=\displaystyle\sum_i(\dfrac{\dif\vec{r}_i}{\dif t}\times\vec{p}_{i/z}+\vec{r}_i\times\dfrac{\dif\vec{p}_{i/z}}{\dif t})\\
-		&=\displaystyle\sum_i(\vec{v}_{i/z}\times\vec{p}_{i/z}+\vec{r}_i\times\vec{F}_{i/z})\\
-		&=\displaystyle\sum_i\vec{r}_i\times\vec{F}_{i/z}\\
-		&=\vec{\tau}_{net}
-	\end{array}$
-	有关微分见\refleaftext{chapter3_derivation}
+    \qquad
+    $
+        \begin{array}{r@{\ }l}
+            \vec{L} & =\displaystyle\sum_i\vec{r}_i\times\vec{p}_{i/z}                                                                                         \\
+                    & =\displaystyle\sum_im_i\vec{r}_i\times(\vec{v}_{ir}+\vec{v}_{it})                                                                        \\
+                    & =\displaystyle\sum_im_i(\vec{r}_i\times\vec{v}_{ir}+\vec{r}_i\times\vec{v}_{it})                                                         \\
+                    & =\displaystyle\sum_im_i(\vec{0}+\vec{r}_i\times(\vec{\omega}\times\vec{r}_i))\mgnote{有关双重叉乘见\refleaftext{chapter3_double_cross_product}} \\
+                    & =\displaystyle\sum_im_i((\vec{r}_i\cdot\vec{r}_i)\vec{\omega}-(\vec{r_i}\cdot\vec{\omega})\vec{r}_i)                                     \\
+                    & =\displaystyle\sum_im_ir_i{}^2\vec{\omega}                                                                                               \\
+                    & =I\vec{\omega}
+        \end{array}$
+    \\[2ex]
+    \hspace*{0.9em}
+    $
+        \begin{array}{r@{\ }l}
+            \dfrac{\dif\vec{L}}{\dif t} & =\dfrac{\dif\displaystyle\sum_i(\vec{r}_i\times\vec{p}_{i/z})}{\dif t}                                                  \\[1.4ex]
+                                        & =\displaystyle\sum_i\dfrac{\dif(\vec{r}_i\times\vec{p}_{i/z})}{\dif t}                                                  \\
+                                        & =\displaystyle\sum_i(\dfrac{\dif\vec{r}_i}{\dif t}\times\vec{p}_{i/z}+\vec{r}_i\times\dfrac{\dif\vec{p}_{i/z}}{\dif t}) \\
+                                        & =\displaystyle\sum_i(\vec{v}_{i/z}\times\vec{p}_{i/z}+\vec{r}_i\times\vec{F}_{i/z})                                     \\
+                                        & =\displaystyle\sum_i\vec{r}_i\times\vec{F}_{i/z}                                                                        \\
+                                        & =\vec{\tau}_{net}
+        \end{array}$
+    有关微分见\refleaftext{chapter3_derivation}
 \end{prove}
 \begin{prove}[$\vec{L}=\vec{L}_{CM}+\vec{L}^{CM}$]
-	我们取质点$m_i$，记它在静止参考系中的速度为$\vec{v}_i$，极径矢量为$\vec{r}_i$在质心系中的速度为$\vec{v}^{^{CM}}_i$，极径矢量为$\vec{r}_i^{^{CM}}$，并记刚体在静止参考系中的质心速度为$\vec{v}_{_{CM}}$，极径矢量为$\vec{r}_{_{CM}}$则有
-	\[\vec{v}_i=\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}}\]
-	\[\vec{r}_i=\vec{r}_i^{^{CM}}+\vec{r}_{_{CM}}\]
-	于是有
-	\begin{align*}
-		\vec{L}&=\sum_im_i\vec{r}_i\times v_i\\
-		&=\sum_im_i(\vec{r}_i^{^{CM}}+\vec{r}_{_{CM}})(\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}})\\
-		&=\sum_im_i\vec{r}_i^{^{CM}}\times\vec{v}_i^{^{CM}}+\sum_im_i\vec{r}_{_{CM}}\times\vec{v}_{_{CM}}\\
-		&+(\sum_im_ir_i^{^{CM}})\times\vec{v}_{_{CM}}+\vec{r}_{_{CM}}\times(\sum_im_i\vec{v}_i^{^{CM}})\\
-		&=\vec{L}^{CM}+\vec{L}_{CM}+\vec{0}\times\vec{v}_{_{CM}}+\vec{r}_{_{CM}}\times\vec{0}\quad(\text{利用质心性质})\\
-		&=\vec{L}^{CM}+\vec{L}_{CM}
-	\end{align*}
+    我们取质点$m_i$，记它在静止参考系中的速度为$\vec{v}_i$，极径矢量为$\vec{r}_i$在质心系中的速度为$\vec{v}^{^{CM}}_i$，极径矢量为$\vec{r}_i^{^{CM}}$，并记刚体在静止参考系中的质心速度为$\vec{v}_{_{CM}}$，极径矢量为$\vec{r}_{_{CM}}$则有
+    \[\vec{v}_i=\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}}\]
+    \[\vec{r}_i=\vec{r}_i^{^{CM}}+\vec{r}_{_{CM}}\]
+    于是有
+    \begin{align*}
+        \vec{L} & =\sum_im_i\vec{r}_i\times v_i                                                                            \\
+                & =\sum_im_i(\vec{r}_i^{^{CM}}+\vec{r}_{_{CM}})(\vec{v}_i^{^{CM}}+\vec{v}_{_{CM}})                         \\
+                & =\sum_im_i\vec{r}_i^{^{CM}}\times\vec{v}_i^{^{CM}}+\sum_im_i\vec{r}_{_{CM}}\times\vec{v}_{_{CM}}         \\
+                & +(\sum_im_ir_i^{^{CM}})\times\vec{v}_{_{CM}}+\vec{r}_{_{CM}}\times(\sum_im_i\vec{v}_i^{^{CM}})           \\
+                & =\vec{L}^{CM}+\vec{L}_{CM}+\vec{0}\times\vec{v}_{_{CM}}+\vec{r}_{_{CM}}\times\vec{0}\quad(\text{利用质心性质}) \\
+                & =\vec{L}^{CM}+\vec{L}_{CM}
+    \end{align*}
 \end{prove}
 \begin{prove}[\itr{Center of Gravity}{重心}:对于均匀的重力场，刚体的重心与质心重合]
-	记重力的合力矩为$\vec{\tau}_{g}$，等效于质心的重力力矩为$\vec{\tau}_{g_{CM}}$，有
-	\begin{align*}
-		\vec{\tau}_g&=\sum_i\vec{r}_i\times(m_i\vec{g}_{/z})\\
-		&=(\sum_im_i\vec{r_i})\times\vec{g}_{/z}\\
-		&=M\vec{r}_{_{CM}}\times\vec{g}_{/z}\quad(\text{由质心定义知})\\
-		&=\vec{r}_{_{CM}}\times(M\vec{g}_{/z})\\
-		&=\vec{\tau}_{g_{CM}}
-	\end{align*}
-	即刚体重心与质心重合。
-	
-	在这里的证明中，我们发现，只要一个力仅与质量成正比，方向不变，那么分析力矩时，就可以把这些力等效作用在质点上。
+    记重力的合力矩为$\vec{\tau}_{g}$，等效于质心的重力力矩为$\vec{\tau}_{g_{CM}}$，有
+    \begin{align*}
+        \vec{\tau}_g & =\sum_i\vec{r}_i\times(m_i\vec{g}_{/z})                 \\
+                     & =(\sum_im_i\vec{r_i})\times\vec{g}_{/z}                 \\
+                     & =M\vec{r}_{_{CM}}\times\vec{g}_{/z}\quad(\text{由质心定义知}) \\
+                     & =\vec{r}_{_{CM}}\times(M\vec{g}_{/z})                   \\
+                     & =\vec{\tau}_{g_{CM}}
+    \end{align*}
+    即刚体重心与质心重合。
+
+    在这里的证明中，我们发现，只要一个力仅与质量成正比，方向不变，那么分析力矩时，就可以把这些力等效作用在质点上。
 \end{prove}
 \newcommand{\base}[1]{\hat{\vec{#1}}}
 \begin{prove}[\itr{Frame Translation with Rotation}{考虑转动的参考系变换}*]
-	这一次，我们采用坐标分解的观点思考问题。
-	
-	首先，考虑一个惯性系，并建立一个常规的空间直角坐标系$\mathcal{F}$，它的基为$\hat{\vec{i}},\hat{\vec{j}},\hat{\vec{k}}$，即为$x,y,z$轴方向的单位向量（单位向量没有量纲，长度为1）。那么，任取一个质点，它的位矢$\vec{P}$可以表示为\[
-	\vec{P}=x\hat{\vec{i}}+y\hat{\vec{j}}+z\hat{\vec{k}}
-	\]
-	我们另建立一个拥有$x',y',z'$轴的，以角速度$\vec{\omega}$旋转的坐标系$\mathcal{F}'$，其中$z'$轴作为旋转轴与$z$轴平行。设该坐标系原点位矢$\vec{O'}$在原参考系中的表达式为$\vec{O}=x_0\hat{\vec{i}}+y_0\hat{\vec{j}}+z_0\hat{\vec{k}}$，那么在$\mathcal{F}'$中，设
-	\[\vec{P}-\vec{O'}=\vec{P}'=x'\hat{\vec{i}'}+y'\hat{\vec{j}'}+z'\hat{\vec{k}'}\]
-	如此，我们说，$\vec{P}$在$\mathcal{F}$中的坐标为$(x,y,z)$，在$\mathcal{F}'$中的坐标为$(x',y',z')$。
-	
-	接下来，我们考虑在不同坐标系中的速度。
-	
-	$\mathcal{F}$中的速度定义为\[\vec{v}=v_x\base{i}+v_y\base{j}+v_z\base{k}\]其中
-	\[v_x=\dfrac{\dif x}{\dif t},v_y=\dfrac{\dif y}{\dif t},v_z=\dfrac{\dif z}{\dif t}\]
-	于是
-	\begin{align}
-		\dfrac{\dif\vec{P}}{\dif t}&=\dfrac{\dif(x\hat{\vec{i}})}{\dif t}+\dfrac{\dif(y\hat{\vec{j}})}{\dif t}+\dfrac{\dif(z\hat{\vec{k}})}{\dif t}\\
-		&=\dfrac{\dif x}{\dif t}\hat{\vec{i}}+\dfrac{\dif y}{\dif t}\hat{\vec{j}}+\dfrac{\dif z}{\dif t}\hat{\vec{k}}\\
-		&=v_x\hat{\vec{i}}+v_y\hat{\vec{j}}+v_z\hat{\vec{k}}\\
-		&=\vec{v}
-	\end{align}
-	其中由(3.2)到(3.3)的理由是该参考系的基$\hat{\vec{i}},\hat{\vec{j}},\hat{\vec{k}}$始终不变。
-	
-	同理，$\mathcal{F}'$中的速度定义为
-	\[\vec{v}'=v_x'\base{i'}+v_y'\base{j'}+v_z'\base{k'}\]
-	其中
-	\[v_x'=\dfrac{\dif x'}{\dif t},v_y'=\dfrac{\dif y'}{\dif t},v_z'=\dfrac{\dif z'}{\dif t}\]
-	\\[1ex]
-	由$\vec{P}'=\vec{P}-\vec{O'}$，且$\vec{O}'$不变，知$\dfrac{\dif \vec{P'}}{\dif t}=\dfrac{\dif\vec{P}}{\dif t}=\vec{v}$。于是有
-	\begin{align}
-		\vec{v}&=\dfrac{\dif\vec{P}'}{\dif t}\\
-		&=\dfrac{\dif(x'\hat{\vec{i}'})}{\dif t}+\dfrac{\dif(y'\hat{\vec{j}'})}{\dif t}+\dfrac{\dif(z'\hat{\vec{k}'})}{\dif t}\\
-		&=\dfrac{\dif x'}{\dif t}\hat{\vec{i}'}+\dfrac{\dif\hat{\vec{i}'}}{\dif t}x'+\dfrac{\dif y'}{\dif t}\hat{\vec{j}'}+\dfrac{\dif\hat{\vec{j}'}}{\dif t}y'+\dfrac{\dif z'}{\dif t}\hat{\vec{k}'}+\dfrac{\dif\hat{\vec{k}'}}{\dif t}z'
-	\end{align}
-	注意到
-	\[\dfrac{\dif\base{i'}}{\dif t}=\vec{\omega}\times\base{i'},\dfrac{\dif\base{j'}}{\dif t}=\vec{\omega}\times\base{j'}\]
-	续(3.7)有
-	\begin{align}
-		\vec{v}&=v_x'\base{i'}+v_y'\base{j'}+v_z'\base{k'}+\vec{\omega}\times\base{i'}x'+\vec{\omega}\times\base{j'}y'\\
-		&=\vec{v}'+\vec{\omega}\times\vec{r}'\qquad(\text{这里记}\vec{r}'=x'\base{i'}+y'\base{j'})
-	\end{align}
-	关于加速度，我们有类似的定义
-	\[\left\{\begin{array}{c}
-		\vec{a}=a_x\base{i}+a_y\base{j}+a_z\base{k}\\[1ex]
-		a_x=\dfrac{\dif v_x}{\dif t},a_y=\dfrac{\dif v_y}{\dif t},a_z=\dfrac{\dif v_z}{\dif t}
-	\end{array}
-	\right.\]
-	\[\left\{\begin{array}{c}
-		\vec{a}'=a_x'\base{i'}+a_y'\base{j}'+a_z'\base{k'}\\[1ex]
-		a_x'=\dfrac{\dif v_x'}{\dif t},a_y'=\dfrac{\dif v_y'}{\dif t},a_z'=\dfrac{\dif v_z'}{\dif t}
-	\end{array}
-	\right.
-	\]
-	对(3.9)左右两侧同时对时间微分，有
-	\begin{align}
-		\mathrm{LHS}&=\dfrac{\dif\vec{v}}{\dif t}\\
-		&=\dfrac{\dif v_x}{\dif t}\base{i}+\dfrac{\dif v_y}{\dif t}\base{j}+\dfrac{\dif v_z}{\dif t}\base{k}\\
-		&=\vec{a}
-	\end{align}
-	\begin{align}
-		\mathrm{RHS}&=\dfrac{\dif\vec{v}'}{\dif t}+\dfrac{\dif(\vec{\omega}\times\vec{r}')}{\dif t}\\
-		&=\dfrac{\dif(v_x'\base{i}')}{\dif t}+\dfrac{\dif(v_y'\base{j}')}{\dif t}+\dfrac{\dif(v_z'\base{k}')}{\dif t}+\dfrac{\dif\vec{\omega}}{\dif t}\times\vec{r}'+\vec{\omega}\times\dfrac{\dif\vec{r}'}{\dif t}\\
-		&=\vec{a}'+\vec{\omega}\times(v_x'\base{i'}+v_y'\base{j'})+\vec{\alpha}\times\vec{r}'+\vec{\omega}\times\dfrac{\dif\vec{r}'}{\dif t}
-	\end{align}
-	记$v_x'\base{i'}+v_y'\base{j'}=\vec{v}_{/z}'$，则续(3.15)有
-	\begin{align}
-		\mathrm{RHS}&=\vec{a}'+\vec{\omega}\times\vec{v}_{/z}'+\vec{\alpha}\times\vec{r}'+\vec{\omega}\times(\vec{v}_{/z}'+\vec{\omega}\times\vec{r}')\\
-		&=\vec{a}'+2\vec{\omega}\times\vec{v}_{/z}'+\vec{\alpha}\times\vec{r}'-\omega^2\vec{r}'\mgnote{有关双重叉乘，见\refleaftext{chapter3_double_cross_product}}
-	\end{align}
-	这里注意到$\vec{\omega}\times\vec{v}_{/z}'=\vec{\omega}\times\vec{v}'$，因为$\vec{v}_z'$与$\vec{\omega}$平行。
-	
-	于是将左式与右式联立，得
-	\[\vec{a}'=\vec{a}-2\vec{\omega}\times\vec{v}'-\vec{\alpha}\times\vec{r}'+\omega^2\vec{r}'\]
-	
-	两侧同时乘以$m$，即得牛顿第二定律形式
-	\[m\vec{a}'=m\vec{a}-2m\vec{\omega}\times\vec{v}'-m\vec{\alpha}\times\vec{r}'+m\omega^2\vec{r}'\]
-	这意味着，如果希望牛顿运动定律在$\mathcal{F}'$中依然成立，我们需要对$\mathcal{F}'$中的物体添加三个假想力，分别是$-2m\vec{\omega}\times\vec{v}',\quad-m\vec{\alpha}\times\vec{r}',\quad m\omega^2\vec{r}'$。
-	
-	如果我们将条件简化，认为$\mathcal{F}'$没有角加速度，则有
-	\[m\vec{a}'=m\vec{a}-2m\vec{\omega}\times\vec{v}'+m\omega^2\vec{r}'\]
-	当$\mathcal{F}'$还拥有平动速度，平动加速度时，只需依照矢量叠加原理分析，再添上惯性力，牛顿第二定律就能继续保持成立。
+    这一次，我们采用坐标分解的观点思考问题。
+
+    首先，考虑一个惯性系，并建立一个常规的空间直角坐标系$\mathcal{F}$，它的基为$\hat{\vec{i}},\hat{\vec{j}},\hat{\vec{k}}$，即为$x,y,z$轴方向的单位向量（单位向量没有量纲，长度为1）。那么，任取一个质点，它的位矢$\vec{P}$可以表示为\[
+        \vec{P}=x\hat{\vec{i}}+y\hat{\vec{j}}+z\hat{\vec{k}}
+    \]
+    我们另建立一个拥有$x',y',z'$轴的，以角速度$\vec{\omega}$旋转的坐标系$\mathcal{F}'$，其中$z'$轴作为旋转轴与$z$轴平行。设该坐标系原点位矢$\vec{O'}$在原参考系中的表达式为$\vec{O}=x_0\hat{\vec{i}}+y_0\hat{\vec{j}}+z_0\hat{\vec{k}}$，那么在$\mathcal{F}'$中，设
+    \[\vec{P}-\vec{O'}=\vec{P}'=x'\hat{\vec{i}'}+y'\hat{\vec{j}'}+z'\hat{\vec{k}'}\]
+    如此，我们说，$\vec{P}$在$\mathcal{F}$中的坐标为$(x,y,z)$，在$\mathcal{F}'$中的坐标为$(x',y',z')$。
+
+    接下来，我们考虑在不同坐标系中的速度。
+
+    $\mathcal{F}$中的速度定义为\[\vec{v}=v_x\base{i}+v_y\base{j}+v_z\base{k}\]其中
+    \[v_x=\dfrac{\dif x}{\dif t},v_y=\dfrac{\dif y}{\dif t},v_z=\dfrac{\dif z}{\dif t}\]
+    于是
+    \begin{align}
+        \dfrac{\dif\vec{P}}{\dif t} & =\dfrac{\dif(x\hat{\vec{i}})}{\dif t}+\dfrac{\dif(y\hat{\vec{j}})}{\dif t}+\dfrac{\dif(z\hat{\vec{k}})}{\dif t} \\
+                                    & =\dfrac{\dif x}{\dif t}\hat{\vec{i}}+\dfrac{\dif y}{\dif t}\hat{\vec{j}}+\dfrac{\dif z}{\dif t}\hat{\vec{k}}    \\
+                                    & =v_x\hat{\vec{i}}+v_y\hat{\vec{j}}+v_z\hat{\vec{k}}                                                             \\
+                                    & =\vec{v}
+    \end{align}
+    其中由(3.2)到(3.3)的理由是该参考系的基$\hat{\vec{i}},\hat{\vec{j}},\hat{\vec{k}}$始终不变。
+
+    同理，$\mathcal{F}'$中的速度定义为
+    \[\vec{v}'=v_x'\base{i'}+v_y'\base{j'}+v_z'\base{k'}\]
+    其中
+    \[v_x'=\dfrac{\dif x'}{\dif t},v_y'=\dfrac{\dif y'}{\dif t},v_z'=\dfrac{\dif z'}{\dif t}\]
+    \\[1ex]
+    由$\vec{P}'=\vec{P}-\vec{O'}$，且$\vec{O}'$不变，知$\dfrac{\dif \vec{P'}}{\dif t}=\dfrac{\dif\vec{P}}{\dif t}=\vec{v}$。于是有
+    \begin{align}
+        \vec{v} & =\dfrac{\dif\vec{P}'}{\dif t}                                                                                                                                                                                                     \\
+                & =\dfrac{\dif(x'\hat{\vec{i}'})}{\dif t}+\dfrac{\dif(y'\hat{\vec{j}'})}{\dif t}+\dfrac{\dif(z'\hat{\vec{k}'})}{\dif t}                                                                                                             \\
+                & =\dfrac{\dif x'}{\dif t}\hat{\vec{i}'}+\dfrac{\dif\hat{\vec{i}'}}{\dif t}x'+\dfrac{\dif y'}{\dif t}\hat{\vec{j}'}+\dfrac{\dif\hat{\vec{j}'}}{\dif t}y'+\dfrac{\dif z'}{\dif t}\hat{\vec{k}'}+\dfrac{\dif\hat{\vec{k}'}}{\dif t}z'
+    \end{align}
+    注意到
+    \[\dfrac{\dif\base{i'}}{\dif t}=\vec{\omega}\times\base{i'},\dfrac{\dif\base{j'}}{\dif t}=\vec{\omega}\times\base{j'}\]
+    续(3.7)有
+    \begin{align}
+        \vec{v} & =v_x'\base{i'}+v_y'\base{j'}+v_z'\base{k'}+\vec{\omega}\times\base{i'}x'+\vec{\omega}\times\base{j'}y' \\
+                & =\vec{v}'+\vec{\omega}\times\vec{r}'\qquad(\text{这里记}\vec{r}'=x'\base{i'}+y'\base{j'})
+    \end{align}
+    关于加速度，我们有类似的定义
+    \[\left\{\begin{array}{c}
+            \vec{a}=a_x\base{i}+a_y\base{j}+a_z\base{k} \\[1ex]
+            a_x=\dfrac{\dif v_x}{\dif t},a_y=\dfrac{\dif v_y}{\dif t},a_z=\dfrac{\dif v_z}{\dif t}
+        \end{array}
+        \right.\]
+    \[\left\{\begin{array}{c}
+            \vec{a}'=a_x'\base{i'}+a_y'\base{j}'+a_z'\base{k'} \\[1ex]
+            a_x'=\dfrac{\dif v_x'}{\dif t},a_y'=\dfrac{\dif v_y'}{\dif t},a_z'=\dfrac{\dif v_z'}{\dif t}
+        \end{array}
+        \right.
+    \]
+    对(3.9)左右两侧同时对时间微分，有
+    \begin{align}
+        \mathrm{LHS} & =\dfrac{\dif\vec{v}}{\dif t}                                                                        \\
+                     & =\dfrac{\dif v_x}{\dif t}\base{i}+\dfrac{\dif v_y}{\dif t}\base{j}+\dfrac{\dif v_z}{\dif t}\base{k} \\
+                     & =\vec{a}
+    \end{align}
+    \begin{align}
+        \mathrm{RHS} & =\dfrac{\dif\vec{v}'}{\dif t}+\dfrac{\dif(\vec{\omega}\times\vec{r}')}{\dif t}                                                                                                                             \\
+                     & =\dfrac{\dif(v_x'\base{i}')}{\dif t}+\dfrac{\dif(v_y'\base{j}')}{\dif t}+\dfrac{\dif(v_z'\base{k}')}{\dif t}+\dfrac{\dif\vec{\omega}}{\dif t}\times\vec{r}'+\vec{\omega}\times\dfrac{\dif\vec{r}'}{\dif t} \\
+                     & =\vec{a}'+\vec{\omega}\times(v_x'\base{i'}+v_y'\base{j'})+\vec{\alpha}\times\vec{r}'+\vec{\omega}\times\dfrac{\dif\vec{r}'}{\dif t}
+    \end{align}
+    记$v_x'\base{i'}+v_y'\base{j'}=\vec{v}_{/z}'$，则续(3.15)有
+    \begin{align}
+        \mathrm{RHS} & =\vec{a}'+\vec{\omega}\times\vec{v}_{/z}'+\vec{\alpha}\times\vec{r}'+\vec{\omega}\times(\vec{v}_{/z}'+\vec{\omega}\times\vec{r}')                  \\
+                     & =\vec{a}'+2\vec{\omega}\times\vec{v}_{/z}'+\vec{\alpha}\times\vec{r}'-\omega^2\vec{r}'\mgnote{有关双重叉乘，见\refleaftext{chapter3_double_cross_product}}
+    \end{align}
+    这里注意到$\vec{\omega}\times\vec{v}_{/z}'=\vec{\omega}\times\vec{v}'$，因为$\vec{v}_z'$与$\vec{\omega}$平行。
+
+    于是将左式与右式联立，得
+    \[\vec{a}'=\vec{a}-2\vec{\omega}\times\vec{v}'-\vec{\alpha}\times\vec{r}'+\omega^2\vec{r}'\]
+
+    两侧同时乘以$m$，即得牛顿第二定律形式
+    \[m\vec{a}'=m\vec{a}-2m\vec{\omega}\times\vec{v}'-m\vec{\alpha}\times\vec{r}'+m\omega^2\vec{r}'\]
+    这意味着，如果希望牛顿运动定律在$\mathcal{F}'$中依然成立，我们需要对$\mathcal{F}'$中的物体添加三个假想力，分别是$-2m\vec{\omega}\times\vec{v}',\quad-m\vec{\alpha}\times\vec{r}',\quad m\omega^2\vec{r}'$。
+
+    如果我们将条件简化，认为$\mathcal{F}'$没有角加速度，则有
+    \[m\vec{a}'=m\vec{a}-2m\vec{\omega}\times\vec{v}'+m\omega^2\vec{r}'\]
+    当$\mathcal{F}'$还拥有平动速度，平动加速度时，只需依照矢量叠加原理分析，再添上惯性力，牛顿第二定律就能继续保持成立。
 \end{prove}

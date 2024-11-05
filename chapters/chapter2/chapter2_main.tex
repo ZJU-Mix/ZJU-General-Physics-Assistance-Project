@@ -9,15 +9,15 @@
 \subsection[质点运动学的基本概念]{\itr{Basic Concepts of Particle Kinematics}{质点运动学的基本概念}}
 相信大家在高中时候以及对质点运动学的基本概念比较了解了，不多赘述，汇总如下\footnote{此时，我们还没有引入向量的观点，因此这里的符号全都是标量形式。}：
 \begin{Itemize}
-       \item \itr{Displacement}{位移} $\Delta x=x_{f} -x_{i}$
-       \item \itr{Average Velocity}{平均速度} $v_{avg} =\dfrac{x_{f}-x_{i}  }{t_{f}-t_{i}  } $
-       \item \itr{Average Speed}{平均速率} $s_{avg} =\dfrac{total\ distance}{total\ time} $ 
-       \item \itr{Instantaneous Velocity}{瞬时速度} $\displaystyle v=\lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} =\frac{\dif  x}{\dif  t} $
+    \item \itr{Displacement}{位移} $\Delta x=x_{f} -x_{i}$
+    \item \itr{Average Velocity}{平均速度} $v_{avg} =\dfrac{x_{f}-x_{i}  }{t_{f}-t_{i}  } $
+    \item \itr{Average Speed}{平均速率} $s_{avg} =\dfrac{total\ distance}{total\ time} $
+    \item \itr{Instantaneous Velocity}{瞬时速度} $\displaystyle v=\lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} =\frac{\dif  x}{\dif  t} $
 \end{Itemize}
 \begin{Itemize}
-       \item \itr{Instantaneous Speed}{瞬时速率} $\left | v \right | >0$ ，即瞬时速度的大小
-       \item \itr{Average Acceleration}{平均加速度} $a_{avg} =\dfrac{v_{f}-v_{i}  }{t_{f}-t_{i}  } $
-       \item \itr{Instantaneous Acceleration}{瞬时加速度} $\displaystyle a=\lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} =\frac{\dif  v}{\dif  t} = \frac{\dif ^2x}{\dif  t^2} $
+    \item \itr{Instantaneous Speed}{瞬时速率} $\left | v \right | >0$ ，即瞬时速度的大小
+    \item \itr{Average Acceleration}{平均加速度} $a_{avg} =\dfrac{v_{f}-v_{i}  }{t_{f}-t_{i}  } $
+    \item \itr{Instantaneous Acceleration}{瞬时加速度} $\displaystyle a=\lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} =\frac{\dif  v}{\dif  t} = \frac{\dif ^2x}{\dif  t^2} $
 \end{Itemize}
 注意这里的下标，avg代表average，i代表initial，f代表final。做题的时候自己写上这样的下标也是很清晰的。
 \subsection[质点运动学有关的计算]{\itr{Calculations Related to Particle Kinematics}{质点运动学有关的计算}}
@@ -33,19 +33,19 @@
 在上面计算的基础上，进一步可以求得位移关于时间的表达式(已知初始位移为$x_{i}$)：
 \begin{equation}
     \begin{aligned}
-    x(t)&=\int_{t_{i}}^{t}v(t')\dif  t'+x_{i}\\
-    & =\int_{t_{i}}^{t} \dif  t'\left[\int_{t_{i}}^{t'}a(t'')\dif  t''+v_{i}\right]+x_{i}\\
-    & =x_{i}+(t-t_{i})v_{i}+\int_{t_{i}}^{t}\dif  t'\int_{t_{i}}^{t'}\dif  t''a(t'')  
-     \end{aligned}
+        x(t) & =\int_{t_{i}}^{t}v(t')\dif  t'+x_{i}                                                \\
+             & =\int_{t_{i}}^{t} \dif  t'\left[\int_{t_{i}}^{t'}a(t'')\dif  t''+v_{i}\right]+x_{i} \\
+             & =x_{i}+(t-t_{i})v_{i}+\int_{t_{i}}^{t}\dif  t'\int_{t_{i}}^{t'}\dif  t''a(t'')
+    \end{aligned}
     \nonumber
 \end{equation}
 
 至此，我们已经得到了相当具有普遍性的两个公式，尽管它们显得十分复杂。如果加速度是一个常数$a$，那么化简这两个公式，就可以得到大家高中时候倒背如流的几个公式：
 \begin{equation}
     \begin{aligned}
-    &v(t)=v_{i}+at\\
-    &x(t)=x_{i}+v_{i}t+\frac{1}{2}at^{2}\\
-    &x(t)-x_{i}= \frac{1}{2} (v_{i}+v_{f})t=\frac{v_{f}^{2}-v_{i}^{2}}{2a} 
+         & v(t)=v_{i}+at                                                         \\
+         & x(t)=x_{i}+v_{i}t+\frac{1}{2}at^{2}                                   \\
+         & x(t)-x_{i}= \frac{1}{2} (v_{i}+v_{f})t=\frac{v_{f}^{2}-v_{i}^{2}}{2a}
     \end{aligned}
     \nonumber
 \end{equation}
@@ -59,13 +59,13 @@
 但是，如果大家尝试从水平和竖直两个方向去描述一个斜抛运动，或是在一个倾斜的坐标系下去描述一个平抛运动，就会发现，结果是一个带着三角函数的复杂式子。这仅仅只是对于二维的、一个质点的讨论。可以想象，用这种track each component的研究分量的方式讨论更高的维度或是更多的质点，会有更多的麻烦。
 \ctikzfig{chapter2_without_vectors}
 \begin{center}
-	在倾斜的坐标系下描述平抛运动
+    在倾斜的坐标系下描述平抛运动
 \end{center}
 
 那么，有什么方法能够让我们避开对于多个分量的繁琐讨论呢？没错，就是 \itr{vector}{向量}。
 \subsection[向量]{\itr{Vector}{向量}}
 \begin{Itemize}
-	\item \itr{vector}{向量}: \En{A \itr{quantity}{量} that has both \itr{direction}{方向} and \itr{magnitude}{大小} and also obeys \itr{the laws of vector addition}{向量加法规律}\mgnote{我们假设读者已经知道向量加法规则，此略。}.}
+    \item \itr{vector}{向量}: \En{A \itr{quantity}{量} that has both \itr{direction}{方向} and \itr{magnitude}{大小} and also obeys \itr{the laws of vector addition}{向量加法规律}\mgnote{我们假设读者已经知道向量加法规则，此略。}.}
 \end{Itemize}
 
 向量的常见表示方法：$\mathbf{a}$(boldface粗体表示)或者$\vec{a}$。本书中采用后者。
@@ -80,34 +80,34 @@
 
 首先，我们从最常见的\textbf{笛卡尔坐标系}(cartesian coordinate)说起。对于向量$\vec{r}$，高中的时候，我们会假设$\vec{r}=(x,y)$ ——其实这里我们省略了基的选取。更加严谨而普遍的表示方式应该是：设$\displaystyle\vec{r} =\left \{ \vec{e }_{1} ,\vec{e }_{2}  \right \} \binom{x}{y} =x\vec{e }_{1}+y\vec{e }_{2}$\footnote{这里的花括号其实就是矩阵的括号，用花括号是为了表示基底的更加清晰(但不严谨)的写法。大家可以将这个表达式理解为一个行向量和列向量的矩阵乘法(向量内积)，这样更好记忆。但事实上$\left \{ \vec{e }_{1} ,\vec{e }_{2}  \right \}$应该是一个分块矩阵的表示，因为$\vec{e }_{1}$和$\vec{e }_{2}$本身也是列向量。}。
 对于 \itr{Cartesian Coordinate}{笛卡尔坐标系}，$\vec{e }_{1}$是$\displaystyle\binom{1}{0} $，$\displaystyle
-\vec{e }_{2}$是$\displaystyle\binom{0}{1} $（也就是x轴，y轴方向的单位向量），代入上面假设的表达式，可以得到$\displaystyle\vec{r}=\binom{x}{y}  $。
+    \vec{e }_{2}$是$\displaystyle\binom{0}{1} $（也就是x轴，y轴方向的单位向量），代入上面假设的表达式，可以得到$\displaystyle\vec{r}=\binom{x}{y}  $。
 \begin{center}
-\begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}[scale=0.8]
 
-  \draw[->] (-3,0) -- (3,0) node[right] {$x$}; % x轴
-  \draw[->] (0,-3) -- (0,3) node[above] {$y$}; % y轴
+        \draw[->] (-3,0) -- (3,0) node[right] {$x$}; % x轴
+        \draw[->] (0,-3) -- (0,3) node[above] {$y$}; % y轴
 
-  \draw[->, thick, thisblue] (0,0) -- (1,0) node[midway, below] {$\vec{e}_1$}; % e1向量
-  \draw[->, thick, thisred] (0,0) -- (0,1) node[midway, right] {$\vec{e}_2$}; % e2向量
-\end{tikzpicture}
+        \draw[->, thick, thisblue] (0,0) -- (1,0) node[midway, below] {$\vec{e}_1$}; % e1向量
+        \draw[->, thick, thisred] (0,0) -- (0,1) node[midway, right] {$\vec{e}_2$}; % e2向量
+    \end{tikzpicture}
 
-	\em 笛卡尔坐标系的基底
+    \em 笛卡尔坐标系的基底
 
 \end{center}
 
 进一步，我们应当跳脱笛卡尔坐标系，去考量一些更加普遍的情况。在线性代数中，我们学习过线性空间和它的基。对于我们要考虑的n维空间，只要取n个\linebreak\itr{linearly independent}{线性无关} 的$\vec{e_{i} }$就可以了。这个时候，一个向量可能会表示成这个样子：
-\[\vec{a} =\left \{ \vec{e_{1} } ,\vec{e_{2} } ,\ldots\vec{e_{n} }\right \} 
-\begin{bmatrix}
-  a_{1} \\
-  a_{2} \\
-  ...\\
-  a_{n}
-\end{bmatrix}\]
+\[\vec{a} =\left \{ \vec{e_{1} } ,\vec{e_{2} } ,\ldots\vec{e_{n} }\right \}
+    \begin{bmatrix}
+        a_{1} \\
+        a_{2} \\
+        ...   \\
+        a_{n}
+    \end{bmatrix}\]
 
 \subsection[向量与标量]{\itr{Vector versus Scalar}{向量vs标量}}
 为了让大家更好地理解向量，这里区分一组概念：\itr{vertor}{向量} 和 \itr{scalar}{标量}。
 \begin{Itemize}
-	\item \itr{scalar}{标量} \En{A \itr{quantity}{量} having \itr{magnitude}{大小} but no \itr{direction}{方向} is a \itr{scalar}{标量}.}
+    \item \itr{scalar}{标量} \En{A \itr{quantity}{量} having \itr{magnitude}{大小} but no \itr{direction}{方向} is a \itr{scalar}{标量}.}
 \end{Itemize}
 常见的标量：T(\itr{temperature}{温度}), m(\itr{mass}{质量}), s(\itr{speed}{速率})\mgnote{注意，向量的大小就是一个标量。}
 \subsection[向量的大小与单位向量]{\itr{Magnitude and Unit Vector}{向量的大小与单位向量}}
@@ -115,9 +115,9 @@
 
 单位向量就是大小为1个单位的向量。
 \begin{Itemize}
-	\item \itr{unit vector}{单位向量} \En{A unit vector is a \itr{dimensionless}{无量纲的} vector having a magnitude of exactly 1.}
-	\\
-	注意，量纲的英文是dimension，题目中出现的时候要注意上下文语义。
+    \item \itr{unit vector}{单位向量} \En{A unit vector is a \itr{dimensionless}{无量纲的} vector having a magnitude of exactly 1.}
+    \\
+    注意，量纲的英文是dimension，题目中出现的时候要注意上下文语义。
 \end{Itemize}
 
 欲求一个向量同方向的单位向量，可取$\displaystyle\hat{\vec{r}} =\frac{\vec{r} }{\left | \vec{r} \right | } $。
@@ -126,8 +126,8 @@
 
 加法运算满足下面两个规律：
 \begin{Itemize}
-     \item \itr{Associaive law of addition}{加法结合律}：$\vec{A}+(\vec{B}+\vec{C})=(\vec{A}+\vec{B})+\vec{C}$
-     \item \itr{Commutative law of addition}{加法交换律}：$\vec{A}+\vec{B}=\vec{B}+\vec{A}$
+    \item \itr{Associaive law of addition}{加法结合律}：$\vec{A}+(\vec{B}+\vec{C})=(\vec{A}+\vec{B})+\vec{C}$
+    \item \itr{Commutative law of addition}{加法交换律}：$\vec{A}+\vec{B}=\vec{B}+\vec{A}$
 \end{Itemize}
 这两个规律的证明，除了图像几何证明之外，还可以用上面我们提到的向量的表示方法\mgnote{见\refleaftext{chapter2_vector_expression}}来证明，推荐大家自己尝试一下。尝试之后可以发现，向量的加法交换律和结合律，都是基于实数的加法交换律和结合律。
 
@@ -137,33 +137,33 @@
 \[\vec{A}-\vec{B}=\vec{A}+(-\vec{B})\]
 
 在新的视角下，向量的数乘也可以这样理解($\alpha$是参与数乘的标量)：
-\[\alpha \vec{a}=\alpha \sum_{i=1}^{n}  a_{i} \vec{e }_{i} =\sum_{i=1}^{n} (\alpha a_{i} )\vec{e }_{i}\]         
-          
+\[\alpha \vec{a}=\alpha \sum_{i=1}^{n}  a_{i} \vec{e }_{i} =\sum_{i=1}^{n} (\alpha a_{i} )\vec{e }_{i}\]
+
 向量的内积(scalar product)\labelroot{chapter2_scalar_product}：
 \[\vec{a} \cdot\vec{b}=(\sum_{i}^{}a_{i}\vec{e}_{i}  )(\sum_{j}^{}b_{j}\vec{e}_{j}  ) =\sum_{i}^{}\sum_{j}^{}a_{i}b_{j}(\vec{e}_{i}\cdot\vec{e}_{j})  \]
 特别的，对于 \itr{cartesian coordinate}{笛卡尔坐标系}\mgnote{这里拓展到多维情形。}，有\mgnote{$\delta$念作delta。}
 \[\vec{e}_{i}\cdot\vec{e}_{j}=\delta _{ij}=\begin{cases}
-    1 & \text{ if } i=j \\
-     0& \text{ if } i\ne j
-   \end{cases}\]
+        1 & \text{ if } i=j    \\
+        0 & \text{ if } i\ne j
+    \end{cases}\]
 于是有
 \[\vec{a} \cdot \vec{b}=\sum_{i}^{} \sum_{j}^{} a_{i} b_{j} \delta _{ij} =\begin{bmatrix}
-    a_1 & a_2 & \cdots & a_n
-  \end{bmatrix}
-  \begin{bmatrix}
-    b_1 \\
-    b_2 \\
-    \vdots \\
-    b_n
-  \end{bmatrix}\]
+        a_1 & a_2 & \cdots & a_n
+    \end{bmatrix}
+    \begin{bmatrix}
+        b_1    \\
+        b_2    \\
+        \vdots \\
+        b_n
+    \end{bmatrix}\]
 
 向量内积满足下面几个基本律：
 \begin{Itemize}
-    \item \itr{Commutative Law}{交换律} 
+    \item \itr{Commutative Law}{交换律}
     $\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}$
-    \item \itr{Distributive Law}{分配律} 
+    \item \itr{Distributive Law}{分配律}
     $\vec{a} \cdot (\vec{b} + \vec{c}) = \vec{a} \cdot \vec{b} + \vec{a} \cdot \vec{c}$
-    \item \itr{Scalar Multiplication Property}{数乘律} 
+    \item \itr{Scalar Multiplication Property}{数乘律}
     $k(\vec{a} \cdot \vec{b}) = (k\vec{a}) \cdot \vec{b} = \vec{a} \cdot (k\vec{b})$，其中 $k$ 是实数。
 \end{Itemize}
 
@@ -171,26 +171,26 @@
 
 \subsection[极坐标]{\itr{Polar Coordinate}{极坐标}\labelroot[16pt]{chapter2_polar_coordinate}}
 二维的情况: $\begin{cases}
-    x=r\cos \theta \\
-    y=r\sin \theta
-   \end{cases}$
+        x=r\cos \theta \\
+        y=r\sin \theta
+    \end{cases}$
 \begin{center}
-\begin{tikzpicture}[scale=1]
-    % 绘制坐标轴
-    \draw[->] (0,0) -- (3,0) node[right] {$x$}; % x轴
-    \draw[->] (0,0) -- (0,3) node[above] {$y$}; % y轴
+    \begin{tikzpicture}[scale=1]
+        % 绘制坐标轴
+        \draw[->] (0,0) -- (3,0) node[right] {$x$}; % x轴
+        \draw[->] (0,0) -- (0,3) node[above] {$y$}; % y轴
 
-    % 绘制极坐标点
-    \draw[->, thick] (0,0) -- (1.5,1.5) node[above] {$P(r,\theta)$};
-    \node[left] (0,0) {$O$};
-    % 角度标记
-    \draw[->] (0.5,0) arc (0:45:0.5) node[midway, right] {$\theta$};
-    
-    % r的长度标记
-    \draw[dotted] (0,0) -- (1.5,1.5) node[midway, right] {$r$};
-\end{tikzpicture}
+        % 绘制极坐标点
+        \draw[->, thick] (0,0) -- (1.5,1.5) node[above] {$P(r,\theta)$};
+        \node[left] (0,0) {$O$};
+        % 角度标记
+        \draw[->] (0.5,0) arc (0:45:0.5) node[midway, right] {$\theta$};
 
-\text{二维极坐标}
+        % r的长度标记
+        \draw[dotted] (0,0) -- (1.5,1.5) node[midway, right] {$r$};
+    \end{tikzpicture}
+
+    \text{二维极坐标}
 \end{center}
 
 二维极坐标系的基本要素是极点和极轴，其中，极轴是一条从极点引出的有向轴。在上图中，极点即为$O$，而极轴则与$x$轴方向相同。我们用$(|\vec{r}|,\theta)$来表示一个点的位置。其中，$\vec{r}$表示以极点为起点，以被描述点为终点的向量，称为极径矢量；$\theta$则表示从极轴出发逆时针旋转到极径矢量的角度。可以发现，$\theta$并不唯一，我们一般取$2\pi$以内的角。
@@ -199,116 +199,116 @@
 
 \ctikzfig{chapter2_polar_coordinate_2d}
 \begin{center}
-	二维极坐标系的基底
+    二维极坐标系的基底
 \end{center}
 
 三维的情况：$\begin{cases}
-    x=r\sin\theta \cos\varphi \\
-    y=r\sin\theta \sin\varphi \\
-    z=r\cos\theta
-   \end{cases}$
+        x=r\sin\theta \cos\varphi \\
+        y=r\sin\theta \sin\varphi \\
+        z=r\cos\theta
+    \end{cases}$
 \begin{center}
-	\resizebox{15em}{30ex}{
-		\begin{tikzpicture}
-			%draw the axes
-			\draw[->] (0,0,0) -- (2.5,0,0) node[anchor=west]{$x$};
-			\draw[->] (0,0,0) -- (0,2.5,0) node[anchor=west]{$z$};
-			\draw[->] (0,0,0) -- (0,0,2.5) node[anchor=west]{$y$};
-			%draw the top and bottom of the cube
-			\draw[dotted,gray!50!thiswhite] (0,2,0) -- (2,2,0) -- (2,0,0);
-			\draw[dotted,gray!50!thiswhite] (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2);
-			
-			%draw the edges of the cube
-			%\draw[dashed,gray] (0,0,0) -- (0,0,2);
-			\draw[dotted,gray!50!thiswhite] (0,2,0) -- (0,2,2);
-			\draw[dashed,thisblack] (2,0,0) -- (2,0,2);
-			\draw[dotted,gray!30!thiswhite] (2,2,0) -- (2,2,2);
-			
-			%  
-			\draw[thick,thisblue!50!black,->] (0,0,0) -- (2,2,2) node[anchor=west,above=-14pt,right=-14pt]{$\boldsymbol{r}$};
-			\draw[dashed,black] (0,0,0) -- (2,0,2);
-			%\draw[dashed,black] (0,2,0) -- (2,2,2);
-			\draw[dashed,black] (2,2,2) -- (2,0,2);
-			
-			% arcs
-			%\coordinate (O) at (0,0,0);
-			\tdplotdrawarc[<-,rotate around x=90,thisgreen!50!black]{(0,0,0)}{0.5}{0}{45}{above=-1pt,right=0pt,anchor=mid west}{$\varphi$};%\tdplotdrawarc[]{(O)}{r}{theta}{theta+Delta_theta}
-			\tdplotdrawarc[<-,rotate around y=-45,thisred!80]{(0,0,0)}{0.5}{35.264}{90}{right=9pt,above=4pt,anchor=mid east}{$\theta$}
-			\node[above=2pt, right=1pt,thisblack!70,scale=0.8] at (2,2,2) {$(x,y,z)$};
-		\end{tikzpicture}
-	}
-	
-	三维极坐标(来自 \url{https://www.latexstudio.net/index/details/index/mid/2316 })
+    \resizebox{15em}{30ex}{
+        \begin{tikzpicture}
+            %draw the axes
+            \draw[->] (0,0,0) -- (2.5,0,0) node[anchor=west]{$x$};
+            \draw[->] (0,0,0) -- (0,2.5,0) node[anchor=west]{$z$};
+            \draw[->] (0,0,0) -- (0,0,2.5) node[anchor=west]{$y$};
+            %draw the top and bottom of the cube
+            \draw[dotted,gray!50!thiswhite] (0,2,0) -- (2,2,0) -- (2,0,0);
+            \draw[dotted,gray!50!thiswhite] (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2);
+
+            %draw the edges of the cube
+            %\draw[dashed,gray] (0,0,0) -- (0,0,2);
+            \draw[dotted,gray!50!thiswhite] (0,2,0) -- (0,2,2);
+            \draw[dashed,thisblack] (2,0,0) -- (2,0,2);
+            \draw[dotted,gray!30!thiswhite] (2,2,0) -- (2,2,2);
+
+            %
+            \draw[thick,thisblue!50!black,->] (0,0,0) -- (2,2,2) node[anchor=west,above=-14pt,right=-14pt]{$\boldsymbol{r}$};
+            \draw[dashed,black] (0,0,0) -- (2,0,2);
+            %\draw[dashed,black] (0,2,0) -- (2,2,2);
+            \draw[dashed,black] (2,2,2) -- (2,0,2);
+
+            % arcs
+            %\coordinate (O) at (0,0,0);
+            \tdplotdrawarc[<-,rotate around x=90,thisgreen!50!black]{(0,0,0)}{0.5}{0}{45}{above=-1pt,right=0pt,anchor=mid west}{$\varphi$};%\tdplotdrawarc[]{(O)}{r}{theta}{theta+Delta_theta}
+            \tdplotdrawarc[<-,rotate around y=-45,thisred!80]{(0,0,0)}{0.5}{35.264}{90}{right=9pt,above=4pt,anchor=mid east}{$\theta$}
+            \node[above=2pt, right=1pt,thisblack!70,scale=0.8] at (2,2,2) {$(x,y,z)$};
+        \end{tikzpicture}
+    }
+
+    三维极坐标(来自 \url{https://www.latexstudio.net/index/details/index/mid/2316 })
 \end{center}
 
 \subsection[基变换]{\itr{Basis Transformation}{基变换}}
 我们考虑一个简单的坐标系旋转的变换：
 \ctikzfig{chapter2_basis_transformation}
 \[\begin{cases}
-	x'=OD+DF=x\cos\theta+y\sin\theta\\
-	y'=PC-FC=y\cos\theta-x\sin\theta
-\end{cases}\]
+        x'=OD+DF=x\cos\theta+y\sin\theta \\
+        y'=PC-FC=y\cos\theta-x\sin\theta
+    \end{cases}\]
 
 两个式子可以用一个矩阵乘法的式子表示：
 \[\left [ x',y' \right ] =\left [ x,y \right ]\begin{bmatrix}
-  \cos\theta &-\sin\theta \\
-   \sin\theta&\cos\theta
- \end{bmatrix}\]
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{bmatrix}\]
 
 对于原坐标系中的一点$(x,y)$，只需要乘上基变换矩阵$\begin{bmatrix}
-  \cos\theta &-\sin\theta \\
-   \sin\theta&\cos\theta
- \end{bmatrix}$，就能得到该点在新坐标系下的坐标$(x',y')$。
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{bmatrix}$，就能得到该点在新坐标系下的坐标$(x',y')$。
 
- \subsection[质点运动的向量表示法]{\itr{Vector Representation of Particle Motion}{质点运动的向量表示}}
- 无论是一维质点运动还是高维质点运动，都可以统一用向量来表示。
- \begin{Itemize}
-  \item \itr{Position}{位置} $\vec{r}$
-  \item \itr{Displacement}{位移} $\Delta\vec{r}=\vec{r}_{f}-\vec{r}_{i}$
-  \item \itr{Average Velocity}{平均速度} $\vec{v}_{avg}=\dfrac{\Delta \vec{r}}{\Delta t}$
-  \item \itr{Instantaneous Velocity}{瞬时速度} $\displaystyle\vec{v}=\lim_{\Delta t \to 0} \frac{\Delta \vec{r}}{\Delta t}=\frac{\dif \vec{r}}{\dif  t}$
-  \item \itr{Average acceleration}{平均加速度} $\vec{a}_{avg}=\dfrac{\vec{v}_{f}-\vec{v}_{i}}{t_{f}-t_{i}}$
-  \item \itr{Instantaneous acceleration}{瞬时加速度} $\displaystyle\vec{a}=\lim_{\Delta t \to 0}\frac{\Delta \vec{v}}{\Delta t}=\frac{\dif \vec{v}}{\dif  t}$
+\subsection[质点运动的向量表示法]{\itr{Vector Representation of Particle Motion}{质点运动的向量表示}}
+无论是一维质点运动还是高维质点运动，都可以统一用向量来表示。
+\begin{Itemize}
+    \item \itr{Position}{位置} $\vec{r}$
+    \item \itr{Displacement}{位移} $\Delta\vec{r}=\vec{r}_{f}-\vec{r}_{i}$
+    \item \itr{Average Velocity}{平均速度} $\vec{v}_{avg}=\dfrac{\Delta \vec{r}}{\Delta t}$
+    \item \itr{Instantaneous Velocity}{瞬时速度} $\displaystyle\vec{v}=\lim_{\Delta t \to 0} \frac{\Delta \vec{r}}{\Delta t}=\frac{\dif \vec{r}}{\dif  t}$
+    \item \itr{Average acceleration}{平均加速度} $\vec{a}_{avg}=\dfrac{\vec{v}_{f}-\vec{v}_{i}}{t_{f}-t_{i}}$
+    \item \itr{Instantaneous acceleration}{瞬时加速度} $\displaystyle\vec{a}=\lim_{\Delta t \to 0}\frac{\Delta \vec{v}}{\Delta t}=\frac{\dif \vec{v}}{\dif  t}$
 \end{Itemize}
 
 而且向量表示也为我们对于基底以及分量的分析提供了便利：
 \begin{equation}
-  \begin{aligned}
-    &\vec{r} =x\hat{\vec{i}}\mgnote{$\hat{\vec{i}}$的上标符号用于表示基底。} +y\hat{\vec{j}} +z\hat{\vec{k}} \\
-\Longrightarrow &\vec{v}=\frac{\dif \vec{r}}{\dif  t}=\frac{\dif  x}{\dif  t}\hat{\vec{i}}+\frac{\dif  y}{\dif  t}\hat{\vec{j}}+\frac{\dif  z}{\dif  t}\hat{\vec{k}}=v_{x}\hat{\vec{i}}+v_{y}\hat{\vec{j}}+v_{z}\hat{\vec{k}}\\
-   \end{aligned}
-  \nonumber
+    \begin{aligned}
+                        & \vec{r} =x\hat{\vec{i}}\mgnote{$\hat{\vec{i}}$的上标符号用于表示基底。} +y\hat{\vec{j}} +z\hat{\vec{k}}                                                                                                                  \\
+        \Longrightarrow & \vec{v}=\frac{\dif \vec{r}}{\dif  t}=\frac{\dif  x}{\dif  t}\hat{\vec{i}}+\frac{\dif  y}{\dif  t}\hat{\vec{j}}+\frac{\dif  z}{\dif  t}\hat{\vec{k}}=v_{x}\hat{\vec{i}}+v_{y}\hat{\vec{j}}+v_{z}\hat{\vec{k}} \\
+    \end{aligned}
+    \nonumber
 \end{equation}
 
 类似的，对于加速度也有：
 \begin{equation}
-  \begin{aligned}
-   \vec{a}=a_{x}\hat{\vec{i}}+a_{y}\hat{\vec{j}}+a_{z}\hat{\vec{k}}
-   \end{aligned}
-  \nonumber
+    \begin{aligned}
+        \vec{a}=a_{x}\hat{\vec{i}}+a_{y}\hat{\vec{j}}+a_{z}\hat{\vec{k}}
+    \end{aligned}
+    \nonumber
 \end{equation}
 
 \subsection[抛体运动]{\itr{Projectile Motion}{抛体运动}}
 \begin{center}
-  \begin{tikzpicture}[scale=1.5]
+    \begin{tikzpicture}[scale=1.5]
 
-      % 轴
-      \draw[->] (0,0) -- (4,0) node[right] {$x$};
-      \draw[->] (0,0) -- (0,3) node[above] {$y$};
-      
-      % 斜抛轨迹
-      \draw[thick, thisblue, domain=0:2.5] plot (\x, -\x^2+\x*2);
+        % 轴
+        \draw[->] (0,0) -- (4,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3) node[above] {$y$};
 
-      % 初始速度矢量
-      \draw[->, thick, thisred] (0,0) -- (1,2) node[right] {$\vec{v_0}$};
+        % 斜抛轨迹
+        \draw[thick, thisblue, domain=0:2.5] plot (\x, -\x^2+\x*2);
 
-      % 角度标记
-      \draw[->] (0,0) -- (0.5,0) arc (0:40:0.9) node[midway, right] {$\phi_0$};
+        % 初始速度矢量
+        \draw[->, thick, thisred] (0,0) -- (1,2) node[right] {$\vec{v_0}$};
 
-      % 标注初始点
-      \node at (0, -0.2) {O};
+        % 角度标记
+        \draw[->] (0,0) -- (0.5,0) arc (0:40:0.9) node[midway, right] {$\phi_0$};
 
-  \end{tikzpicture}
+        % 标注初始点
+        \node at (0, -0.2) {O};
+
+    \end{tikzpicture}
 \end{center}
 
 普遍的，对于一个匀加速运动，有$\vec{r}=\vec{r}_{0}+\vec{v}_{0}t+\dfrac{1}{2}\vec{a}t^{2}$。
@@ -316,46 +316,46 @@
 \vspace*{0.4ex}
 对于上图所示的简单的抛体运动，我们这样计算物体重新落到$x$轴上时，距离开始的时间和距离：
 \begin{equation}
-  \begin{aligned}
-   \vec{r}_{f}&=s\hat{\vec{i}}+0\hat{\vec{j}}\\
-   \Rightarrow\begin{pmatrix}
-    s\\
-    0
-   \end{pmatrix}&=\begin{pmatrix}
-                   v_{0}\cos\phi_{0}t\\
-                   -v_{0}\sin\phi_{0}t 
-                 \end{pmatrix}+\begin{pmatrix}
-                                            0\\
-                                            -\dfrac{1}{2}gt^{2}
-                                          \end{pmatrix}\\
-   \Longrightarrow t&=\frac{2v_{0}\sin\phi_{0}}{g}\\
-   \Longrightarrow s&=\frac{v_{0}^{2}\sin2\phi_{0}}{g}
-  \end{aligned}
-  \nonumber
+    \begin{aligned}
+        \vec{r}_{f}                & =s\hat{\vec{i}}+0\hat{\vec{j}}    \\
+        \Rightarrow\begin{pmatrix}
+                       s \\
+                       0
+                   \end{pmatrix} & =\begin{pmatrix}
+                                        v_{0}\cos\phi_{0}t \\
+                                        -v_{0}\sin\phi_{0}t
+                                    \end{pmatrix}+\begin{pmatrix}
+                                                      0 \\
+                                                      -\dfrac{1}{2}gt^{2}
+                                                  \end{pmatrix}   \\
+        \Longrightarrow t          & =\frac{2v_{0}\sin\phi_{0}}{g}     \\
+        \Longrightarrow s          & =\frac{v_{0}^{2}\sin2\phi_{0}}{g}
+    \end{aligned}
+    \nonumber
 \end{equation}
 
 再来看一个射击自由落体的靶子的例子：
 \begin{center}
-  \begin{tikzpicture}[scale=1.5]
+    \begin{tikzpicture}[scale=1.5]
 
-      % 轴
-      \draw[->] (0,0) -- (4,0) node[right] {$x$};
-      \draw[->] (0,0) -- (0,3) node[above] {$y$};
-      
-      % 斜抛轨迹
-      \draw[thick, thisblue, domain=0:2] plot (\x, -\x^2+\x*2);
+        % 轴
+        \draw[->] (0,0) -- (4,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3) node[above] {$y$};
 
-      % 初始速度矢量
-      \draw[->, thisblack] (0,0) -- (1,2) node[right] {T target};
-      \draw[->, thick, thisred] (0,0) -- (0.5,1) node[left] {$\vec{v}_0$};
-      \draw[->,thisblue] (1,2) -- (1,1) node[above right] {hit};
-      % 角度标记
-      \draw[->] (0,0) -- (0.5,0) arc (0:40:0.9) node[midway, right] {$\phi_0$};
+        % 斜抛轨迹
+        \draw[thick, thisblue, domain=0:2] plot (\x, -\x^2+\x*2);
 
-      % 标注初始点
-      \node at (0, -0.2) {O};
+        % 初始速度矢量
+        \draw[->, thisblack] (0,0) -- (1,2) node[right] {T target};
+        \draw[->, thick, thisred] (0,0) -- (0.5,1) node[left] {$\vec{v}_0$};
+        \draw[->,thisblue] (1,2) -- (1,1) node[above right] {hit};
+        % 角度标记
+        \draw[->] (0,0) -- (0.5,0) arc (0:40:0.9) node[midway, right] {$\phi_0$};
 
-  \end{tikzpicture}
+        % 标注初始点
+        \node at (0, -0.2) {O};
+
+    \end{tikzpicture}
 \end{center}
 
 Q1：在靶子下落的一瞬间开枪，问枪应该瞄准哪里？
@@ -368,11 +368,11 @@ Q2：子弹发射的最小速度是多少？
 
 当然，也可以不用坐标系的变换，直接这样计算：
 \[\left\{
-\begin{aligned}
-  & \text{子弹位置：} \quad \vec{r}_{_P}=\vec{v}_{0}t - \frac{1}{2}gt^{2}\hat{\vec{j}} \\
-  & \text{靶子位置：} \quad \vec{r}_{_T}=\left(|OT|\cos\phi_{0}\hat{\vec{i}} + |OT|\sin\phi_{0}\hat{\vec{j}}\right) - \frac{1}{2}gt^2\hat{\vec{j}}
-\end{aligned}
-\right.\]
+    \begin{aligned}
+         & \text{子弹位置：} \quad \vec{r}_{_P}=\vec{v}_{0}t - \frac{1}{2}gt^{2}\hat{\vec{j}}                                                             \\
+         & \text{靶子位置：} \quad \vec{r}_{_T}=\left(|OT|\cos\phi_{0}\hat{\vec{i}} + |OT|\sin\phi_{0}\hat{\vec{j}}\right) - \frac{1}{2}gt^2\hat{\vec{j}}
+    \end{aligned}
+    \right.\]
 加之$\vec{r}_{_P}=\vec{r}_{_T}$，即可解出要打中需要的角度和击中的时间。
 
 \subsection[匀速圆周运动]{\itr{Uniform Circular Motion}{匀速圆周运动}}
@@ -380,52 +380,52 @@ Q2：子弹发射的最小速度是多少？
 
 \vspace*{2ex}
 \begin{minipage}{0.9\textwidth}
-	\begin{minipage}{0.6\linewidth}
-		\begin{center}
-			\thisincludegraphics[width=0.7\textwidth]{chapter2_uniform circular motion}
-			
-			匀速圆周运动(本图出自\url{https://www.cnblogs.com/1024th/p/10744727.html})
-		\end{center}
-	\end{minipage}
-	\quad
-	\begin{minipage}{0.35\linewidth}
-			\[\vec{a}=\lim_{\Delta t \to 0} \frac{\Delta \vec{v}}{\Delta t}\]
-				由简单的几何关系可知，任何一点的加速度$\vec{a}$都垂直于切线方向，指向圆心。
-	\end{minipage}
+    \begin{minipage}{0.6\linewidth}
+        \begin{center}
+            \thisincludegraphics[width=0.7\textwidth]{chapter2_uniform circular motion}
+
+            匀速圆周运动(本图出自\url{https://www.cnblogs.com/1024th/p/10744727.html})
+        \end{center}
+    \end{minipage}
+    \quad
+    \begin{minipage}{0.35\linewidth}
+        \[\vec{a}=\lim_{\Delta t \to 0} \frac{\Delta \vec{v}}{\Delta t}\]
+        由简单的几何关系可知，任何一点的加速度$\vec{a}$都垂直于切线方向，指向圆心。
+    \end{minipage}
 \end{minipage}
 \vspace*{2ex}
 
 确定方向后，再确定大小，即有：
 \begin{equation}
-  \begin{aligned}
-         \left | \Delta \vec{v} \right |&=2v\sin\frac{\theta}{2} \\
-    \Longrightarrow \left | \vec{a} \right |&=\lim_{\Delta t \to 0}  \frac{2v\sin\frac{\theta}{2}}{\Delta t}=\lim_{\Delta t \to 0}  \frac{2v\sin\frac{v\Delta t}{2r}}{\Delta t}=\frac{v^{2}}{r} \\
-    \Longrightarrow \vec{a}&=-\frac{v^{2}}{r}\hat{\vec{r}}
-  \end{aligned}
-  \nonumber
+    \begin{aligned}
+        \left | \Delta \vec{v} \right |          & =2v\sin\frac{\theta}{2}                                                                                                                            \\
+        \Longrightarrow \left | \vec{a} \right | & =\lim_{\Delta t \to 0}  \frac{2v\sin\frac{\theta}{2}}{\Delta t}=\lim_{\Delta t \to 0}  \frac{2v\sin\frac{v\Delta t}{2r}}{\Delta t}=\frac{v^{2}}{r} \\
+        \Longrightarrow \vec{a}                  & =-\frac{v^{2}}{r}\hat{\vec{r}}
+    \end{aligned}
+    \nonumber
 \end{equation}
 
 也可以用上极坐标来研究这个问题。之前提到过，极坐标也有一对正交基，如果将其理解为$x,y$轴正交基的旋转的话，就有如下表达式：
 
 \[\left \{ \hat{\vec{r}},\hat{\vec{\theta}} \right \} =\left \{ \hat{\vec{i}},\hat{\vec{j}} \right \}\begin{pmatrix}
-  \cos\theta & -\sin\theta\\
-   \sin\theta& \cos\theta
- \end{pmatrix} \]
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{pmatrix} \]
 对称地，也有：
 \[\left \{ \hat{\vec{i}},\hat{\vec{j}} \right \} =\left \{ \hat{\vec{r}},\hat{\vec{\theta}} \right \}\begin{pmatrix}
-  \cos\theta & \sin\theta\\
-  - \sin\theta& \cos\theta
- \end{pmatrix} \]
+        \cos\theta   & \sin\theta \\
+        - \sin\theta & \cos\theta
+    \end{pmatrix} \]
 
- 如此可以推出
- \begin{equation}
-  \begin{aligned}
-      \frac{\dif \hat{\vec{r}}}{\dif t}&=\frac{\dif \cos\theta}{\dif t}\hat{\vec{i}}+\frac{\dif \sin\theta}{\dif t}\hat{\vec{j}}\\
-         &=-\sin\theta\frac{\dif \theta}{\dif t}\hat{\vec{i}}+\cos\theta\frac{\dif \theta}{\dif t}\hat{\vec{j}}\\
-&=-\sin\theta\frac{\dif \theta}{\dif t}(\cos\theta\hat{\vec{r}}-\sin\theta\hat{\vec{\theta}})+\cos\theta\frac{\dif \theta}{\dif t}(\sin\theta\hat{\vec{r}}+\cos\theta\hat{\vec{\theta}})\\
-&=\frac{\dif \theta}{\dif t}\hat{\vec{\theta}}
-  \end{aligned}
-  \nonumber
+如此可以推出
+\begin{equation}
+    \begin{aligned}
+        \frac{\dif \hat{\vec{r}}}{\dif t} & =\frac{\dif \cos\theta}{\dif t}\hat{\vec{i}}+\frac{\dif \sin\theta}{\dif t}\hat{\vec{j}}                                                                                                \\
+                                          & =-\sin\theta\frac{\dif \theta}{\dif t}\hat{\vec{i}}+\cos\theta\frac{\dif \theta}{\dif t}\hat{\vec{j}}                                                                                   \\
+                                          & =-\sin\theta\frac{\dif \theta}{\dif t}(\cos\theta\hat{\vec{r}}-\sin\theta\hat{\vec{\theta}})+\cos\theta\frac{\dif \theta}{\dif t}(\sin\theta\hat{\vec{r}}+\cos\theta\hat{\vec{\theta}}) \\
+                                          & =\frac{\dif \theta}{\dif t}\hat{\vec{\theta}}
+    \end{aligned}
+    \nonumber
 \end{equation}
 
 类似地\footnote{这要仔细想想，$\frac{\dif \theta}{\dif t}$是角速度的大小，但$\frac{\dif \hat{\vec{\theta}}}{\dif t}$却并不是角速度！目前我们讨论的暂时都是角速度的大小，至于角速度本身，将在第三章详细介绍。}，也有
@@ -433,66 +433,66 @@ Q2：子弹发射的最小速度是多少？
 
 这两个式子和匀速圆周运动加速度有啥关系？别急，慢慢推导：
 \begin{equation}
-  \begin{aligned}
-    &\vec{v}=\frac{\dif \vec{r}}{\dif t}=\frac{\dif {r\hat{\vec{r}}}}{\dif t}=r\frac{\dif \hat{\vec{r}}}{\dif t}=r\frac{\dif \theta}{\dif t}\hat{\vec{\theta}}=r\omega \hat{\vec{\theta}}\\
-\Longrightarrow &\vec{a}=\frac{\dif \vec{v}}{\dif t}=r\omega\frac{\dif \hat{\vec{\theta}}}{\dif t}=r\omega(-\frac{\dif \theta}{\dif t}\hat{\vec{r}} )=-\omega^{2}r\hat{\vec{r}}=-\frac{v^{2}}{r}\hat{\vec{r}}
-  \end{aligned}
-  \nonumber
+    \begin{aligned}
+                        & \vec{v}=\frac{\dif \vec{r}}{\dif t}=\frac{\dif {r\hat{\vec{r}}}}{\dif t}=r\frac{\dif \hat{\vec{r}}}{\dif t}=r\frac{\dif \theta}{\dif t}\hat{\vec{\theta}}=r\omega \hat{\vec{\theta}}         \\
+        \Longrightarrow & \vec{a}=\frac{\dif \vec{v}}{\dif t}=r\omega\frac{\dif \hat{\vec{\theta}}}{\dif t}=r\omega(-\frac{\dif \theta}{\dif t}\hat{\vec{r}} )=-\omega^{2}r\hat{\vec{r}}=-\frac{v^{2}}{r}\hat{\vec{r}}
+    \end{aligned}
+    \nonumber
 \end{equation}
 
 \subsection[变速圆周运动]{\itr{Non-uniform Circular Motion}{变速圆周运动}}
 \begin{center}
-	\begin{tikzpicture}
-		% Draw the circle
-		\draw[thick] (0,0) circle(2);
-		
-		% Define the point on the circle
-		\coordinate (P) at (2,0);
-		
-		% Draw the arrows
-		\draw[->, thick] (P) -- ++(-2,0) node[midway, below] {$a_{_R}$}; % Tangential arrow
-		\draw[->, thick] (P) -- ++(0,2) node[midway, right] {$a_{_T}$, \itr{tangential acceleration}{切向加速度}}; % Radial arrow
-		
-		% Draw the point on the circle
-		\fill[black] (P) circle (2pt);
-	\end{tikzpicture}
+    \begin{tikzpicture}
+        % Draw the circle
+        \draw[thick] (0,0) circle(2);
+
+        % Define the point on the circle
+        \coordinate (P) at (2,0);
+
+        % Draw the arrows
+        \draw[->, thick] (P) -- ++(-2,0) node[midway, below] {$a_{_R}$}; % Tangential arrow
+        \draw[->, thick] (P) -- ++(0,2) node[midway, right] {$a_{_T}$, \itr{tangential acceleration}{切向加速度}}; % Radial arrow
+
+        % Draw the point on the circle
+        \fill[black] (P) circle (2pt);
+    \end{tikzpicture}
 \end{center}
 
 \begin{Itemize}
- \item $\displaystyle\vec{v}=\frac{\dif \vec{r}}{\dif t}=\omega r\hat{\vec{\theta}}$
- \item $\displaystyle\omega=\frac{\dif \theta}{\dif t}$
- \item $\displaystyle\vec{a}=\frac{\dif \vec{v}}{\dif t}=\frac{\dif \omega}{\dif t}r\hat{\vec{\theta}}$(\itr{tangential}{切向的})$-\displaystyle\omega^2 r\hat{\vec{r}}$(\itr{centripedal}{径向的})
+    \item $\displaystyle\vec{v}=\frac{\dif \vec{r}}{\dif t}=\omega r\hat{\vec{\theta}}$
+    \item $\displaystyle\omega=\frac{\dif \theta}{\dif t}$
+    \item $\displaystyle\vec{a}=\frac{\dif \vec{v}}{\dif t}=\frac{\dif \omega}{\dif t}r\hat{\vec{\theta}}$(\itr{tangential}{切向的})$-\displaystyle\omega^2 r\hat{\vec{r}}$(\itr{centripedal}{径向的})
 \end{Itemize}
 \section[牛顿定律]{\itr{Newton's Laws}{牛顿定律}}
 牛顿定律研究的是什么？简而言之，力与加速度之间的关系。
 
 牛顿定律是普适的吗？不是，有两个限制条件：
 \begin{center}
-	\itr{low speed}{低速}，\itr{macroscopic scale of interaction}{宏观尺度的作用}
+    \itr{low speed}{低速}，\itr{macroscopic scale of interaction}{宏观尺度的作用}
 \end{center}
 
 突破了前一个限制条件，也就是不再远小于光速，就需要用相对论来讨论，这在之后的章节会详细介绍。突破了后一个限制条件，就需要量子力学来讨论了。
 \subsection[牛顿第一定律]{\itr{Newton's First Law of Motion}{牛顿第一运动定律}}
 \begin{law}[\itr{Newton's First Law of Motion}{牛顿第一运动定律}---\refleaftext{prove2.1}]
-  \En{If no force \itr{acts on}{作用于} a \itr{body}{物体}, the body's \itr{velocity}{速度} cannot change. That is, when no force acts on an object, the acceleration of the object is zero. Any isolated object( one that does not interact with its environment) is either at rest or moving with constant velocity.}
+    \En{If no force \itr{acts on}{作用于} a \itr{body}{物体}, the body's \itr{velocity}{速度} cannot change. That is, when no force acts on an object, the acceleration of the object is zero. Any isolated object( one that does not interact with its environment) is either at rest or moving with constant velocity.}
 \end{law}
 牛顿定律提出的背景：
 384BC\textasciitilde 322BC，\itr{Aristotle}{亚里士多德} 提出，物体的运动需要持续的动力(need continuous action of an agent)\mgnote{当然，你知道这是错误的。}；
 1564\textasciitilde 1642，\itr{Galilei}{伽利略} 提出，物体在没有阻碍的情况下会维持原来的运动状态(objects retain their motion in absence of any \itr{impediments}{阻碍})。
 \subsection[牛顿第二定律]{\itr{Newton's Second Law of Motion}{牛顿第二运动定律}}
 \begin{law}[\itr{Newton's Second Law of Motion}{牛顿第二运动定律}---\refleaftext{prove2.2}]
-	\En{The acceleration of an object is directly \itr{proportional}{成比例} to the \itr{net force}{合外力} acting on it and \itr{inversely proportional}{成反比} to its mass.}
-	\[\sum{\vec{F}}=m\vec{a}\]
+    \En{The acceleration of an object is directly \itr{proportional}{成比例} to the \itr{net force}{合外力} acting on it and \itr{inversely proportional}{成反比} to its mass.}
+    \[\sum{\vec{F}}=m\vec{a}\]
 \end{law}
 \subsection[牛顿第三定律]{\itr{Newton's Third Law of Motion}{牛顿第三运动定律}}
 \begin{law}[\itr{Newton's Third Law of Motion}{牛顿第三运动定律}---\refleaftext{prove2.3}]
- \En{The \itr{action force}{作用力} is equal in magnitude to the \itr{reaction force}{反作用力} and opposite in direction. }
+    \En{The \itr{action force}{作用力} is equal in magnitude to the \itr{reaction force}{反作用力} and opposite in direction. }
 \end{law}
 
 \subsection[惯性参考系与非惯性参考系]{\itr{Inertial Reference Frame \& Non-inertial Reference Frame}{惯性参考系\&非惯性参考系}}
 \begin{Itemize}
-  \item 惯性参考系是指一个不受外力作用、未被加速且静止或匀速直线运动的参考系。在这个惯性参考系中，牛顿定律成立，即物体保持原有状态（静止或匀速直线运动）。
-	\item 非惯性参考系是指一个相对于惯性参考系不保持匀速直线运动或静止的参考系。在非惯性参考系中，牛顿定律不成立\footnotemark。
+    \item 惯性参考系是指一个不受外力作用、未被加速且静止或匀速直线运动的参考系。在这个惯性参考系中，牛顿定律成立，即物体保持原有状态（静止或匀速直线运动）。
+    \item 非惯性参考系是指一个相对于惯性参考系不保持匀速直线运动或静止的参考系。在非惯性参考系中，牛顿定律不成立\footnotemark。
 \end{Itemize}
 \footnotetext{这很好理解，不妨考虑一个不受力的物体，它在非惯性参考系中可以拥有加速度，这与牛顿第一定律冲突，因此牛顿定律不再成立。}
 
@@ -505,24 +505,24 @@ Q2：子弹发射的最小速度是多少？
 下面用伽利略变换\labelroot{Galilean transformation}来证明上面的结论：
 \ctikzfig{chapter2_galilean_transformation}
 \begin{center}
-	伽利略变换
+    伽利略变换
 \end{center}
 \begin{equation}
-  \begin{aligned}
- \vec{r}'&=\vec{r}-\vec{u}t\\
-\Rightarrow \frac{\dif \vec{r}'}{\dif t}&=\frac{\dif \vec{r}}{\dif t}-\vec{v_{0}}\\
-\Leftrightarrow \vec{v}'&=\vec{v}-\vec{v_{0}}\\
-\Rightarrow \frac{\dif \vec{v}'}{\dif t}&=\frac{\dif \vec{v}}{\dif t}\\
-\Leftrightarrow \vec{a}'&=\vec{a}
-  \end{aligned}
-  \nonumber
+    \begin{aligned}
+        \vec{r}'                                 & =\vec{r}-\vec{u}t                        \\
+        \Rightarrow \frac{\dif \vec{r}'}{\dif t} & =\frac{\dif \vec{r}}{\dif t}-\vec{v_{0}} \\
+        \Leftrightarrow \vec{v}'                 & =\vec{v}-\vec{v_{0}}                     \\
+        \Rightarrow \frac{\dif \vec{v}'}{\dif t} & =\frac{\dif \vec{v}}{\dif t}             \\
+        \Leftrightarrow \vec{a}'                 & =\vec{a}
+    \end{aligned}
+    \nonumber
 \end{equation}
 
 \subsection[非惯性系中的相对运动]{\itr{Relative Motion in Non-inertial Frame}{非惯性系中的相对运动}}
 先来看一个例子：
 \ctikzfig{chapter2_noninertial_frame}
 \begin{center}
-	向右匀加速运动车厢中的小球(小球与车厢相对静止)
+    向右匀加速运动车厢中的小球(小球与车厢相对静止)
 \end{center}
 
 在高中时，我们往往在地面参考系中对这个小球的受力情况进行分析，并求解车厢的加速度。而现在，我们尝试在车厢这个非惯性参考系中研究它。
@@ -554,7 +554,7 @@ Q2：子弹发射的最小速度是多少？
 在这里，我们将变力做功转化为无数个小位移时的恒力做功的和。计算出来的结果，也就是这个力在$F-x$图上的曲线与$x$轴围成的面积，如下。
 \ctikzfig{chapter2_work_done_by_varying_force}
 \begin{center}
-	变力做功的计算
+    变力做功的计算
 \end{center}
 力会随位移而改变的一个经典例子是弹簧，这就不得不提到著名的胡克定律\footnote{需要注意，这里的负号十分重要，这表示弹簧提供的力与弹簧被拉伸一段的位移是相反的，这符合$\vec{F}_{s}$与$\vec{x}$的矢量属性。}：
 \[\vec{F}_{s}=-k\vec{x}\]
@@ -566,7 +566,7 @@ Q2：子弹发射的最小速度是多少？
 
 \ctikzfig{chapter2_hook}
 \begin{center}
-	弹簧的变力做功
+    弹簧的变力做功
 \end{center}
 \subsection[动能]{\itr{Kinetic Energy}{动能}}
 大家应该都知道低速运动物体的动能公式是$\frac{1}{2}mv^{2} $，但是为什么要这样定义？这个$\frac{1}{2}$是怎么来的？其实这样的定律，从一个简单的匀加速运动中就可以看出其合理性：
@@ -574,13 +574,13 @@ Q2：子弹发射的最小速度是多少？
 设一个物体质量为$m$，且在恒力作用下作加速度为$a$的匀加速直线运动，则可作如下推导：
 \begin{equation}
     \begin{aligned}
-    	&\hspace*{-3em}\left\{\begin{aligned}
-    		\sum W&=Fd=(ma)d\\
-    		d&=\frac{1}{2}(v_{i}+v_{f})t\\
-    		a&=\frac{v_{f}-v_{i}}{t}
-    	\end{aligned}\right.\\[1ex]
-  \Longrightarrow \sum W&=m\frac{v_{f}-v_{i}}{t}\frac{1}{2}(v_{i}+v_{f})t\\[1ex]
-  &=\frac{1}{2}mv_{f}^{2}-\frac{1}{2}mv_{i}^{2}
+                               & \hspace*{-3em}\left\{\begin{aligned}
+                                                          \sum W & =Fd=(ma)d                  \\
+                                                          d      & =\frac{1}{2}(v_{i}+v_{f})t \\
+                                                          a      & =\frac{v_{f}-v_{i}}{t}
+                                                      \end{aligned}\right. \\[1ex]
+        \Longrightarrow \sum W & =m\frac{v_{f}-v_{i}}{t}\frac{1}{2}(v_{i}+v_{f})t         \\[1ex]
+                               & =\frac{1}{2}mv_{f}^{2}-\frac{1}{2}mv_{i}^{2}
     \end{aligned}
     \nonumber
 \end{equation}
@@ -594,10 +594,10 @@ Q2：子弹发射的最小速度是多少？
 用公式表示，即$\sum W =K_{f}-K{i}=\Delta K$。无论这个 \itr{net force}{合外力} 是否恒定，这个公式都是适用的。
 \subsection[功率]{\itr{Power}{功率}}
 \begin{Itemize}
-  \item \En{\itr{Power}{功率}: The \itr{time rate}{速率} of doing work, or energy transfer.}
-  \item \itr{Average power}{平均功率}: $\upperline{P} =\dfrac{W}{\Delta t}$
-  \item \itr{Instantaneous power}{瞬时功率}:$P=\dfrac{\dif W}{\dif t}=F\cdot\dfrac{\dif s}{\dif t}=\vec{F}\cdot\vec{v}$
-  \item SI Unit of power: the watt $W=1\mathrm{J}/\mathrm{s}=1\mathrm{kg}\cdot \mathrm{m}^2/\mathrm{s}^3$
+    \item \En{\itr{Power}{功率}: The \itr{time rate}{速率} of doing work, or energy transfer.}
+    \item \itr{Average power}{平均功率}: $\upperline{P} =\dfrac{W}{\Delta t}$
+    \item \itr{Instantaneous power}{瞬时功率}:$P=\dfrac{\dif W}{\dif t}=F\cdot\dfrac{\dif s}{\dif t}=\vec{F}\cdot\vec{v}$
+    \item SI Unit of power: the watt $W=1\mathrm{J}/\mathrm{s}=1\mathrm{kg}\cdot \mathrm{m}^2/\mathrm{s}^3$
 \end{Itemize}
 
 \section[能量守恒]{\itr{Conservation of Energy}{能量守恒}}
@@ -648,7 +648,7 @@ Q2：子弹发射的最小速度是多少？
 
 还有一个特别的计算方法：
 
-	\En{Any conservative force acting on an object within a system equals the negative derivative of the potential energy of the system with repect to $\vec{r}$.}
+\En{Any conservative force acting on an object within a system equals the negative derivative of the potential energy of the system with repect to $\vec{r}$.}
 
 也就是说，保守力等于该保守力对应势能对位矢$\vec{r}$的负导数。用向量表示就是
 \[\vec{F}=-\hat{\vec{i}}\frac{\partial U}{\partial x}-\hat{\vec{j}} \frac{\partial U}{\partial y} -\hat{\vec{k}} \frac{\partial U}{\partial z} \]
@@ -662,8 +662,8 @@ Q2：子弹发射的最小速度是多少？
 \subsection[系统的平衡性]{\itr{Equilibrium of a System}{系统的平衡性}}
 以下考虑只有一维坐标$x$的情形。
 \begin{Itemize}
- \item \En{In general, positions of \itr{stable equilibrium}{稳定平衡} correspond to points for which $U(x)$ is a \itr{minimum}{极小值点}, that is, }$\dfrac{\dif U}{\dif x}=0\quad\dfrac{\dif ^2U}{\dif x^{2} }>0$。
- \item \En{In general, positions of \itr{unstable equilibrium}{不稳定平衡} correspond to points for which $U(x)$ is a \itr{maximum}{极大值点}, that is, }$\dfrac{\dif U}{\dif x}=0\quad\dfrac{\dif ^2U}{\dif x^{2} }<0$。
+    \item \En{In general, positions of \itr{stable equilibrium}{稳定平衡} correspond to points for which $U(x)$ is a \itr{minimum}{极小值点}, that is, }$\dfrac{\dif U}{\dif x}=0\quad\dfrac{\dif ^2U}{\dif x^{2} }>0$。
+    \item \En{In general, positions of \itr{unstable equilibrium}{不稳定平衡} correspond to points for which $U(x)$ is a \itr{maximum}{极大值点}, that is, }$\dfrac{\dif U}{\dif x}=0\quad\dfrac{\dif ^2U}{\dif x^{2} }<0$。
 \end{Itemize}
 \section[动量守恒]{\itr{Conservation of Momentum}{动量守恒}}
 
@@ -674,11 +674,11 @@ Q2：子弹发射的最小速度是多少？
 
 考虑一个最简单的情况——一个受恒力$F$的质点在做一维的运动。首先，让我们把变换前后的功和动能建立起联系：
 \begin{equation}
-  \begin{aligned}
-     &W'=Fd'=F(d-v_{0}t)=W-v_{0}Ft\\
-     &K'=\frac{1}{2}m(v')^{2}=\frac{1}{2}m(v-v_{0})^{2}=K-v_{0}mv+\frac{1}{2}mv_{0}^{2}
-  \end{aligned}
-  \nonumber
+    \begin{aligned}
+         & W'=Fd'=F(d-v_{0}t)=W-v_{0}Ft                                                      \\
+         & K'=\frac{1}{2}m(v')^{2}=\frac{1}{2}m(v-v_{0})^{2}=K-v_{0}mv+\frac{1}{2}mv_{0}^{2}
+    \end{aligned}
+    \nonumber
 \end{equation}
 联立上面两个式子，有
 \[W'-(K_{f}'-K_{i}')=W-(K_{f}-K_{i})-v_{0}Ft+v_{0}m(v_{f}-v_{i})\]
@@ -686,7 +686,7 @@ Q2：子弹发射的最小速度是多少？
 根据动能定理$W=K_{f}-K_{i}$，要想$W'=K_{f}'-K_{i}'$依然成立，就必须有$Ft=mv_{f}-mv_{i}$成立。幸运的是，我们发现这个式子确实成立。所以，动能定理在伽利略变换下具有不变性。同时，我们将这个式子命名为\textbf{动量定理}。
 
 \begin{law}[\itr{Impulse-Momentum Theorem}{动量定理}---\refleaftext{prove2.6}]
-  \En{The \itr{impulse}{冲量} of the force $\vec{F}$ acting on a particle equals the change in the linear momentum of the particle caused by that force, that is, $\vec{I}=\Delta \vec{p}$.}
+    \En{The \itr{impulse}{冲量} of the force $\vec{F}$ acting on a particle equals the change in the linear momentum of the particle caused by that force, that is, $\vec{I}=\Delta \vec{p}$.}
 \end{law}
 其中，\itr{Linear momentum}{动量} 定义为$\vec{p}=m\vec{v}$， \itr{Impulse}{冲量} 定义为$\displaystyle \vec{I}=\int_{t_{i}}^{t_{f}}\vec{F}\dif t $。
 
@@ -700,13 +700,13 @@ Q2：子弹发射的最小速度是多少？
 
 这个规律可以有如下推广：
 \begin{Itemize}
-  \item \itr{Conservation of Linear Momentum}{动量守恒} \En{Whenever two or more particles in an isolated system interact, the total momentum of the system remains constant.}
-  \item \En{Note: the only requirement is that the forces must be \itr{internal}{内部的} to the system.}
+    \item \itr{Conservation of Linear Momentum}{动量守恒} \En{Whenever two or more particles in an isolated system interact, the total momentum of the system remains constant.}
+    \item \En{Note: the only requirement is that the forces must be \itr{internal}{内部的} to the system.}
 \end{Itemize}
 
 \subsection[碰撞]{\itr{Collision}{碰撞}}
 \begin{Itemize}
-  \item \En{Definition: Collision is the event of two particles' coming together for a short time and thereby producing \itr{impulsive}{瞬时的} forces on each other.}
+    \item \En{Definition: Collision is the event of two particles' coming together for a short time and thereby producing \itr{impulsive}{瞬时的} forces on each other.}
 \end{Itemize}
 
 在任何没有合外力或是合外力可以忽略的碰撞中，碰撞系统的动量都是守恒的。然而，这个系统的动能不一定守恒。我们把碰撞过程中动能守恒的碰撞称作 \itr{Elastic collision}{弹性碰撞}，反之则称为 \itr{Inelastic collision}{非弹性碰撞}。
@@ -719,9 +719,9 @@ Q2：子弹发射的最小速度是多少？
 \[\vec{v}=\frac{m_{1}\vec{v}_{1i}+m_{2}\vec{v}_{2i}}{m_{1}+m_{2}}\]
 然后，我们就可以直接得到末速度
 \[\left\{\begin{aligned}
-	\vec{v}_{1f}&=2\vec{v}-\vec{v}_{1i}\\
-	\vec{v}_{2f}&=2\vec{v}-\vec{v}_{2i}
-\end{aligned}\right.\]
+        \vec{v}_{1f} & =2\vec{v}-\vec{v}_{1i} \\
+        \vec{v}_{2f} & =2\vec{v}-\vec{v}_{2i}
+    \end{aligned}\right.\]
 
 若是遇到有角度的二维碰撞，情况就略复杂一点，但总体思路也是很简单的，无非是动量守恒和能量守恒表达式的联立。其中动量守恒会涉及多个方向的分析，可能不止一个表达式。
 
@@ -731,7 +731,7 @@ Q2：子弹发射的最小速度是多少？
 
 \ctikzfig{chapter2_CM}
 \begin{center}
-	质心的位置
+    质心的位置
 \end{center}
 
 对于一个系统，其将质心作为参考系原点的参考系被称为系统的\textbf{质心系}（CM Frame）。因此，在质心系中，有
@@ -739,8 +739,8 @@ Q2：子弹发射的最小速度是多少？
 
 此外，关于质心系还有一个很重要的结论，即
 \begin{law}[质心系中，系统的总动量为$\vec{0}$ ---\refleaftext{prove2.7}]
-	记系统在其质心系中的总动量为$\vec{P}^{CM}$，则有
-	\[\vec{P}^{CM}=\vec{0}\]
+    记系统在其质心系中的总动量为$\vec{P}^{CM}$，则有
+    \[\vec{P}^{CM}=\vec{0}\]
 \end{law}
 
 \section[重力]{\itr{The Law of Gravity}{重力相关的定律}}
@@ -749,8 +749,8 @@ Q2：子弹发射的最小速度是多少？
 
 通过这三类现象和一些计算推导\footnote{在《自然哲学的数学原理》这本书中，牛顿记录了推导万有引力的计算方法。主要运用的工具是欧几里得几何学、代数学以及自己的“微分和积分的思想”。}（牛顿有非常恐怖的数学功底），牛顿统一了天上和地上的运动：
 \begin{law}[\itr{The Law of Universal Gravitation}{万有引力定律} ---\refleaftext{prove2.8}]
-       \En{Every particle in the Universe attracts every other particle with a force that is directly \itr{proportional}{成比例} to the \itr{product}{乘积} of their masses and \itr{inversely proportional}{反比} to the \itr{square}{平方} of the distance between them.}
-       
+    \En{Every particle in the Universe attracts every other particle with a force that is directly \itr{proportional}{成比例} to the \itr{product}{乘积} of their masses and \itr{inversely proportional}{反比} to the \itr{square}{平方} of the distance between them.}
+
 \end{law}
 若用公式表示万有引力的大小，就是$F_{g}=G\dfrac{m_{1}m_{2}}{r^{2}}$。
 
@@ -759,24 +759,24 @@ Q2：子弹发射的最小速度是多少？
 设地球质量为 \( M_E \)，月球质量为 \( M_M \)，两者之间的平均距离为 \( R \)。根据万有引力定律，地球对月球的引力 \( F_E \) 为：
 
 \[
-F_E = G \frac{M_E M_M}{R^2}
+    F_E = G \frac{M_E M_M}{R^2}
 \]
 
 月球的运动可以用开普勒定律(\refleaftext{law2.8})描述。根据万有引力定律，月球的运动周期$T$应满足：
 
 \[
-T^2 = \frac{4 \pi^2 R^3}{G (M_E + M_M)}
+    T^2 = \frac{4 \pi^2 R^3}{G (M_E + M_M)}
 \]
 
 因为 \( M_M \) 相对 \( M_E \) 较小，可以近似认为
 \[
-T^2 \approx \frac{4 \pi^2 R^3}{G M_E}
+    T^2 \approx \frac{4 \pi^2 R^3}{G M_E}
 \]
 
 根据实际观测，月球的运动周期约为 27.3 天。计算得到周期应符合：
 
 \[
-T = 2 \pi \sqrt{\frac{R^3}{G M_E}}
+    T = 2 \pi \sqrt{\frac{R^3}{G M_E}}
 \]
 
 通过将 \( R \) 和 \( M_E \) 的已知值代入，可以得到理论计算的周期，并与观测值进行比较。
@@ -786,11 +786,11 @@ T = 2 \pi \sqrt{\frac{R^3}{G M_E}}
 \subsection[行星运动以及开普勒定律]{\itr{Motion of the planets \& Kepler's laws}{行星运动以及开普勒定律}}
 通过实验观察和数据分析，开普勒总结出了三大定律。
 \begin{law}[开普勒三大定律]
-	\begin{itemize}
-		\item \En{All planets move in \itr{elliptical}{椭圆} orbits with the Sun at one \itr{focal point}{焦点}.}
-		\item \En{The radius vector drawn from the Sun to a planet \itr{sweeps out}{扫过} equal areas in equal \itr{time interval}{时间间隔}(Exactly reflects the conservation of angular momentum).}
-		\item \En{The square of the orbital period of any planet is proportional to the \itr{cube}{立方} of the \itr{semimajor axis}{半长轴} of the elliptical orbit.}
-	\end{itemize}
+    \begin{itemize}
+        \item \En{All planets move in \itr{elliptical}{椭圆} orbits with the Sun at one \itr{focal point}{焦点}.}
+        \item \En{The radius vector drawn from the Sun to a planet \itr{sweeps out}{扫过} equal areas in equal \itr{time interval}{时间间隔}(Exactly reflects the conservation of angular momentum).}
+        \item \En{The square of the orbital period of any planet is proportional to the \itr{cube}{立方} of the \itr{semimajor axis}{半长轴} of the elliptical orbit.}
+    \end{itemize}
 \end{law}
 
 这里提一下 \itr{Conic Section}{圆锥曲线}。牛顿分析后认为，重力场中可能的环绕轨迹是圆锥曲线\mgnote{圆锥曲线由于它们能够通过切割一个圆锥面得到而获名。}。
@@ -809,7 +809,7 @@ T = 2 \pi \sqrt{\frac{R^3}{G M_E}}
 根据平衡条件，可以得到：
 
 \[
-G = \frac{4 \pi^2 k r^2}{m_1 m_2 \sin\theta}
+    G = \frac{4 \pi^2 k r^2}{m_1 m_2 \sin\theta}
 \]
 \begin{singlefigure}[扭摆实验]{chapter2_cavendish.png}[0.6]
 \end{singlefigure}
@@ -823,7 +823,7 @@ G = \frac{4 \pi^2 k r^2}{m_1 m_2 \sin\theta}
 通过多次实验，重力常数的国际标准值为：
 
 \[
-G \approx 6.674 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}
+    G \approx 6.674 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}
 \]
 
 \subsection[自由落体加速度]{\itr{Free-fall acceleration}{自由落体加速度}}
@@ -848,15 +848,15 @@ G \approx 6.674 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}
 为了克服引力，物体需达到的总能量为零\mgnote{设物体恰好能够到达无穷远处，此时速度几乎为$0$，地球对物体的引力势能也几乎为$0$。}：
 
 \[
-E = K + U = 0
+    E = K + U = 0
 \]
 也即
 \[
-\frac{1}{2}mv^2 - \frac{GMm}{R} = 0
+    \frac{1}{2}mv^2 - \frac{GMm}{R} = 0
 \]
 因此，第二宇宙速度 \( v_2 \) 为
 \[
-v_2 = \sqrt{\frac{2GM}{R}}\approx11.2\mathrm{km/s}
+    v_2 = \sqrt{\frac{2GM}{R}}\approx11.2\mathrm{km/s}
 \]
 
 \section*{第三宇宙速度$^*$}
@@ -864,7 +864,7 @@ v_2 = \sqrt{\frac{2GM}{R}}\approx11.2\mathrm{km/s}
 
 注意，这里不能仅仅将推导第二宇宙速度的公式中的$M$换成太阳的质量。在这种情况下，航天器需要同时挣脱地球的引力和太阳的引力；同时，地球绕太阳公转也为航天器提供了一部分初速度。
 \[
-v = \sqrt{\frac{2GM}{R}}\approx42.2\mathrm{km/s}
+    v = \sqrt{\frac{2GM}{R}}\approx42.2\mathrm{km/s}
 \]
 其中$M$为太阳的质量，$R$为地球与太阳的距离。
 
@@ -881,22 +881,22 @@ v = \sqrt{\frac{2GM}{R}}\approx42.2\mathrm{km/s}
 \subsection[火箭推进]{\itr{Rocket propulsion}{火箭推进}}
 从动量角度研究火箭推进是很多题目喜欢考察的：
 \begin{singlefigure}[火箭推进]{chapter2_rocket.png}[0.8]
-\end{singlefigure}  
+\end{singlefigure}
 由动量定理有
 \[
-(M+\Delta m)v=M(v+\Delta v)+\Delta m(v-v_{e})\mgnote{$v_{e}$中$e$表示eject，$v_{e}$就是气体喷射速度。气体喷射速度是一个相对速度。}
+    (M+\Delta m)v=M(v+\Delta v)+\Delta m(v-v_{e})\mgnote{$v_{e}$中$e$表示eject，$v_{e}$就是气体喷射速度。气体喷射速度是一个相对速度。}
 \]
 整理得
 \[
-M\Delta v=v_{e}\Delta m\Rightarrow  M\dif v=v_{e}\dif m=-v_{e}\dif M
+    M\Delta v=v_{e}\Delta m\Rightarrow  M\dif v=v_{e}\dif m=-v_{e}\dif M
 \]
 由此可以得到
 \[
-  \int_{v_{i}}^{v_{f}}v=-v_{e}\int_{M_{i}}^{M_{f}}\frac{\dif  M}{M}
+    \int_{v_{i}}^{v_{f}}v=-v_{e}\int_{M_{i}}^{M_{f}}\frac{\dif  M}{M}
 \]
 即
 \[
-v_{f}-v_{i}=v_{e}\ln{\frac{M_{i}}{M_{f}}}
+    v_{f}-v_{i}=v_{e}\ln{\frac{M_{i}}{M_{f}}}
 \]
 
 这也告诉我们，火箭不带燃料的部分越轻，火箭所带燃料越多，火箭能达到的速度越大。

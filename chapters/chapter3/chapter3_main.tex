@@ -3,10 +3,10 @@
 \section[刚体]{\itr{Rigid Body}{刚体}}
 想象一个物体，它受到力产生加速度的同时，各个部位还会发生形变，这样的运动显然是非常复杂的。我们简化了研究对象，选择那些具有体积，且形状固定不变的物体。这样的物体就叫做刚体。
 \begin{Itemize}
-	\item \itr{rigid body}{刚体}:\En{An object that is
-		\itr{nondeformable}{不可形变的}, or in other words, an object in which the
-		separations between all parts of particles remain
-		constant.}
+    \item \itr{rigid body}{刚体}:\En{An object that is
+        \itr{nondeformable}{不可形变的}, or in other words, an object in which the
+        separations between all parts of particles remain
+        constant.}
 \end{Itemize}
 \section[转动]{\itr{Rotation}{转动}}
 我们已经非常了解平动了。鉴于刚体的运动可以分为平动和转动，我们不妨先放弃平动，单独对转动做出分析。
@@ -19,13 +19,13 @@
 极坐标系\footnote{你可能会注意到，在\refleaftext{chapter2_polar_coordinate} 中，我们已经介绍过了极坐标系。然而，这里将引入的极坐标系，其中的一些约定将与之前有所不同。传统上，我们对极坐标系的基底的定义与之前的定义相同，这是因为，我们只考虑了二维的情况，无法再添加一个维度来描述角度矢量。而在这里，为了更好地研究旋转，我们在对角度矢量的定义中引入了垂直于平面的方向。在本章及其证明与习题中所提到的极坐标系，都按照本章的约定方式。}的基本要素是极点和极轴，其中极轴是一条从极点引出的有向轴。
 \ctikzfig{chapter3_polar_coordinate}
 \begin{center}
-	\em 这是一个极坐标系，$O$为极点，$x$轴方向为极轴方向
+    \em 这是一个极坐标系，$O$为极点，$x$轴方向为极轴方向
 \end{center}
 在极坐标系中，我们使用坐标$(r,\theta)$或者$(|\vec{r}|,|\vec{\theta}|)$描述点的位置。
 
 \begin{Itemize}
-	\item $\vec{r}$即起点为极点，终点为被描述点的向量，称为极径矢量。
-	\item $\vec{\theta}$即角度矢量，方向\labelroot{chapter3_direction}垂直于坐标平面向纸面外。我们规定，从极轴出发旋转到极径矢量的旋转角，\itr{counterclockwise}{逆时针} 时方向为正，\itr{clockwise}{顺时针} 时方向为负\footnotemark。
+    \item $\vec{r}$即起点为极点，终点为被描述点的向量，称为极径矢量。
+    \item $\vec{\theta}$即角度矢量，方向\labelroot{chapter3_direction}垂直于坐标平面向纸面外。我们规定，从极轴出发旋转到极径矢量的旋转角，\itr{counterclockwise}{逆时针} 时方向为正，\itr{clockwise}{顺时针} 时方向为负\footnotemark。
 \end{Itemize}
 \footnotetext{当然，对于一个第四象限的点，你可以认为它是逆时针旋转得到的优角（就是大于180度的角），也可以认为它是顺时针旋转得到的锐角。在本书中，由于叉乘的考量，我们往往取锐角考虑。}
 
@@ -34,145 +34,145 @@
 柱坐标系是极坐标系往$z$轴平面的延伸。柱坐标相比极坐标的$r,\theta$还多了一个$z$，用于指示点在$z$轴上的投影位置。
 
 \hspace*{-0.5em}\begin{minipage}{0.6\textwidth}
-	\centering
-	\begin{tikzpicture}[scale=1]
-		\coordinate (O) at (0,0);
-		\coordinate (Ox) at (-3,-3);
-		\coordinate (Oy) at (4.243,0);  % sqrt{18}
-		\coordinate (Oz) at (0, 6);
-		
-		% draw axis
-		\draw[-latex, line width=1] (O)-- (Ox) node[below] {$x$};
-		\draw[-latex, line width=1] (O)-- (Oy) node[right] {$y$};
-		\draw[-latex, line width=1] (O)-- (Oz) node[above] {$z$};
-		
-		
-		% draw arcs
-		\draw[thick] ($(0, 0) + (236:3cm and 2cm)$(P) arc
-		(236:360:3cm and 2cm);
-		\draw[thick] ($(0, 0) + (236:3cm and 2cm)$(P) arc
-		(236:360:3cm and 2cm);
-		
-		\draw[thick] ($(0, 5) + (236:3cm and 2cm)$(P) arc
-		(236:360:3cm and 2cm);
-		
-		\draw[thick, -latex] ($(0, 0) + (236:1.5cm and 1cm)$(P) arc
-		(236:310:1.5cm and 1cm);
-		
-		\coordinate (Phi) at (0,-1) ;
-		\node[below] at (Phi) {$\theta$};
-		
-		
-		\coordinate (A1) at (0, 5);
-		\coordinate (B) at (3, 5);
-		\coordinate (C) at (-1.7, 3.3);
-		\draw[thick] (A1)--(B);
-		\draw[thick] (A1)--(C);
-		
-		
-		
-		% radius
-		\coordinate (D) at (1.9,-1.5);
-		\coordinate (P) at (1.9,3.5);
-		\draw[thick] (O)--(D);
-		\draw[thick, dashed] (A1)--(P) node[right, yshift=-1mm] {$P$};
-		\draw[thick] (D)--(P);
-		\fill[black] (P) circle (3pt);
-		
-		
-		\coordinate (A) at (2.6, 4.0);
-		\draw[thick, dashed] (A1)--(A) node[right, yshift=-1mm, xshift=-1mm] {$A$};
-		
-		
-		% arcs
-		\draw[thick] ($(0, 5) + (310:1.8cm and 1.2cm)$(P) arc
-		(310:330:1.8cm and 1.2cm);
-		
-		\draw[thick] ($(0, 3.5) + (310:1.8cm and 1.2cm)$(P) arc
-		(310:330:1.8cm and 1.2cm);
-		
-		\draw[thick] ($(0, 3.5) + (310:3cm and 2cm)$(P) arc
-		(310:330:3cm and 2cm);
-		
-		\coordinate (Q) at (1.9,1.97);
-		\node[below,xshift=2mm] at (Q) {$Q$};
-		\node[xshift=-3mm] at (O){$O$};
-		% \fill[black] (Q) circle (3pt);
-		
-		
-		\coordinate (B) at (2.6, 2.5);
-		\node[below,xshift=1mm] at (B) {$B$};
-		% \fill[black] (B) circle (3pt);
-		\draw[thick] (A) --(B);
-		
-		\coordinate (S) at (1.15, 4.1);
-		\node[below, xshift=-2mm] at (S) {$S$};
-		% \fill[black] (S) circle (3pt);
-		
-		\coordinate (R) at (1.15, 2.6);
-		\node[below, xshift=-2mm] at (R) {$R$};
-		%\fill[black] (R) circle (3pt);
-		
-		
-		\coordinate (D) at (1.52, 4.42);
-		\node[above] at (D) {$D$};
-		% \fill[black] (D) circle (3pt);
-		
-		\coordinate (C) at (1.54, 2.86);
-		\node[below] at (C) {$C$};
-		%\fill[black] (C) circle (3pt);
-		
-		\draw[thick] (S) --(R);
-		\draw[thick] (D) --(C);
-		\draw[thick] (R) --(Q);
-		\draw[thick] (C) --(B);
-		
-		% verticals on the planes
-		\coordinate (H) at (-1.65,-1.65);
-		%\fill[black] (H) circle (3pt);
-		%
-		\coordinate (I) at (-1.65,3.35);
-		%\fill[black] (I) circle (3pt);
-		\draw[thick] (H) --(I);
-		
-		\coordinate (J) at (3,0);
-		%\fill[black] (J) circle (3pt);
-		\coordinate (K) at (3,5);
-		%\fill[black] (K) circle (3pt);
-		\draw[thick] (J) --(K);
-		
-		% filling
-		\filldraw[opacity=0.2]
-		(D)--(A) arc (325:306:3cm and 2.2cm)--(S)
-		arc (305:325:1.8cm and 1.2cm)--cycle;
-		
-		\filldraw[opacity=0.2]
-		(P) arc (306:325:3cm and 2.2cm)--(B)
-		arc (325:306:3.0cm and 2.2cm)--cycle;
-		
-		\filldraw[opacity=0.2]
-		(P)--(Q)--(R)--(S)--cycle;
-		
-		% differential labels
-		\node[right, yshift=1mm,xshift=2mm, rotate=-20] at (Q) {$r \dif \theta$};
-		\node[right, yshift=6mm, xshift=-1mm ] at (B) {$\dif z$};
-		\node[right,xshift=3mm, yshift=2mm, rotate=-20] at (D) {$\dif r$};
-		
-	\end{tikzpicture}
-	\refstepcounter{figure}
-	
-	图\thefigure: 柱坐标系\footnote{本图来自 \url{https://www.latexstudio.net/index/details/index/mid/813.html}}
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \coordinate (O) at (0,0);
+        \coordinate (Ox) at (-3,-3);
+        \coordinate (Oy) at (4.243,0);  % sqrt{18}
+        \coordinate (Oz) at (0, 6);
+
+        % draw axis
+        \draw[-latex, line width=1] (O)-- (Ox) node[below] {$x$};
+        \draw[-latex, line width=1] (O)-- (Oy) node[right] {$y$};
+        \draw[-latex, line width=1] (O)-- (Oz) node[above] {$z$};
+
+
+        % draw arcs
+        \draw[thick] ($(0, 0) + (236:3cm and 2cm)$(P) arc
+        (236:360:3cm and 2cm);
+        \draw[thick] ($(0, 0) + (236:3cm and 2cm)$(P) arc
+        (236:360:3cm and 2cm);
+
+        \draw[thick] ($(0, 5) + (236:3cm and 2cm)$(P) arc
+        (236:360:3cm and 2cm);
+
+        \draw[thick, -latex] ($(0, 0) + (236:1.5cm and 1cm)$(P) arc
+        (236:310:1.5cm and 1cm);
+
+        \coordinate (Phi) at (0,-1) ;
+        \node[below] at (Phi) {$\theta$};
+
+
+        \coordinate (A1) at (0, 5);
+        \coordinate (B) at (3, 5);
+        \coordinate (C) at (-1.7, 3.3);
+        \draw[thick] (A1)--(B);
+        \draw[thick] (A1)--(C);
+
+
+
+        % radius
+        \coordinate (D) at (1.9,-1.5);
+        \coordinate (P) at (1.9,3.5);
+        \draw[thick] (O)--(D);
+        \draw[thick, dashed] (A1)--(P) node[right, yshift=-1mm] {$P$};
+        \draw[thick] (D)--(P);
+        \fill[black] (P) circle (3pt);
+
+
+        \coordinate (A) at (2.6, 4.0);
+        \draw[thick, dashed] (A1)--(A) node[right, yshift=-1mm, xshift=-1mm] {$A$};
+
+
+        % arcs
+        \draw[thick] ($(0, 5) + (310:1.8cm and 1.2cm)$(P) arc
+        (310:330:1.8cm and 1.2cm);
+
+        \draw[thick] ($(0, 3.5) + (310:1.8cm and 1.2cm)$(P) arc
+        (310:330:1.8cm and 1.2cm);
+
+        \draw[thick] ($(0, 3.5) + (310:3cm and 2cm)$(P) arc
+        (310:330:3cm and 2cm);
+
+        \coordinate (Q) at (1.9,1.97);
+        \node[below,xshift=2mm] at (Q) {$Q$};
+        \node[xshift=-3mm] at (O){$O$};
+        % \fill[black] (Q) circle (3pt);
+
+
+        \coordinate (B) at (2.6, 2.5);
+        \node[below,xshift=1mm] at (B) {$B$};
+        % \fill[black] (B) circle (3pt);
+        \draw[thick] (A) --(B);
+
+        \coordinate (S) at (1.15, 4.1);
+        \node[below, xshift=-2mm] at (S) {$S$};
+        % \fill[black] (S) circle (3pt);
+
+        \coordinate (R) at (1.15, 2.6);
+        \node[below, xshift=-2mm] at (R) {$R$};
+        %\fill[black] (R) circle (3pt);
+
+
+        \coordinate (D) at (1.52, 4.42);
+        \node[above] at (D) {$D$};
+        % \fill[black] (D) circle (3pt);
+
+        \coordinate (C) at (1.54, 2.86);
+        \node[below] at (C) {$C$};
+        %\fill[black] (C) circle (3pt);
+
+        \draw[thick] (S) --(R);
+        \draw[thick] (D) --(C);
+        \draw[thick] (R) --(Q);
+        \draw[thick] (C) --(B);
+
+        % verticals on the planes
+        \coordinate (H) at (-1.65,-1.65);
+        %\fill[black] (H) circle (3pt);
+        %
+        \coordinate (I) at (-1.65,3.35);
+        %\fill[black] (I) circle (3pt);
+        \draw[thick] (H) --(I);
+
+        \coordinate (J) at (3,0);
+        %\fill[black] (J) circle (3pt);
+        \coordinate (K) at (3,5);
+        %\fill[black] (K) circle (3pt);
+        \draw[thick] (J) --(K);
+
+        % filling
+        \filldraw[opacity=0.2]
+        (D)--(A) arc (325:306:3cm and 2.2cm)--(S)
+        arc (305:325:1.8cm and 1.2cm)--cycle;
+
+        \filldraw[opacity=0.2]
+        (P) arc (306:325:3cm and 2.2cm)--(B)
+        arc (325:306:3.0cm and 2.2cm)--cycle;
+
+        \filldraw[opacity=0.2]
+        (P)--(Q)--(R)--(S)--cycle;
+
+        % differential labels
+        \node[right, yshift=1mm,xshift=2mm, rotate=-20] at (Q) {$r \dif \theta$};
+        \node[right, yshift=6mm, xshift=-1mm ] at (B) {$\dif z$};
+        \node[right,xshift=3mm, yshift=2mm, rotate=-20] at (D) {$\dif r$};
+
+    \end{tikzpicture}
+    \refstepcounter{figure}
+
+    图\thefigure: 柱坐标系\footnote{本图来自 \url{https://www.latexstudio.net/index/details/index/mid/813.html}}
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
-	如图，这是一个以$x$轴为极轴的柱坐标系，$P$的坐标为$(r,\theta,z)$。
-	\[\vec{OP}=\vec{r}+\vec{z}\]
-	阴影部分是一个极小的体积元(这里放大绘制)。
+    如图，这是一个以$x$轴为极轴的柱坐标系，$P$的坐标为$(r,\theta,z)$。
+    \[\vec{OP}=\vec{r}+\vec{z}\]
+    阴影部分是一个极小的体积元(这里放大绘制)。
 \end{minipage}
 \vspace{2ex}
 
 在对刚体运动进行描述时，我们往往选取刚体的旋转轴作为$z$轴建立柱坐标系，然后借助柱坐标系说明其运动的相关参数。
 
-	
+
 \subsection[叉乘]{\itr{Cross Product}{叉乘}\labelroot[16pt]{chapter3_cross_product}}
 在介绍转动的有关概念前，我们还需引入叉乘这一数学工具。
 
@@ -181,36 +181,36 @@
 叉乘可以看成这样一个运算：按顺序输入两个向量$\vec{A},\vec{B}$，输出一个特定长度且与它们都正交的向量$\vec{C}$。当然，这样的描述是不精确的，一是长度需要确定的值，二是与$\vec{A},\vec{B}$都正交的向量方向不唯一\mgnote{除了$\vec{0}$，还有正反两个方向}。因此，接下来，我们要对长度和方向作出具体描述。
 
 \begin{Itemize}
-	\item 长度： $C=AB\sin\theta$，其中$\theta$是由$\vec{A}$旋转至$\vec{B}$所成的小于$\dfrac{\pi}{2}$的角\footnotemark 。在几何意义上，$|\vec{C}|$即是$\vec{A},\vec{B}$构成的平行四边形的面积。
-	\item 方向： $\vec{C}$的方向是介绍长度时所述的$\vec{\theta}$的方向\mgnote{关于角度矢量的方向，可回见\\\refleaftext{chapter3_direction}。}。在几何意义上，$\vec{C}$与$\vec{A},\vec{B}$所张成平面的法向量平行。
+    \item 长度： $C=AB\sin\theta$，其中$\theta$是由$\vec{A}$旋转至$\vec{B}$所成的小于$\dfrac{\pi}{2}$的角\footnotemark 。在几何意义上，$|\vec{C}|$即是$\vec{A},\vec{B}$构成的平行四边形的面积。
+    \item 方向： $\vec{C}$的方向是介绍长度时所述的$\vec{\theta}$的方向\mgnote{关于角度矢量的方向，可回见\\\refleaftext{chapter3_direction}。}。在几何意义上，$\vec{C}$与$\vec{A},\vec{B}$所张成平面的法向量平行。
 \end{Itemize}
 \footnotetext{事实上，这里不规定旋转，对于长度是没有影响的。这里这么说，主要是希望在介绍长度和方向时，这个角度可以统一。回想一下，在介绍极坐标系时，我们就规定逆时针是正方向了，所以这么规定可以合理地引出正负。}
 
 如果这么说不够直观，我们可以参考右手定则：
 
 \begin{singlefigure}[\En{Right-Hand Rule}]{chapter3_right_hand_rule}[0.6]
-	以$\vec{A}$为起始，右手手指向$\vec{B}$弯曲（取$<\frac{\pi}{2}$方向），大拇指方向为$\vec{C}$的方向\\
-	我们称$\vec{A}$叉乘$\vec{B}$等于$\vec{C}$，记作$\vec{A}\times\vec{B}=\vec{C}$
+    以$\vec{A}$为起始，右手手指向$\vec{B}$弯曲（取$<\frac{\pi}{2}$方向），大拇指方向为$\vec{C}$的方向\\
+    我们称$\vec{A}$叉乘$\vec{B}$等于$\vec{C}$，记作$\vec{A}\times\vec{B}=\vec{C}$
 \end{singlefigure}
 
 下面不加证明地给出叉乘的有关性质和定理：
 
 \begin{Itemize}
-	\item \itr{Anti-Commutative Law}{反交换律} $\vec{A}\times\vec{B}=-\vec{B}\times\vec{A}$，即交换两向量顺序，它们的夹角方向会取反。
-	\item \itr{Distributive Law}{分配律} $\vec{A}\times(\vec{B}+\vec{C})=\vec{A}\times\vec{B}+\vec{A}\times\vec{C}$
-	\item \itr{Derivative}{导数} $\dfrac{\dif}{\dif t}(\vec{A}\times\vec{B})=\dfrac{\dif\vec{A}}{\dif t}\times \vec{B}+\vec{A}\times\dfrac{\dif\vec{B}}{\dif t}$\labelroot{chapter3_derivation}\\
-	\En{It is important to preserve the
-		multiplicative order of A and B.}\\
-	鉴于反交换率，保证叉乘的顺序正确是十分重要的。
-	\item \itr{Lagrange's Identity}{拉格朗日恒等式} $(\vec{A}\times\vec{B})\cdot(\vec{C}\times\vec{D})=\left|\begin{array}{cc}
-		\vec{A}\cdot\vec{C}&\vec{A}\cdot\vec{D}\\
-		\vec{B}\cdot\vec{C}&\vec{B}\cdot\vec{D}
-	\end{array}\right|$
-	\item \itr{Double Cross Product}{二重叉乘}\labelroot{chapter3_double_cross_product}\begin{align*}
-		(\vec{A}\times\vec{B})\times\vec{C}&=(\vec{A}\cdot\vec{C})\vec{B}-(\vec{B}\cdot\vec{C})\vec{A}\\
-		\vec{A}\times(\vec{B}\times\vec{C})&=(\vec{A}\cdot\vec{C})\vec{B}-(\vec{A}\cdot\vec{B})\vec{C}
-	\end{align*}
-	这里也可以发现，叉乘不满足结合律。
+    \item \itr{Anti-Commutative Law}{反交换律} $\vec{A}\times\vec{B}=-\vec{B}\times\vec{A}$，即交换两向量顺序，它们的夹角方向会取反。
+    \item \itr{Distributive Law}{分配律} $\vec{A}\times(\vec{B}+\vec{C})=\vec{A}\times\vec{B}+\vec{A}\times\vec{C}$
+    \item \itr{Derivative}{导数} $\dfrac{\dif}{\dif t}(\vec{A}\times\vec{B})=\dfrac{\dif\vec{A}}{\dif t}\times \vec{B}+\vec{A}\times\dfrac{\dif\vec{B}}{\dif t}$\labelroot{chapter3_derivation}\\
+    \En{It is important to preserve the
+        multiplicative order of A and B.}\\
+    鉴于反交换率，保证叉乘的顺序正确是十分重要的。
+    \item \itr{Lagrange's Identity}{拉格朗日恒等式} $(\vec{A}\times\vec{B})\cdot(\vec{C}\times\vec{D})=\left|\begin{array}{cc}
+            \vec{A}\cdot\vec{C} & \vec{A}\cdot\vec{D} \\
+            \vec{B}\cdot\vec{C} & \vec{B}\cdot\vec{D}
+        \end{array}\right|$
+    \item \itr{Double Cross Product}{二重叉乘}\labelroot{chapter3_double_cross_product}\begin{align*}
+        (\vec{A}\times\vec{B})\times\vec{C} & =(\vec{A}\cdot\vec{C})\vec{B}-(\vec{B}\cdot\vec{C})\vec{A} \\
+        \vec{A}\times(\vec{B}\times\vec{C}) & =(\vec{A}\cdot\vec{C})\vec{B}-(\vec{A}\cdot\vec{B})\vec{C}
+    \end{align*}
+    这里也可以发现，叉乘不满足结合律。
 \end{Itemize}
 
 有些同学初次看见那么多公式难免慌张。事实上，普通物理\Romannumeral{1}对于叉乘的考察非常有限，基本只要清楚定义和基本的运算律即可。
@@ -220,26 +220,26 @@
 在定好一个柱坐标系后之后，确定刚体的角度矢量及其与时间的关系，就能确定刚体的转动。
 
 \begin{Itemize}
-	\item \itr{Angular displacement}{角位移}\mgnote{$\vec{\theta}$的单位rad属于数学单位，它是一个无量纲量。} $\Delta\vec{\theta}=\vec{\theta}_f-\vec{\theta}_i$
-	\item \itr{Instantaneous angular velocity}{瞬时角速度} $\vec{\omega} = \dfrac{\dif\vec{\theta}}{\dif t}$
-	\item \itr{Instantaneous angular acceleration}{瞬时角加速度}  $\vec{\alpha}=\dfrac{\dif\vec{\omega}}{\dif t}$
+    \item \itr{Angular displacement}{角位移}\mgnote{$\vec{\theta}$的单位rad属于数学单位，它是一个无量纲量。} $\Delta\vec{\theta}=\vec{\theta}_f-\vec{\theta}_i$
+    \item \itr{Instantaneous angular velocity}{瞬时角速度} $\vec{\omega} = \dfrac{\dif\vec{\theta}}{\dif t}$
+    \item \itr{Instantaneous angular acceleration}{瞬时角加速度}  $\vec{\alpha}=\dfrac{\dif\vec{\omega}}{\dif t}$
 \end{Itemize}
 
 \En{When rotating about
-	a fixed axis, every
-	particle on a rigid
-	object rotates
-	through the same
-	angle and has the
-	same angular speed
-	and the same angular
-	acceleration.}
+    a fixed axis, every
+    particle on a rigid
+    object rotates
+    through the same
+    angle and has the
+    same angular speed
+    and the same angular
+    acceleration.}
 
 平动与转动有如下关系\labelroot{chapter3_connection}：
 \begin{Itemize}
-	\item  \itr{arc length}{弧长} $s=r\theta$，此指圆周运动。
-	\item $\vec{v}_t=\vec{\omega}\times\vec{r}$ \& $v_t=\omega r$，其中t下标指\itr{tangential}{切向}，$\vec{v}_t$即同时垂直于$z$轴\footnotemark 和$\vec{r}$的速度分量。
-	\item $\vec{a}_t=\vec{\alpha}\times\vec{r}$ \& $a_t=\alpha r$，$\vec{a}_t$即同时垂直于$z$轴和$\vec{r}$的加速度分量。
+    \item  \itr{arc length}{弧长} $s=r\theta$，此指圆周运动。
+    \item $\vec{v}_t=\vec{\omega}\times\vec{r}$ \& $v_t=\omega r$，其中t下标指\itr{tangential}{切向}，$\vec{v}_t$即同时垂直于$z$轴\footnotemark 和$\vec{r}$的速度分量。
+    \item $\vec{a}_t=\vec{\alpha}\times\vec{r}$ \& $a_t=\alpha r$，$\vec{a}_t$即同时垂直于$z$轴和$\vec{r}$的加速度分量。
 \end{Itemize}
 \footnotetext{注意这里垂直于$z$轴的条件，我们考虑的是绕轴旋转，所以任何轴向的速度分量也不在我们研究转动的考虑之中。}
 
@@ -251,27 +251,27 @@
 以下默认已经选定转轴\labelroot{chapter3_axis}。
 
 \begin{Itemize}
-	\item \itr{The Moment of Inertia}{转动惯量} $\displaystyle I=\sum_{i}m_ir_i^2$，其中把刚体看成由多个质点组合而成，$r_i$即是质点$m_i$的极径矢量大小。
-	
-	\En{The moment of inertia is a measure of the
-		resistance of an object to changes in its rotational
-		motion, just as mass is a measure of the tendency
-		of an object to resist changes in its linear motion.}
-	\item \itr{Torque}{力矩} $\vec{\tau}=\vec{r}\times\vec{F}_{/z}$，其中$\vec{r}$是力$\vec{F}$的作用点对应的极径矢量，$\vec{F}_{/z}=\vec{F}-\vec{F}_z$，$\vec{F}_z$即$\vec{F}$在$z$轴上的分矢量\labelroot{chapter3_lower/z}\footnotemark。
-	\item \itr{Net Torque}{合外力矩} $\displaystyle\vec{\tau}_{net}=\sum_{i}\vec{\tau}_i$
-	\item 类似牛顿第二定律，有：在惯性系中，$\vec{\tau}_{net}=I\vec{\alpha}$，即合外力矩等于刚体的转动惯量乘以角加速度。
+    \item \itr{The Moment of Inertia}{转动惯量} $\displaystyle I=\sum_{i}m_ir_i^2$，其中把刚体看成由多个质点组合而成，$r_i$即是质点$m_i$的极径矢量大小。
+
+    \En{The moment of inertia is a measure of the
+        resistance of an object to changes in its rotational
+        motion, just as mass is a measure of the tendency
+        of an object to resist changes in its linear motion.}
+    \item \itr{Torque}{力矩} $\vec{\tau}=\vec{r}\times\vec{F}_{/z}$，其中$\vec{r}$是力$\vec{F}$的作用点对应的极径矢量，$\vec{F}_{/z}=\vec{F}-\vec{F}_z$，$\vec{F}_z$即$\vec{F}$在$z$轴上的分矢量\labelroot{chapter3_lower/z}\footnotemark。
+    \item \itr{Net Torque}{合外力矩} $\displaystyle\vec{\tau}_{net}=\sum_{i}\vec{\tau}_i$
+    \item 类似牛顿第二定律，有：在惯性系中，$\vec{\tau}_{net}=I\vec{\alpha}$，即合外力矩等于刚体的转动惯量乘以角加速度。
 \end{Itemize}
 \footnotetext{事实上，力矩拥有两种定义，一种是对点定义的，为$\vec{r}\times\vec{F}$；另一种是对轴定义的，为$\vec{r}\times\vec{F}_{/z}$。鉴于我们使用了柱坐标系建立这些概念，这里选择对轴定义的力矩。}
 \begin{singlefigure}[力矩示意图]{chapter3_torque}[0.5]
-	在本图中，由于$\vec{F}$没有$z$轴上的分量，所以$\vec{F}=\vec{F}_{/z}$。\\
-	事实上，普物\Romannumeral{1}中基本没有出现过$\vec{F}$有$z$轴分量的情况。
+    在本图中，由于$\vec{F}$没有$z$轴上的分量，所以$\vec{F}=\vec{F}_{/z}$。\\
+    事实上，普物\Romannumeral{1}中基本没有出现过$\vec{F}$有$z$轴分量的情况。
 \end{singlefigure}
 关于以上内容的证明，见\refleaftext{prove3.1}。
 
 其中，为了便于计算力矩，我们可以引入 \itr{moment arm/force arm}{力臂} 的概念，其大小即为转轴到力的作用线的距离。有了这一点，力矩的大小就可以通过力臂乘以力得到。
 \ctikzfig{chapter3_moment_arm}
 \begin{center}
-	\em $l_1$是$\vec{F}_1$的力臂，$l_2$是$\vec{F}_2$的力臂。
+    \em $l_1$是$\vec{F}_1$的力臂，$l_2$是$\vec{F}_2$的力臂。
 \end{center}
 
 对于常见的物体，其转动惯量是应当记住的：
@@ -285,8 +285,8 @@
 在之前对转动的动力学概念的讨论中，我们默认转轴是选定的\mgnote{见\refleaftext{chapter3_axis}}，这是因为，当转轴不同时，转动惯量与合力矩都会发生变化。平行轴定理是解决转轴变化过程中转动惯量变化的利器，其表述如下：
 
 \begin{law}[\itr{Parallel Axis Theorem/Steiner Theorem}{平行轴定理/施泰纳定理}---\refleaftext{prove3.2}]
-	记刚体$M$以过质心的轴(简称质心轴)为转动轴时的转动惯量为$I_{CM}$，以任意平行于质心轴的轴为转动轴时的转动惯量为$I$，这两条轴之间的距离为$h$，则有
-	\[I=I_{CM}+Mh^2\]
+    记刚体$M$以过质心的轴(简称质心轴)为转动轴时的转动惯量为$I_{CM}$，以任意平行于质心轴的轴为转动轴时的转动惯量为$I$，这两条轴之间的距离为$h$，则有
+    \[I=I_{CM}+Mh^2\]
 \end{law}
 
 幸于拥有平行轴公式，我们在背诵常见刚体的转动惯量时，一般只要记下它以质心轴为转动轴时的转动惯量即可。
@@ -296,10 +296,10 @@
 \subsection[纯转动中的能量]{\itr{Energy in Rotation ONLY}{纯转动中的能量}}
 首先，让我们思考一个只发生转动的刚体所带的能量(\refleaftext{prove3.3})。
 \begin{Itemize}
-	\item 动能定理 $K_R=\dfrac{1}{2}I\omega^2$
-	\item 做功 $\dif W=\tau\dif\theta$
-	\item 功率 $P=\tau\omega$
-	\item 旋转势能 $U=\dfrac{1}{2}\kappa\theta^2$
+    \item 动能定理 $K_R=\dfrac{1}{2}I\omega^2$
+    \item 做功 $\dif W=\tau\dif\theta$
+    \item 功率 $P=\tau\omega$
+    \item 旋转势能 $U=\dfrac{1}{2}\kappa\theta^2$
 \end{Itemize}
 其中，旋转势能是指由弹性旋转体扭转回原位的趋势产生的，只依赖于其状态的能量，在数值上等于将旋
 转体自原位扭转至当前位置所做的功。$\kappa$称为扭转常数，单位为$\mathrm{N}\cdot\mathrm{m}$。
@@ -308,7 +308,7 @@
 \subsection[同时发生转动与平动时的能量]{\itr{Energy in Rotation \& Translation}{同时发生转动与平动时的能量}}
 现在，让我们思考一个问题：
 \begin{center}
-	\itshape 一个刚体在质心系中能够发生平动吗？
+    \itshape 一个刚体在质心系中能够发生平动吗？
 \end{center}
 
 答案是否定的。如果刚体在质心系中发生平动，那么质心就会拥有平动速度，然而，在质心系中，质心又一直处于原点，这与质心拥有平动速度相矛盾，因此刚体在质心系中只能发生转动\labelroot{chapter3_rotation_CM}。
@@ -316,10 +316,10 @@
 既然如此，我们便会有这样的想法：利用质心系，把同时发生平动和转动的物体转化成只发生转动的物体来研究。如此，便产生了柯尼希定理：
 
 \begin{law}[\itr{Konig's Theorem}{柯尼希定理}---\refleaftext{prove3.4}]
-	记一个系统$M$的质心速度为$v_{_{CM}}$，在质心系中的动能为$K^{CM}$，在静止参考系中的动能为$K$，并记$K_{CM}=\dfrac{1}{2}Mv_{_{CM}}{}^2$，则有
-	\[K=K_{CM}+K^{CM}\]
-	如果考虑对一个刚体使用柯尼希定理，则有：
-	\[K=\dfrac{1}{2}Mv_{_{CM}}{}^2+\dfrac{1}{2}I_{CM}\omega^2\]
+    记一个系统$M$的质心速度为$v_{_{CM}}$，在质心系中的动能为$K^{CM}$，在静止参考系中的动能为$K$，并记$K_{CM}=\dfrac{1}{2}Mv_{_{CM}}{}^2$，则有
+    \[K=K_{CM}+K^{CM}\]
+    如果考虑对一个刚体使用柯尼希定理，则有：
+    \[K=\dfrac{1}{2}Mv_{_{CM}}{}^2+\dfrac{1}{2}I_{CM}\omega^2\]
 \end{law}
 
 在研究一个同时发生平动和转动的物体的动能时，我们往往使用柯尼希定理，分别求解其质心的平动动能和在质心系中的转动动能。
@@ -327,36 +327,36 @@
 与平动时的动量类似，我们可以定义刚体的角动量。
 \subsection[定义]{Definition}
 \begin{Itemize}
-	\item \itr{Angular Momentum}{角动量} $\displaystyle\vec{L}=\sum_i\vec{r}_i\times\vec{p}_{i/z}=I\vec{\omega}$，其中$\vec{p}_{i/z}=\vec{p}_i-\vec{p}_{iz}$，$ \vec{r}_i\times\vec{p}_{i/z}$应视作质点$m_i$的角动量。角动量的方向总是与角速度的方向一致\footnotemark。
-	\item 类似动量，我们有$\dfrac{\dif \vec{L}}{\dif t}=\vec{\tau}_{net}$。
+    \item \itr{Angular Momentum}{角动量} $\displaystyle\vec{L}=\sum_i\vec{r}_i\times\vec{p}_{i/z}=I\vec{\omega}$，其中$\vec{p}_{i/z}=\vec{p}_i-\vec{p}_{iz}$，$ \vec{r}_i\times\vec{p}_{i/z}$应视作质点$m_i$的角动量。角动量的方向总是与角速度的方向一致\footnotemark。
+    \item 类似动量，我们有$\dfrac{\dif \vec{L}}{\dif t}=\vec{\tau}_{net}$。
 \end{Itemize}
 以上内容证明见\refleaftext{prove3.5}。
 
 \footnotetext{对于这句话需持谨慎态度。在本章所定义的概念体系中，这句话是成立的，但由于大多数对角动量的定义都是对点定义，即$\displaystyle\sum_i\vec{r}_i\times\vec{p}_i$，就出现了角动量方向与角速度方向不一致的说法。\textbf{当出现这类判断时，请读者优先考虑不一致的说法}。}
 \subsection[角动量守恒]{\itr{Conservation of Angular Momentum}{角动量守恒}}
 \begin{Itemize}
-	\item \itr{Conservation of Angular Momentum}{角动量守恒}由角动量的性质，我们可以发现，当合外力矩的值为$\vec{0}$时，系统的角动量保持守恒。
-	\[\vec{\tau}_{net}=0\Leftrightarrow\vec{L}=Constant\]
+    \item \itr{Conservation of Angular Momentum}{角动量守恒}由角动量的性质，我们可以发现，当合外力矩的值为$\vec{0}$时，系统的角动量保持守恒。
+    \[\vec{\tau}_{net}=0\Leftrightarrow\vec{L}=Constant\]
 \end{Itemize}
 
 利用角动量守恒，可以解释开普勒第二定律。
 \begin{singlefigure}[\En{Kepler's Second Law}]{chapter3_kepler's_second_law}
-	对$M_p$分析，有$\vec{\tau}_{net}=\vec{r}\times\vec{F}_g=\vec{0}$，因此角动量守恒\\[1ex]
-	$\dfrac{\dif A}{\dif t}=\dfrac{1}{2}|\vec{r}\times\vec{v}|=\dfrac{L}{M_p}\Rightarrow$单位时间扫过面积相等
+    对$M_p$分析，有$\vec{\tau}_{net}=\vec{r}\times\vec{F}_g=\vec{0}$，因此角动量守恒\\[1ex]
+    $\dfrac{\dif A}{\dif t}=\dfrac{1}{2}|\vec{r}\times\vec{v}|=\dfrac{L}{M_p}\Rightarrow$单位时间扫过面积相等
 \end{singlefigure}
 \En{When a force is directed toward or away from a
-	fixed point and is function of $\vec{r}$ only, it is called a
-	\itr{Central Force}{中心力}.}
-	
-	总是可以选择合适的轴，使得中心力产生的力矩为$\vec{0}$。
-	
-	花样滑冰时选手收紧胳膊旋转较快，而张开双臂后旋转变
-	慢，这也是角动量守恒的功劳。你可能会发现，收紧胳膊时，人的动能变大了，这是生物能的功劳。
+    fixed point and is function of $\vec{r}$ only, it is called a
+    \itr{Central Force}{中心力}.}
+
+总是可以选择合适的轴，使得中心力产生的力矩为$\vec{0}$。
+
+花样滑冰时选手收紧胳膊旋转较快，而张开双臂后旋转变
+慢，这也是角动量守恒的功劳。你可能会发现，收紧胳膊时，人的动能变大了，这是生物能的功劳。
 \subsection[质心系转化]{\itr{Center of Frame Translation}{质心系转化}}
 角动量在静止参考系和质心系间的转化与柯尼希定理类似。
 \begin{law}[\itr{Angular Momentum Translation Using C.M. Frame}{利用质心系的角动量变换}\footnotemark---\refleaftext{prove3.6}]
-	记质心角动量为$\vec{L}_{CM}=M\vec{r}_{_{CM}}\times\vec{v}_{_{CM}}$，刚体在质心系中的角动量为$\vec{L}^{CM}=\sum_im_i\vec{r}_i^{^{CM}}\times\vec{v}^{^{CM}}_i$，刚体在静止参考系中的角动量为$\vec{L}$，且保证两个参考系中选取的轴平行，则有
-	\[\vec{L}=\vec{L}_{CM}+\vec{L}^{CM}\]
+    记质心角动量为$\vec{L}_{CM}=M\vec{r}_{_{CM}}\times\vec{v}_{_{CM}}$，刚体在质心系中的角动量为$\vec{L}^{CM}=\sum_im_i\vec{r}_i^{^{CM}}\times\vec{v}^{^{CM}}_i$，刚体在静止参考系中的角动量为$\vec{L}$，且保证两个参考系中选取的轴平行，则有
+    \[\vec{L}=\vec{L}_{CM}+\vec{L}^{CM}\]
 \end{law}
 \footnotetext{对于对点定义的角动量，也有类似的结论，证明方法也基本相同。}
 \section[重心]{\itr{Center of Gravity}{重心}}
@@ -364,7 +364,7 @@
 
 一个重要的结论是:
 \begin{center}
-	{\itshape 对于均匀的重力场，刚体的重心与质心重合(\refleaftext{prove3.7})}。
+    {\itshape 对于均匀的重力场，刚体的重心与质心重合(\refleaftext{prove3.7})}。
 \end{center}
 
 至于不均匀的情况，就需要依据定义进行计算了。
@@ -377,17 +377,17 @@
 
 对于一个仅发生转动的参考系，有如下定理：
 \begin{law}[\itr{Frame Translation with Rotation}{考虑转动的参考系变换}$^*$---\refleaftext{prove3.8}]
-	如果希望牛顿运动定律在一个转动参考系$\mathcal{F}'$中依然成立，我们需要对$\mathcal{F}'$中的物体添加三个假想力，分别是$-2m\vec{\omega}\times\vec{v}',-m\vec{\alpha}\times\vec{r}',m\omega^2\vec{r}'$。
-	
-	其中，$\vec{\omega}$是$\mathcal{F}'$的角速度，$\vec{\alpha}$是$\mathcal{F}'$的角加速度，$\vec{v}'$是物体在$\mathcal{F}'$中的速度，$\vec{r}'$是物体在$\mathcal{F}'$中的极径矢量。
-	
-	如果我们将条件简化，认为$\mathcal{F}'$没有角加速度，则无需考虑$-m\vec{\alpha}\times\vec{r}'$。
-	
-	我们称$-2m\vec{\omega}\times\vec{v}'$为 \itr{Coriolis Force}{科里奥利力}，$m\omega^2\vec{r}'$为 \itr{Centrifugal Force}{离心力}。
+    如果希望牛顿运动定律在一个转动参考系$\mathcal{F}'$中依然成立，我们需要对$\mathcal{F}'$中的物体添加三个假想力，分别是$-2m\vec{\omega}\times\vec{v}',-m\vec{\alpha}\times\vec{r}',m\omega^2\vec{r}'$。
+
+    其中，$\vec{\omega}$是$\mathcal{F}'$的角速度，$\vec{\alpha}$是$\mathcal{F}'$的角加速度，$\vec{v}'$是物体在$\mathcal{F}'$中的速度，$\vec{r}'$是物体在$\mathcal{F}'$中的极径矢量。
+
+    如果我们将条件简化，认为$\mathcal{F}'$没有角加速度，则无需考虑$-m\vec{\alpha}\times\vec{r}'$。
+
+    我们称$-2m\vec{\omega}\times\vec{v}'$为 \itr{Coriolis Force}{科里奥利力}，$m\omega^2\vec{r}'$为 \itr{Centrifugal Force}{离心力}。
 \end{law}
 \begin{singlefigure}[地球的科里奥利力]{chapter3_earth}[0.42]
-如果考虑地球的科里奥利力，我们会发现，在北半球上，\\科里奥利
-力永远指向物体运动方向的右侧，而在南半球正好相反。
+    如果考虑地球的科里奥利力，我们会发现，在北半球上，\\科里奥利
+    力永远指向物体运动方向的右侧，而在南半球正好相反。
 \end{singlefigure}
 台风的旋转方向在北半球是逆时针，在南半球是顺时针，这也是科里奥利力的影响。
 
@@ -395,23 +395,23 @@
 \section[回顾与总结]{Review and Summary}
 在我们的推导中，我们发现，转动力学的结论与平动力学有着惊人的相似性。关注这份相似性既能体会物理的美感，又能加深对结论的记忆。
 \[\ \ \begin{aligned}
-	&\mathrm{Angular~speed~}\vec{\omega}=\dif\vec{\theta}/\dif t&& \mathrm{Linear~speed~}\vec{v}=\dif \vec{x}/\dif t  \\
-	&\mathrm{Angular~acceleration~}\vec{\alpha}=\dif\vec{\omega}/\dif t&& \mathrm{Linear~acceleration~}\vec{a}=\dif \vec{v}/\dif t  \\
-	&\mathrm{Resultant~torque~}\sum\vec{\tau}=I\vec{\alpha} && \mathrm{Resultant~force~}\sum \vec{F}=m\vec{a}  \\
-	&\begin{array}{l}{{\mathrm{If}}}\\{\vec{\alpha}=\mathrm{constant}}\left\{\begin{array}{l}{{\vec{\omega}_{f}=\vec{\omega}_{i}+\vec{\alpha} t}}\\{{\vec{\theta}_{f}-\vec{\theta}_{i}=\vec{\omega}_{i}t+\frac{1}{2}\vec{\alpha} t^{2}}}\\{{\omega_{f}{}^{2}=\omega_{i}{}^{2}+2\alpha(\theta_{f}-\theta_{i})}}\end{array}\right.\end{array}
-	&&
-	\begin{array}{l}{{\mathrm{If}}}\\{\vec{a}=\mathrm{constant}}\left\{\begin{array}{l}{{\vec{v}_{f}=\vec{v}_{i}+\vec{a}t}}\\{{\vec{x}_{f}-\vec{x}_{i}=\vec{v}_{i}t+\frac{1}{2}\vec{a}t^{2}}}\\{{v_{f}{}^{2}=v_{i}{}^{2}+2a(x_{f}-x_{i})}}\end{array}\right.\end{array}  \\
-	&\mathrm{Work}\ W=\int_{\theta_{i}}^{\theta_{f}}\tau \dif\theta && \mathrm{Work}\ W=\int_{x_{i}}^{x_{f}}F_{x}\dif x  \\
-	&\mathrm{Rotational~kinetic~energy~}K_{\mathrm{R}}=\frac{1}{2}I\omega^{2}&& \mathrm{Kinetic~energy~}K=\frac{1}{2}mv^{2}  \\
-	&\mathrm{Power}\ P=\vec{\tau}\cdot\vec{\omega}&& \mathrm{Power}\ P=\vec{F}\cdot\vec{v}  \\
-	&\mathrm{Angular~momentum~}\vec{L}=I\vec{\omega} && \mathrm{Linear~momentum~}\vec{p}=m\vec{v}  \\
-	&\mathrm{Resultant~torque~}\sum\vec{\tau}=\dif \vec{L}/\dif t&& \mathrm{Resultant~force~}\sum \vec{F}=\dif \vec{p}/\dif t 
-\end{aligned}\]
+         & \mathrm{Angular~speed~}\vec{\omega}=\dif\vec{\theta}/\dif t                                                                                                          &   & \mathrm{Linear~speed~}\vec{v}=\dif \vec{x}/\dif t         \\
+         & \mathrm{Angular~acceleration~}\vec{\alpha}=\dif\vec{\omega}/\dif t                                                                                                   &   & \mathrm{Linear~acceleration~}\vec{a}=\dif \vec{v}/\dif t  \\
+         & \mathrm{Resultant~torque~}\sum\vec{\tau}=I\vec{\alpha}                                                                                                               &   & \mathrm{Resultant~force~}\sum \vec{F}=m\vec{a}            \\
+         & \begin{array}{l}{{\mathrm{If}}}\\{\vec{\alpha}=\mathrm{constant}}\left\{\begin{array}{l}{{\vec{\omega}_{f}=\vec{\omega}_{i}+\vec{\alpha} t}}\\{{\vec{\theta}_{f}-\vec{\theta}_{i}=\vec{\omega}_{i}t+\frac{1}{2}\vec{\alpha} t^{2}}}\\{{\omega_{f}{}^{2}=\omega_{i}{}^{2}+2\alpha(\theta_{f}-\theta_{i})}}\end{array}\right.\end{array}
+         &                                                                                                                                                                      &
+        \begin{array}{l}{{\mathrm{If}}}\\{\vec{a}=\mathrm{constant}}\left\{\begin{array}{l}{{\vec{v}_{f}=\vec{v}_{i}+\vec{a}t}}\\{{\vec{x}_{f}-\vec{x}_{i}=\vec{v}_{i}t+\frac{1}{2}\vec{a}t^{2}}}\\{{v_{f}{}^{2}=v_{i}{}^{2}+2a(x_{f}-x_{i})}}\end{array}\right.\end{array}                                                                         \\
+         & \mathrm{Work}\ W=\int_{\theta_{i}}^{\theta_{f}}\tau \dif\theta                                                                                                       &   & \mathrm{Work}\ W=\int_{x_{i}}^{x_{f}}F_{x}\dif x          \\
+         & \mathrm{Rotational~kinetic~energy~}K_{\mathrm{R}}=\frac{1}{2}I\omega^{2}                                                                                             &   & \mathrm{Kinetic~energy~}K=\frac{1}{2}mv^{2}               \\
+         & \mathrm{Power}\ P=\vec{\tau}\cdot\vec{\omega}                                                                                                                        &   & \mathrm{Power}\ P=\vec{F}\cdot\vec{v}                     \\
+         & \mathrm{Angular~momentum~}\vec{L}=I\vec{\omega}                                                                                                                      &   & \mathrm{Linear~momentum~}\vec{p}=m\vec{v}                 \\
+         & \mathrm{Resultant~torque~}\sum\vec{\tau}=\dif \vec{L}/\dif t                                                                                                         &   & \mathrm{Resultant~force~}\sum \vec{F}=\dif \vec{p}/\dif t
+    \end{aligned}\]
 
 
 
 
-  
+
 
 
 

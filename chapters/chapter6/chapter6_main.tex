@@ -6,8 +6,8 @@
 
 经典力学的奠基人牛顿曾在《自然哲学的数学原理》一书中写过：
 \begin{enumerate}
-	\item 绝对的、真正的数学时间，出于其本性而自行均匀地流逝着，与外界任何事物无关。
-	\item 绝对的空间，就其本质而言，永远保持不变和不动，且与外界任何事物无关。
+    \item 绝对的、真正的数学时间，出于其本性而自行均匀地流逝着，与外界任何事物无关。
+    \item 绝对的空间，就其本质而言，永远保持不变和不动，且与外界任何事物无关。
 \end{enumerate}
 
 这事实上反映了，\textbf{在牛顿力学中，空间和时间与物质的运动无关，它们彼此也互不相关。}
@@ -22,21 +22,21 @@
 
 在经典力学的视角下，有
 \begin{equation}
-	\left\{
-	\begin{array}{l}
-		x'=x-ut\\
-		y'=y\\
-		z'=z\\
-		t'=t
-	\end{array}
-	\right.
+    \left\{
+    \begin{array}{l}
+        x'=x-ut \\
+        y'=y    \\
+        z'=z    \\
+        t'=t
+    \end{array}
+    \right.
 \end{equation}
 
 式$(6.1)$反映了发生相对运动的两个惯性系描述同一事件的时空坐标之间的联系，通常被称为 \itr{Galilean Transformation}{伽利略变换}。
 
 在伽利略变换的基础上，依据$v=\dfrac{\dif x}{\dif t}$与$v'=\dfrac{\dif x'}{\dif t'}$，我们可以得到速度变换公式
 \begin{equation}
-	v'=v-u
+    v'=v-u
 \end{equation}
 
 这个公式被称为\textbf{牛顿力学的速度相加原理}。
@@ -51,27 +51,27 @@
 然而，物理学家们相信，物理定律是拥有普适性的。为了使电磁现象与相对性原理相适应，爱因斯坦基于两个基本假设，提出了相对时空观。
 
 \begin{Itemize}
-	\item \itr{Principle of the Constancy of Lightspeed}{光速不变原理} 光在真空中的速率在任何惯性参考系中都相等。
-	\item \itr{The Principle of Relativity}{相对性假设}\labelroot{chapter6_principle_of_relativity} 不仅力学规律，一切物理规律对所有惯性系都是一样的，不存在任何一个特殊的惯性系。
+    \item \itr{Principle of the Constancy of Lightspeed}{光速不变原理} 光在真空中的速率在任何惯性参考系中都相等。
+    \item \itr{The Principle of Relativity}{相对性假设}\labelroot{chapter6_principle_of_relativity} 不仅力学规律，一切物理规律对所有惯性系都是一样的，不存在任何一个特殊的惯性系。
 \end{Itemize}
 
 在绝对时空观中，存在伽利略变换来反映同一事件在两个惯性系中的时空坐标之间的联系；同样地，在相对时空观中，也需要一种变换来反映这个联系。这个变换名叫 \itr{Lorentz Transformation}{洛伦兹变换}。掌握洛伦兹变换，是理解狭义相对论的关键。
 
 \section[洛伦兹变换]{\itr{Lorentz Transformation}{洛伦兹变换}}
 \begin {law}[\itr{Lorentz Transformation}{洛伦兹变换}---\refleaftext{prove6.1}]
-	\ctikzfig{chapter6_framess}
-	设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$t,t'$表示$S$系，$S'$系中的时间，用$x,y,z$与$x',y',z'$表示$S$系，$S'$系中的坐标，则有
-	\[\left\{\begin{array}{l}
-		t'=\gamma(t-\beta\dfrac{x}{c})\\
-		x'=\gamma(x-vt)\\
-		y'=y\\
-		z'=z
-	\end{array}\right.\]
-  其中
-  \[
-  	\gamma=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}} = \dfrac{1}{1-\beta^2}\quad,\quad\beta=\dfrac{v}{c}
-  \]
-  在之后的讨论中，$v$统一代表两个参考系的相对速度。
+\ctikzfig{chapter6_framess}
+设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$t,t'$表示$S$系，$S'$系中的时间，用$x,y,z$与$x',y',z'$表示$S$系，$S'$系中的坐标，则有
+\[\left\{\begin{array}{l}
+        t'=\gamma(t-\beta\dfrac{x}{c}) \\
+        x'=\gamma(x-vt)                \\
+        y'=y                           \\
+        z'=z
+    \end{array}\right.\]
+其中
+\[
+    \gamma=\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}} = \dfrac{1}{1-\beta^2}\quad,\quad\beta=\dfrac{v}{c}
+\]
+在之后的讨论中，$v$统一代表两个参考系的相对速度。
 \end{law}
 
 洛伦兹变换给出了狭义相对论下，同一事件在两个惯性系中的时空坐标之间的关系。通过洛伦兹变换，我们可以发现，两个惯性系中的时空不再是相同的。
@@ -80,7 +80,7 @@
 \subsection[尺缩效应]{\itr{Length Contraction}{尺缩效应}}
 首先，我们需要声明一件事情：
 \begin{center}
-	\em 在同一参考系下，对长度的测量应当保证在同一时间进行。
+    \em 在同一参考系下，对长度的测量应当保证在同一时间进行。
 \end{center}
 承认这一点后，我们开始对 \itr{Length Contraction}{尺缩效应} 的讨论。
 \begin{singlefigure}{chapter_6_2}[0.45]
@@ -91,25 +91,25 @@
 
 而在$S^{\prime}$系看来，由洛伦兹变换得
 \[\left\{\begin{array}{l}
-	x_{1}'=\gamma(x_1-vt_1)\\
-	x_{2}'=\gamma(x_2-vt_2)\\
-	t_1'=\gamma(t_1-\dfrac{v}{c^2} x_1)\\[1ex]
-	t_2'=\gamma(t_2-\dfrac{v}{c^2} x_2)
-\end{array}\right.\]
+        x_{1}'=\gamma(x_1-vt_1)             \\
+        x_{2}'=\gamma(x_2-vt_2)             \\
+        t_1'=\gamma(t_1-\dfrac{v}{c^2} x_1) \\[1ex]
+        t_2'=\gamma(t_2-\dfrac{v}{c^2} x_2)
+    \end{array}\right.\]
 由于我们是在$S^{\prime}$系下做的测量，应有
 \[t_2'-t_1'=\gamma[(t_2-t_1)-\dfrac{v}{c^2} (x_2-x_1)]=0\]
 设$S'$系中的测量结果为$L$，则有
 \[L=x_2'-x_1'=\gamma[(x_2-x_1)-\dfrac{v^2}{c^2}(x_2-x_1)]=\dfrac{L_0}{\gamma}\]
 我们记$s=\dfrac{1}{\gamma}$，则有
 \begin{equation}
-	L=sL_0
+    L=sL_0
 \end{equation}
 
 显然，$s<1$，因此，在任何相对杆子运动的惯性参考系看来，杆子的长度将短于原长。这一结论往往被记为\textbf{原长最长}。
 
 如何用自然语言解释这个效应呢？我们可以发现，在$S$系中同时的事件，经过洛伦兹变换后，在$S'$系中看来可能是不同时的。用数学语言来表达，也就是
 \[
-	t_1-t_2=0\quad \bcancel{\Rightarrow}\quad t_1'-t_2'=0
+    t_1-t_2=0\quad \bcancel{\Rightarrow}\quad t_1'-t_2'=0
 \]
 这一现象被称为\textbf{同时的相对性}，与绝对时空观中\textbf{同时的绝对性}相对应。
 
@@ -119,7 +119,7 @@
 
 对于尺缩效应，还有一个补充\labelroot{chapter6_length_contraction}：
 \begin{center}
-	\em 就长度而言，尺缩效应只对物体长度方向\footnote{\eg 一根杆子在$x$方向有原长，但它同时拥有$x,y$方向的速度，那么在计算运动杆子的长度时，只需考虑$x$方向的速度。}的速度生效(\refleaftext{prove6.2})。
+    \em 就长度而言，尺缩效应只对物体长度方向\footnote{\eg 一根杆子在$x$方向有原长，但它同时拥有$x,y$方向的速度，那么在计算运动杆子的长度时，只需考虑$x$方向的速度。}的速度生效(\refleaftext{prove6.2})。
 \end{center}
 
 \subsection[动钟变慢]{\itr{Time dilation}{时延效应}}
@@ -130,21 +130,21 @@
 设在$S$系中，事件$E_1$对应坐标$(x_1,t_1)$，$E_2$对应坐标$(x_2,t_2)$\mgnote{在这里，我们省略对$y$和$z$的讨论}。
 
 显然，在$S$系中，时间间隔的测量结果为
-\[\tau=t_2-t_1\] 
+\[\tau=t_2-t_1\]
 这里的$\tau$称为 \itr{Proper Time}{原时}。
 
 而在$S'$系看来，由洛伦兹变换得
 \[\left\{\begin{array}{l}
-	t_1'=\gamma(t_1-\dfrac{v}{c^2} x_1)\\[1ex]
-	t_2'=\gamma(t_2-\dfrac{v}{c^2} x_2)
-\end{array}\right.\]
+        t_1'=\gamma(t_1-\dfrac{v}{c^2} x_1) \\[1ex]
+        t_2'=\gamma(t_2-\dfrac{v}{c^2} x_2)
+    \end{array}\right.\]
 
 由于时钟在$S$系中静止，有$x_2-x_1=0$，于是
 \[t_2'-t_1'=\gamma[(t_2-t_1)-\dfrac{v}{c^2}(x_2-x_1)]=\gamma(t_2-t_1)\]
 
 记$S'$系中测得的时间间隔为$t$，则有
 \begin{equation}
-	t=\gamma\tau
+    t=\gamma\tau
 \end{equation}
 
 显然，$\gamma > 1$，因此$t>\tau$。也就是说，在任何相对时钟运动的惯性参考系看来，时钟的一刻度对应的时间间隔长于其原时。这一结论往往被记为\textbf{原时最短}。
@@ -163,39 +163,39 @@
 \subsection[速度变换]{\itr{Speed Transformation}{速度变换}}
 类似于牛顿力学的速度相加原理，在相对论中，我们也有自己的速度相加原理。
 \begin{law}[\itr{Speed Transformation}{速度变换}---\refleaftext{prove6.3}]
-	对于满足洛伦兹变换
-	\[\left\{\begin{array}{l}
-		t'=\gamma(t-\beta\dfrac{x}{c})\\
-		x'=\gamma(x-vt)\\
-		y'=y\\
-		z'=z
-	\end{array}\right.\]
-	的$S$系和$S'$系，设物体在$S$系中的速度坐标为$(u_x,u_y,u_z)$，$S'$系中的速度坐标为$(u_x',u_y',u_z')$，则有
+    对于满足洛伦兹变换
+    \[\left\{\begin{array}{l}
+            t'=\gamma(t-\beta\dfrac{x}{c}) \\
+            x'=\gamma(x-vt)                \\
+            y'=y                           \\
+            z'=z
+        \end{array}\right.\]
+    的$S$系和$S'$系，设物体在$S$系中的速度坐标为$(u_x,u_y,u_z)$，$S'$系中的速度坐标为$(u_x',u_y',u_z')$，则有
     \[
-    \left\{\begin{aligned}
-    	u_x'&=\dfrac{u_x-v}{1-\dfrac{vu_x}{c^2}}\\[1ex]
-    	u_y'&=\sqrt{1-\frac{v^2}{c^2}}\dfrac{u_y}{1-\dfrac{vu_x}{c^2}}=s\dfrac{u_y}{1-\dfrac{vu_x}{c^2}}\\[1ex]
-    	u_z'&=\sqrt{1-\frac{v^2}{c^2}}\dfrac{u_z}{1-\dfrac{vu_x}{c^2}}=s\dfrac{u_z}{1-\dfrac{vu_x}{c^2}}
-    \end{aligned}\right.
+        \left\{\begin{aligned}
+            u_x' & =\dfrac{u_x-v}{1-\dfrac{vu_x}{c^2}}                                                         \\[1ex]
+            u_y' & =\sqrt{1-\frac{v^2}{c^2}}\dfrac{u_y}{1-\dfrac{vu_x}{c^2}}=s\dfrac{u_y}{1-\dfrac{vu_x}{c^2}} \\[1ex]
+            u_z' & =\sqrt{1-\frac{v^2}{c^2}}\dfrac{u_z}{1-\dfrac{vu_x}{c^2}}=s\dfrac{u_z}{1-\dfrac{vu_x}{c^2}}
+        \end{aligned}\right.
     \]
 \end{law}
 尽管在洛伦兹变换中，$y\rightarrow y',z\rightarrow z'$保持不变，只要意识到时间发生了变化，就很好理解为什么$u_y',u_z'$发生了变化。
 \begin{ex}[\itr{Perpendicular moving rigids}{垂直运动的尺子}]
-如下图所示，两把尺子静止长度都为$L_0$，朝着垂直的方向以速度$v$运动，问在一把尺子上看另一把尺子的长度是多少？  
-	\ctikzfig{chapter6_example_6_2}  
+    如下图所示，两把尺子静止长度都为$L_0$，朝着垂直的方向以速度$v$运动，问在一把尺子上看另一把尺子的长度是多少？
+    \ctikzfig{chapter6_example_6_2}
 \end{ex}
 \begin{so}[\itr{Perpendicular moving rigids}{垂直运动的尺子}]
-	
-	我们不妨考虑在尺$2$眼中，尺$1$的长度。显然地，尺$1$与尺$2$有一个相对速度。由于尺缩效应只对物体长度方向的速度生效\mgnote{见\refleaftext{chapter6_length_contraction}}，我们只考虑尺$1$方向上的相对速度。
-	
-	以尺$2$方向为$x$轴，以尺$1$方向为$y$轴，可以建立惯性系$S,S'$。其中，在$S$系中，尺$2$有$x$轴方向速度$v$，尺$1$有$y$轴方向速度$u_y=v$；在$S'$系中，尺$2$保持静止。
-	
-	由速度变换公式，有
-	\[u_y'=\sqrt{1-\dfrac{v^2}{c^2}}\dfrac{u_y}{1-\dfrac{v\cdot 0}{c^2}}=\sqrt{1-\dfrac{v^2}{c^2}}v=\sqrt{1-\beta^2}v\]
-    
+
+    我们不妨考虑在尺$2$眼中，尺$1$的长度。显然地，尺$1$与尺$2$有一个相对速度。由于尺缩效应只对物体长度方向的速度生效\mgnote{见\refleaftext{chapter6_length_contraction}}，我们只考虑尺$1$方向上的相对速度。
+
+    以尺$2$方向为$x$轴，以尺$1$方向为$y$轴，可以建立惯性系$S,S'$。其中，在$S$系中，尺$2$有$x$轴方向速度$v$，尺$1$有$y$轴方向速度$u_y=v$；在$S'$系中，尺$2$保持静止。
+
+    由速度变换公式，有
+    \[u_y'=\sqrt{1-\dfrac{v^2}{c^2}}\dfrac{u_y}{1-\dfrac{v\cdot 0}{c^2}}=\sqrt{1-\dfrac{v^2}{c^2}}v=\sqrt{1-\beta^2}v\]
+
     由尺缩效应公式，有
     \[L'=L_0\sqrt{1-\dfrac{u_y'{}^2}{c^2}}=L_0\sqrt{1-\beta^2(1-\beta^2)}\]
-    
+
     注：$\beta=\dfrac{v}{c}$，最早在洛伦兹变换\mgnote{见\refleaftext{law6.1}}中提及。
 
 \end{so}
@@ -204,7 +204,7 @@
 我们知道，在经典力学中，动量被定义为物体质量和速度的乘积。而在狭义相对论中，我们知道，光速是物体能达到的最高速度。那么，我们自然会要求一个有质量的物体在趋于光速时具有无穷大的动量\mgnote{否则就可以通过某些手段得到速度超越光速的物体}。于是，我们要把经典力学的动量修正(\refleaftext{prove6.4})为相对论动量，修正结果如下：
 \[p\equiv\frac{M_0v}{\left(1-v^{2}/c^{2}\right)^{\frac{1}{2}}}\equiv\gamma M_0 v\]
 如下图所示，我们看到动量在$v$趋于$c$时发散，这与我们之前的讨论相吻合。
-\begin{singlefigure}{chapter_6_3}[0.45] 
+\begin{singlefigure}{chapter_6_3}[0.45]
 \end{singlefigure}
 这时，我们得引入一些新的概念来解释上述现象。由于我们认为速度有限，一个突破口就是认为质量随速度改变。因此，我们引入动质量
 \[M(v)=\frac{M_0}{\left(1-v^{2}/c^{2}\right)^{\frac{1}{2}}}=\gamma M_0\]
@@ -219,7 +219,7 @@
 \[W=\int_0^{x_f} \dfrac{\dif p}{\dif t}\dif x\]
 求解(\refleaftext{prove6.5})这个积分式，最终可以得到
 \begin{equation}
-	K=W=(\gamma -1)M_0c^2
+    K=W=(\gamma -1)M_0c^2
 \end{equation}
 
 新的表达式在$v<<c$时会退化成经典情形，这是因为
@@ -231,16 +231,16 @@
 
 爱因斯坦质能方程告诉我们，一个粒子在静止时也具有能量，具体来说是
 \begin{equation}
-	E_0=M_0c^2
+    E_0=M_0c^2
 \end{equation}
 式中$M$是粒子的静质量。我们将这种能量称为静止能量，将其与动能$K$相加，就得到了总能量
 \begin{equation}
-	E\equiv \frac{M_0c^2}{\sqrt{1-v^2/c^2}}\equiv \gamma M_0 c^2
+    E\equiv \frac{M_0c^2}{\sqrt{1-v^2/c^2}}\equiv \gamma M_0 c^2
 \end{equation}
 
 光子的情况则有些特殊——它并没有质量。光子的能动量\labelroot{chapter6_photon}由公式
 \begin{equation}
-	E=h\nu\qquad p=\dfrac{h\nu}{c}
+    E=h\nu\qquad p=\dfrac{h\nu}{c}
 \end{equation}
 给出，其中$\nu$\mgnote{读作`Nju'}即光子的频率，$h$为普朗克常数。
 
@@ -249,15 +249,15 @@
 
 我们知道，洛伦兹变换反映了在不同惯性系中时空坐标的变换。同样地，我们也可以得到在不同惯性系中相对论能量与动量的变换关系。
 \begin{law}[\itr{Energy and Momentum Transformation}{动量能量变换}---\refleaftext{prove6.6}]
-	\ctikzfig{chapter6_framess}
-	设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$p,p'$表示任一物体在$S$系，$S'$系中的动量，用$E,E'$表示该物体在$S$系，$S'$系中的能量，则有
-	\[\left\{\begin{aligned}
-		E'&=\gamma(E-p_xv)\\
-		p_x'&=\gamma(p_x-\dfrac{E}{c^2}v)\\
-		p_y'&=p_y\\
-		p_z'&=p_z
-	\end{aligned}\right.\]
-	此处的$\gamma$为$\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}$。
+    \ctikzfig{chapter6_framess}
+    设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$p,p'$表示任一物体在$S$系，$S'$系中的动量，用$E,E'$表示该物体在$S$系，$S'$系中的能量，则有
+    \[\left\{\begin{aligned}
+            E'   & =\gamma(E-p_xv)              \\
+            p_x' & =\gamma(p_x-\dfrac{E}{c^2}v) \\
+            p_y' & =p_y                         \\
+            p_z' & =p_z
+        \end{aligned}\right.\]
+    此处的$\gamma$为$\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}$。
 \end{law}
 \section[一些关联]{Some Relations}
 在这一节，让我们整理一下之前的内容，寻找各个量之间的关联。
@@ -266,29 +266,29 @@
 
 首先是关于时空变换。时间相对于空间，欠缺了量纲$\left[\dfrac{L}{T}\right]$，可以用光速来补足。因此，接下来，我们把$(ct)$看作整体。
 \begin{law}[\itr{Lorentz Transformation With Unified Dimension}{统一量纲后的洛伦兹变换}]
-	\ctikzfig{chapter6_framess}
-	设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$t,t'$表示$S$系，$S'$系中的时间，用$x,y,z$与$x',y',z'$表示$S$系，$S'$系中的坐标，则有
-	\[\left\{\begin{array}{l}
-		(ct)'=\gamma[(ct)-\beta x]\\
-		x'=\gamma[x-\beta(ct)]\\
-		y'=y\\
-		z'=z
-	\end{array}\right.\]
+    \ctikzfig{chapter6_framess}
+    设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$t,t'$表示$S$系，$S'$系中的时间，用$x,y,z$与$x',y',z'$表示$S$系，$S'$系中的坐标，则有
+    \[\left\{\begin{array}{l}
+            (ct)'=\gamma[(ct)-\beta x] \\
+            x'=\gamma[x-\beta(ct)]     \\
+            y'=y                       \\
+            z'=z
+        \end{array}\right.\]
 \end{law}
 
 可以看到，洛伦兹变换对于$x$和$(ct)$在形式上是完全对称的。
 
 再是关于能动量变换。能量相对于动量，多出了量纲$\left[\dfrac{L}{T}\right]$，可以用光速来除去。因此，接下来，我们把$\left(\dfrac{E}{c}\right)$看作整体。
 \begin{law}[\itr{Energy and Momentum Transformation With Unified Dimension}{统一量纲后的能动量变换}]
-	\ctikzfig{chapter6_framess}
-	设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$p,p'$表示任一物体在$S$系，$S'$系中的动量，用$E,E'$表示该物体在$S$系，$S'$系中的能量，则有
-	\[\left\{\begin{aligned}
-		\left(\dfrac{E}{c}\right)'&=\gamma\left[\left(\dfrac{E}{c}\right)-\beta p_x\right]\\
-		p_x'&=\gamma\left[p_x-\beta\left(\dfrac{E}{c}\right)\right]\\
-		p_y'&=p_y\\
-		p_z'&=p_z
-	\end{aligned}\right.\]
-	此处的$\gamma$为$\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}$。
+    \ctikzfig{chapter6_framess}
+    设$S'$系相对$S$系有$x$方向的速度$v$，并分别用$p,p'$表示任一物体在$S$系，$S'$系中的动量，用$E,E'$表示该物体在$S$系，$S'$系中的能量，则有
+    \[\left\{\begin{aligned}
+            \left(\dfrac{E}{c}\right)' & =\gamma\left[\left(\dfrac{E}{c}\right)-\beta p_x\right] \\
+            p_x'                       & =\gamma\left[p_x-\beta\left(\dfrac{E}{c}\right)\right]  \\
+            p_y'                       & =p_y                                                    \\
+            p_z'                       & =p_z
+        \end{aligned}\right.\]
+    此处的$\gamma$为$\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}$。
 \end{law}
 
 可以看到，能动量变换对于$p_x$和$\left(\dfrac{E}{c}\right)$在形式上是完全对称的。
@@ -301,11 +301,11 @@
 
 注意到洛伦兹变换中$(ct)$与$x$的高度对称性，我们取$(ct)^2-x^2$，可得
 \begin{equation}
-	\begin{aligned}
-		{(ct)'}^2-{x'}^2&=\gamma^2[(ct)^2(1-\beta^2)-x^2(1-\beta^2)]\\
-		&=\gamma^2[(ct)^2-x^2]\dfrac{1}{\gamma^2}\\
-		&=(ct)^2-x^2
-	\end{aligned}
+    \begin{aligned}
+        {(ct)'}^2-{x'}^2 & =\gamma^2[(ct)^2(1-\beta^2)-x^2(1-\beta^2)] \\
+                         & =\gamma^2[(ct)^2-x^2]\dfrac{1}{\gamma^2}    \\
+                         & =(ct)^2-x^2
+    \end{aligned}
 \end{equation}
 
 这说明，$(ct)^2-x^2$正是我们寻找的一个不变量。如果我们将$y,z$也加进去，显然有$(ct)^2-x^2-y^2-z^2$是一个不变量。那么，这个不变量就可以用来``度量时空''\footnote{所谓度量时空的含义，将在闵氏时空图的介绍中说明}。
@@ -318,11 +318,11 @@
     \ctikzfig{chapter6_dpl}
 \end{ex}
 \begin{so}[光的多普勒效应]
-	注意到要解决的是光子在观察者参考系中的频率问题。显然地，有可能与频率有联系的量是光子的能动量。
-	
-	不妨设光子在$S$系中的动量为$p$，能量为$E$，在观察者系中的动量为$p'$，且设观察者系中光子的频率为$\nu$。
-	
-	注意到观察者系相对$S$系的速度为$-v$，由动量变换有
+    注意到要解决的是光子在观察者参考系中的频率问题。显然地，有可能与频率有联系的量是光子的能动量。
+
+    不妨设光子在$S$系中的动量为$p$，能量为$E$，在观察者系中的动量为$p'$，且设观察者系中光子的频率为$\nu$。
+
+    注意到观察者系相对$S$系的速度为$-v$，由动量变换有
     \[p'=\gamma\left(p+v\frac{E}{c^2}\right)\]
     且对于光子有
     \[E=h\nu_0\quad,\quad p=\dfrac{h\nu_0}{c}\]
@@ -339,11 +339,11 @@
 
 为了形式上的统一性，接下来，我们记
 \[\left\{\begin{aligned}
-	x_0&=(ct)\\
-	x_1&=x\\
-	x_2&=y\\
-	x_3&=z
-\end{aligned}\right.\]
+        x_0 & =(ct) \\
+        x_1 & =x    \\
+        x_2 & =y    \\
+        x_3 & =z
+    \end{aligned}\right.\]
 则有不变量$x_0{}^2-x_1{}^2-x_2{}^2-x_3{}^2$。
 
 再为了简化分析，我们不再考虑$x_2,x_3$，而只用$x_0,x_1$来描述时空。那么，在这个被限制的时空中，有不变量\footnote{关于这里的不变量，你可以在不同的参考资料上看到不同的定义，有$s^2=x_0{}^2-x_1{}^2$，也有$s^2=x_1{}^2-x_0{}^2$，本书选择了第一种。}
@@ -359,7 +359,7 @@
 \ctikzfig{chapter6_mins1}
 
 在时空图中，我们定义线长\mgnote{当计算线长$l_{ab}$时，应取$l_{ab}=\sqrt{|l_{ab}{}^2|}$}为
-\[l_{ab}{}^2=\int_{a}^{b}\mgnote{这里的积分应取$a$端点到$b$端点的路径积分的意思} \dif s^2\] 
+\[l_{ab}{}^2=\int_{a}^{b}\mgnote{这里的积分应取$a$端点到$b$端点的路径积分的意思} \dif s^2\]
 
 例如，对于上图的$a,b$，就有
 \[l_{ab}{}^2=c^2(t_b-t_a)^2-(x_b-x_a)^2\]
@@ -377,19 +377,19 @@
 
 \ctikzfig{chapter6_mins2}
 \begin{Itemize}
-	\item \itr{World Line}{世界线} 对于某一个物体，它的每一个事件都可以用一个时空点表示在闵氏时空图中。我们称这些点连接成的曲线为 \itr{World Line}{世界线}。\\
-	\eg 上图中的$x=ct,x=-ct$线，就可以看成是光子的世界线\mgnote{$x$和$ct$的变化速度相同，只有速度为$c$的物质才能做到，必然为光子}。
-	\item \itr{Light Cone}{光锥} 我们把光子的世界线称为 \itr{Light Cone}{光锥}，并认为图中的黄色区域在 \itr{Light Cone}{光锥} 内部，其余区域在 \itr{Light Cone}{光锥} 外部。
-	\item \itr{Absolute Future}{绝对未来} 对于发生在$(0,0)$的事件$0$，发生在光锥内，且$ct>0$的事件(如事件$1$)处于它的 \itr{Absolute Future}{绝对未来}。参与了事件$0$的人可以用小于$c$的速度抵达事件$1$，这说明，发生在绝对未来的事件是可以被当前事件影响的。
-	\item \itr{Absolute Past}{绝对过去} 对于发生在$(0,0)$的事件$0$，发生在光锥内，且$ct<0$的事件(如事件$2$)处于它的 \itr{Absolute Past}{绝对过去}。参与了事件$2$的人可以用小于$c$的速度抵达事件$0$，这说明，发生在绝对过去的事件可以影响当前事件。
-	\item \itr{Elsewhere}{其他区} 对于发生在$(0,0)$的事件$0$，发生在光锥外的事件(如事件$3,4$)处于它的 \itr{Elsewhere}{其他区}。参与了事件$0$的人无法抵达事件$3$，参与了事件$4$的人也无法抵达事件$0$，这说明，发生在其他区的事件既不能被当前事件影响，也不能影响当前事件。
+    \item \itr{World Line}{世界线} 对于某一个物体，它的每一个事件都可以用一个时空点表示在闵氏时空图中。我们称这些点连接成的曲线为 \itr{World Line}{世界线}。\\
+    \eg 上图中的$x=ct,x=-ct$线，就可以看成是光子的世界线\mgnote{$x$和$ct$的变化速度相同，只有速度为$c$的物质才能做到，必然为光子}。
+    \item \itr{Light Cone}{光锥} 我们把光子的世界线称为 \itr{Light Cone}{光锥}，并认为图中的黄色区域在 \itr{Light Cone}{光锥} 内部，其余区域在 \itr{Light Cone}{光锥} 外部。
+    \item \itr{Absolute Future}{绝对未来} 对于发生在$(0,0)$的事件$0$，发生在光锥内，且$ct>0$的事件(如事件$1$)处于它的 \itr{Absolute Future}{绝对未来}。参与了事件$0$的人可以用小于$c$的速度抵达事件$1$，这说明，发生在绝对未来的事件是可以被当前事件影响的。
+    \item \itr{Absolute Past}{绝对过去} 对于发生在$(0,0)$的事件$0$，发生在光锥内，且$ct<0$的事件(如事件$2$)处于它的 \itr{Absolute Past}{绝对过去}。参与了事件$2$的人可以用小于$c$的速度抵达事件$0$，这说明，发生在绝对过去的事件可以影响当前事件。
+    \item \itr{Elsewhere}{其他区} 对于发生在$(0,0)$的事件$0$，发生在光锥外的事件(如事件$3,4$)处于它的 \itr{Elsewhere}{其他区}。参与了事件$0$的人无法抵达事件$3$，参与了事件$4$的人也无法抵达事件$0$，这说明，发生在其他区的事件既不能被当前事件影响，也不能影响当前事件。
 \end{Itemize}
 
 接下来，我们开始分析闵氏时空图中的洛伦兹变换。为了使形式与时空图适应，我们选择统一量纲后的洛伦兹变换如下：
 \[\left\{\begin{array}{l}
-	(ct)'=\gamma[(ct)-\beta x]\\
-	x'=\gamma[x-\beta(ct)]\\
-\end{array}\right.\]
+        (ct)'=\gamma[(ct)-\beta x] \\
+        x'=\gamma[x-\beta(ct)]     \\
+    \end{array}\right.\]
 
 回忆一下轴的性质：$x'$轴上，$ct'=0$；$ct'$轴上，$x'=0$。因此，我们只要分别在闵氏时空图上绘制直线$\gamma[(ct)-\beta x]=0$和$ \gamma[x-\beta(ct)]=0$，就可以得到洛伦兹变换后的$x'$轴和$ct'$轴。
 \ctikzfig{chapter6_mins3}
@@ -402,9 +402,9 @@
 我们可以依据事件点的$s^2$，将闵氏时空图分为三个部分：
 \ctikzfig{chapter6_mins5}
 \begin{Itemize}
-	\item \itr{Timelike Separation}{类时分隔} 我们称$s^2>0$的部分为 \itr{Timelike Separation}{类时分隔}。对于在这样的区域发生的事件，总有办法找到一个惯性系，使得在这个惯性系中，该事件和原点事件发生在同一空间。事实上，你只需要作一个洛伦兹变换，使得该事件点落在$ct'$轴上。
-	\item  \itr{Spacelike Seperation}{类空分隔} 我们称$s^2<0$的部分为 \itr{Spacelike Seperation}{类空分隔}。对于在这样的区域发生的事件，总有办法找到一个惯性系，使得在这个惯性系中，该事件和原点事件发生在同一时间。事实上，你只需要作一个洛伦兹变换，使得该事件点落在$x'$轴上。
-	\item \itr{Lightlike Seperation}{类光分隔} 我们称$s^2=0$的部分为 \itr{Lightlike Seperation}{类光分隔}。
+    \item \itr{Timelike Separation}{类时分隔} 我们称$s^2>0$的部分为 \itr{Timelike Separation}{类时分隔}。对于在这样的区域发生的事件，总有办法找到一个惯性系，使得在这个惯性系中，该事件和原点事件发生在同一空间。事实上，你只需要作一个洛伦兹变换，使得该事件点落在$ct'$轴上。
+    \item  \itr{Spacelike Seperation}{类空分隔} 我们称$s^2<0$的部分为 \itr{Spacelike Seperation}{类空分隔}。对于在这样的区域发生的事件，总有办法找到一个惯性系，使得在这个惯性系中，该事件和原点事件发生在同一时间。事实上，你只需要作一个洛伦兹变换，使得该事件点落在$x'$轴上。
+    \item \itr{Lightlike Seperation}{类光分隔} 我们称$s^2=0$的部分为 \itr{Lightlike Seperation}{类光分隔}。
 \end{Itemize}
 
 上述对闵氏时空图的分区属于固定一个事件点在原点的特殊情况。对于一般的时间间隔，我们也可以把它们分为三种类型:
@@ -428,94 +428,93 @@
 在这个子小节，我们尝试用闵氏时空图解释狭义相对论中的一些效应。
 
 \begin{ex}[\itr{Using Minkovski graph to solve problems below}{利用闵氏时空图求解如下问题}]
-(a)画出“动尺收缩”所对应的时空图，尝试解释为什么会收缩，并计算出收缩因子；
-\\(b)画出“动钟变慢”所对应的时空图，尝试解释为什么会变慢，并计算出变慢因子。    
+    (a)画出“动尺收缩”所对应的时空图，尝试解释为什么会收缩，并计算出收缩因子；
+    \\(b)画出“动钟变慢”所对应的时空图，尝试解释为什么会变慢，并计算出变慢因子。
 \end{ex}
-\begin{so}[\itr{Using Minkovski graph to solve problems below}{利用闵氏时空图求解如下问题}] 
+\begin{so}[\itr{Using Minkovski graph to solve problems below}{利用闵氏时空图求解如下问题}]
     (a)\\
     画出时空图如下
     \ctikzfig{chapter6_mins7}
-    
+
     $P$，$Q$是在$x-ct$系中静止的两个点，其世界线由绿色线段标明。
-    
+
     在$x-ct$系中测量$PQ$的距离，即取$ct$坐标相同的两个点求$\Delta x$，不妨取图中$L_0$。
-    
+
     在$x'ct'$系中测量时，需要保证$ct'$坐标相同，因此作与$x'$轴平行的线被$P,Q$的世界线截取的部分，不妨取图中$L$。
-    
+
     需要注意的一点是，由于$x'$轴和$ct'$轴发生了收缩，其尺度与$x$轴和$ct$轴并不一致，所以我们不能直接凭肉眼判断$L>L_0$。正确的做法是，利用时空间隔在洛伦兹变换中不变的性质，在两个参考系中分别考虑。
-    
+
     在$x-ct$系中，$L$的时空间隔为\[(\beta L_0)^2-L_0{}^2\]
-    
+
     而在$x'-ct'$系中，$L$的时空间隔为\[-L^2\]
-    
+
     于是有\[(\beta L_0)^2-L_0{}^2=-L^2\]
-    
+
     即\[L=\sqrt{1-\beta^2}L_0=sL_0\]
-    
+
     显然，$PQ$的距离在$x'-ct'$系中发生了收缩。
-    
-	(b)\\
+
+    (b)\\
     画出时空图如下
     \ctikzfig{chapter6_mins8}
     $P,Q$是$x-ct$系中同一个静止的钟在不同时间下触发的指针移动事件。
-    
+
     在$x-ct$系中，$P,Q$的时间差即图中的$c\tau$。
-    
+
     在$x'-ct'$系中，$P,Q$的时间差即$P,Q$两点的$ct'$差值。过$Q$作平行于$x'$轴的直线与$ct'$轴相交，图中的$c\Delta t$即为所求。
-    
+
     我们可以通过联立直线
     \[\left\{
-    	\begin{aligned}
-    		ct &= \dfrac{1}{\beta} x\\
-    		ct &= \beta x + c\tau
-    	\end{aligned}
-    \right.\]
+        \begin{aligned}
+            ct & = \dfrac{1}{\beta} x \\
+            ct & = \beta x + c\tau
+        \end{aligned}
+        \right.\]
     解得平行线与$x'$轴的交点在$x-ct$系中的坐标
     \[\left(\dfrac{\beta c\tau}{1-\beta^2},\dfrac{c\tau}{1-\beta^2}\right)\]
-    
+
     一样地，我们分别求出在$x-ct$系，$x'-ct'$系中$c\Delta t$的时空间隔并联立，可得
     \[\left(\dfrac{c\tau}{1-\beta^2}\right)^2-\left(\dfrac{\beta c\tau}{1-\beta^2}\right)^2=(c\Delta t)^2\]
-    
+
     解得
     \[\Delta t = \gamma \tau\]
-    
-    显然，$PQ$的时间差在$x'-ct'$系中发生了膨胀。   
+
+    显然，$PQ$的时间差在$x'-ct'$系中发生了膨胀。
 \end{so}
 
 除了尺缩效应和时延效应，这里再使用闵氏时空图解释一个著名的佯谬：双生子佯谬。
 
 \begin{ex}[双生子佯谬]
-	考虑地球上的一对兄弟。某一天，哥哥从地球出发，以极快的速度进行星际旅行。若干年后，哥哥又回到了地球。
-	
-	双生子佯谬认为，以弟弟的视角看，哥哥在运动，所以他认为哥哥的时间延缓了；以哥哥的视角看，弟弟也在运动，所以他认为弟弟的时间延缓了。现在，两人面对面，到底是谁的时间延缓了？
+    考虑地球上的一对兄弟。某一天，哥哥从地球出发，以极快的速度进行星际旅行。若干年后，哥哥又回到了地球。
+
+    双生子佯谬认为，以弟弟的视角看，哥哥在运动，所以他认为哥哥的时间延缓了；以哥哥的视角看，弟弟也在运动，所以他认为弟弟的时间延缓了。现在，两人面对面，到底是谁的时间延缓了？
 \end{ex}
 \begin{so}[双生子佯谬]
-	对该问题，爱因斯坦的回答是，在哥哥做星际航行的过程中，他必然经历加速和减速的过程，也就是说，哥哥的参考系不再是惯性参考系，因此无法使用狭义相对论解释这一现象。虽然这个回答符合逻辑，但有回避问题之嫌。
-	
-	在使用闵氏时空图回答这个问题之前，我们需要先明确几点。
-	\begin{itemize}
-		\item 在非惯性参考系中，尽管全局的时空几何可能由于引力或加速度而变得复杂\mgnote{关于这个，可以查阅广义相对论。}，但在任何足够小的区域内，通过广义相对论的局部平直性原理\mgnote{由于本书并不直接讨论广义相对论，这里只作引入，不予证明。}，时空可以被近似为闵氏时空。
-		\item 在闵氏时空图中，某个物体的世界线长度等于其经历的原时(乘以光速)。
-	\end{itemize}
-	
-	对于第二点的解释如下：
-	
-	依据第一点，在极小尺度下，我们依旧可以认为闵氏线元是一个不变量。同时，当物体以自身作为参考系$x'-ct'$时，其$\dif x'$始终保持为$0$。那么，由闵氏线元不变，有:
-	\begin{equation}
-		\dif s^2=\dif(ct)^2-\dif x^2 = \dif (ct')^2-\dif x'^2 = \dif(ct')^2
-	\end{equation}
-	
-	依据线长的定义，对闵氏线元取路径积分，可以发现，左式的积分是世界线长度，而右式的积分其实就是物体在自身参考系中时间(乘以光速)的总流逝量，也就是原时(乘以光速)。
-	
-	接下来，我们尝试在闵氏时空图中绘制弟弟和哥哥的世界线:
-	\ctikzfig{chapter6_mins9}
-	
-	在图中，我们用$a$表示弟弟，$b$表示哥哥。由于弟弟一直在地球，在大尺度下认为他不运动，因此弟弟的世界线在$ct$轴上。至于哥哥，则在$x$方向上有运动，并最后回到地球，和弟弟相遇，因此呈现这样的世界线。
-	
-	由于一开始明确的第二点，比较弟弟和哥哥经历的时间，其实就是比较他们的世界线长度。我们用与$x$轴平行的虚线将兄弟的世界线分割成多个极小的部分，并在每一个部分比较两者的长短。
-	
-	由于每一小段内，$a$没有$x$坐标的变化，而$b$却有，且两者$ct$坐标的变化量相同，所以都有$a$的小段长于$b$的小段。求和，即$a$的世界线短于$b$的世界线。
-	
-	因此，是哥哥的时间延缓了。
+    对该问题，爱因斯坦的回答是，在哥哥做星际航行的过程中，他必然经历加速和减速的过程，也就是说，哥哥的参考系不再是惯性参考系，因此无法使用狭义相对论解释这一现象。虽然这个回答符合逻辑，但有回避问题之嫌。
+
+    在使用闵氏时空图回答这个问题之前，我们需要先明确几点。
+    \begin{itemize}
+        \item 在非惯性参考系中，尽管全局的时空几何可能由于引力或加速度而变得复杂\mgnote{关于这个，可以查阅广义相对论。}，但在任何足够小的区域内，通过广义相对论的局部平直性原理\mgnote{由于本书并不直接讨论广义相对论，这里只作引入，不予证明。}，时空可以被近似为闵氏时空。
+        \item 在闵氏时空图中，某个物体的世界线长度等于其经历的原时(乘以光速)。
+    \end{itemize}
+
+    对于第二点的解释如下：
+
+    依据第一点，在极小尺度下，我们依旧可以认为闵氏线元是一个不变量。同时，当物体以自身作为参考系$x'-ct'$时，其$\dif x'$始终保持为$0$。那么，由闵氏线元不变，有:
+    \begin{equation}
+        \dif s^2=\dif(ct)^2-\dif x^2 = \dif (ct')^2-\dif x'^2 = \dif(ct')^2
+    \end{equation}
+
+    依据线长的定义，对闵氏线元取路径积分，可以发现，左式的积分是世界线长度，而右式的积分其实就是物体在自身参考系中时间(乘以光速)的总流逝量，也就是原时(乘以光速)。
+
+    接下来，我们尝试在闵氏时空图中绘制弟弟和哥哥的世界线:
+    \ctikzfig{chapter6_mins9}
+
+    在图中，我们用$a$表示弟弟，$b$表示哥哥。由于弟弟一直在地球，在大尺度下认为他不运动，因此弟弟的世界线在$ct$轴上。至于哥哥，则在$x$方向上有运动，并最后回到地球，和弟弟相遇，因此呈现这样的世界线。
+
+    由于一开始明确的第二点，比较弟弟和哥哥经历的时间，其实就是比较他们的世界线长度。我们用与$x$轴平行的虚线将兄弟的世界线分割成多个极小的部分，并在每一个部分比较两者的长短。
+
+    由于每一小段内，$a$没有$x$坐标的变化，而$b$却有，且两者$ct$坐标的变化量相同，所以都有$a$的小段长于$b$的小段。求和，即$a$的世界线短于$b$的世界线。
+
+    因此，是哥哥的时间延缓了。
 \end{so}
-	
